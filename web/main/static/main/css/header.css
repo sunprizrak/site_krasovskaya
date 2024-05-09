@@ -1,0 +1,28 @@
+header {
+    font-family: 'PlayfairDisplay';
+}
+
+.navbar {
+    height: 100px;
+    --bs-navbar-nav-link-padding-x: 5.5rem !important;
+    user-select: none;
+}
+
+.navbar #navbar-wrap {
+    height: 100%;
+}
+
+.navbar .navbar-nav {
+    align-items: end;
+    height: 100%;
+}
+
+.navbar .collapse {
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.navbar .nav-link {
+    font-size: 30px !important;
+    padding: 0;
+}

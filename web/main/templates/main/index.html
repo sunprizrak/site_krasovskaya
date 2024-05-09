@@ -1,0 +1,65 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main_content %}
+    <div class="container-fluid" id="index_page">
+        <div class="row">
+            <div class="col-4">
+                <img src="{% static 'main/img/home-left.jpg' %}" alt="home-left">
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col" id="name_hello-wrap">
+                        <div id="name_hello">
+                            <p>Меня зовут</p>
+                            <h1>Катерина</h1>
+                            <h1>Красницкая<span>,</span></h1>
+                            <p>я - прихолог,</p>
+                            <p>групповой терапевт</p>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <img src="{% static 'main/img/home-right.jpg' %}" alt="home-right">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="ask_question-wrap">
+                        <button type="button" class="btn" name="ask_question">ЗАДАТЬ ВОПРОС</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="my_news">
+                            <div class="row">
+                                <div class="col">
+                                    <h4>МОИ НОВОСТИ</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="d-grid">
+                                        <a href="#" draggable="false">| katherine krasnitskay |</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col">
+                                    <div>
+                                        <p>
+                                            Часто мне задают вопрос: может, и мне пора на терапию? Кода я <br>
+                                            слышу его, непроизвольно мимика моего лица меняется, выражая <br>
+                                            симпатию...
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

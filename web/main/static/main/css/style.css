@@ -1,0 +1,17 @@
+@import url('/static/main/css/header.css');
+@import url('/static/main/css/index.css');
+
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('/static/main/font/PlayfairDisplay.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Monplesir script';
+    src: url('/static/main/font/Monplesir_script.ttf') format('truetype');
+}
+
+body {
+    background: url('/static/main/img/background.png') no-repeat;
+}
+
