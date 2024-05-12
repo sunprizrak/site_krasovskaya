@@ -19,10 +19,11 @@
 </head>
 <body>
     <header>
-        {% include 'main/header.html' %}
+        {% block header %}
+        {% endblock %}
     </header>
     <main>
-        {% block main_content %}
+        {% block main %}
         {% endblock %}
     </main>
     <footer>

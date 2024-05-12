@@ -1,23 +1,76 @@
+.navbar {
+    user-select: none;
+    height: 15vh;
+    --bs-navbar-nav-link-padding-x: 5.5rem !important;
+    font-family: 'PlayfairDisplay';
+    background-image: url('/static/main/img/header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar #navbar-wrap {
+    height: 100%;
+}
+
+.navbar-nav {
+    width: 70%;
+    justify-content: center;
+    background-color: gray;
+}
+
+.navbar .collapse {
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.navbar .nav-link {
+    font-size: 1.8rem !important;
+    white-space: nowrap;
+}
+
 #index_page {
     font-family: 'PlayfairDisplay';
     user-select: none;
 }
 
-img[alt='home-right'] {
-    width: 326px;
+#wrap-home-left-image {
+    position: relative;
+    background-color: #4e9599;
+    bottom: 8vh;
+    left: 1%;
+    width: auto;
+    height: 41%;
+    border-top-left-radius: 5vh;
+    border-bottom-left-radius: 5vh;
+    border-top-right-radius: 13vh;
+    padding-left: 4%;
+}
+
+#home-top-rectangle {
+    position: absolute;
+    top: -7vh;
+    left: 35%;
+    background-color: #fbde98;
+    width: 72%;
+    height: 28vh;
+    border-bottom-right-radius: 43px;
+}
+
+img[alt='home-left'] {
+    border-top-left-radius: 13vh;
+    border-top-right-radius: 13vh;
+    width: 100%;
+    height: 86vh;
     -webkit-user-drag: none; /* Safari */
     -khtml-user-drag: none; /* Konqueror */
     -moz-user-drag: none; /* Mozilla Firefox */
     user-drag: none;
     draggable: false;
+    position: relative;
 }
 
-img[alt='home-left'] {
-    border-top-left-radius: 118px;
-    border-top-right-radius: 175px;
-    margin-left: 53px;
-    margin-top: -20px;
-    width: 510px;
+img[alt='home-right'] {
+    width: 326px;
     -webkit-user-drag: none; /* Safari */
     -khtml-user-drag: none; /* Konqueror */
     -moz-user-drag: none; /* Mozilla Firefox */
@@ -95,3 +148,14 @@ button[name='ask_question']:hover {
     padding: 15px 50px 15px 50px;
     background-color: #e0dbd7;
 }
+
+#home-bottom-right-rectangle {
+    height: 17vh;
+    border-top-left-radius: 6vh;
+    background-color: #fbde98;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    aspect-ratio: 1 / 1;
+}
+
