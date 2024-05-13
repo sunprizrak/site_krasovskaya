@@ -1,30 +1,19 @@
 .navbar {
     user-select: none;
-    height: 15vh;
-    --bs-navbar-nav-link-padding-x: 5.5rem !important;
+    height: 18vh;
+    --bs-navbar-nav-link-padding-x: calc(3vw + 3vh) !important;
     font-family: 'PlayfairDisplay';
     background-image: url('/static/main/img/header.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.navbar #navbar-wrap {
-    height: 100%;
-}
-
-.navbar-nav {
-    width: 70%;
-    justify-content: center;
-    background-color: gray;
-}
-
 .navbar .collapse {
     justify-content: flex-end;
-    height: 100%;
 }
 
 .navbar .nav-link {
-    font-size: 1.8rem !important;
+    font-size: calc(1vw + 1vh) !important;
     white-space: nowrap;
 }
 
@@ -48,11 +37,11 @@
 
 #home-top-rectangle {
     position: absolute;
-    top: -7vh;
+    top: -10vh;
     left: 35%;
     background-color: #fbde98;
     width: 72%;
-    height: 28vh;
+    height: 25vh;
     border-bottom-right-radius: 43px;
 }
 
@@ -69,8 +58,28 @@ img[alt='home-left'] {
     position: relative;
 }
 
+#home-middle-top {
+    position: relative;
+}
+
+#wrap-home-right-image {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    height: 100%;
+    width: 26%;
+    background-color: #fbde98;
+    border-bottom-left-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+}
+
+
 img[alt='home-right'] {
-    width: 326px;
+    position: relative;
+    height: 100%;
+    bottom: 6%;
+    left: 12%;
+    border-radius: 5vh;
     -webkit-user-drag: none; /* Safari */
     -khtml-user-drag: none; /* Konqueror */
     -moz-user-drag: none; /* Mozilla Firefox */
@@ -78,22 +87,20 @@ img[alt='home-right'] {
     draggable: false;
 }
 
-#name_hello-wrap {
-    flex-wrap: wrap;
-    align-content: flex-end;
-}
-
 #name_hello {
     display: inline-block;
+    position: relative;
     user-select: none;
+    background-color: blue;
 }
 
 #name_hello p {
-    font-weight: bold;
+    font-size: 1.6rem;
 }
 
 #name_hello h1 {
     color: #4e9599;
+    font-size: calc(3vw + 3vh);
 }
 
 #name_hello h1::first-letter {
