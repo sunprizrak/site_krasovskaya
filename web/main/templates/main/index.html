@@ -5,16 +5,23 @@
 
 {% block header %}
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="#" draggable="false">ОБО МНЕ</a>
-                    <a class="nav-link" href="#" draggable="false">РАСПИСАНИЕ</a>
-                    <a class="nav-link" href="#" draggable="false">ГРУППЫ</a>
-                    <a class="nav-link" href="#" draggable="false">КОНТАКТЫ</a>
+        <div class="container">
+            <div class="row w-100">
+                <div class="col-auto position-relative" id="navbar-left-column">
+                    <div id="home-top-rectangle"></div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col">
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="#" draggable="false">ОБО МНЕ</a>
+                            <a class="nav-link" href="#" draggable="false">РАСПИСАНИЕ</a>
+                            <a class="nav-link" href="#" draggable="false">ГРУППЫ</a>
+                            <a class="nav-link" href="#" draggable="false">КОНТАКТЫ</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -22,18 +29,16 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container-fluid" id="index_page">
-        <div id="home-bottom-right-rectangle"></div>
+    <div class="container bg-dark" id="index_page">
         <div class="row">
-            <div class="col-auto vh-100" style="background: blue;">
+            <div id="index-left-column" class="col-auto bg-light">
                 <div id="wrap-home-left-image">
-                    <div id="home-top-rectangle"></div>
                     <img src="{% static 'main/img/home-left.jpg' %}" alt="home-left">
                 </div>
             </div>
-            <div class="col" style="background: red;">
+            <div class="col">
                 <div class="row">
-                    <div class="col" id="home-middle-top" style="background-color: gray;">
+                    <div class="col-auto bg-light" id="index-middle-left">
                         <div id="name_hello">
                             <p>Меня зовут</p>
                             <h1>Катерина</h1>
@@ -41,10 +46,11 @@
                             <p>я - пcихолог,</p>
                             <p>групповой терапевт</p>
                         </div>
-<!--                        <div id="wrap-home-right-image">-->
-<!--&lt;!&ndash;                            <div id="home-middle-rectangle"></div>&ndash;&gt;-->
-<!--                            <img src="{% static 'main/img/home-right.jpg' %}" alt="home-right">-->
-<!--                        </div>-->
+                    </div>
+                    <div class="col position-relative bg-dark">
+                        <div id="wrap-home-right-image">
+                            <img src="{% static 'main/img/home-right.jpg' %}" alt="home-right">
+                        </div>
                     </div>
                 </div>
 <!--                <div class="row">-->
@@ -53,7 +59,7 @@
 <!--                    </div>-->
 <!--                </div>-->
 <!--                <div class="row">-->
-<!--                    <div class="col">-->
+<!--                    <div class="col" id="index-bottom">-->
 <!--                        <div id="my_news">-->
 <!--                            <div class="row">-->
 <!--                                <div class="col">-->
@@ -71,8 +77,8 @@
 <!--                                <div class="col">-->
 <!--                                    <div>-->
 <!--                                        <p>-->
-<!--                                            Часто мне задают вопрос: может, и мне пора на терапию? Кода я <br>-->
-<!--                                            слышу его, непроизвольно мимика моего лица меняется, выражая <br>-->
+<!--                                            Часто мне задают вопрос: может, и мне пора на терапию? Кода я-->
+<!--                                            слышу его, непроизвольно мимика моего лица меняется, выражая-->
 <!--                                            симпатию...-->
 <!--                                        </p>-->
 <!--                                    </div>-->
@@ -81,7 +87,33 @@
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
+<!--                <div id="home-bottom-right-rectangle"></div>-->
             </div>
+<!--            <div id="home-bottom-right-rectangle-2"></div>-->
         </div>
     </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.innerWidth >= 1200) {
+                // Получаем элементы
+                var navbarLeftColumn = document.getElementById('navbar-left-column');
+                var indexLeftColumn = document.getElementById('index-left-column');
+
+                function syncNavbarColumnWidth() {
+                    // Устанавливаем ширину колонки навбара равной ширине колонки index-left-column
+                    var columnWidth = indexLeftColumn.offsetWidth;
+                    navbarLeftColumn.style.width = columnWidth + 'px';
+                }
+
+                // Синхронизируем ширину при загрузке страницы
+                syncNavbarColumnWidth();
+
+                // Синхронизируем ширину при изменении размера окна
+                window.addEventListener('resize', syncNavbarColumnWidth);
+            }
+        });
+    </script>
 {% endblock %}

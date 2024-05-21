@@ -11,10 +11,8 @@
 }
 
 html, body {
-    width: 100vw;
-    height: 100vh;
     overflow: hidden;
-    background-color: #ece6e4 !important;
+    background-color: #ece4d8 !important;
 }
 
 /* body {

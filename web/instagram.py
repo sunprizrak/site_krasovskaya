@@ -1,7 +1,7 @@
 from instagrapi import Client
-
-ACCOUNT_USERNAME = 'sunprizrak'
-ACCOUNT_PASSWORD = 'test_API'
+import os
+ACCOUNT_USERNAME = os.getenv('ACCOUNT_USERNAME')
+ACCOUNT_PASSWORD = os.getenv('ACCOUNT_PASSWORD')
 
 cl = Client()
 cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
