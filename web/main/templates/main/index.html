@@ -29,7 +29,7 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container bg-dark" id="index_page">
+    <div class="container position-relative bg-dark" id="index_page">
         <div class="row">
             <div id="index-left-column" class="col-auto bg-light">
                 <div id="wrap-home-left-image">
@@ -53,11 +53,11 @@
                         </div>
                     </div>
                 </div>
-<!--                <div class="row">-->
-<!--                    <div class="col" id="ask_question-wrap">-->
-<!--                        <button type="button" class="btn" name="ask_question">ЗАДАТЬ ВОПРОС</button>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="row">
+                    <div class="col" id="ask_question-wrap">
+                        <button type="button" class="btn" name="ask_question">ЗАДАТЬ ВОПРОС</button>
+                    </div>
+                </div>
 <!--                <div class="row">-->
 <!--                    <div class="col" id="index-bottom">-->
 <!--                        <div id="my_news">-->
@@ -87,32 +87,39 @@
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
-<!--                <div id="home-bottom-right-rectangle"></div>-->
+                <div id="home-bottom-right-rectangle"></div>
             </div>
-<!--            <div id="home-bottom-right-rectangle-2"></div>-->
         </div>
     </div>
+    <div id="home-bottom-right-rectangle-2"></div>
 {% endblock %}
 
 {% block js %}
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (window.innerWidth >= 1200) {
+        $(document).ready(function() {
+            if ($(window).width() >= 992) {
                 // Получаем элементы
-                var navbarLeftColumn = document.getElementById('navbar-left-column');
-                var indexLeftColumn = document.getElementById('index-left-column');
+                var $navbar = $('header .navbar');
+                var $topRectangle = $('#home-top-rectangle');
+                var $navbarLeftColumn = $('#navbar-left-column');
+                var $indexLeftColumn = $('#index-left-column');
+                var $indexRightWrap = $('#wrap-home-right-image');
+                var $imageRight = $('#wrap-home-right-image img');
+                var $indexBottomRectangle = $('#home-bottom-right-rectangle');
+                var $indexBottomRectangle2 = $('#home-bottom-right-rectangle-2');
 
                 function syncNavbarColumnWidth() {
-                    // Устанавливаем ширину колонки навбара равной ширине колонки index-left-column
-                    var columnWidth = indexLeftColumn.offsetWidth;
-                    navbarLeftColumn.style.width = columnWidth + 'px';
+                    $navbarLeftColumn.css('width', $indexLeftColumn.outerWidth());
+                    $topRectangle.css('height', $navbar.outerHeight() + 80);
+                    $indexRightWrap.css('width', $imageRight.outerWidth() - 20);
+                    $indexBottomRectangle2.css('height', $indexBottomRectangle.outerHeight());
                 }
 
                 // Синхронизируем ширину при загрузке страницы
                 syncNavbarColumnWidth();
 
                 // Синхронизируем ширину при изменении размера окна
-                window.addEventListener('resize', syncNavbarColumnWidth);
+                $(window).resize(syncNavbarColumnWidth);
             }
         });
     </script>

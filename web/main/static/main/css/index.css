@@ -1,7 +1,7 @@
 .navbar {
     user-select: none;
     height: 18vh;
-    --bs-navbar-nav-link-padding-x: 0.8rem !important;
+    --bs-navbar-nav-link-padding-x: 1rem !important;
     font-family: 'PlayfairDisplay';
     background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
 
@@ -13,14 +13,13 @@
 }
 
 .navbar .nav-link {
-    font-size: 1.5rem !important;
+    font-size: calc(0.8vw + 0.8vh) !important;
     white-space: nowrap;
 }
 
 #home-top-rectangle {
     position: absolute;
     background-color: #fbde98;
-    height: 25vh;
     border-bottom-right-radius: 43px;
     z-index: 1111;
     width: 65%;
@@ -65,7 +64,6 @@ img[alt='home-left'] {
     top: 0;
     left: -11%;
     height: 106%;
-    width: 85%;
     background-color: #fbde98;
     border-bottom-left-radius: 5vh;
     border-bottom-right-radius: 5vh;
@@ -75,8 +73,8 @@ img[alt='home-left'] {
 
 img[alt='home-right'] {
     position: relative;
-    height: 100%;
-    bottom: 18%;
+    height: 108%;
+    bottom: 15%;
     left: 12%;
     border-radius: 5vh;
     -webkit-user-drag: none; /* Safari */
@@ -89,8 +87,8 @@ img[alt='home-right'] {
 
 #index-middle-left {
     position: relative;
-    padding-top: 7%;
-    padding-left: 3%;
+    padding-top: 40px;
+    padding-left: 20px;
 }
 
 #name_hello {
@@ -101,12 +99,12 @@ img[alt='home-right'] {
 }
 
 #name_hello p {
-    font-size: 1rem;
+    font-size: calc(0.7vw + 0.7vh);
 }
 
 #name_hello h1 {
     color: #4e9599;
-    font-size: 3rem;
+    font-size: calc(1.5vw + 1.5vh);
 }
 
 #name_hello h1::first-letter {
@@ -126,9 +124,10 @@ img[alt='home-right'] {
 button[name='ask_question'] {
     background-color: #4e9599;
     color: #fff;
-    width: 40%;
-    font-size: calc(1vw + 1vh);
+    width: 65%;
+    font-size: calc(0.9vw + 0.9vh);
     border-radius: 30px;
+    margin-top: 10px;
 }
 
 button[name='ask_question']:hover {
@@ -180,11 +179,10 @@ button[name='ask_question']:hover {
 }
 
 #home-bottom-right-rectangle-2 {
-    height: 17vh;
     background-color: #fbde98;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -23px;
     width: 20%;
 }
 
