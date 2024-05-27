@@ -49,7 +49,7 @@ img[alt='home-left'] {
     border-top-left-radius: 13vh;
     border-top-right-radius: 13vh;
     width: 100%;
-    height: 84vh;
+    height: 82vh;
     -webkit-user-drag: none; /* Safari */
     -khtml-user-drag: none; /* Konqueror */
     -moz-user-drag: none; /* Mozilla Firefox */
@@ -182,7 +182,7 @@ button[name='ask_question']:hover {
     background-color: #fbde98;
     position: absolute;
     right: 0;
-    bottom: -23px;
+    bottom: 0;
     width: 20%;
 }
 

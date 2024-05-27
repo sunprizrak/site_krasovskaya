@@ -113,6 +113,10 @@
                     $topRectangle.css('height', $navbar.outerHeight() + 80);
                     $indexRightWrap.css('width', $imageRight.outerWidth() - 20);
                     $indexBottomRectangle2.css('height', $indexBottomRectangle.outerHeight());
+                    $containerRightEdge = $('.container').offset().left + $('.container').outerWidth();
+                    $windowWidth = $(window).width();
+                    $rightBottomFixedWidth = $windowWidth - $containerRightEdge;
+                    $indexBottomRectangle2.css('width', $rightBottomFixedWidth);
                 }
 
                 // Синхронизируем ширину при загрузке страницы
