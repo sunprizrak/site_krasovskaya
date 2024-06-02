@@ -38,7 +38,7 @@
             </div>
             <div class="col-7 bg-primary" id="index-right-column">
                 <div class="row">
-                    <div class="col position-relative bg-light" id="index-middle-left">
+                    <div class="col-auto position-relative bg-light" id="index-middle-left">
                         <div id="name_hello">
                             <p>Меня зовут</p>
                             <h1>Катерина</h1>
@@ -47,7 +47,7 @@
                             <p>групповой терапевт</p>
                         </div>
                     </div>
-                    <div class="col-auto position-relative bg-success">
+                    <div class="col position-relative bg-success">
                         <div id="wrap-home-right-image">
                             <img src="{% static 'main/img/home-right.jpg' %}" alt="right-image">
                         </div>
@@ -113,9 +113,6 @@
                     var $windowWidth = $(window).width();
                     $navbarLeftColumn.css('width', $indexLeftColumn.outerWidth());
                     $topRectangle.css('height', $navbar.outerHeight() + 80);
-                    // $indexLeftColumn.css('height', $indexLeftColumn.outerHeight() - $(window).height() * 0.08);
-                    $indexRightWrap.css('width', $imageRight.outerWidth() - 20);
-                    $indexRightWrap.css('right', 50 + $imageRight.outerWidth() * 0.05);
                     $indexBottomRectangle2.css('height', $indexBottomRectangle.outerHeight());
                     $containerRightEdge = $('.container').offset().left + $('.container').outerWidth();
                     $rightBottomFixedWidth = $windowWidth - $containerRightEdge;
