@@ -14,7 +14,7 @@
                     </button>
                 </div>
                 <div class="col">
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link" href="#" draggable="false">ОБО МНЕ</a>
                             <a class="nav-link" href="#" draggable="false">РАСПИСАНИЕ</a>
@@ -29,16 +29,16 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container position-relative bg-dark" id="index_page">
+    <div class="container position-relative bg-info" id="index_page">
         <div class="row">
-            <div id="index-left-column" class="col-auto bg-light">
+            <div class="col-5 bg-dark" id="index-left-column">
                 <div id="wrap-home-left-image">
-                    <img src="{% static 'main/img/home-left.jpg' %}" alt="home-left">
+                    <img src="{% static 'main/img/home-left.jpg' %}" alt="left-image">
                 </div>
             </div>
-            <div class="col">
+            <div class="col-7 bg-primary" id="index-right-column">
                 <div class="row">
-                    <div class="col-auto bg-light" id="index-middle-left">
+                    <div class="col position-relative bg-light" id="index-middle-left">
                         <div id="name_hello">
                             <p>Меня зовут</p>
                             <h1>Катерина</h1>
@@ -47,9 +47,9 @@
                             <p>групповой терапевт</p>
                         </div>
                     </div>
-                    <div class="col position-relative bg-dark">
+                    <div class="col-auto position-relative bg-success">
                         <div id="wrap-home-right-image">
-                            <img src="{% static 'main/img/home-right.jpg' %}" alt="home-right">
+                            <img src="{% static 'main/img/home-right.jpg' %}" alt="right-image">
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
 <!--                <div class="row">-->
-<!--                    <div class="col" id="index-bottom">-->
+<!--                    <div class="col bg-dark" id="index-bottom">-->
 <!--                        <div id="my_news">-->
 <!--                            <div class="row">-->
 <!--                                <div class="col">-->
@@ -90,6 +90,7 @@
                 <div id="home-bottom-right-rectangle"></div>
             </div>
         </div>
+
     </div>
     <div id="home-bottom-right-rectangle-2"></div>
 {% endblock %}
@@ -108,22 +109,24 @@
                 var $indexBottomRectangle = $('#home-bottom-right-rectangle');
                 var $indexBottomRectangle2 = $('#home-bottom-right-rectangle-2');
 
-                function syncNavbarColumnWidth() {
+                function indexAdapt() {
+                    var $windowWidth = $(window).width();
                     $navbarLeftColumn.css('width', $indexLeftColumn.outerWidth());
                     $topRectangle.css('height', $navbar.outerHeight() + 80);
+                    // $indexLeftColumn.css('height', $indexLeftColumn.outerHeight() - $(window).height() * 0.08);
                     $indexRightWrap.css('width', $imageRight.outerWidth() - 20);
+                    $indexRightWrap.css('right', 50 + $imageRight.outerWidth() * 0.05);
                     $indexBottomRectangle2.css('height', $indexBottomRectangle.outerHeight());
                     $containerRightEdge = $('.container').offset().left + $('.container').outerWidth();
-                    $windowWidth = $(window).width();
                     $rightBottomFixedWidth = $windowWidth - $containerRightEdge;
                     $indexBottomRectangle2.css('width', $rightBottomFixedWidth);
                 }
 
                 // Синхронизируем ширину при загрузке страницы
-                syncNavbarColumnWidth();
+                indexAdapt();
 
                 // Синхронизируем ширину при изменении размера окна
-                $(window).resize(syncNavbarColumnWidth);
+                $(window).resize(indexAdapt);
             }
         });
     </script>

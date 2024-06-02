@@ -11,14 +11,7 @@
 }
 
 html, body {
+    height: 100%;
     overflow: hidden;
     background-color: #ece4d8 !important;
 }
-
-/* body {
-    background-image: url('/static/main/img/background_1920x1379.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-} */
-

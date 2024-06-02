@@ -1,89 +1,103 @@
 .navbar {
     user-select: none;
     height: 18vh;
+    min-height: 126px;
     --bs-navbar-nav-link-padding-x: 1rem !important;
     font-family: 'PlayfairDisplay';
     background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
 
-}
+    & .container {
+        position: relative;
+        top: -2vh;
+    }
 
-.navbar .container {
-    position: relative;
-    top: -2vh;
-}
+    & .navbar-nav {
+        position: absolute;
+        right: 30px;
+    }
 
-.navbar .nav-link {
-    font-size: calc(0.8vw + 0.8vh) !important;
-    white-space: nowrap;
-}
+    & .nav-link {
+        font-size: 1rem !important;
+        white-space: nowrap;
+    }
 
-#home-top-rectangle {
-    position: absolute;
-    background-color: #fbde98;
-    border-bottom-right-radius: 43px;
-    z-index: 1111;
-    width: 65%;
-    right: -5%;
-    top: -7vh;
+    & #home-top-rectangle {
+        position: absolute;
+        background-color: #fbde98;
+        border-bottom-right-radius: 43px;
+        z-index: 1111;
+        min-height: 206px;
+        width: 65%;
+        right: -5%;
+        top: 0;
+    }
 }
 
 #index_page {
     font-family: 'PlayfairDisplay';
     user-select: none;
+
+    & #index-left-column {
+        height: 100vh;
+        /* height: calc(50vh - 5%); */
+
+        & #wrap-home-left-image {
+            position: relative;
+            background-color: #4e9599;
+            bottom: 8vh;
+            left: 1%;
+            width: auto;
+            min-height: 290px;
+            height: 43%;
+            border-top-left-radius: 40px;
+            border-bottom-left-radius: 40px;
+            border-top-right-radius: 110px;
+            padding-left: 4%;
+
+            & img {
+                border-top-left-radius: 110px;
+                border-top-right-radius: 110px;
+                width: 100%;
+                /* height: 82vh; */
+                -webkit-user-drag: none; /* Safari */
+                -khtml-user-drag: none; /* Konqueror */
+                -moz-user-drag: none; /* Mozilla Firefox */
+                user-drag: none;
+                draggable: false;
+                position: relative;
+                z-index: 111111;
+            }
+        }
+    }
+
+    & #index-right-column {
+        & #wrap-home-right-image {
+            position: relative;
+            height: 106%;
+            background-color: #fbde98;
+            border-bottom-left-radius: 5vh;
+            border-bottom-right-radius: 5vh;
+            z-index: 1111;
+
+            & img {
+                position: absolute;
+                height: 108%;
+                left: 50px;
+                bottom: 25px;
+                border-radius: 5vh;
+                -webkit-user-drag: none; /* Safari */
+                -khtml-user-drag: none; /* Konqueror */
+                -moz-user-drag: none; /* Mozilla Firefox */
+                user-drag: none;
+                draggable: false;
+            }
+        }
+    }
 }
 
-#wrap-home-left-image {
-    position: relative;
-    background-color: #4e9599;
-    bottom: 8vh;
-    left: 1%;
-    width: auto;
-    height: 48%;
-    border-top-left-radius: 5vh;
-    border-bottom-left-radius: 5vh;
-    border-top-right-radius: 13vh;
-    padding-left: 4%;
-}
-
-img[alt='home-left'] {
-    border-top-left-radius: 13vh;
-    border-top-right-radius: 13vh;
-    width: 100%;
-    height: 82vh;
-    -webkit-user-drag: none; /* Safari */
-    -khtml-user-drag: none; /* Konqueror */
-    -moz-user-drag: none; /* Mozilla Firefox */
-    user-drag: none;
-    draggable: false;
-    position: relative;
-    z-index: 111111;
-}
-
-#wrap-home-right-image {
-    position: absolute;
-    top: 0;
-    left: -11%;
-    height: 106%;
-    background-color: #fbde98;
-    border-bottom-left-radius: 5vh;
-    border-bottom-right-radius: 5vh;
-    z-index: 1111;
-}
 
 
-img[alt='home-right'] {
-    position: relative;
-    height: 108%;
-    bottom: 15%;
-    left: 12%;
-    border-radius: 5vh;
-    -webkit-user-drag: none; /* Safari */
-    -khtml-user-drag: none; /* Konqueror */
-    -moz-user-drag: none; /* Mozilla Firefox */
-    user-drag: none;
-    draggable: false;
-    aspect-ratio: 1 / 1;
-}
+
 
 #index-middle-left {
     position: relative;
@@ -99,12 +113,12 @@ img[alt='home-right'] {
 }
 
 #name_hello p {
-    font-size: calc(0.7vw + 0.7vh);
+    font-size: 0.9rem;
 }
 
 #name_hello h1 {
     color: #4e9599;
-    font-size: calc(1.5vw + 1.5vh);
+    font-size: 1.9rem;
 }
 
 #name_hello h1::first-letter {
@@ -124,8 +138,8 @@ img[alt='home-right'] {
 button[name='ask_question'] {
     background-color: #4e9599;
     color: #fff;
-    width: 65%;
-    font-size: calc(0.9vw + 0.9vh);
+    width: 80%;
+    font-size: 1.4rem;
     border-radius: 30px;
     margin-top: 10px;
 }
@@ -137,12 +151,12 @@ button[name='ask_question']:hover {
 
 #index-bottom {
     display: flex;
-    justify-content: center;
-    position: relative;
+    flex-direction: column;
+    align-items: center;
 }
 
 #my_news {
-    display: inline-block;
+    width: 88%;
     border: 1px solid #4e9599;
     padding: 5px 40px 5px 40px;
     border-radius: 50px;
@@ -173,8 +187,8 @@ button[name='ask_question']:hover {
     border-top-left-radius: 6vh;
     background-color: #fbde98;
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: 0;
     aspect-ratio: 1 / 1;
 }
 
@@ -185,4 +199,75 @@ button[name='ask_question']:hover {
     bottom: 0;
     width: 20%;
 }
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar .nav-link {
+        font-size: 1rem !important;
+    }
+
+    #name_hello p {
+        font-size: 0.9rem;
+    }
+
+    #name_hello h1 {
+        color: #4e9599;
+        font-size: 1.9rem;
+    }
+
+
+    button[name='ask_question'] {
+        width: 80%;
+        font-size: 1.4rem;
+    }
+
+
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .navbar .nav-link {
+        font-size: 1.5rem !important;
+    }
+
+    #name_hello p {
+        font-size: 0.9rem;
+    }
+
+    #name_hello h1 {
+        color: #4e9599;
+        font-size: 3rem;
+    }
+
+
+    button[name='ask_question'] {
+        width: 80%;
+        font-size: 1.4rem;
+    }
+
+
+}
+
+@media (min-width: 1400px) {
+    .navbar .nav-link {
+        font-size: 1.5rem !important;
+    }
+
+    #name_hello p {
+        font-size: 0.9rem;
+    }
+
+    #name_hello h1 {
+        color: #4e9599;
+        font-size: 3rem;
+    }
+
+
+    button[name='ask_question'] {
+        width: 80%;
+        font-size: 1.4rem;
+    }
+
+
+}
+
 
