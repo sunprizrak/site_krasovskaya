@@ -29,68 +29,52 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container position-relative bg-info" id="index_page">
+    <div class="container position-relative" id="index_page">
         <div class="row">
-            <div class="col-5 bg-dark" id="index-left-column">
+            <div class="col-auto" id="index-left-column">
                 <div id="wrap-home-left-image">
                     <img src="{% static 'main/img/home-left.jpg' %}" alt="left-image">
                 </div>
             </div>
-            <div class="col-7 bg-primary" id="index-right-column">
+            <div class="col" id="index-right-column">
                 <div class="row">
-                    <div class="col-auto position-relative bg-light" id="index-middle-left">
+                    <div class="col-auto position-relative" id="index-middle-left">
                         <div id="name_hello">
                             <p>Меня зовут</p>
                             <h1>Катерина</h1>
                             <h1>Красницкая<span>,</span></h1>
-                            <p>я - пcихолог,</p>
-                            <p>групповой терапевт</p>
+                            <p>я - психолог,<br>групповой терапевт</p>
                         </div>
                     </div>
-                    <div class="col position-relative bg-success">
+                    <div class="col position-relative">
                         <div id="wrap-home-right-image">
                             <img src="{% static 'main/img/home-right.jpg' %}" alt="right-image">
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col" id="ask_question-wrap">
-                        <button type="button" class="btn" name="ask_question">ЗАДАТЬ ВОПРОС</button>
+                        <button type="button" class="btn">ЗАДАТЬ ВОПРОС</button>
                     </div>
                 </div>
-<!--                <div class="row">-->
-<!--                    <div class="col bg-dark" id="index-bottom">-->
-<!--                        <div id="my_news">-->
-<!--                            <div class="row">-->
-<!--                                <div class="col">-->
-<!--                                    <h4>МОИ НОВОСТИ</h4>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <div class="col">-->
-<!--                                    <div class="d-grid">-->
-<!--                                        <a href="#" draggable="false">| katherine krasnitskay |</a>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="row mt-2">-->
-<!--                                <div class="col">-->
-<!--                                    <div>-->
-<!--                                        <p>-->
-<!--                                            Часто мне задают вопрос: может, и мне пора на терапию? Кода я-->
-<!--                                            слышу его, непроизвольно мимика моего лица меняется, выражая-->
-<!--                                            симпатию...-->
-<!--                                        </p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-                <div id="home-bottom-right-rectangle"></div>
+                <div class="row mt-5">
+                    <div class="col position-relative" id="index-bottom">
+                        <div id="my_news">
+                            <h6>МОИ НОВОСТИ</h6>
+                            <a href="#" draggable="false">| katherine krasnitskay |</a>
+                            <div>
+                                <p>
+                                    Часто мне задают вопрос: может, и мне пора на терапию? Кода я
+                                    слышу его, непроизвольно мимика моего лица меняется, выражая
+                                    симпатию...
+                                </p>
+                            </div>
+                        </div>
+                        <div id="home-bottom-right-rectangle"></div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
     <div id="home-bottom-right-rectangle-2"></div>
 {% endblock %}
@@ -100,23 +84,11 @@
         $(document).ready(function() {
             if ($(window).width() >= 992) {
                 // Получаем элементы
-                var $navbar = $('header .navbar');
-                var $topRectangle = $('#home-top-rectangle');
-                var $navbarLeftColumn = $('#navbar-left-column');
+                var $navbarLeftColumn = $('header .navbar #navbar-left-column');
                 var $indexLeftColumn = $('#index-left-column');
-                var $indexRightWrap = $('#wrap-home-right-image');
-                var $imageRight = $('#wrap-home-right-image img');
-                var $indexBottomRectangle = $('#home-bottom-right-rectangle');
-                var $indexBottomRectangle2 = $('#home-bottom-right-rectangle-2');
 
                 function indexAdapt() {
-                    var $windowWidth = $(window).width();
                     $navbarLeftColumn.css('width', $indexLeftColumn.outerWidth());
-                    $topRectangle.css('height', $navbar.outerHeight() + 80);
-                    $indexBottomRectangle2.css('height', $indexBottomRectangle.outerHeight());
-                    $containerRightEdge = $('.container').offset().left + $('.container').outerWidth();
-                    $rightBottomFixedWidth = $windowWidth - $containerRightEdge;
-                    $indexBottomRectangle2.css('width', $rightBottomFixedWidth);
                 }
 
                 // Синхронизируем ширину при загрузке страницы
