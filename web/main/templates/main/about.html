@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main %}
+    <div class="container" id="about-page">
+        <div class="row">
+            <div class="col-6 bg-dark" id="about-top-left-col">
+                <div id="wrap-about-image">
+                    <img src="{% static 'main/img/about-image.png' %}" alt="about-image">
+                </div>
+            </div>
+            <div class="col-6 bg-light" id="about-top-right-col">
+                <div class="vertical-line-text">
+                    <p>
+                        Магистр практико-ориентированной психологии (психологическое консультирование и психокоррекция), групповой терапевт.
+
+                        Более 10 лет работаю с группами и все больше убеждаюсь
+                        в эффективности групповых процессов.
+
+                        В работе я внимательный, бережный и устойчивый групповой терапевт. Умею быть рядом с вами, обсуждать тяжелые темы и сильные чувства, говорить о глубоком и важном.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,4 +1,6 @@
+@import url('/static/main/css/header.css');
 @import url('/static/main/css/index.css');
+@import url('/static/main/css/about.css');
 
 @font-face {
     font-family: 'PlayfairDisplay';

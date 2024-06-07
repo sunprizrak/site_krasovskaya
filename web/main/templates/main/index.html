@@ -3,31 +3,6 @@
 
 {% block title %}{{ title }}{% endblock %}
 
-{% block header %}
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <div class="row w-100">
-                <div class="col-auto position-relative" id="navbar-left-column">
-                    <div id="home-top-rectangle"></div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="col">
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-link" href="#" draggable="false">ОБО МНЕ</a>
-                            <a class="nav-link" href="#" draggable="false">РАСПИСАНИЕ</a>
-                            <a class="nav-link" href="#" draggable="false">ГРУППЫ</a>
-                            <a class="nav-link" href="#" draggable="false">КОНТАКТЫ</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-{% endblock %}
-
 {% block main %}
     <div class="container position-relative" id="index_page">
         <div class="row">
@@ -54,14 +29,14 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col" id="ask_question-wrap">
-                        <button type="button" class="btn">ЗАДАТЬ ВОПРОС</button>
+                        <button type="button">ЗАДАТЬ ВОПРОС</button>
                     </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col position-relative" id="index-bottom">
                         <div id="my_news">
-                            <h6>МОИ НОВОСТИ</h6>
-                            <a href="#" draggable="false">| katherine krasnitskay |</a>
+                            <a name="news" href="#" draggable="false">МОИ НОВОСТИ</a>
+                            <a name="inst" href="#" draggable="false">| katherine krasnitskay |</a>
                             <div>
                                 <p>
                                     Часто мне задают вопрос: может, и мне пора на терапию? Кода я
