@@ -111,6 +111,20 @@
                 font-family: 'Monplesir script';
             }
         }
+
+        .vertical-line-text {
+
+            p {
+
+                span {
+                    font-style: italic;
+                }
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
     }
 }
 
@@ -135,4 +149,8 @@
         margin: 0;
         font-size: 13px;
     }
+}
+
+.modal-content {
+    background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
 }
