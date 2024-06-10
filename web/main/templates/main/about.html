@@ -6,23 +6,64 @@
 {% block main %}
     <div class="container" id="about-page">
         <div class="row">
-            <div class="col-6 bg-dark" id="about-top-left-col">
+            <div class="col-6 d-flex justify-content-center" id="about-top-left-col">
                 <div id="wrap-about-image">
                     <img src="{% static 'main/img/about-image.png' %}" alt="about-image">
                 </div>
             </div>
-            <div class="col-6 bg-light" id="about-top-right-col">
+            <div class="col-6" id="about-top-right-col">
                 <div class="vertical-line-text">
                     <p>
-                        Магистр практико-ориентированной психологии (психологическое консультирование и психокоррекция), групповой терапевт.
+                        <strong>Магистр</strong> практико-ориентированной психологии (психологическое <br>
+                        консультирование и психокоррекция), <strong>групповой терапевт</strong>. <br>
+                        <br>
+                        Более 10 лет работаю с группами и все больше убеждаюсь <br>
+                        в эффективности групповых процессов. <br>
+                        <br>
+                        В работе я внимательный, бережный и устойчивый групповой <br>
+                        терапевт. Умею быть рядом с вами, обсуждать тяжелые темы <br>
+                        и сильные чувства, говорить о глубоком и важном.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 about-middle-zindex">
+                <div id="about-one">
+                    <span>01</span>
+                    <p>Тут что-то надо написать</p>
+                </div>
+            </div>
+            <div class="col-6 d-flex about-middle-zindex" id="about-middle-center">
+                <h2>Почему груповая терапия?</h2>
+                <div id="about-two">
+                    <span>02</span>
+                    <p>Тут что-то надо <br> написать</p>
+                </div>
+            </div>
+            <div class="col-3 d-flex justify-content-end about-middle-zindex">
+                <div id="about-three">
+                    <span>03</span>
+                    <p>Тут что-то надо написать</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-3" id="about-bottom-col">
 
-                        Более 10 лет работаю с группами и все больше убеждаюсь
-                        в эффективности групповых процессов.
+                <h2>Моё образование</h2>
 
-                        В работе я внимательный, бережный и устойчивый групповой терапевт. Умею быть рядом с вами, обсуждать тяжелые темы и сильные чувства, говорить о глубоком и важном.
+                <div class="vertical-line-text">
+                    <p>
+                        Училась в Белорусском государственном университете по специальности "Психологическое консультирование и психокоррекция" <br>
+                        (диплом магистра, 2014 г.), успешно завершила программу по специализации "Зависимость и зависимые отношения. Гештальт-подход" <br>
+                        (сертификат Общества практикующих психологов "Гештальт-подход", 2012 г.) и по программе "Группа как инструмент психологической <br>
+                        помощи" (сертификат Института супервизии и групповой терапии, 2024 г.). <br>
+                        Свои группы я веду под регулярной супервизией.
                     </p>
                 </div>
             </div>
         </div>
     </div>
+    <div class="container-fluid" id="about-gradient"></div>
 {% endblock %}

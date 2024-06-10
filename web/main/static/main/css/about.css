@@ -1,36 +1,138 @@
 
 #about-page {
+    font-family: 'PlayfairDisplay';
+    user-select: none;
+
     #about-top-left-col {
+        padding-bottom: 25px;
+
         #wrap-about-image {
             position: relative;
-            width: 100%;
-            bottom: 85px;
-
-            &:after {
-                position: absolute;
-                content: '';
-                top: 20%;
-                width: 50px;
-                height: 60%;
-                background-color: #4e9599;
-                border-radius:  0 43px 43px 0;
-            }
+            background-color: #4e9599;
+            width: 300px;
+            height: 226px;
+            border-radius:  0 43px 43px 0;
 
             img {
-                height: 356px;
+                position: relative;
+                width: 106%;
+                right: 76px;
+                bottom: 42px;
+                z-index: 1000;
             }
         }
+
     }
 
     #about-top-right-col {
         .vertical-line-text {
-            border-left: 2px solid #4e9599;
-            margin-top: 18px;
-            padding: 10px;
+              margin-top: 18px;
+              margin-bottom: 18px;
+        }
+    }
 
-            p {
-                padding: 0;
+    #about-one {
+        width: 100%;
+        height: 125px;
+        border: 1px solid #4e9599;
+        border-radius: 43px;
+        margin-top: 70px;
+        padding: 40px;
+        position: relative;
+
+        span {
+            position: absolute;
+            font-family: 'Monplesir script';
+            font-size: 2rem;
+            color: #4e9599;
+            top: -23px;
+            left: 32px;
+        }
+    }
+
+    #about-middle-center {
+        flex-direction: column;
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+
+            &::first-letter {
+                font-family: 'Monplesir script';
             }
         }
+
+        #about-two {
+            position: relative;
+            align-self: center;
+            width: 80%;
+            height: 125px;
+            border: 1px solid #4e9599;
+            border-radius: 43px;
+            margin-top: 20px;
+            padding: 40px;
+
+            span {
+                position: absolute;
+                font-family: 'Monplesir script';
+                font-size: 2rem;
+                color: #4e9599;
+                top: -23px;
+                left: 32px;
+            }
+        }
+    }
+
+    #about-three {
+        position: relative;
+        width: 100%;
+        height: 125px;
+        border: 1px solid #4e9599;
+        border-radius: 43px;
+        margin-top: 70px;
+        padding: 40px;
+
+        span {
+            position: absolute;
+            font-family: 'Monplesir script';
+            font-size: 2rem;
+            color: #4e9599;
+            top: -23px;
+            left: 32px;
+        }
+    }
+
+    #about-bottom-col {
+
+        h2 {
+            text-align: center;
+
+            &::first-letter {
+                font-family: 'Monplesir script';
+            }
+        }
+    }
+}
+
+#about-gradient {
+    position: absolute;
+    top: 321px;
+    height: 165px;
+    background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+    z-index: 100;
+}
+
+.about-middle-zindex {
+    z-index: 1000;
+}
+
+.vertical-line-text {
+    border-left: 2px solid #4e9599;
+    padding: 10px;
+
+    p {
+        padding: 0;
+        margin: 0;
+        font-size: 13px;
     }
 }
