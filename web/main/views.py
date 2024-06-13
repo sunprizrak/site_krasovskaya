@@ -17,3 +17,12 @@ class AboutView(TemplateView):
         'navbar_property': 'about-navbar',
         'nav_link_color': 'about-color',
     }
+
+
+class ScheduleView(TemplateView):
+    template_name = 'main/schedule.html'
+    extra_context = {
+        'title': 'Расписание',
+        'navbar_property': 'schedule-navbar',
+        'nav_link_color': 'schedule-color',
+    }

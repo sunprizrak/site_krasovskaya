@@ -32,6 +32,12 @@
         }
     }
 
+    &.schedule-navbar {
+        .navbar-nav {
+            right: 0;
+        }
+    }
+
 
 
     .nav-link {
@@ -97,6 +103,10 @@
     color: #4f4e4e !important;
 }
 
-.about-color {
+.about-color, .schedule-color {
     color: #4e9599 !important;
+}
+
+.schedule-navbar {
+    height: 55px;
 }

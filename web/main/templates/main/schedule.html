@@ -1,0 +1,100 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main %}
+    <div class="container" id="schedule-page">
+        <div class="row">
+            <div class="col d-flex justify-content-center" id="schedule-top-col">
+                <h2>Расписание</h2>
+            </div>
+        </div>
+        <div class="row row-cols-2">
+            <div class="col">
+                <div class="schedule-header justify-content-end">
+                    <span class="left-color">ПН</span>
+                </div>
+                <div class="schedule-box">
+                    <p>
+                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>
+                        Терапевтическа Онлайн группа 4
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>
+                        Время для проведения личных консультаций
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col d-flex flex-column justify-content-end">
+                <div class="schedule-header">
+                    <span class="right-color">ЧТ</span>
+                </div>
+                <div class="schedule-box">
+                    <p>
+                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>
+                        Терапевтическа Онлайн группа 4
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>
+                        Время для проведения личных консультаций
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col mt-3">
+                <div class="schedule-header justify-content-end">
+                    <span class="left-color">ВТ</span>
+                </div>
+                <div class="schedule-box">
+                    <p>
+                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>
+                        Терапевтическа Онлайн группа 4
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>
+                        Время для проведения личных консультаций
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col mt-3 d-flex flex-column justify-content-end">
+                <div class="schedule-header">
+                    <span class="right-color">ПТ</span>
+                </div>
+                <div class="schedule-box">
+                    <p>
+                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>
+                        Терапевтическа Онлайн группа 4
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>
+                        Время для проведения личных консультаций
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col mt-3">
+                <div class="schedule-header justify-content-end">
+                    <span class="left-color">СР</span>
+                </div>
+                <div class="schedule-box">
+                    <p>
+                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>
+                        Терапевтическа Онлайн группа 4
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>
+                        Время для проведения личных консультаций
+                        <strong class="d-flex justify-content-center">(мест нет)</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="col mt-3 d-flex align-items-end">
+                <div class="schedule-box d-flex flex-column box-right-bottom">
+                    <p>Если вы хотите записаться в группу, заполните, <br>
+                        пожалуйста форму
+                    </p>
+                    <button type="button" class="align-self-center">ХОЧУ В ГРУППУ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

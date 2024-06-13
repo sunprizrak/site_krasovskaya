@@ -1,0 +1,67 @@
+
+#schedule-page {
+    font-family: 'PlayfairDisplay';
+    user-select: none;
+
+    #schedule-top-col {
+        h2 {
+            color: #4e9599;
+
+            &::first-letter {
+                font-family: 'Monplesir script';
+            }
+        }
+    }
+}
+
+
+.schedule-header {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    width: 90%;
+    border-radius: 43px;
+    background-color: blue;
+
+    span {
+        padding: 0 60px 0 60px;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+}
+
+.left-color {
+    color: #ece4d8;
+}
+
+.right-color {
+    color: #4e9599;
+}
+
+.schedule-box {
+    width: 90%;
+    border: 1px solid #4e9599;
+    border-radius: 43px;
+    margin-top: 15px;
+
+    p {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    button {
+        background-color: #4e9599;
+        color: #fff;
+        width: 65%;
+        font-size: 1.1rem;
+        padding: 5px;
+        border-radius: 30px;
+        border: 0;
+        margin-top: 10px;
+    }
+}
+
+.box-right-bottom {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}

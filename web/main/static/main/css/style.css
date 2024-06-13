@@ -1,6 +1,7 @@
 @import url('/static/main/css/header.css');
 @import url('/static/main/css/index.css');
 @import url('/static/main/css/about.css');
+@import url('/static/main/css/schedule.css');
 
 @font-face {
     font-family: 'PlayfairDisplay';
