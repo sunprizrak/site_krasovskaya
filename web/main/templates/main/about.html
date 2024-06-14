@@ -66,12 +66,15 @@
         </div>
     </div>
     <div class="container-fluid" id="about-gradient"></div>
+{% endblock %}
+
+{% block modal %}
     <div class="modal fade" id="about-modal-one" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="about-modal-oneLabel">Диплом магистра</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="circle-button" data-bs-dismiss="modal" aria-label="Close"></div>
                 </div>
                 <div class="modal-body position-relative">
                     <img src="{% static 'main/img/diplom-magistr.jpg' %}" alt="master-degree">
@@ -87,7 +90,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="about-modal-twoLabel">Сертификат</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="circle-button" data-bs-dismiss="modal" aria-label="Close"></div>
                 </div>
                 <div class="modal-body">
                     <img src="{% static 'main/img/sert-gesh-podh.jpg' %}" alt="sert-gesh">
@@ -103,7 +106,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="about-modal-threeLabel">Сертификат</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="circle-button" data-bs-dismiss="modal" aria-label="Close"></div>
                 </div>
                 <div class="modal-body">
                     <img src="{% static 'main/img/sert-group-ter.jpg' %}" alt="sert-group-ter">

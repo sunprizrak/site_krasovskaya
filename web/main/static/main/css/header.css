@@ -34,7 +34,7 @@
 
     &.schedule-navbar {
         .navbar-nav {
-            right: 0;
+            right: 65px;
         }
     }
 
