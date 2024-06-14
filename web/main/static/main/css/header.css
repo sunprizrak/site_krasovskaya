@@ -2,6 +2,7 @@
     user-select: none;
     --bs-navbar-nav-link-padding-x: 1rem !important;
     font-family: 'PlayfairDisplay';
+    z-index: 1000;
 
 
     .container {

@@ -11,6 +11,10 @@
             &::first-letter {
                 font-family: 'Monplesir script';
             }
+
+            @media (min-width: 1400px) {
+                font-size: 2.3rem;
+             }
         }
     }
 
@@ -24,10 +28,18 @@
         background: linear-gradient(to right, rgba(227, 236, 237, 1) 0%, 38.550421595573425%, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
         z-index: 100;
 
+        @media (min-width: 1400px) {
+            height: 45px;
+        }
+
         span {
             padding: 0 60px 0 60px;
             font-size: 1.4rem;
             font-weight: bold;
+
+            @media (min-width: 1400px) {
+                font-size: 1.6rem;
+             }
         }
     }
 
@@ -43,6 +55,14 @@
         p {
             text-align: center;
             font-size: 13px;
+
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                font-size: 15px;
+            }
+
+            @media (min-width: 1400px) {
+                font-size: 17px;
+             }
         }
 
         button {
@@ -55,6 +75,26 @@
             border: 0;
             margin-top: 10px;
         }
+
+        .schedule-star {
+            position: absolute;
+            background-color: #fbde98;
+            left: 28px;
+            bottom: 31px;
+            width: 25px;
+            height: 25px;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                left: 42px;
+                bottom: 36px;
+            }
+
+            @media (min-width: 1400px) {
+                left: 58px;
+                bottom: 40px;
+             }
+        }
     }
 
     #col-left-bottom {
@@ -63,7 +103,7 @@
         &:before {
             position: absolute;
             content: '';
-            right: 50%;
+            right: 58%;
             top: 10%;
             width: 100vw;
             height: 100vh;
@@ -116,6 +156,20 @@
 .box-right-bottom {
     padding-top: 10px;
     padding-bottom: 20px;
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        height: 155px;
+    }
+
+    @media (min-width: 1400px) {
+        height: 175px;
+    }
+
+    button {
+        @media (min-width: 1400px) {
+            font-size: 1.3rem !important;
+        }
+    }
 }
 
 #schedule-top-right {
@@ -126,6 +180,14 @@
     height: 200px;
     background-color: #fbde98;
     z-index: 5;
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        width: 255px;
+    }
+
+    @media (min-width: 1400px) {
+        width: 284px;
+     }
 }
 
 #schedule-modal-group {
@@ -208,6 +270,17 @@
                         input {
                             width: 25px;
                             height: 25px;
+
+                            &:focus {
+                                outline: none;
+                                border-color: #4e9599;
+                                box-shadow: 0 0 0 0.2rem rgba(78, 149, 153, 0.5);
+                            }
+
+                            &:checked {
+                                background-color: #4e9599;
+                                border-color: #4e9599;
+                            }
                         }
 
                         label {
@@ -222,6 +295,11 @@
                 .modal-footer {
                     button {
                         width: 60%;
+                        font-size: 1.2rem;
+
+                        @media (min-width: 1400px) {
+                            font-size: 1.3rem;
+                        }
                     }
                 }
             }
