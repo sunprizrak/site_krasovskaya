@@ -2,8 +2,8 @@
 #contacts-page {
     font-family: 'PlayfairDisplay';
     user-select: none;
-    margin-top: 78px;
-    padding-bottom: 50px;
+    margin-top: 65px;
+    padding-bottom: 35px;
 
     #contacts-left {
         h2 {
@@ -17,17 +17,47 @@
         }
 
         #contacts-info {
-            width: 85%;
-            background-color: pink;
+            width: 500px;
+            background-color: #ece7e4;
+            border-top-left-radius: 43px;
+            border-top-right-radius: 43px;
             position: relative;
+            padding: 10px 30px 10px 30px;
             z-index: 10000;
+            top: 5px;
+
+            i {
+                color: #4e9599;
+
+                &::before {
+                    font-size: 1.6rem;
+                }
+
+                &.bi-telephone-fill {
+
+                    &::before {
+                        transform: scale(-1, 1);
+                    }
+
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 14px;
+            }
 
             button {
                 background-color: #4e9599;
                 border: 0;
                 color: #ece4d8;
                 border-radius: 43px;
-                width: 60%;
+                width: 80%;
                 font-size: 1.2rem;
             }
         }
@@ -40,6 +70,12 @@
             z-index: 10000;
             border-top-left-radius: 43px;
             border-top-right-radius: 43px;
+            height: 564px;
+            float: right;
+
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                height: 624px;
+            }
         }
     }
 }
@@ -47,4 +83,12 @@
 #contacts-bottom {
     height: 100vh;
     background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+
+    a {
+        position: relative;
+        top: 10px;
+        text-decoration: none;
+        color: inherit;
+        font-size: 14px;
+    }
 }
