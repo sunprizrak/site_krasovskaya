@@ -26,3 +26,12 @@ class ScheduleView(TemplateView):
         'navbar_property': 'schedule-navbar',
         'nav_link_color': 'schedule-color',
     }
+
+
+class ContactsView(TemplateView):
+    template_name = 'main/contacts.html'
+    extra_context = {
+        'title': 'Контакты',
+        'navbar_property': 'contacts-navbar',
+        'nav_link_color': 'contacts-color',
+    }

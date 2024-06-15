@@ -1,0 +1,75 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block main %}
+    <div class="container" id="contacts-page">
+        <div class="row">
+            <div class="col-8 bg-light" id="contacts-left">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <h2>Контакты</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <div class="container" id="contacts-info">
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <h5>Катерина Красницкая</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#">+(382)68-415-027</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#">элекстронная почта</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <p>Рафаиловичи, Черногория</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <img src="{% static 'main/img/' %}" class="img-fluid" alt="contacts-map">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <p>Вы можете найти меня в социальных сетях:</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#">профиль в facebook</a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#">блог в instagram</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#">Мой телеграм-канал "Групповая терапия. Будва"</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <button type="button" class="align-self-center">ЗАДАТЬ ВОПРОС</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4 bg-dark" id="contacts-right">
+                <img src="{% static 'main/img/home-left.jpg' %}" class="img-fluid" alt="contacts-foto">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="contacts-bottom"></div>
+{% endblock %}

@@ -1,0 +1,50 @@
+
+#contacts-page {
+    font-family: 'PlayfairDisplay';
+    user-select: none;
+    margin-top: 78px;
+    padding-bottom: 50px;
+
+    #contacts-left {
+        h2 {
+            color: #4e9599;
+            position: relative;
+            z-index: 10000;
+
+            &::first-letter {
+                font-family: 'Monplesir script';
+            }
+        }
+
+        #contacts-info {
+            width: 85%;
+            background-color: pink;
+            position: relative;
+            z-index: 10000;
+
+            button {
+                background-color: #4e9599;
+                border: 0;
+                color: #ece4d8;
+                border-radius: 43px;
+                width: 60%;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    #contacts-right {
+
+        img {
+            position: relative;
+            z-index: 10000;
+            border-top-left-radius: 43px;
+            border-top-right-radius: 43px;
+        }
+    }
+}
+
+#contacts-bottom {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+}

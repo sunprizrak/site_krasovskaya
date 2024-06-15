@@ -39,6 +39,22 @@
         }
     }
 
+    &.contacts-navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+
+        .container {
+            bottom: 40px;
+        }
+
+        .navbar-nav {
+            right: 15px;
+        }
+    }
+
 
 
     .nav-link {
@@ -86,7 +102,7 @@
     }
 }
 
-.home-navbar {
+.home-navbar, .contacts-navbar {
     background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
     height: 151px;
 
