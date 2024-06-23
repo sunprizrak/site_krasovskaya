@@ -6,7 +6,7 @@
 {% block main %}
     <div class="container" id="contacts-page">
         <div class="row">
-            <div class="col-7 d-flex justify-content-start bg-light" id="contacts-left">
+            <div class="col-7 d-flex justify-content-start" id="contacts-left">
                 <div class="row-1">
                     <div class="col d-flex justify-content-center">
                         <h2>Контакты</h2>
@@ -42,12 +42,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-4">
+                            <div class="row mt-4" id="search-row">
                                 <div class="col d-flex justify-content-center">
                                     <p>Вы можете найти меня в социальных сетях:</p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" id="soc-row">
                                 <div class="col-6 d-flex">
                                     <i class="bi bi-facebook"></i>
                                     <a href="#" class="ms-2">профиль в facebook</a>
@@ -63,9 +63,9 @@
                                     <a href="#" class="ms-2">Мой телеграм-канал "Групповая терапия. Будва"</a>
                                 </div>
                             </div>
-                            <div class="row mt-2">
+                            <div class="row mt-2" id="button-row">
                                 <div class="col d-flex justify-content-center">
-                                    <button type="button" class="align-self-center">ЗАДАТЬ ВОПРОС</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal" class="align-self-center">ЗАДАТЬ ВОПРОС</button>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                 </div>
 
             </div>
-            <div class="col-5 bg-dark" id="contacts-right">
+            <div class="col-5" id="contacts-right">
                 <img src="{% static 'main/img/contacts-foto.png' %}" alt="contacts-foto">
             </div>
         </div>
@@ -81,13 +81,18 @@
     <div class="container-fluid" id="contacts-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-6 position-relative d-flex justify-content-start">
+                <div class="col-6 position-relative d-flex justify-content-start bottom-col">
                     <a href="#">Пользовательское соглашение</a>
                 </div>
-                <div class="col-6 position-relative d-flex justify-content-end">
+                <div class="col-6 position-relative d-flex justify-content-end bottom-col">
                     <a href="#">Политика конфиденциальности</a>
                 </div>
             </div>
         </div>
     </div>
+    <div id="top-left-block"></div>
+{% endblock %}
+
+{% block modal %}
+    {% include 'main/feedback_modal.html' %}
 {% endblock %}

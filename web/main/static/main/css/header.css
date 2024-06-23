@@ -48,6 +48,10 @@
 
         .container {
             bottom: 40px;
+
+            @media (min-width: 1400px) {
+                bottom: 65px;
+            }
         }
 
         .navbar-nav {
