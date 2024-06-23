@@ -13,7 +13,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link {% if request.path == '/about' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'about' %}" draggable="false">ОБО МНЕ</a>
-                        <a class="nav-link {% if request.path == '/' %}d-none{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="#" draggable="false">НОВОСТИ</a>
+                        <a class="nav-link {% if request.path == '/' %}d-none{% endif %}{% if request.path == '/news' %}active{% endif %}{% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'news' %}" draggable="false">НОВОСТИ</a>
                         <a class="nav-link {% if request.path == '/schedule' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'schedule' %}" draggable="false">РАСПИСАНИЕ</a>
                         <a class="nav-link {% if request.path == '/groups' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="#" draggable="false">ГРУППЫ</a>
                         <a class="nav-link {% if request.path == '/contacts' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'contacts' %}" draggable="false">КОНТАКТЫ</a>

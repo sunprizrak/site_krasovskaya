@@ -39,6 +39,12 @@
         }
     }
 
+    &.news-navbar {
+        .navbar-nav {
+            right: 65px;
+        }
+    }
+
     &.contacts-navbar {
         position: fixed;
         top: 0;
@@ -124,10 +130,15 @@
     color: #4f4e4e !important;
 }
 
-.about-color, .schedule-color {
+.about-color, .schedule-color, .news-color {
     color: #4e9599 !important;
 }
 
 .schedule-navbar {
+    height: 55px;
+}
+
+.news-navbar {
+    background-color: transparent;
     height: 55px;
 }

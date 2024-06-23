@@ -35,3 +35,12 @@ class ContactsView(TemplateView):
         'navbar_property': 'contacts-navbar',
         'nav_link_color': 'contacts-color',
     }
+
+
+class NewsView(TemplateView):
+    template_name = 'main/news.html'
+    extra_context = {
+        'title': 'Новости',
+        'navbar_property': 'news-navbar',
+        'nav_link_color': 'news-color',
+    }
