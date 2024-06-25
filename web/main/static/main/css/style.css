@@ -3,7 +3,7 @@
 @import url('/static/main/css/about.css');
 @import url('/static/main/css/schedule.css');
 @import url('/static/main/css/contacts.css');
-@import url('/static/main/css/news.css');
+@import url('/static/news/css/news.css');
 
 @font-face {
     font-family: 'PlayfairDisplay';
@@ -16,6 +16,8 @@
 }
 
 html, body {
+    height: 100%;
+    position: relative;
     overflow: hidden;
     background-color: #ece4d8 !important;
 }
@@ -27,11 +29,17 @@ header {
 
 main {
     position: relative;
+    height: 100%;
+}
 
+.h-100-p {
+    height: 100%;
 }
 
 .modal {
     .modal-dialog {
+        max-width: 700px;
+
         .modal-content {
             background-color: #ece4d8 !important;
             font-family: 'PlayfairDisplay';

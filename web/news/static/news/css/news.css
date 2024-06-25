@@ -1,0 +1,221 @@
+#news-page {
+    font-family: 'PlayfairDisplay';
+    user-select: none;
+
+    #news-top {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: '';
+
+            height: 100%;
+            left: -50vw;
+            right: -50vw;
+            background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
+            z-index: 150;
+        }
+
+        h2 {
+            color: #F5F5F5;
+            z-index: 1050;
+
+            &::first-letter {
+                font-family: 'Monplesir script';
+            }
+        }
+
+        p {
+            font-size: 14px;
+            z-index: 1050;
+
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                font-size: 17px;
+            }
+
+            @media (min-width: 1400px) {
+                font-size: 19px;
+            }
+        }
+    }
+
+    #news-middle {
+        .full-width-hr {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                width: 100vw;
+                height: 1px;
+                background-color: #4E9599;
+                transform: translateX(-50%);
+            }
+        }
+
+        .news-wrap {
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 60vh;
+            min-height: 450px;
+
+            .news {
+                display: flex;
+                flex-direction: column;
+
+                strong {
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 17px;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 19px;
+                    }
+                }
+
+                img[alt='news-image'] {
+                    float: left;
+                    margin-right: 20px;
+                    width: 190px;
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        width: 256px;
+                    }
+
+                    @media (min-width: 1400px) {
+                        width: 256px;
+                    }
+                }
+
+                .news-text {
+
+                    p {
+                        margin: 0 10px 0 0;
+                        font-size: 13px;
+
+                        @media (min-width: 1200px) and (max-width: 1399px) {
+                            font-size: 15px;
+                        }
+
+                        @media (min-width: 1400px) {
+                            font-size: 17px;
+                        }
+                    }
+                }
+
+                .heart-wrap {
+                    position: relative;
+
+                    .heart {
+                        display: inline-block;
+                        position: absolute;
+                        right: 30px;
+
+                        i {
+                            color: #4E9599;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#news-bottom {
+    padding: 10px 0 10px 0px;
+
+    button {
+        background-color: #fbc01c;
+        color: #4f4e4e;
+        width: 65%;
+        font-size: 1.1rem;
+        padding: 5px;
+        border-radius: 30px;
+        border: 0;
+
+        &:active {
+            box-shadow: 5px 7px 10px 2px rgba(0,0,0,.4);
+        }
+
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            font-size: 1.3rem;
+        }
+
+        @media (min-width: 1400px) {
+            width: 55%;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+#feedback_subscribe {
+    .modal-dialog {
+        .modal-content {
+            .modal-body {
+                padding: 0 40px 0 40px;
+
+                label[for="scheduleInputName"], label[for="scheduleInputEmail"] {
+                    color: #4e9599;
+                    font-size: 1.8rem;
+
+                    &::first-letter {
+                        font-family: 'Monplesir script';
+                    }
+                }
+
+                input[id="scheduleInputName"], input[id="scheduleInputEmail"] {
+                    width: 80%;
+                    border-radius: 43px;
+                    height: 50px;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #4e9599;
+                        box-shadow: 0 0 0 0.2rem rgba(78, 149, 153, 0.5);
+                    }
+                }
+
+                .form-check {
+                    input {
+                        width: 25px;
+                        height: 25px;
+
+                        &:focus {
+                            outline: none;
+                            border-color: #4e9599;
+                            box-shadow: 0 0 0 0.2rem rgba(78, 149, 153, 0.5);
+                        }
+
+                        &:checked {
+                            background-color: #4e9599;
+                            border-color: #4e9599;
+                        }
+                    }
+
+                    label {
+                        font-size: 13px;
+                        color: inherit;
+                        padding: 7px 0 0 10px;
+                    }
+                }
+
+                strong {
+                    font-size: 14px;
+                }
+            }
+
+            .modal-footer {
+                padding-bottom: 25px;
+                    button {
+                        width: 60%;
+                        font-size: 1.2rem;
+
+                        @media (min-width: 1400px) {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+        }
+    }
+}

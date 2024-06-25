@@ -167,31 +167,26 @@
 }
 
 #contacts-bottom {
-    height: 100vh;
+    height: 8%;
+    position: absolute;
+    bottom: 66px;
     background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+    z-index: 1050;
 
-    .bottom-col {
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 14px;
+
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            font-size: 15px;
+        }
 
         @media (min-width: 1400px) {
-            margin-top: 0.5rem;
-        }
-
-        a {
-            position: relative;
-            top: 10px;
-            text-decoration: none;
-            color: inherit;
-            font-size: 14px;
-
-            @media (min-width: 1200px) and (max-width: 1399px) {
-                font-size: 15px;
-            }
-
-            @media (min-width: 1400px) {
-                font-size: 15px;
-            }
+            font-size: 15px;
         }
     }
+
 }
 
 #top-left-block {

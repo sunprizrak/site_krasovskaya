@@ -24,24 +24,89 @@
 
         .navbar-nav {
             right: 15px;
+
+            @media (min-width: 1400px) {
+                right: 55px;
+            }
+
+            .nav-link {
+                font-size: 1rem !important;
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 1.4rem !important;
+                }
+
+                @media (min-width: 1400px) {
+                    font-size: 1.6rem !important;
+                }
+            }
         }
     }
 
     &.about-navbar {
         .navbar-nav {
             right: 0;
+
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                right: 140px;
+            }
+
+            @media (min-width: 1400px) {
+                right: 112px;
+            }
+
+
+            .nav-link {
+                font-size: 1rem !important;
+
+                @media (min-width: 1400px) {
+                    font-size: 1.3rem !important;
+                }
+            }
         }
     }
 
     &.schedule-navbar {
         .navbar-nav {
-            right: 65px;
+            right: 30px;
+
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                right: 42px;
+            }
+
+            @media (min-width: 1400px) {
+                right: 56px;
+            }
+
+            .nav-link {
+                font-size: 0.85rem !important;
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 1.05rem !important;
+                }
+
+                @media (min-width: 1400px) {
+                    font-size: 1.25rem !important;
+                }
+            }
         }
     }
 
     &.news-navbar {
         .navbar-nav {
             right: 65px;
+
+            .nav-link {
+                font-size: 0.7rem !important;
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 0.9rem !important;
+                }
+
+                @media (min-width: 1400px) {
+                    font-size: 1.1rem !important;
+                }
+            }
         }
     }
 
@@ -62,13 +127,23 @@
 
         .navbar-nav {
             right: 15px;
+
+            .nav-link {
+                font-size: 0.9rem !important;
+                color: #4e9599;
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 1.1rem !important;
+                }
+
+                @media (min-width: 1400px) {
+                    font-size: 1.3rem !important;
+                }
+            }
         }
     }
 
-
-
     .nav-link {
-        font-size: 1rem !important;
         white-space: nowrap;
 
         &:hover {
@@ -77,14 +152,6 @@
 
         &.active {
             color: #e1dbd8 !important;
-        }
-
-        @media (min-width: 1200px) and (max-width: 1399px) {
-            font-size: 1.3rem !important;
-        }
-
-        @media (min-width: 1400px) {
-            font-size: 1.5rem !important;
         }
     }
 
@@ -140,5 +207,13 @@
 
 .news-navbar {
     background-color: transparent;
-    height: 55px;
+    height: 40px;
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        height: 45px;
+    }
+
+    @media (min-width: 1400px) {
+        height: 50px;
+    }
 }
