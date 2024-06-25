@@ -52,26 +52,5 @@
         </div>
     </div>
     <div id="home-bottom-right-rectangle-2"></div>
-{% endblock %}
-
-{% block js %}
-    <script>
-        $(document).ready(function() {
-            if ($(window).width() >= 992) {
-                // Получаем элементы
-                var $navbarLeftColumn = $('header .navbar #navbar-left-column');
-                var $indexLeftColumn = $('#index-left-column');
-
-                function indexAdapt() {
-                    $navbarLeftColumn.css('width', $indexLeftColumn.outerWidth());
-                }
-
-                // Синхронизируем ширину при загрузке страницы
-                indexAdapt();
-
-                // Синхронизируем ширину при изменении размера окна
-                $(window).resize(indexAdapt);
-            }
-        });
-    </script>
+    <div id="home-top-rectangle"></div>
 {% endblock %}

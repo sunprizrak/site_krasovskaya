@@ -154,29 +154,6 @@
             color: #e1dbd8 !important;
         }
     }
-
-    #home-top-rectangle {
-        position: absolute;
-        top: -50px;
-        background-color: #fbde98;
-        border-bottom-right-radius: 43px;
-        z-index: 1111;
-        height: 195px;
-        width: 67%;
-        right: -25px;
-
-        @media (min-width: 1200px) and (max-width: 1399px) {
-            width: 67%;
-            right: -20px;
-        }
-
-        @media (min-width: 1400px) {
-            height: 265px;
-            top: -65px;
-            width: 68%;
-            right: -30px;
-        }
-    }
 }
 
 .home-navbar, .contacts-navbar {

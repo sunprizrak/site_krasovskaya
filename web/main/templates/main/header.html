@@ -2,23 +2,13 @@
 
 <nav class="navbar navbar-expand-lg {% if navbar_property %}{{ navbar_property }}{% endif %}">
     <div class="container">
-        <div class="row w-100">
-            <div class="col-auto position-relative" id="navbar-left-column">
-                <div class="{% if request.path != '/' %}d-none{% endif %}" id="home-top-rectangle"></div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="col">
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link {% if request.path == '/about' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'about' %}" draggable="false">ОБО МНЕ</a>
-                        <a class="nav-link {% if request.path == '/' %}d-none{% endif %}{% if request.path == '/news' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'news' %}" draggable="false">НОВОСТИ</a>
-                        <a class="nav-link {% if request.path == '/schedule' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'schedule' %}" draggable="false">РАСПИСАНИЕ</a>
-                        <a class="nav-link {% if request.path == '/groups' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="#" draggable="false">ГРУППЫ</a>
-                        <a class="nav-link {% if request.path == '/contacts' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'contacts' %}" draggable="false">КОНТАКТЫ</a>
-                    </div>
-                </div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link {% if request.path == '/about' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'about' %}" draggable="false">ОБО МНЕ</a>
+                <a class="nav-link {% if request.path == '/' %}d-none{% endif %}{% if request.path == '/news' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'news' %}" draggable="false">НОВОСТИ</a>
+                <a class="nav-link {% if request.path == '/schedule' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'schedule' %}" draggable="false">РАСПИСАНИЕ</a>
+                <a class="nav-link {% if request.path == '/groups' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="#" draggable="false">ГРУППЫ</a>
+                <a class="nav-link {% if request.path == '/contacts' %}active{% endif %} {% if nav_link_color %}{{ nav_link_color }}{% endif %}" href="{% url 'contacts' %}" draggable="false">КОНТАКТЫ</a>
             </div>
         </div>
     </div>
