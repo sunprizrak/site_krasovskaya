@@ -3,15 +3,22 @@
 
 {% block title %}{{ title }}{% endblock %}
 
+{% block header %}
+<header id="contacts-header">
+    {% include 'main/navbar.html' %}
+</header>
+{% endblock %}
+
 {% block main %}
-    <div class="container" id="contacts-page">
-        <div class="row">
-            <div class="col-7 d-flex justify-content-start" id="contacts-left">
-                <div class="row-1">
+<main id="contacts-main">
+    <div class="container bg-light" id="contacts-container">
+        <div class="row" id="contacts-top-row">
+            <div class="col bg-dark d-flex justify-content-start" id="contacts-left">
+                <div class="row-1 w-100">
                     <div class="col d-flex justify-content-center">
                         <h2>Контакты</h2>
                     </div>
-                    <div class="col d-flex justify-content-center">
+                    <div class="col mt-1 d-flex justify-content-center">
                         <div class="container" id="contacts-info">
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
@@ -43,11 +50,11 @@
                                 </div>
                             </div>
                             <div class="row mt-4" id="search-row">
-                                <div class="col d-flex justify-content-center">
+                                <div class="col mt-3 d-flex justify-content-center">
                                     <p>Вы можете найти меня в социальных сетях:</p>
                                 </div>
                             </div>
-                            <div class="row" id="soc-row">
+                            <div class="row mt-1" id="soc-row">
                                 <div class="col-6 d-flex">
                                     <i class="bi bi-facebook"></i>
                                     <a href="#" class="ms-2">профиль в facebook</a>
@@ -71,26 +78,22 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-5" id="contacts-right">
+            <div class="col-auto" id="contacts-right">
                 <img src="{% static 'main/img/contacts-foto.png' %}" alt="contacts-foto">
             </div>
         </div>
-    </div>
-    <div class="container-fluid" id="contacts-bottom">
-        <div class="container h-100-p">
-            <div class="row h-100-p">
-                <div class="col-6 position-relative d-flex justify-content-start align-items-center">
-                    <a href="#">Пользовательское соглашение</a>
-                </div>
-                <div class="col-6 position-relative d-flex justify-content-end align-items-center">
-                    <a href="#">Политика конфиденциальности</a>
-                </div>
+        <div class="row" id="contacts-bottom-row">
+            <div class="col-6 position-relative d-flex justify-content-start align-items-center">
+                <a href="#">Пользовательское соглашение</a>
+            </div>
+            <div class="col-6 position-relative d-flex justify-content-end align-items-center">
+                <a href="#">Политика конфиденциальности</a>
             </div>
         </div>
     </div>
     <div id="top-left-block"></div>
+</main>
 {% endblock %}
 
 {% block modal %}

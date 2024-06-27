@@ -11,14 +11,14 @@
 
 {% block main %}
 <main id="about-main">
-    <div class="container bg-light" id="about-container">
-        <div class="row">
-            <div class="col-5 position-relative" id="about-top-left-col">
+    <div class="container" id="about-container">
+        <div class="row" id="about-top-row">
+            <div class="col-5 d-flex align-items-center position-relative" id="top-left-col">
                 <div id="wrap-about-image">
                     <img src="{% static 'main/img/about-image.png' %}" alt="about-image">
                 </div>
             </div>
-            <div class="col-7" id="about-top-right-col">
+            <div class="col-7 d-flex flex-column justify-content-center" id="top-right-col">
                 <div class="vertical-line-text">
                     <p>
                         <strong>Магистр</strong> практико-ориентированной психологии (психологическое <br>
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="row about-gradient">
+        <div class="row about-gradient" id="about-middle-row">
             <div class="col-3 about-middle-zindex">
                 <div id="about-one">
                     <span>01</span>
@@ -55,11 +55,9 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col mt-3" id="about-bottom-col">
-
+        <div class="row" id="about-bottom-row">
+            <div class="col d-flex flex-column justify-content-center">
                 <h2>Моё образование</h2>
-
                 <div class="vertical-line-text">
                     <p>
                         Училась в Белорусском государственном университете по специальности <span>"Психологическое консультирование и психокоррекция"</span> <br>

@@ -1,9 +1,10 @@
 #about-header {
-    background-color: blue;
     height: 7%;
+    min-height: 51px;
 
     .navbar {
         height: 100%;
+        background-color: transparent;
 
         .navbar-nav {
             right: 0;
@@ -38,116 +39,80 @@
         font-family: 'PlayfairDisplay';
         user-select: none;
 
-        #about-top-left-col {
-            padding-bottom: 25px;
+        #about-top-row {
+            height: 35%;
+            min-height: 243px;
+            max-height: 250px;
 
-            #wrap-about-image {
-                position: relative;
-                background-color: #4e9599;
-                width: 300px;
-                height: 226px;
-                float: inline-end;
-                border-radius:  0 43px 43px 0;
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    height: 250px;
-                    right: 36px;
-                }
-
-                @media (min-width: 1400px) {
-                    height: 290px;
-                    right: 77px;
-                 }
-
-                img {
-                    position: relative;
-                    width: 108%;
-                    right: 76px;
-                    bottom: 42px;
-                    z-index: 1000;
-
-                    @media (min-width: 1200px) and (max-width: 1399px) {
-                        width: 117%;
-                        right: 114px;
-                    }
-
-                    @media (min-width: 1400px) {
-                        width: 130%;
-                        right: 148px;
-                    }
-                }
-            }
-
-        }
-
-        #about-top-right-col {
-            .vertical-line-text {
-                  margin-top: 18px;
-                  margin-bottom: 18px;
-                  margin-left: 28px;
-
-                  @media (min-width: 1400px) {
-                      margin-left: 62px;
-                  }
-            }
-        }
-
-        #about-one {
-            width: 100%;
-            height: 125px;
-            border: 1px solid #4e9599;
-            border-radius: 43px;
-            margin-top: 70px;
-            padding: 40px;
-            position: relative;
 
             @media (min-width: 1200px) and (max-width: 1399px) {
-                margin-top: 84px;
+                min-height: 250px;
+                max-height: 308px;
+
             }
 
             @media (min-width: 1400px) {
-                margin-top: 87px;
+                min-height: 314px;
+                max-height: 351px;
             }
 
-            span {
-                position: absolute;
-                font-family: 'Monplesir script';
-                font-size: 2rem;
-                color: #4e9599;
-                top: -23px;
-                left: 32px;
+
+            #top-left-col {
+                height: 100%;
+
+                #wrap-about-image {
+                    position: relative;
+                    display: flex;
+                    background-color: #4e9599;
+                    width: 49vh;
+                    min-width: 365px;
+                    height: 80%;
+                    border-radius:  0 43px 43px 0;
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        min-width: 373px;
+                    }
+
+                    @media (min-width: 1400px) {
+                        min-width: 470px;
+                    }
+
+                    img {
+                        position: relative;
+                        align-self: center;
+                        height: 155%;
+                        z-index: 1000;
+                    }
+                }
+            }
+
+            #top-right-col {
+                .vertical-line-text {
+                      margin-left: 28px;
+
+                      @media (min-width: 1400px) {
+                          margin-left: 62px;
+                      }
+                }
             }
         }
 
-        #about-middle-center {
-            flex-direction: column;
+         #about-middle-row {
+            height: 30%;
+            min-height: 208px;
 
-            h2 {
-                text-align: center;
-                margin-top: 30px;
+             @media (min-width: 1200px) and (max-width: 1399px) {
+                min-height: 224px;
+             }
 
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 2.3rem;
-                }
-
-                @media (min-width: 1400px) {
-                    font-size: 2.5rem;
-                }
-
-                &::first-letter {
-                    font-family: 'Monplesir script';
-                }
-            }
-
-            #about-two {
-                position: relative;
-                align-self: center;
-                width: 80%;
+            #about-one {
+                width: 100%;
                 height: 125px;
                 border: 1px solid #4e9599;
                 border-radius: 43px;
-                margin-top: 20px;
+                margin-top: 40%;
                 padding: 40px;
+                position: relative;
 
                 span {
                     position: absolute;
@@ -158,36 +123,78 @@
                     left: 32px;
                 }
             }
-        }
 
-        #about-three {
-            position: relative;
-            width: 100%;
-            height: 125px;
-            border: 1px solid #4e9599;
-            border-radius: 43px;
-            margin-top: 70px;
-            padding: 40px;
+            #about-middle-center {
+                flex-direction: column;
+
+                h2 {
+                    text-align: center;
+                    margin-top: 10%;
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 2.3rem;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 2.5rem;
+                    }
+
+                    &::first-letter {
+                        font-family: 'Monplesir script';
+                    }
+                }
+
+                #about-two {
+                    position: relative;
+                    align-self: center;
+                    width: 80%;
+                    height: 125px;
+                    border: 1px solid #4e9599;
+                    border-radius: 43px;
+                    margin-top: 2%;
+                    padding: 40px;
+
+                    span {
+                        position: absolute;
+                        font-family: 'Monplesir script';
+                        font-size: 2rem;
+                        color: #4e9599;
+                        top: -23px;
+                        left: 32px;
+                    }
+                }
+            }
+
+            #about-three {
+                position: relative;
+                width: 100%;
+                height: 125px;
+                border: 1px solid #4e9599;
+                border-radius: 43px;
+                margin-top: 40%;
+                padding: 40px;
+
+
+
+                span {
+                    position: absolute;
+                    font-family: 'Monplesir script';
+                    font-size: 2rem;
+                    color: #4e9599;
+                    top: -23px;
+                    left: 32px;
+                }
+            }
+
+         }
+
+         #about-bottom-row {
+            height: 35%;
+            min-height: 246px;
 
             @media (min-width: 1200px) and (max-width: 1399px) {
-                margin-top: 84px;
-            }
-
-            @media (min-width: 1400px) {
-                margin-top: 87px;
-            }
-
-            span {
-                position: absolute;
-                font-family: 'Monplesir script';
-                font-size: 2rem;
-                color: #4e9599;
-                top: -23px;
-                left: 32px;
-            }
-        }
-
-        #about-bottom-col {
+                min-height: 256px;
+             }
 
             h2 {
                 text-align: center;
@@ -219,7 +226,8 @@
                     }
                 }
             }
-        }
+
+         }
     }
 }
 
@@ -231,24 +239,24 @@
     &:before {
         position: absolute;
         content: '';
-        height: 165px;
+        height: 178px;
         left: -50vw;
         right: -50vw;
         background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
         z-index: 150;
     }
 
-    @media (min-width: 1200px) and (max-width: 1399px) {
+   @media (min-width: 1200px) and (max-width: 1399px) {
 
         &:before {
-            height: 177px;
+            height: 195px;
         }
     }
 
     @media (min-width: 1400px) {
 
         &:before {
-            height: 183px;
+            height: 211px;
         }
 
     }

@@ -61,39 +61,6 @@
         }
     }
 
-    &.contacts-navbar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-
-        .container {
-            bottom: 40px;
-
-            @media (min-width: 1400px) {
-                bottom: 65px;
-            }
-        }
-
-        .navbar-nav {
-            right: 15px;
-
-            .nav-link {
-                font-size: 0.9rem !important;
-                color: #4e9599;
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 1.1rem !important;
-                }
-
-                @media (min-width: 1400px) {
-                    font-size: 1.3rem !important;
-                }
-            }
-        }
-    }
-
     .nav-link {
         white-space: nowrap;
 
@@ -107,7 +74,7 @@
     }
 }
 
-.home-navbar, .contacts-navbar {
+.home-navbar {
     background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
     height: 151px;
 
