@@ -79,7 +79,7 @@
                     top: 5px;
                     height: 73vh;
                     max-width: 476px;
-                    min-height: 525px;
+                    min-height: 559px;
                     max-height: 617px;
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
@@ -151,48 +151,24 @@
                         }
                     }
 
-                    #search-row {
-                         @media (min-width: 1400px) {
-                            margin-top: 2.5rem !important;
-                        }
-                    }
 
-                    #soc-row {
+
+                    button {
+                        background-color: #4e9599;
+                        border: 0;
+                        color: #ece4d8;
+                        border-radius: 43px;
+                        width: 80%;
+                        height: 40px;
+                        font-size: 1.2rem;
+
                         @media (min-width: 1200px) and (max-width: 1399px) {
-                            margin-top: 15px;
+                            font-size: 1.4rem;
                         }
 
                         @media (min-width: 1400px) {
-                            margin-top: 15px;
-                        }
-                    }
+                            font-size: 1.7rem;
 
-                    #button-row {
-                        @media (min-width: 1200px) and (max-width: 1399px) {
-                            margin-top: 1rem !important;
-                        }
-
-                        @media (min-width: 1400px) {
-                            margin-top: 2rem !important;
-                        }
-
-                        button {
-                            background-color: #4e9599;
-                            border: 0;
-                            color: #ece4d8;
-                            border-radius: 43px;
-                            width: 80%;
-                            height: 40px;
-                            font-size: 1.2rem;
-
-                            @media (min-width: 1200px) and (max-width: 1399px) {
-                                font-size: 1.4rem;
-                            }
-
-                            @media (min-width: 1400px) {
-                                font-size: 1.7rem;
-
-                            }
                         }
                     }
                 }
@@ -207,8 +183,8 @@
                     z-index: 1050;
                     border-top-left-radius: 43px;
                     border-top-right-radius: 43px;
-                    height: 79vh;
-                    min-height: 569px;
+                    height: 78vh;
+                    min-height: 606px;
                     max-height: 655px;
                     bottom: 14%;
 
