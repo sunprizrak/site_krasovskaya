@@ -43,24 +43,6 @@
         }
     }
 
-    &.news-navbar {
-        .navbar-nav {
-            right: 65px;
-
-            .nav-link {
-                font-size: 0.7rem !important;
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 0.9rem !important;
-                }
-
-                @media (min-width: 1400px) {
-                    font-size: 1.1rem !important;
-                }
-            }
-        }
-    }
-
     .nav-link {
         white-space: nowrap;
 
@@ -83,28 +65,6 @@
     }
 }
 
-.about-navbar {
-    height: 70px;
-    background-color: transparent;
-}
-
 .home-color {
     color: #4f4e4e !important;
-}
-
-.about-color, .schedule-color, .news-color {
-    color: #4e9599 !important;
-}
-
-.news-navbar {
-    background-color: transparent;
-    height: 40px;
-
-    @media (min-width: 1200px) and (max-width: 1399px) {
-        height: 45px;
-    }
-
-    @media (min-width: 1400px) {
-        height: 50px;
-    }
 }
