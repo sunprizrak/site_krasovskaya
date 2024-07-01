@@ -3,16 +3,23 @@
 
 {% block title %}{{ title }}{% endblock %}
 
+{% block header %}
+<header id="index-header">
+    {% include 'main/navbar.html' %}
+</header>
+{% endblock %}
+
 {% block main %}
-    <div class="container position-relative" id="index_page">
-        <div class="row">
-            <div class="col-auto" id="index-left-column">
+<main id="index-main">
+    <div class="container position-relative" id="index_container">
+        <div class="row h-100">
+            <div class="col-auto bg-dark" id="index-left-column">
                 <div id="wrap-home-left-image">
                     <img src="{% static 'main/img/home-left.jpg' %}" alt="left-image">
                 </div>
-                <div id="home-top-rectangle"></div>
+<!--                <div id="home-top-rectangle"></div>-->
             </div>
-            <div class="col" id="index-right-column">
+            <div class="col bg-light" id="index-right-column">
                 <div class="row">
                     <div class="col-auto position-relative" id="index-middle-left">
                         <div id="name_hello">
@@ -52,5 +59,5 @@
             </div>
         </div>
     </div>
-    <div id="home-bottom-right-rectangle-2"></div>
+</main>
 {% endblock %}
