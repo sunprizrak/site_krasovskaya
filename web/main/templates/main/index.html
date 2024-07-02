@@ -36,14 +36,14 @@
                 </div>
                 <div class="row d-flex flex-grow-1">
                     <div class="col" id="ask_question-wrap">
-                        <button type="button">ЗАДАТЬ ВОПРОС</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal">ЗАДАТЬ ВОПРОС</button>
                     </div>
                 </div>
                 <div class="row d-flex">
                     <div class="col d-flex justify-content-center" id="index-bottom">
                         <div id="my_news">
-                            <a name="news" href="#" draggable="false">МОИ НОВОСТИ</a>
-                            <a name="inst" href="#" draggable="false">| katherine krasnitskay |</a>
+                            <a name="news" href="{% url 'news' %}" draggable="false">МОИ НОВОСТИ</a>
+                            <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katherine krasnitskay |</a>
                             <div>
                                 <p>
                                     Часто мне задают вопрос: может, и мне пора на терапию? Кода я
@@ -59,4 +59,8 @@
         </div>
     </div>
 </main>
+{% endblock %}
+
+{% block modal %}
+    {% include 'main/feedback_modal.html' %}
 {% endblock %}

@@ -18,8 +18,7 @@
 html, body {
     height: 100%;
     position: relative;
-    /*overflow: hidden; */
-    overflow-x: hidden;
+    overflow: hidden;
     margin: 0;
     padding: 0;
     background-color: #ece4d8 !important;
