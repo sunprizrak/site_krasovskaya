@@ -12,14 +12,13 @@
 {% block main %}
 <main id="index-main">
     <div class="container position-relative" id="index_container">
-        <div class="row h-100">
-            <div class="col-auto bg-dark" id="index-left-column">
+        <div class="row">
+            <div class="col-auto" id="index-left-column">
                 <div id="wrap-home-left-image">
                     <img src="{% static 'main/img/home-left.jpg' %}" alt="left-image">
                 </div>
-<!--                <div id="home-top-rectangle"></div>-->
             </div>
-            <div class="col bg-light" id="index-right-column">
+            <div class="col d-flex flex-column" id="index-right-column">
                 <div class="row">
                     <div class="col-auto position-relative" id="index-middle-left">
                         <div id="name_hello">
@@ -35,13 +34,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5">
+                <div class="row d-flex flex-grow-1">
                     <div class="col" id="ask_question-wrap">
                         <button type="button">ЗАДАТЬ ВОПРОС</button>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col position-relative" id="index-bottom">
+                <div class="row d-flex">
+                    <div class="col d-flex justify-content-center" id="index-bottom">
                         <div id="my_news">
                             <a name="news" href="#" draggable="false">МОИ НОВОСТИ</a>
                             <a name="inst" href="#" draggable="false">| katherine krasnitskay |</a>

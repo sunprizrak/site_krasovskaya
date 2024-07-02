@@ -49,26 +49,13 @@
             #wrap-home-left-image {
                 position: relative;
                 background-color: #4e9599;
-                /*bottom: 107px;*/
-                bottom: 19%;
-                /*left: 5px; */
+                margin-top: -32%;
                 width: auto;
-                height: 48%;
-                /*height: 290px;*/
-                border-top-left-radius: 40px;
-                border-bottom-left-radius: 40px;
+                height: 61%;
+                border-top-left-radius: 43px;
+                border-bottom-left-radius: 43px;
                 border-top-right-radius: 110px;
-                /*padding-left: 30px; */
                 z-index: 1050;
-
-                /*@media (min-width: 1200px) and (max-width: 1399px) {
-                    height: 320px;
-                }
-
-                @media (min-width: 1400px) {
-                    height: 390px;
-                    bottom: 144px;
-                } */
 
                 &:before {
                     position: absolute;
@@ -76,10 +63,36 @@
                     width: 75%;
                     top: -50vh;
                     right: -13%;
-                    bottom: 133px;
+                    bottom: 49%;
                     background-color: #fbde98;
                     border-bottom-right-radius: 43px;
-                    z-index: 1111;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    height: 100%;
+                    width: 100%;
+                    left: -10px;
+                    z-index: -1;
+                    background-color: #4e9599;
+                    border-top-left-radius: 43px;
+                    border-bottom-left-radius: 43px;
+
+                }
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    &:after {
+                        left: -20px;
+                    }
+                }
+
+                @media (min-width: 1400px) {
+                    margin-top: -30%;
+
+                    &:after {
+                        left: -20px;
+                    }
                 }
 
                 img {
@@ -87,6 +100,7 @@
                     border-top-right-radius: 110px;
                     width: auto;
                     height: 88vh;
+                    min-height: 579px;
                     left: 5%;
                     -webkit-user-drag: none; /* Safari */
                     -khtml-user-drag: none; /* Konqueror */
@@ -95,37 +109,21 @@
                     draggable: false;
                     position: relative;
 
-                    /*@media (min-width: 1200px) and (max-width: 1399px) {
-                        height: 690px;
+
+                    @media (min-width: 992px) and (max-width: 1199px) {
+                        max-height: 689px;
+                    }
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        min-height: 671px;
+                        max-height: 742px;
                     }
 
                     @media (min-width: 1400px) {
-                        height: 770px;
-                    } */
+                        min-height: 730px;
+                        max-height: 870px;
+                    }
 
-                }
-            }
-
-            #home-top-rectangle {
-                position: absolute;
-                top: -149px;
-                right: -23px;
-                background-color: #fbde98;
-                border-bottom-right-radius: 43px;
-                z-index: 1111;
-                height: 195px;
-                width: 280px;
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    width: 310px;
-                    right: -18px;
-                }
-
-                @media (min-width: 1400px) {
-                    height: 265px;
-                    width: 355px;
-                    top: -200px;
-                    right: -26px;
                 }
             }
         }
@@ -136,13 +134,13 @@
 
                 #name_hello {
                     position: relative;
-                    top: 23px;
-                    left: 15px;
+                    top: 25px;
+                    left: 17px;
                     user-select: none;
                     z-index: 11111;
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        left: 8px;
+                        top: 30px;
                     }
 
                     @media (min-width: 1400px) {
@@ -198,17 +196,18 @@
                 z-index: 1111;
                 bottom: 16%;
                 right: 37px;
-                width: 105%;
+                width: 240px;
 
                 @media (min-width: 1200px) and (max-width: 1399px) {
                     right: 50px;
-                    width: 110%;
+                    width: 296px;
                     bottom: 13%;
                 }
 
                 @media (min-width: 1400px) {
                     right: 50px;
-                    width: 95%;
+                    width: 340px;
+
                 }
 
                 img {
@@ -224,7 +223,7 @@
                     draggable: false;
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        left: 40px;
+                        left: 43px;
                     }
 
                     @media (min-width: 1400px) {
@@ -237,6 +236,7 @@
             #ask_question-wrap {
                 display: flex;
                 justify-content: center;
+                align-items: center;
 
                 button {
                     background-color: #4e9599;
@@ -247,6 +247,7 @@
                     border-radius: 30px;
                     border: 0;
                     margin-top: 10px;
+                    max-height: 50px;
 
                     &:active {
                         box-shadow: 5px 7px 10px 2px rgba(0,0,0,.4);
@@ -264,8 +265,7 @@
             }
 
             #index-bottom {
-                display: flex;
-                justify-content: center;
+                position: relative;
 
                 @media (min-width: 1200px) {
                     flex-direction: column;
@@ -359,20 +359,9 @@
                         border-top-left-radius: 43px;
                         z-index: 150;
                     }
-
-                    /*&:after {
-                        position: absolute;
-                        content: '';
-                        left: 50%;
-                        width: 100vw;
-                        height: 100%;
-                        background-color: #fbde98;
-                    }*/
                 }
             }
         }
     }
 }
-
-
 
