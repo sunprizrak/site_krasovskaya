@@ -176,10 +176,6 @@
                             font-family: 'Monplesir script';
                         }
 
-                        span {
-                            color: #2b2a2c;
-                        }
-
                         @media (min-width: 1200px) and (max-width: 1399px) {
                             font-size: 3.2rem;
                         }
@@ -368,4 +364,6 @@
         }
     }
 }
+
+
 
