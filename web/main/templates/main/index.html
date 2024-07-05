@@ -41,15 +41,15 @@
                 </div>
                 <div class="row d-flex">
                     <div class="col d-flex justify-content-center" id="index-bottom">
-                        <div id="my_news">
-                            <a name="news" href="{% url 'news' %}" draggable="false">МОИ НОВОСТИ</a>
-                            <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
-                            <div>
-                                <p>
-                                    Часто мне задают вопрос: может, и мне пора на терапию? Кода я
-                                    слышу его, непроизвольно мимика моего лица меняется, выражая
-                                    симпатию...
-                                </p>
+                        <div class="row-1" id="my_news">
+                            <div class="col d-flex justify-content-center">
+                                <a name="news" href="{% url 'news' %}" draggable="false">МОИ НОВОСТИ</a>
+                            </div>
+                            <div class="col d-flex justify-content-center">
+                                <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
+                            </div>
+                            <div class="col py-2">
+                                {{ latest_news_text|safe }}
                             </div>
                         </div>
                         <div id="home-bottom-right-rectangle"></div>

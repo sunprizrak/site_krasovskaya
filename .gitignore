@@ -1,3 +1,5 @@
 .venv
 .idea
 web/.env.dev
+web/media
+web/session.json
