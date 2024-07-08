@@ -13,11 +13,12 @@ class HomeView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        latest_news = NewsModel.objects.first()
-        text = latest_news.text
-        abbreviated_text = self.truncate_text(text, 150)
+        if NewsModel.objects.count() > 0:
+            latest_news = NewsModel.objects.first()
+            text = latest_news.text
+            abbreviated_text = self.truncate_text(text, 150)
 
-        context['latest_news_text'] = abbreviated_text
+            context['latest_news_text'] = abbreviated_text
         return context
 
     def truncate_text(self, text, max_length):

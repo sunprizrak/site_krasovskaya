@@ -24,7 +24,7 @@ ACCOUNT_PASSWORD = os.environ.get('ACCOUNT_PASSWORD')
 #                 ACCOUNT_PASSWORD = line.split('=')[1].strip()
 
 
-cl = Client()
+cl = Client(request_timeout=10)
 session_path = 'session.json'
 
 if os.path.exists(session_path):
@@ -78,6 +78,7 @@ if medias:
     news = NewsModel.objects.all()
 
     for index, media in enumerate(medias):
+        instagram_id = media.id
         title = media.caption_text.strip().split('\n')[0]
         text = markdown.markdown('<br>'.join(media.caption_text.strip().split('\n')[2:]))
         img_url = str(media.thumbnail_url)
@@ -88,19 +89,23 @@ if medias:
             image_content = ContentFile(response.content)
             image_name = img_url.split('/')[-1].split('?')[0]
 
-            if len(news) == len(medias):
-                news[index].title = title
-                news[index].image.save(image_name, image_content)
-                news[index].text = text
-                news[index].save()
+            news_item, created = NewsModel.objects.update_or_create(
+                instagram_id=instagram_id,
+                defaults={
+                    'title': title,
+                    'text': text,
+                }
+            )
+
+            if not created:
+                news_item.image.save(image_name, image_content)
+                news_item.save()
             else:
-                obj = NewsModel(
-                    title=title,
-                    text=text,
-                )
-                obj.image.save(image_name, image_content)
-                obj.save()
+                news_item.image.save(image_name, image_content)
 
-
-
+    news_count = NewsModel.objects.count()
+    if news_count > 3:
+        old_news_items = NewsModel.objects.all().order_by('-id')[3:]
+        for old_news_item in old_news_items:
+            old_news_item.delete()
 

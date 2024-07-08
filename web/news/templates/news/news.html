@@ -38,8 +38,8 @@
                             </div>
                         </div>
                         <div class="col heart-wrap">
-                            <div class="heart">
-                                <span>0</span>
+                            <div class="heart" data-news-id="{{ news_item.id }}">
+                                <span>{{ news_item.likes }}</span>
                                 <i class="bi bi-heart-fill"></i>
                             </div>
                         </div>
@@ -114,4 +114,31 @@
             </form>
         </div>
     </div>
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function() {
+        $('.heart').click(function() {
+            var newsId = $(this).data('news-id');
+            var likeCount = $(this).find('span');
+
+            $.ajax({
+                url: '',
+                type: 'POST',
+                data: {
+                    'news_id': newsId,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(data) {
+                    if (data.success) {
+                        likeCount.text(data.likes);
+                    } else {
+                        alert(data.error);
+                    }
+                }
+            });
+        });
+    });
+</script>
 {% endblock %}

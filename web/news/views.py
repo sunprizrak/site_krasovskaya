@@ -1,5 +1,7 @@
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
-from .models import NewsModel
+from .models import NewsModel, Like
+from django.http import JsonResponse
 
 
 class NewsView(ListView):
@@ -9,3 +11,27 @@ class NewsView(ListView):
     extra_context = {
         'title': 'Новости',
     }
+
+    def post(self, request, *args, **kwargs):
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            news_id = request.POST.get('news_id')
+            news = get_object_or_404(NewsModel, id=news_id)
+            ip = self.get_client_ip(request)
+
+            if not Like.objects.filter(news=news, ip_address=ip).exists():
+                news.likes += 1
+                news.save()
+                Like.objects.create(news=news, ip_address=ip)
+                return JsonResponse({'success': True, 'likes': news.likes})
+
+            return JsonResponse({'success': False, 'error': 'Вы уже лайкнули эту новость'})
+
+        return JsonResponse({'success': False, 'error': 'Invalid request'})
+
+    def get_client_ip(self, request):
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
