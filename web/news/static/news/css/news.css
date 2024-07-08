@@ -140,19 +140,27 @@
                         }
                     }
 
-                    .heart-wrap {
+                    .heart {
+                        display: inline-flex;
+                        align-items: center;
                         position: relative;
+                        cursor: pointer;
 
-                        .heart {
-                            display: inline-block;
-                            position: absolute;
-                            right: 30px;
+                        span {
+                            margin-right: 5px;
+                        }
 
-                            i {
-                                color: #4E9599;
+                        i {
+                            color: #4E9599;
+                            transition: transform 0.1s ease-in-out;
+                            transform-origin: center;
+
+                            &:active {
+                                transform: scale(1.3);
                             }
                         }
                     }
+
                 }
             }
         }
