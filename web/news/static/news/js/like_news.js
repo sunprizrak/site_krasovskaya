@@ -14,7 +14,7 @@ $(document).ready(function() {
                 if (data.success) {
                     likeCount.text(data.likes);
                 } else {
-                    alert(data.error);
+                    alert(data.message);
                 }
             }
         });

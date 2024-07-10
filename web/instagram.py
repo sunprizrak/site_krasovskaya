@@ -24,52 +24,8 @@ ACCOUNT_PASSWORD = os.environ.get('ACCOUNT_PASSWORD')
 #                 ACCOUNT_PASSWORD = line.split('=')[1].strip()
 
 
-cl = Client(request_timeout=10)
-session_path = 'session.json'
-
-if os.path.exists(session_path):
-    session = cl.load_settings(session_path)
-
-    login_via_session = False
-    login_via_pw = False
-
-    if session:
-        try:
-            cl.set_settings(session)
-            cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
-
-            # check if session is valid
-            try:
-                cl.get_timeline_feed()
-            except LoginRequired:
-                logger.info("Session is invalid, need to login via username and password")
-
-                old_session = cl.get_settings()
-
-                # use the same device uuids across logins
-                cl.set_settings({})
-                cl.set_uuids(old_session["uuids"])
-
-                cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
-            login_via_session = True
-        except Exception as e:
-            logger.info("Couldn't login user using session information: %s" % e)
-
-    if not login_via_session:
-        try:
-            logger.info("Attempting to login via username and password. username: %s" % ACCOUNT_USERNAME)
-            if cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD):
-                login_via_pw = True
-        except Exception as e:
-            logger.info("Couldn't login user using username and password: %s" % e)
-
-    if not login_via_pw and not login_via_session:
-        raise Exception("Couldn't login user with either password or session")
-
-else:
-    cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
-    cl.dump_settings(session_path)
-
+cl = Client()
+cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
 
 user_id = cl.user_id_from_username(ACCOUNT_USERNAME)
 medias = cl.user_medias(user_id, 3)
@@ -81,6 +37,7 @@ if medias:
         instagram_id = media.id
         title = media.caption_text.strip().split('\n')[0]
         text = markdown.markdown('<br>'.join(media.caption_text.strip().split('\n')[2:]))
+        taken_at = media.taken_at
         img_url = str(media.thumbnail_url)
 
         response = requests.get(img_url)
@@ -94,6 +51,7 @@ if medias:
                 defaults={
                     'title': title,
                     'text': text,
+                    'taken_at': taken_at,
                 }
             )
 
@@ -104,8 +62,12 @@ if medias:
                 news_item.image.save(image_name, image_content)
 
     news_count = NewsModel.objects.count()
+
     if news_count > 3:
-        old_news_items = NewsModel.objects.all().order_by('-id')[3:]
-        for old_news_item in old_news_items:
-            old_news_item.delete()
+        medias_ids = [media.id for media in medias]
+        news = NewsModel.objects.all()
+
+        for news_item in news:
+            if news_item.instagram_id not in medias_ids:
+                news_item.delete()
 

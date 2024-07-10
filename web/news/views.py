@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
 from .models import NewsModel, Like
 from django.http import JsonResponse
+from django.contrib import messages
 
 
 class NewsView(ListView):
@@ -11,6 +12,9 @@ class NewsView(ListView):
     extra_context = {
         'title': 'Новости',
     }
+
+    def get_queryset(self):
+        return NewsModel.objects.all().order_by('-taken_at')
 
     def post(self, request, *args, **kwargs):
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
@@ -24,9 +28,11 @@ class NewsView(ListView):
                 Like.objects.create(news=news, ip_address=ip)
                 return JsonResponse({'success': True, 'likes': news.likes})
 
-            return JsonResponse({'success': False, 'error': 'Вы уже лайкнули эту новость'})
+            messages.success(request, 'Вы уже лайкнули эту новость')
 
-        return JsonResponse({'success': False, 'error': 'Invalid request'})
+            return JsonResponse({'success': False, 'message': 'Вы уже лайкнули эту новость'})
+
+        return JsonResponse({'success': False, 'message': 'Invalid request'})
 
     def get_client_ip(self, request):
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')

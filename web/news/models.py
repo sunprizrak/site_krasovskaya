@@ -11,6 +11,8 @@ class NewsModel(models.Model):
     text = models.TextField()
     likes = models.IntegerField(default=0)
     instagram_id = models.CharField(max_length=255, unique=True)
+    taken_at = models.DateTimeField()
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'News Item'
