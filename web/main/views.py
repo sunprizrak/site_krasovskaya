@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, ListView
 from news.models import NewsModel
+from .models import GroupLesson
 
 
 class HomeView(ListView):
@@ -37,10 +38,13 @@ class AboutView(TemplateView):
     }
 
 
-class ScheduleView(TemplateView):
+class ScheduleView(ListView):
+    model = GroupLesson
+    context_object_name = 'group_lesson'
     template_name = 'main/schedule.html'
     extra_context = {
         'title': 'Расписание',
+        'schedule_days': ('ПН', 'ЧТ', 'ВТ', 'ПТ', 'СР'),
     }
 
 

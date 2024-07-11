@@ -62,9 +62,6 @@
             height: 90%;
 
             .schedule-header {
-                display: flex;
-                position: relative;
-                align-items: center;
                 height: 36px;
                 width: 90%;
                 border-radius: 43px;
@@ -76,7 +73,7 @@
                 }
 
                 span {
-                    padding: 0 60px 0 60px;
+                    padding: 0 45px 0 45px;
                     font-size: 1.4rem;
                     font-weight: bold;
 
@@ -98,6 +95,7 @@
                 p {
                     text-align: center;
                     font-size: 13px;
+                    margin: 0;
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
                         font-size: 15px;
@@ -106,6 +104,12 @@
                     @media (min-width: 1400px) {
                         font-size: 17px;
                      }
+
+                    strong {
+                        &.color_true {
+                            color: #4e9599;
+                        }
+                    }
                 }
 
                 button {

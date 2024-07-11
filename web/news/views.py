@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
 from .models import NewsModel, Like
 from django.http import JsonResponse
-from django.contrib import messages
 
 
 class NewsView(ListView):
@@ -22,15 +21,16 @@ class NewsView(ListView):
             news = get_object_or_404(NewsModel, id=news_id)
             ip = self.get_client_ip(request)
 
-            if not Like.objects.filter(news=news, ip_address=ip).exists():
+            like, created = Like.objects.get_or_create(news=news, ip_address=ip)
+            if created:
                 news.likes += 1
                 news.save()
-                Like.objects.create(news=news, ip_address=ip)
                 return JsonResponse({'success': True, 'likes': news.likes})
-
-            messages.success(request, 'Вы уже лайкнули эту новость')
-
-            return JsonResponse({'success': False, 'message': 'Вы уже лайкнули эту новость'})
+            else:
+                like.delete()
+                news.likes -= 1
+                news.save()
+                return JsonResponse({'success': True, 'likes': news.likes})
 
         return JsonResponse({'success': False, 'message': 'Invalid request'})
 

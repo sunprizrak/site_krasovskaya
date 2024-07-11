@@ -22,6 +22,7 @@ CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'http://localhost'
 INSTALLED_APPS = [
     'main.apps.MainConfig',
     'news.apps.NewsConfig',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

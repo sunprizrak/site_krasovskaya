@@ -13,10 +13,8 @@ $(document).ready(function() {
             success: function(data) {
                 if (data.success) {
                     likeCount.text(data.likes);
-                } else {
-                    alert(data.message);
                 }
-            }
+            }.bind(this)
         });
     });
 });
