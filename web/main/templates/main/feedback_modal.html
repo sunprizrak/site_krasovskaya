@@ -10,18 +10,18 @@
                 </div>
                 <div class="modal-body">
                     <div class="row mb-3">
-                        <label for="scheduleInputName" class="col-sm-4 col-form-label">Ваше имя</label>
+                        <label for="InputName" class="col-sm-4 col-form-label">Ваше имя</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="scheduleInputName">
+                            {{ form.name }}
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="scheduleInputContact" class="col-sm-4 col-form-label">
+                        <label for="InputContact" class="col-sm-4 col-form-label">
                             Как с вами связаться<br>
                             <small class="text-muted">(телефон, электронная почта)</small>
                         </label>
                         <div class="col-sm-8">
-                            <input type="email" class="form-control" id="scheduleInputContact">
+                            {{ form.contact }}
                         </div>
                     </div>
                     <div class="row">
@@ -34,14 +34,14 @@
                     <div class="row mt-3">
                         <div class="col">
                             <div class="form-floating">
-                                <textarea class="form-control"></textarea>
+                                {{ form.text }}
                             </div>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col d-flex justify-content-center">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="data_check">
+                                {{ form.agree_to_privacy_policy }}
                                 <label class="form-check-label" for="data_check">
                                     Согласен/ на обработку персональных данных
                                 </label>

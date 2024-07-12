@@ -100,6 +100,7 @@ main {
                     border: 0;
                     color: #ece4d8;
                     border-radius: 43px;
+                    cursor: pointer;
                 }
             }
         }
@@ -117,7 +118,7 @@ main {
                 .modal-body {
                     padding: 0 40px 0 40px;
 
-                    label[for="scheduleInputName"], label[for="scheduleInputContact"] {
+                    label[for="InputName"], label[for="InputContact"] {
                         color: #4e9599;
 
                         &::first-letter {
@@ -125,13 +126,13 @@ main {
                         }
                     }
 
-                    label[for="scheduleInputName"] {
+                    label[for="InputName"] {
                         padding: 0 0 0 10px;
                         font-size: 1.8rem;
 
                     }
 
-                    label[for="scheduleInputContact"] {
+                    label[for="InputContact"] {
                         font-size: 1.1rem;
                         line-height: 1;
                         text-align: center;
@@ -142,7 +143,7 @@ main {
 
                     }
 
-                    input[id="scheduleInputName"], input[id="scheduleInputContact"] {
+                    input[id="InputName"], input[id="InputContact"] {
                         border-radius: 43px;
                         height: 50px;
 

@@ -1,13 +1,18 @@
 from django.shortcuts import get_object_or_404
+from django.urls import reverse_lazy
 from django.views.generic import ListView
+from django.views.generic.edit import FormMixin
+from main.forms import QuestionForm
 from .models import NewsModel, Like
 from django.http import JsonResponse
 
 
-class NewsView(ListView):
+class NewsView(FormMixin, ListView):
     model = NewsModel
+    form_class = QuestionForm
     context_object_name = 'news'
     template_name = 'news/news.html'
+    success_url = reverse_lazy('news')
     extra_context = {
         'title': 'Новости',
     }
@@ -31,6 +36,14 @@ class NewsView(ListView):
                 news.likes -= 1
                 news.save()
                 return JsonResponse({'success': True, 'likes': news.likes})
+        else:
+            form = self.get_form()
+
+            if form:
+                if form.is_valid():
+                    return self.form_valid(form)
+                else:
+                    return self.form_invalid(form)
 
         return JsonResponse({'success': False, 'message': 'Invalid request'})
 
@@ -41,3 +54,7 @@ class NewsView(ListView):
         else:
             ip = request.META.get('REMOTE_ADDR')
         return ip
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)

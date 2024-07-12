@@ -52,3 +52,47 @@ class Enrollment(models.Model):
 
     def __str__(self):
         return f"{self.person} записан в {self.group_lesson}"
+
+
+class Question(models.Model):
+    name = models.CharField(verbose_name='имя',max_length=100)
+    contact = models.CharField(verbose_name='контактные данные', max_length=100)
+    text = models.TextField(verbose_name='текст')
+    agree_to_privacy_policy = models.BooleanField(
+        default=False,
+        verbose_name='согласен на обработку персональных данных'
+    )
+    is_read = models.BooleanField(default=False, verbose_name='прочитано')
+    created = models.DateTimeField(verbose_name='получен', auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['-created']
+        verbose_name = 'Вопрос'
+        verbose_name_plural = 'Вопросы'
+
+
+class WantWriteGroup(models.Model):
+    name = models.CharField(verbose_name='имя', max_length=100)
+    contact = models.CharField(verbose_name='контактные данные', max_length=100)
+    group = models.ForeignKey(
+        GroupLesson,
+        verbose_name='группа',
+        on_delete=models.CASCADE,
+        limit_choices_to={'capacity__gt': models.F('enrollments__count')},
+    )
+    agree_to_privacy_policy = models.BooleanField(
+        default=False,
+        verbose_name='согласен на обработку персональных данных'
+    )
+    created = models.DateTimeField(verbose_name='получен', auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name}"
+
+    class Meta:
+        ordering = ['-created']
+        verbose_name = 'Желающий записаться на группу'
+        verbose_name_plural = "Желающие записаться на группу"

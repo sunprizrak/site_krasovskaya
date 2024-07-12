@@ -66,86 +66,6 @@
                     </div>
                 </div>
             {% endfor %}
-<!--            <div class="col">-->
-<!--                <div class="row schedule-header">-->
-<!--                    <div class="col d-flex justify-content-end align-items-center">-->
-<!--                        <span class="left-color">ПН</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="row schedule-box">-->
-<!--                    <p>-->
-<!--                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>-->
-<!--                        Терапевтическа Онлайн группа 4-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>-->
-<!--                        Время для проведения личных консультаций-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col d-flex flex-column align-items-end">-->
-<!--                <div class="row schedule-header">-->
-<!--                    <div class="col d-flex justify-content-end align-items-center">-->
-<!--                        <span class="right-color">ЧТ</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="schedule-box">-->
-<!--                    <p>-->
-<!--                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>-->
-<!--                        Терапевтическа Онлайн группа 4-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>-->
-<!--                        Время для проведения личных консультаций-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col mt-3">-->
-<!--                <div class="schedule-header justify-content-end">-->
-<!--                    <span class="left-color">ВТ</span>-->
-<!--                </div>-->
-<!--                <div class="schedule-box">-->
-<!--                    <p>-->
-<!--                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>-->
-<!--                        Терапевтическа Онлайн группа 4-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>-->
-<!--                        Время для проведения личных консультаций-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col mt-3 d-flex flex-column align-items-end">-->
-<!--                <div class="schedule-header">-->
-<!--                    <span class="right-color">ПТ</span>-->
-<!--                </div>-->
-<!--                <div class="schedule-box">-->
-<!--                    <p>-->
-<!--                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>-->
-<!--                        Терапевтическа Онлайн группа 4-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>-->
-<!--                        Время для проведения личных консультаций-->
-<!--                        <strong class="d-flex justify-content-center">(есть 1 место)</strong>-->
-<!--                    </p>-->
-<!--                    <div class="schedule-star"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col mt-3" id="col-left-bottom">-->
-<!--                <div class="schedule-header justify-content-end">-->
-<!--                    <span class="left-color">СР</span>-->
-<!--                </div>-->
-<!--                <div class="schedule-box">-->
-<!--                    <p>-->
-<!--                        <strong class="d-flex justify-content-center">9:30 - 11:00</strong>-->
-<!--                        Терапевтическа Онлайн группа 4-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                        <strong class="d-flex justify-content-center">12:00 - 15:00</strong>-->
-<!--                        Время для проведения личных консультаций-->
-<!--                        <strong class="d-flex justify-content-center">(мест нет)</strong>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
             <div class="col mt-3 d-flex flex-column align-items-end" id="col-right-bottom">
                 <div class="schedule-header justify-content-end header-right-bottom"></div>
                 <div class="schedule-box d-flex flex-column justify-content-center box-right-bottom">
@@ -173,18 +93,18 @@
                 </div>
                 <div class="modal-body">
                     <div class="row mb-3">
-                        <label for="scheduleInputName" class="col-sm-4 col-form-label">Ваше имя</label>
+                        <label for="InputName" class="col-sm-4 col-form-label">Ваше имя</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="scheduleInputName">
+                            {{ form.name }}
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="scheduleInputContact" class="col-sm-4 col-form-label">
+                        <label for="InputContact" class="col-sm-4 col-form-label">
                             Как с вами связаться<br>
                             <small class="text-muted">(телефон, электронная почта)</small>
                         </label>
                         <div class="col-sm-8">
-                            <input type="email" class="form-control" id="scheduleInputContact">
+                            {{ form.contact }}
                         </div>
                     </div>
                     <div class="row">
@@ -196,18 +116,19 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col" id="select-col">
-                            <select class="form-select form-select-lg" aria-label="schedule-select">
-                                <option selected>Выберите группу</option>
-                                <option value="1">Исцеление от зависимости (пт, 12:00)</option>
-                                <option value="2">Исцеление от зависимости (пт, 12:00)</option>
-                                <option value="3">Исцеление от зависимости (пт, 12:00)</option>
-                            </select>
+<!--                            <select class="form-select form-select-lg" aria-label="schedule-select">-->
+<!--                                <option selected>Выберите группу</option>-->
+<!--                                <option value="1">Исцеление от зависимости (пт, 12:00)</option>-->
+<!--                                <option value="2">Исцеление от зависимости (пт, 12:00)</option>-->
+<!--                                <option value="3">Исцеление от зависимости (пт, 12:00)</option>-->
+<!--                            </select>-->
+                            {{ form.group }}
                         </div>
                     </div>
                     <div class="row mt-5">
                         <div class="col d-flex justify-content-center">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="data_check">
+                                {{ form.agree_to_privacy_policy }}
                                 <label class="form-check-label" for="data_check">
                                     Согласен/ на обработку персональных данных
                                 </label>
