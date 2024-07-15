@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import GroupLesson, Person, Enrollment, Question
+from .models import GroupLesson, Person, Enrollment, Question, WantWriteGroup
 
 
 class EnrollmentInline(admin.TabularInline):
@@ -28,7 +28,23 @@ class PersonAdmin(admin.ModelAdmin):
 class QuestionAdmin(admin.ModelAdmin):
     list_display = ('name', 'contact', 'agree_to_privacy_policy', 'created', 'is_read')
     list_filter = ('is_read', 'created')
-    search_fields = ('name', 'contact', 'text')
+    search_fields = ('name', 'contact')
+    actions = ['mark_as_read', 'mark_as_unread']
+
+    def mark_as_read(self, request, queryset):
+        queryset.update(is_read=True)
+    mark_as_read.short_description = "Отметить как прочитанные"
+
+    def mark_as_unread(self, request, queryset):
+        queryset.update(is_read=False)
+    mark_as_unread.short_description = "Отметить как непрочитанные"
+
+
+@admin.register(WantWriteGroup)
+class WantWriteGroupAdmin(admin.ModelAdmin):
+    list_display = ('name', 'contact', 'group', 'agree_to_privacy_policy', 'created', 'is_read')
+    list_filter = ('is_read', 'created')
+    search_fields = ('name', 'contact',)
     actions = ['mark_as_read', 'mark_as_unread']
 
     def mark_as_read(self, request, queryset):

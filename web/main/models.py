@@ -81,12 +81,12 @@ class WantWriteGroup(models.Model):
         GroupLesson,
         verbose_name='группа',
         on_delete=models.CASCADE,
-        limit_choices_to={'capacity__gt': models.F('enrollments__count')},
     )
     agree_to_privacy_policy = models.BooleanField(
         default=False,
         verbose_name='согласен на обработку персональных данных'
     )
+    is_read = models.BooleanField(default=False, verbose_name='прочитано')
     created = models.DateTimeField(verbose_name='получен', auto_now_add=True)
 
     def __str__(self):
@@ -94,5 +94,5 @@ class WantWriteGroup(models.Model):
 
     class Meta:
         ordering = ['-created']
-        verbose_name = 'Желающий записаться на группу'
-        verbose_name_plural = "Желающие записаться на группу"
+        verbose_name = 'Желающий записаться в группу'
+        verbose_name_plural = "Желающие записаться в группу"

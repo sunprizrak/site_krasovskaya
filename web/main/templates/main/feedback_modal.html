@@ -2,7 +2,7 @@
 
 <div class="modal fade" id="feedback_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form method="post">
+        <form class="needs-validation" method="post" novalidate>
             {% csrf_token %}
             <div class="modal-content">
                 <div class="modal-header justify-content-end">
@@ -48,10 +48,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button type="submit" class="btn" data-bs-dismiss="modal">Отправить</button>
+                    <button type="submit" class="btn">Отправить</button>
                 </div>
             </div>
         </form>

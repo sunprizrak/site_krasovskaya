@@ -251,7 +251,7 @@
                 .modal-body {
                     padding: 0 40px 0 40px;
 
-                    label[for="scheduleInputName"], label[for="scheduleInputContact"] {
+                    label[for="InputName"], label[for="InputContact"] {
                         color: #4e9599;
 
                         &::first-letter {
@@ -259,13 +259,13 @@
                         }
                     }
 
-                    label[for="scheduleInputName"] {
+                    label[for="InputName"] {
                         padding: 0 0 0 10px;
                         font-size: 1.8rem;
 
                     }
 
-                    label[for="scheduleInputContact"] {
+                    label[for="InputContact"] {
                         font-size: 1.1rem;
                         line-height: 1;
                         text-align: center;
@@ -276,7 +276,7 @@
 
                     }
 
-                    input[id="scheduleInputName"], input[id="scheduleInputContact"] {
+                    input[id="InputName"], input[id="InputContact"] {
                         border-radius: 43px;
                         height: 50px;
 
@@ -304,14 +304,28 @@
                         }
                     }
 
+                    #select-col {
+                        position: relative;
 
-                    .form-select {
-                        border-radius: 43px;
+                        &:after {
+                            content: '▼';
+                            position: absolute;
+                            color: #4e9599;
+                            top: 50%;
+                            right: 30px;
+                            transform: translateY(-50%);
+                            pointer-events: none;
+                        }
 
-                        &:focus {
-                            outline: none;
-                            border-color: #4e9599;
-                            box-shadow: 0 0 0 0.2rem rgba(78, 149, 153, 0.5);
+                        .form-select {
+                            border-radius: 43px;
+                            background-image: none;
+
+                            &:focus {
+                                outline: none;
+                                border-color: #4e9599;
+                                box-shadow: 0 0 0 0.2rem rgba(78, 149, 153, 0.5);
+                            }
                         }
                     }
 

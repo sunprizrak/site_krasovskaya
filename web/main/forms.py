@@ -1,5 +1,6 @@
 from django import forms
-from .models import Question, WantWriteGroup
+from django.db.models import Count, F
+from .models import Question, WantWriteGroup, GroupLesson
 
 
 class QuestionForm(forms.ModelForm):
@@ -32,6 +33,12 @@ class QuestionForm(forms.ModelForm):
 
 
 class WantWriteGroupForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['group'].queryset = GroupLesson.objects.annotate(
+            num_enrollments=Count('enrollments')
+        ).filter(capacity__gt=F('num_enrollments'))
+        self.fields['group'].empty_label = 'Выберите группу'
 
     class Meta:
         model = WantWriteGroup
