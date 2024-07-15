@@ -26,3 +26,21 @@ class Like(models.Model):
 
     class Meta:
         unique_together = ('news', 'ip_address')
+
+
+class Subscribe(models.Model):
+    name = models.CharField(verbose_name='имя', max_length=100)
+    email = models.EmailField(verbose_name='email')
+    agree_to_privacy_policy = models.BooleanField(
+        default=False,
+        verbose_name='согласен на обработку персональных данных'
+    )
+    created = models.DateTimeField(verbose_name='подписан', auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        ordering = ['-created']
+        verbose_name = 'Подписка'
+        verbose_name_plural = 'Подписки'

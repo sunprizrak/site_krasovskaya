@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView
 from django.views.generic.edit import FormMixin
 from main.forms import QuestionForm
+from .forms import SubscribeForm
 from .models import NewsModel, Like
 from django.http import JsonResponse
 
@@ -10,6 +11,7 @@ from django.http import JsonResponse
 class NewsView(FormMixin, ListView):
     model = NewsModel
     form_class = QuestionForm
+    second_form_class = SubscribeForm
     context_object_name = 'news'
     template_name = 'news/news.html'
     success_url = reverse_lazy('news')
@@ -19,6 +21,12 @@ class NewsView(FormMixin, ListView):
 
     def get_queryset(self):
         return NewsModel.objects.all().order_by('-taken_at')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.get_form()
+        context['subscribe_form'] = self.second_form_class()
+        return context
 
     def post(self, request, *args, **kwargs):
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
@@ -37,13 +45,19 @@ class NewsView(FormMixin, ListView):
                 news.save()
                 return JsonResponse({'success': True, 'likes': news.likes})
         else:
-            form = self.get_form()
+            question_form = self.get_form()
+            subscribe_form = self.second_form_class(request.POST)
 
-            if form:
-                if form.is_valid():
-                    return self.form_valid(form)
+            if 'question' in request.POST:
+                if question_form.is_valid():
+                    return self.form_valid(question_form)
                 else:
-                    return self.form_invalid(form)
+                    return self.form_invalid(question_form)
+            elif 'subscribe' in request.POST:
+                if subscribe_form.is_valid():
+                    return self.form_valid(subscribe_form)
+                else:
+                    return self.form_invalid(subscribe_form)
 
         return JsonResponse({'success': False, 'message': 'Invalid request'})
 
