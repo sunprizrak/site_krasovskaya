@@ -17,14 +17,15 @@ def send_new_news_notification(new_news_ids):
     new_news = NewsModel.objects.filter(pk__in=new_news_ids)
     subscribers = Subscribe.objects.all()
 
-    # Формируем содержание письма
     news_content = '\n\n'.join([f"{news.title}\n{news.text}" for news in new_news])
     subject = 'Последние новости'
     message = f"Привет!\n\nВот последние посты из нашего Instagram:\n\n{news_content}\n\nС уважением, Команда"
-    from_email = settings.DEFAULT_FROM_EMAIL
+    from_email = settings.EMAIL_HOST_USER
 
-    # Отправляем письмо каждому подписчику
     for subscriber in subscribers:
+
+        message = f'Привет, {subscriber.name}!\n\nВот последние новости:\n\n{news_content}\n\nС уважением, Екатерина Красовская'
+
         send_mail(subject, message, from_email, [subscriber.email])
 
 
