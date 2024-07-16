@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 
+from celery.schedules import crontab
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
+    'django_celery_beat',
     'django_cleanup.apps.CleanupConfig',
 ]
 
@@ -126,5 +129,18 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND')
+CELERY_ACCEPT_CONTENT = os.environ.get('CELERY_ACCEPT_CONTENT', 'json').split(',')
+CELERY_TASK_SERIALIZER = os.environ.get('CELERY_TASK_SERIALIZER', 'json')
+CELERY_RESULT_SERIALIZER = os.environ.get('CELERY_RESULT_SERIALIZER', 'json')
+
+CELERY_BEAT_SCHEDULE = {
+    'fetch-instagram-news-every-day': {
+        'task': 'news.tasks.fetch_instagram_news',
+        'schedule': crontab(hour=6, minute=0),  # Запускать задачу каждый день в 6:00 утра
+    },
+}
 
 SITE_NAME = os.environ.get('SITE_NAME')

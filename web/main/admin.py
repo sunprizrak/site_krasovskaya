@@ -26,7 +26,7 @@ class PersonAdmin(admin.ModelAdmin):
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('name', 'contact', 'agree_to_privacy_policy', 'created', 'is_read')
+    list_display = ('name', 'contact', 'created', 'is_read')
     list_filter = ('is_read', 'created')
     search_fields = ('name', 'contact')
     actions = ['mark_as_read', 'mark_as_unread']
@@ -42,7 +42,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
 @admin.register(WantWriteGroup)
 class WantWriteGroupAdmin(admin.ModelAdmin):
-    list_display = ('name', 'contact', 'group', 'agree_to_privacy_policy', 'created', 'is_read')
+    list_display = ('name', 'contact', 'group', 'created', 'is_read')
     list_filter = ('is_read', 'created')
     search_fields = ('name', 'contact',)
     actions = ['mark_as_read', 'mark_as_unread']

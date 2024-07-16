@@ -16,9 +16,48 @@ services:
         image: postgres:16.2-alpine3.18
         volumes:
             - postgres_data:/var/lib/postgresql/data/
-        environment:
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=postgres
-            - POSTGRES_DB=web_dev
+        env_file:
+            -   ./.env.dev
+    redis:
+        image: redis:7.2.5-alpine
+        hostname: redis
+    celery:
+        build: .
+        hostname: celery
+        env_file: ./.env.dev
+        command: celery -A web worker --loglevel=error
+        volumes:
+            - .:/usr/src/web
+        links:
+            - redis
+        depends_on:
+            - redis
+            - db
+    celery-beat:
+        build: .
+        command: celery -A web beat -l info
+        volumes:
+            - .:/usr/src/web
+        env_file:
+            - ./.env.dev
+        depends_on:
+            - redis
+            - db
+    flower:
+        build: .
+        hostname: flower
+        env_file:
+            - ./.env.dev
+        command: celery -A web flower
+        volumes:
+            - .:/usr/src/web
+        links:
+            - redis
+        depends_on:
+            - redis
+            - celery
+            - db
+        ports:
+            -   '5555:5555'
 volumes:
     postgres_data:

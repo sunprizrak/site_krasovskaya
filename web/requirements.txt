@@ -7,3 +7,7 @@ pillow==10.3.0
 instagrapi==2.1.2
 requests
 markdown
+celery
+django-celery-beat
+redis
+flower

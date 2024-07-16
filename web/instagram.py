@@ -8,7 +8,6 @@ import logging
 from instagrapi import Client
 from django.core.files.base import ContentFile
 from news.models import NewsModel
-from instagrapi.exceptions import LoginRequired
 
 logger = logging.getLogger()
 
