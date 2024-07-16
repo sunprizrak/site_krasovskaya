@@ -23,9 +23,7 @@ def send_new_news_notification(new_news_ids):
     from_email = settings.EMAIL_HOST_USER
 
     for subscriber in subscribers:
-
         message = f'Привет, {subscriber.name}!\n\nВот последние новости:\n\n{news_content}\n\nС уважением, Екатерина Красовская'
-
         send_mail(subject, message, from_email, [subscriber.email])
 
 
