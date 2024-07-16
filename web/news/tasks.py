@@ -3,11 +3,29 @@ from celery.utils.log import get_task_logger
 import os
 import markdown
 import requests
+from django.conf import settings
 from instagrapi import Client
 from django.core.files.base import ContentFile
-from .models import NewsModel
+from .models import NewsModel, Subscribe
+from django.core.mail import send_mail
 
 logger = get_task_logger(__name__)
+
+
+@shared_task
+def send_new_news_notification(new_news_ids):
+    new_news = NewsModel.objects.filter(pk__in=new_news_ids)
+    subscribers = Subscribe.objects.all()
+
+    # Формируем содержание письма
+    news_content = '\n\n'.join([f"{news.title}\n{news.text}" for news in new_news])
+    subject = 'Последние новости'
+    message = f"Привет!\n\nВот последние посты из нашего Instagram:\n\n{news_content}\n\nС уважением, Команда"
+    from_email = settings.DEFAULT_FROM_EMAIL
+
+    # Отправляем письмо каждому подписчику
+    for subscriber in subscribers:
+        send_mail(subject, message, from_email, [subscriber.email])
 
 
 @shared_task
@@ -22,6 +40,8 @@ def fetch_instagram_news():
 
     user_id = cl.user_id_from_username(ACCOUNT_USERNAME)
     medias = cl.user_medias(user_id, 3)
+
+    new_news = []
 
     if medias:
         for index, media in enumerate(medias):
@@ -46,11 +66,12 @@ def fetch_instagram_news():
                     }
                 )
 
-                if not created:
+                if created:
                     news_item.image.save(image_name, image_content)
-                    news_item.save()
+                    new_news.append(news_item)
                 else:
                     news_item.image.save(image_name, image_content)
+                    news_item.save()
 
         news_count = NewsModel.objects.count()
 
@@ -66,4 +87,9 @@ def fetch_instagram_news():
         logger.info('Instagram news fetched and processed successfully.')
     else:
         logger.warning('No Instagram news found.')
+
+    if new_news:
+        new_news_ids = [news.pk for news in new_news]
+        send_new_news_notification.delay(new_news_ids)
+
 

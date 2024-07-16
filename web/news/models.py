@@ -16,8 +16,8 @@ class NewsModel(models.Model):
 
     class Meta:
         ordering = ['taken_at']
-        verbose_name = 'News Item'
-        verbose_name_plural = 'News'
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
 
 
 class Like(models.Model):
