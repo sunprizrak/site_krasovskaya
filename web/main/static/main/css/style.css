@@ -113,6 +113,7 @@ main {
         max-width: 700px;
 
         form {
+
             .modal-content {
 
                 .modal-body {
@@ -179,6 +180,12 @@ main {
                             overflow: hidden;
                             resize: none;
                             padding: 20px 30px 20px 30px;
+
+
+                            &.form-control:invalid, &.form-control.is-invalid {
+                                padding-right: calc(1.5em + .75rem);
+                                background-position: top calc(1em + .1875rem) right calc(1em + .1875rem);
+                            }
 
                             &:focus {
                                 outline: none;
