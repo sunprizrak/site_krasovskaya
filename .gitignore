@@ -1,5 +1,7 @@
 .venv
 .idea
-web/.env.dev
-web/media
-web/session.json
+/web/.env.dev
+/web/media
+/web/session.json
+/web/celerybeat-schedule
+/web/.env.prod
