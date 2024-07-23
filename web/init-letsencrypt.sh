@@ -2,7 +2,7 @@
 
 source .env
 
-domains=$CERTBOT_DOMAINS
+domains=($CERTBOT_DOMAINS)
 rsa_key_size=4096
 data_path=$CERTBOT_DATA_PATH
 email=$CERTBOT_EMAIL # Adding a valid address is strongly recommended
