@@ -31,14 +31,14 @@ RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/web/wheels -r requir
 FROM python:3.12.3-alpine3.18
 
 # create directory for the app
-RUN mkdir -p /home/web
+RUN mkdir -p /home/app
 
 # create the app user
 RUN addgroup -S web && adduser -S web -G web
 
 # create the appropriate directories
-ENV HOME=/home/web
-ENV APP_HOME=/home/web/web
+ENV HOME=/home/app
+ENV APP_HOME=/home/app/web
 RUN mkdir $APP_HOME
 RUN mkdir $APP_HOME/static
 WORKDIR $APP_HOME
@@ -63,4 +63,4 @@ RUN chown -R web:web $APP_HOME
 # change to the app user
 USER web
 
-ENTRYPOINT ["sh", "/home/web/web/entrypoint.prod.sh"]
+ENTRYPOINT ["sh", "/home/app/web/entrypoint.prod.sh"]
