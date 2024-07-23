@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source .env
+source .env.prod
 
 domains=($CERTBOT_DOMAINS)
 rsa_key_size=4096
