@@ -44,7 +44,7 @@ def fetch_instagram_news():
 
         proxy_url = f"http://{PROXY_USERNAME}:{PROXY_PASSWORD}@{PROXY_HOST}:{PROXY_PORT}"
 
-        cl = Client(poxy=proxy_url)
+        cl = Client(proxy=proxy_url)
 
     cl.delay_range = [1, 3]
     cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
