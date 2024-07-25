@@ -46,6 +46,7 @@ def fetch_instagram_news():
 
         cl = Client(poxy=proxy_url)
 
+    cl.delay_range = [1, 3]
     cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
 
     user_id = cl.user_id_from_username(ACCOUNT_USERNAME)
