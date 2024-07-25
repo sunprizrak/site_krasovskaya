@@ -34,7 +34,18 @@ def fetch_instagram_news():
     ACCOUNT_USERNAME = os.environ.get('ACCOUNT_USERNAME')
     ACCOUNT_PASSWORD = os.environ.get('ACCOUNT_PASSWORD')
 
-    cl = Client()
+    if settings.DEBUG:
+        cl = Client()
+    else:
+        PROXY_USERNAME = os.environ.get('PROXY_USERNAME')
+        PROXY_PASSWORD = os.environ.get('PROXY_PASSWORD')
+        PROXY_HOST = os.environ.get('PROXY_HOST')
+        PROXY_PORT = os.environ.get('PROXY_PORT')
+
+        proxy_url = f"http://{PROXY_USERNAME}:{PROXY_PASSWORD}@{PROXY_HOST}:{PROXY_PORT}"
+
+        cl = Client(poxy=proxy_url)
+
     cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
 
     user_id = cl.user_id_from_username(ACCOUNT_USERNAME)
