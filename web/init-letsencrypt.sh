@@ -2,9 +2,7 @@
 
 source .env.prod
 
-domains_str=$CERTBOT_DOMAINS
-IFS=' ' read -r -a domain_array <<< "$domains_str"
-domains=("${domain_array[@]}")
+domains="(${CERTBOT_DOMAINS% })"
 rsa_key_size=4096
 data_path=$CERTBOT_DATA_PATH
 email=$CERTBOT_EMAIL # Adding a valid address is strongly recommended
