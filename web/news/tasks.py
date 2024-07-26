@@ -35,7 +35,7 @@ def fetch_instagram_news():
     ACCOUNT_PASSWORD = os.environ.get('ACCOUNT_PASSWORD')
 
     if settings.DEBUG:
-        cl = Client()
+        cl = Client(delay_range=[1, 3])
     else:
         PROXY_USERNAME = os.environ.get('PROXY_USERNAME')
         PROXY_PASSWORD = os.environ.get('PROXY_PASSWORD')
@@ -44,9 +44,8 @@ def fetch_instagram_news():
 
         proxy_url = f"http://{PROXY_USERNAME}:{PROXY_PASSWORD}@{PROXY_HOST}:{PROXY_PORT}"
 
-        cl = Client(proxy=proxy_url)
+        cl = Client(proxy=proxy_url, delay_range=[1, 3])
 
-    cl.delay_range = [1, 3]
     cl.login(ACCOUNT_USERNAME, ACCOUNT_PASSWORD)
 
     user_id = cl.user_id_from_username(ACCOUNT_USERNAME)
@@ -102,5 +101,3 @@ def fetch_instagram_news():
     if new_news:
         new_news_ids = [news.pk for news in new_news]
         send_new_news_notification.delay(new_news_ids)
-
-
