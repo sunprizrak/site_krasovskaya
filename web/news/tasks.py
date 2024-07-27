@@ -41,8 +41,9 @@ def fetch_instagram_news():
         PROXY_PASSWORD = os.environ.get('PROXY_PASSWORD')
         PROXY_HOST = os.environ.get('PROXY_HOST')
         PROXY_PORT = os.environ.get('PROXY_PORT')
+        PROXY_PROTOCOL = os.environ.get('PROXY_PROTOCOL')
 
-        proxy_url = f"http://{PROXY_USERNAME}:{PROXY_PASSWORD}@{PROXY_HOST}:{PROXY_PORT}"
+        proxy_url = f"{PROXY_PROTOCOL}://{PROXY_USERNAME}:{PROXY_PASSWORD}@{PROXY_HOST}:{PROXY_PORT}"
 
         cl = Client(proxy=proxy_url, delay_range=[1, 3])
 
