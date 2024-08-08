@@ -6,12 +6,12 @@ def path_img(instance, filename):
 
 
 class NewsModel(models.Model):
-    title = models.CharField()
-    image = models.ImageField(upload_to=path_img)
-    text = models.TextField()
-    likes = models.IntegerField(default=0)
-    is_sent = models.BooleanField(default=False)
-    created = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(verbose_name='Заголовок')
+    image = models.ImageField(verbose_name='Картинка', upload_to=path_img)
+    text = models.TextField(verbose_name='Текст')
+    likes = models.IntegerField(verbose_name='Лайки', default=0)
+    is_sent = models.BooleanField(verbose_name='Отправлено', default=False)
+    created = models.DateTimeField(verbose_name='Cоздана', auto_now_add=True)
 
     class Meta:
         ordering = ['-created']
