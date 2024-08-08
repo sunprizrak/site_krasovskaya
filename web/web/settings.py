@@ -146,9 +146,9 @@ CELERY_TASK_SERIALIZER = os.environ.get('CELERY_TASK_SERIALIZER', 'json')
 CELERY_RESULT_SERIALIZER = os.environ.get('CELERY_RESULT_SERIALIZER', 'json')
 
 CELERY_BEAT_SCHEDULE = {
-    'fetch-instagram-news-every-day': {
-        'task': 'news.tasks.fetch_instagram_news',
-        'schedule': crontab(hour=6, minute=0),  # Запускать задачу каждый день в hour:minute
+    'check_new-news-every-day': {
+        'task': 'news.tasks.check_and_send_new_news',
+        'schedule': crontab(hour=9, minute=0),  # Запускать задачу каждый день в hour:minute
     },
 }
 

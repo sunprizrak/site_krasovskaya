@@ -4,7 +4,7 @@ from .models import Subscribe, NewsModel
 
 @admin.register(NewsModel)
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'likes', 'taken_at', 'created')
+    list_display = ('title', 'likes', 'is_sent', 'created')
 
 
 @admin.register(Subscribe)

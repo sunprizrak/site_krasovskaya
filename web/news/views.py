@@ -19,9 +19,6 @@ class NewsView(FormMixin, ListView):
         'title': 'Новости',
     }
 
-    def get_queryset(self):
-        return NewsModel.objects.all().order_by('-taken_at')
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = self.get_form()

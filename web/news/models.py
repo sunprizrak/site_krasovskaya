@@ -10,12 +10,11 @@ class NewsModel(models.Model):
     image = models.ImageField(upload_to=path_img)
     text = models.TextField()
     likes = models.IntegerField(default=0)
-    instagram_id = models.CharField(max_length=255, unique=True)
-    taken_at = models.DateTimeField()
+    is_sent = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['taken_at']
+        ordering = ['-created']
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
 

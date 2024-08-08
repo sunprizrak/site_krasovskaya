@@ -14,7 +14,7 @@ class HomeView(FormMixin, ListView):
     template_name = 'main/index.html'
     success_url = reverse_lazy('home')
     extra_context = {
-        'title': 'Красовская',
+        'title': 'Красницкая',
     }
 
     def get_context_data(self, **kwargs):

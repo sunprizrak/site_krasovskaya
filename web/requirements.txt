@@ -4,7 +4,6 @@ psycopg2-binary
 django-cleanup
 django-grappelli
 pillow==10.3.0
-instagrapi==2.1.2
 requests
 markdown
 celery
