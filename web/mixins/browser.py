@@ -25,5 +25,5 @@ class CheckBrowserVersionMixin:
                 context['show_update_message'] = False
         else:
             context['show_update_message'] = False
-        context['show_update_message'] = True ######  удалить
+
         return context
