@@ -1,0 +1,63 @@
+.show-update-message {
+    height: 100% !important;
+    overflow: hidden;
+    background-color: #4e9599 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PlayfairDisplay';
+}
+
+.apple-window {
+    width: 800px;
+    height: 450px;
+    position: relative;
+    background: #ece4d8;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 30px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.apple-window nav {
+    height: 20px;
+    background: #3b3a38;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.apple-window nav .apple-but {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    margin-left: 5px;
+    box-shadow: 0px 0px 3px black;
+}
+
+.apple-window nav .apple-but:nth-child(1) {
+    background-color: #e63402;
+}
+
+.apple-window nav .apple-but:nth-child(2) {
+    background-color: #e69e02;
+}
+
+.apple-window nav .apple-but:nth-child(3) {
+    background-color: #02e656;
+}
+
+.apple-window .apple-text {
+    display: flex-box;
+    position: relative;
+    top: 35%;
+    left: 15%;
+    color: #4e9599;
+    user-select: none;
+}
+
+.apple-window .apple-text h5::first-letter {
+    font-family: 'Monplesir script';
+}

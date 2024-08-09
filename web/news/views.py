@@ -6,9 +6,10 @@ from main.forms import QuestionForm
 from .forms import SubscribeForm
 from .models import NewsModel, Like
 from django.http import JsonResponse
+from mixins.browser import CheckBrowserVersionMixin
 
 
-class NewsView(FormMixin, ListView):
+class NewsView(CheckBrowserVersionMixin, FormMixin, ListView):
     model = NewsModel
     form_class = QuestionForm
     second_form_class = SubscribeForm

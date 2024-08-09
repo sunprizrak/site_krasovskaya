@@ -1,13 +1,13 @@
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView
 from django.views.generic.edit import FormMixin
-
+from mixins.browser import CheckBrowserVersionMixin
 from news.models import NewsModel
 from .models import GroupLesson
 from .forms import QuestionForm, WantWriteGroupForm
 
 
-class HomeView(FormMixin, ListView):
+class HomeView(CheckBrowserVersionMixin, FormMixin, ListView):
     model = NewsModel
     form_class = QuestionForm
     context_object_name = 'news'
@@ -48,14 +48,14 @@ class HomeView(FormMixin, ListView):
         return super().form_valid(form)
 
 
-class AboutView(TemplateView):
+class AboutView(CheckBrowserVersionMixin, TemplateView):
     template_name = 'main/about.html'
     extra_context = {
         'title': 'Обо Мне',
     }
 
 
-class ScheduleView(FormMixin, ListView):
+class ScheduleView(CheckBrowserVersionMixin, FormMixin, ListView):
     model = GroupLesson
     form_class = WantWriteGroupForm
     context_object_name = 'group_lesson'
@@ -78,7 +78,7 @@ class ScheduleView(FormMixin, ListView):
         return super().form_valid(form)
 
 
-class ContactsView(FormMixin, TemplateView):
+class ContactsView(CheckBrowserVersionMixin, FormMixin, TemplateView):
     template_name = 'main/contacts.html'
     form_class = QuestionForm
     success_url = reverse_lazy('contacts')

@@ -3,7 +3,9 @@
 @import url('/static/main/css/about.css');
 @import url('/static/main/css/schedule.css');
 @import url('/static/main/css/contacts.css');
+@import url('/static/main/css/browser_update.css');
 @import url('/static/news/css/news.css');
+
 
 @font-face {
     font-family: 'PlayfairDisplay';
@@ -37,6 +39,7 @@ main {
 .h-100-p {
     height: 100%;
 }
+
 
 .modal {
     .modal-dialog {
@@ -236,4 +239,3 @@ main {
         }
     }
 }
-
