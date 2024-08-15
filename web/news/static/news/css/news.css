@@ -198,6 +198,8 @@
 
 #feedback_subscribe {
     .modal-dialog {
+        max-width: 700px;
+
         .modal-content {
             .modal-body {
                 padding: 0 40px 0 40px;

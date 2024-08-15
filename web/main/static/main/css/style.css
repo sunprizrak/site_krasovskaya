@@ -43,7 +43,6 @@ main {
 
 .modal {
     .modal-dialog {
-        max-width: 700px;
 
         .modal-content {
             background-color: #ece4d8 !important;
