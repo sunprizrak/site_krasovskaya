@@ -17,6 +17,7 @@
 
             .nav-link {
                 font-size: 0.85rem !important;
+                color: #4e9599;
 
                 @media (min-width: 1200px) and (max-width: 1399px) {
                     font-size: 1.05rem !important;
