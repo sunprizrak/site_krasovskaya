@@ -32,6 +32,12 @@
         <script src="{% static 'main/js/validate_forms.js' %}"></script>
         {% block js %}
         {% endblock %}
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
     {% endif %}
 </body>
 </html>

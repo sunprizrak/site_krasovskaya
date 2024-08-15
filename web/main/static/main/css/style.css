@@ -48,7 +48,7 @@ main {
         .modal-content {
             background-color: #ece4d8 !important;
             font-family: 'PlayfairDisplay';
-            border: 4px solid #4e9599;
+            border: 3px solid #4e9599;
             border-radius: 43px;
 
             .modal-header {
@@ -94,6 +94,7 @@ main {
 
                 img {
                     width: 100%;
+                    max-height: 626px;
                 }
             }
 
@@ -236,6 +237,23 @@ main {
                     }
                 }
             }
+        }
+    }
+}
+
+
+
+.tooltip {
+
+    .tooltip-inner {
+        background-color: #e0dbd7;
+        color: black;
+    }
+
+    .tooltip-arrow {
+
+        &:before {
+            border-bottom-color: #e0dbd7 !important;
         }
     }
 }

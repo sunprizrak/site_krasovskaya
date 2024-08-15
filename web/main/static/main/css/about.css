@@ -94,7 +94,7 @@
                     }
 
                     @media (min-width: 1400px) {
-                        min-width: 470px;
+                        min-width: 455px;
                         max-width: 481px;
                     }
 
@@ -102,7 +102,7 @@
                         position: relative;
                         align-self: center;
                         height: 40vh;
-                        min-height: 280px;
+                        min-height: 277px;
                         max-height: 285px;
                         z-index: 1000;
 
@@ -131,9 +131,8 @@
         }
 
         #about-middle-row {
-            height: 32%;
+            height: 35%;
             min-height: 208px;
-            max-height: 260px;
 
             @media (min-width: 1200px) and (max-width: 1399px) {
                 min-height: 224px;
@@ -145,7 +144,6 @@
             }
 
             #about-middle-title {
-                margin-top: 4vh;
 
                 h2 {
                     text-align: center;
@@ -237,7 +235,7 @@
         }
 
         #about-bottom-row {
-            height: 33%;
+            height: 30%;
             min-height: 216px;
 
             @media (min-width: 1200px) and (max-width: 1399px) {
@@ -291,30 +289,12 @@
     &:before {
         position: absolute;
         content: '';
-        height: 22vh;
-        min-height: 156px;
-        max-height: 160px;
+        height: 62%;
         left: -50vw;
         right: -50vw;
         background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
         z-index: 150;
     }
-
-    @media (min-width: 1200px) and (max-width: 1399px) {
-
-        &:before {
-            min-height: 168px;
-            max-height: 175px;
-        }
-    }
-
-    /*@media (min-width: 1400px) {
-
-        &:before {
-            height: 211px;
-        }
-
-    }*/
 }
 
 .about-middle-zindex {
