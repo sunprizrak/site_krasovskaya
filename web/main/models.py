@@ -36,6 +36,10 @@ class Person(models.Model):
     phone = models.CharField(verbose_name='телефон', max_length=20, blank=True, null=True)
     created = models.DateTimeField(verbose_name='создана', auto_now_add=True)
 
+    @property
+    def enrolled_groups(self):
+        return ", ".join([str(enrollment.group_lesson) for enrollment in self.enrollment_set.all()])
+
     def __str__(self):
         return f"{self.last_name} {self.first_name} {self.sur_name}"
 

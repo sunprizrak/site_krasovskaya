@@ -20,8 +20,13 @@ class GroupLessonAdmin(admin.ModelAdmin):
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ('last_name', 'first_name', 'sur_name', 'email', 'phone')
+    list_display = ('last_name', 'first_name', 'sur_name', 'enrolled_groups', 'email', 'phone')
     search_fields = ('first_name', 'last_name', 'sur_name', 'email', 'phone')
+
+    def enrolled_groups(self, obj):
+        return obj.enrolled_groups
+
+    enrolled_groups.short_description = 'Записан в группы'
 
 
 @admin.register(Question)

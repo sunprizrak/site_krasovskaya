@@ -20,10 +20,22 @@
 html, body {
     height: 100%;
     position: relative;
-    overflow: hidden;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     background-color: #ece4d8 !important;
+
+    @media (min-width: 992px) and (max-width: 1199px) and (min-height: 618px) {
+        overflow-y: hidden;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1399px) and (min-height: 695px) {
+        overflow-y: hidden;
+    }
+
+    @media (min-width: 1400px) and (min-height: 767px) {
+        overflow-y: hidden;
+    }
 }
 
 header {

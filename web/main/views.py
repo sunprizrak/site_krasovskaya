@@ -21,11 +21,13 @@ class HomeView(CheckBrowserVersionMixin, FormMixin, ListView):
         context = super().get_context_data(**kwargs)
 
         if NewsModel.objects.count() > 0:
-            latest_news = NewsModel.objects.last()
-            text = latest_news.text
-            abbreviated_text = self.truncate_text(text, 150)
+            context['news_text'] = []
+            news = NewsModel.objects.all()
 
-            context['latest_news_text'] = abbreviated_text
+            for obj in news:
+                text = obj.text
+                abbreviated_text = self.truncate_text(text, 150)
+                context['news_text'].append(abbreviated_text)
         return context
 
     def truncate_text(self, text, max_length):

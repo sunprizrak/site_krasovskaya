@@ -8,6 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" value="notranslate">
     <title>{% block title %}{% endblock %}</title>
+    <!-- Google tag (gtag.js) -->
+    {% block google_tags %}
+    {% endblock %}
+    <!-- style project -->
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}?v=1.0"/>
     <link rel="shortcut icon" href="{% static 'main/img/favicon.ico' %}"/>
     <!-- JQuery -->
@@ -30,14 +34,9 @@
         {% block modal %}
         {% endblock %}
         <script src="{% static 'main/js/validate_forms.js' %}"></script>
+        <script src="{% static 'main/js/bootstrap_tooltip.js' %}"></script>
         {% block js %}
         {% endblock %}
-        <script>
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-              return new bootstrap.Tooltip(tooltipTriggerEl)
-            })
-        </script>
     {% endif %}
 </body>
 </html>
