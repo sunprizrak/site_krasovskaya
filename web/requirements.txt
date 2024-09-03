@@ -3,6 +3,7 @@ gunicorn
 psycopg2-binary
 django-cleanup
 django-grappelli
+django-ckeditor
 pillow==10.3.0
 requests
 markdown

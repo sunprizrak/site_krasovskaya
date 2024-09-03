@@ -23,38 +23,38 @@
 {% block main %}
 <main id="news-main">
     <div class="container" id="news-container">
-        <div class="row-1" id="news-top">
-            <div class="col pt-4 d-flex justify-content-center">
-                <h2>Новости</h2>
-            </div>
-            <div class="col pb-2 d-flex justify-content-center">
-                <p>
-                    Я веду блоги в инстаграм и телеграм, размешаю там посты о психологии и еще <br>
-                    что-нибудь тут написать о новостях и переходите на мой инстаграм и вообще
-                </p>
+        <div class="row" id="news-top">
+            <div class="col d-flex justify-content-center align-items-center">
+                <h2>Мои новости</h2>
             </div>
         </div>
         <div class="row-1" id="news-middle">
             <div class="col full-width-hr"></div>
             <div class="col d-flex flex-column flex-fill news-wrap">
                 {% for news_item in news %}
-                    <div class="row pb-5 news">
-                        <div class="col d-flex justify-content-center">
-                            <strong>{{ news_item.title }}</strong>
-                        </div>
-                        <div class="col mt-3">
-                            <img src="{{ news_item.image.url }}" alt="news-image">
-                            <div class="news-text">
-                                {{ news_item.text|safe }}
+                    {% if not news_item.hide %}
+                        <div class="row pb-5 news">
+                            {% if new_item.title %}
+                                <div class="col d-flex justify-content-center">
+                                    <strong>{{ news_item.title }}</strong>
+                                </div>
+                            {% endif %}
+                            <div class="col mt-3">
+                                {% if news_item.image %}
+                                    <img src="{{ news_item.image.url }}" alt="news-image">
+                                {% endif %}
+                                <div class="news-text">
+                                    {{ news_item.text|safe }}
+                                </div>
+                            </div>
+                            <div class="col-11  d-flex align-self-center justify-content-end position-relative">
+                                <div class="heart" data-news-id="{{ news_item.id }}">
+                                    <span>{{ news_item.likes }}</span>
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-11  d-flex align-self-center justify-content-end position-relative">
-                            <div class="heart" data-news-id="{{ news_item.id }}">
-                                <span>{{ news_item.likes }}</span>
-                                <i class="bi bi-heart-fill"></i>
-                            </div>
-                        </div>
-                    </div>
+                    {% endif %}
                 {% endfor %}
             </div>
             <div class="col full-width-hr"></div>

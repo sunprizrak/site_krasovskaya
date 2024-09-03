@@ -37,8 +37,8 @@
 
         #news-top {
             position: relative;
-            height: 21%;
-            min-height: 129px;
+            height: 11%;
+            min-height: 64px;
 
             &:before {
                 position: absolute;
@@ -74,7 +74,7 @@
         }
 
         #news-middle {
-            height: 69%;
+            height: 79%;
 
             .full-width-hr {
                 position: relative;

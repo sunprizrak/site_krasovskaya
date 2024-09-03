@@ -1,15 +1,17 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 def path_img(instance, filename):
     return 'news/{filename}'.format(filename=filename)
 
 
 class NewsModel(models.Model):
-    title = models.CharField(verbose_name='Заголовок')
-    image = models.ImageField(verbose_name='Картинка', upload_to=path_img)
-    text = models.TextField(verbose_name='Текст')
+    title = models.CharField(verbose_name='Заголовок', blank=True)
+    image = models.ImageField(verbose_name='Картинка', upload_to=path_img, blank=True)
+    text = RichTextField(verbose_name='Текст')
+    description = RichTextField(verbose_name='Описание', default='')
     likes = models.IntegerField(verbose_name='Лайки', default=0)
+    hide = models.BooleanField(verbose_name='Скрыть', default=False)
     is_sent = models.BooleanField(verbose_name='Отправлено', default=False)
     created = models.DateTimeField(verbose_name='Cоздана', auto_now_add=True)
 
