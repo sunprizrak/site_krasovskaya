@@ -110,10 +110,11 @@
                         }
                     }
 
-                    img[alt='news-image'] {
+                    img[alt='news-image'], video {
                         float: left;
                         margin-right: 20px;
                         width: 190px;
+                        pointer-events: none;
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
                             width: 256px;
@@ -122,6 +123,10 @@
                         @media (min-width: 1400px) {
                             width: 256px;
                         }
+                    }
+
+                    video::-webkit-media-controls {
+                        display: none !important;
                     }
 
                     .news-text {

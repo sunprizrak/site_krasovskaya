@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(blank=True, verbose_name='Заголовок')),
-                ('image', models.ImageField(blank=True, upload_to=news.models.path_img, verbose_name='Картинка')),
+                ('image', models.ImageField(blank=True, upload_to=news.models.path_media_file, verbose_name='Картинка')),
                 ('text', ckeditor.fields.RichTextField(verbose_name='Текст')),
                 ('description', ckeditor.fields.RichTextField(default='', verbose_name='Описание')),
                 ('likes', models.IntegerField(default=0, verbose_name='Лайки')),

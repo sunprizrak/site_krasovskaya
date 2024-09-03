@@ -40,8 +40,15 @@
                                 </div>
                             {% endif %}
                             <div class="col mt-3">
-                                {% if news_item.image %}
-                                    <img src="{{ news_item.image.url }}" alt="news-image">
+                                {% if news_item.file %}
+                                    {% if news_item.media_type == 'photo' %}
+                                        <img src="{{ news_item.file.url }}" alt="news-image">
+                                    {% elif news_item.media_type == 'video' %}
+                                        <video controls autoplay loop muted>
+                                            <source src="{{ news_item.file.url }}">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    {% endif %}
                                 {% endif %}
                                 <div class="news-text">
                                     {{ news_item.text|safe }}
