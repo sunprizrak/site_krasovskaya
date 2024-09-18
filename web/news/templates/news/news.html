@@ -34,7 +34,7 @@
                 {% for news_item in news %}
                     {% if not news_item.hide %}
                         <div class="row pb-5 news">
-                            {% if new_item.title %}
+                            {% if news_item.title %}
                                 <div class="col d-flex justify-content-center">
                                     <strong>{{ news_item.title }}</strong>
                                 </div>

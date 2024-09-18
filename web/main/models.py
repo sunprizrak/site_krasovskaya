@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 
 
@@ -14,6 +15,7 @@ class GroupLesson(models.Model):
     start_time = models.TimeField(verbose_name='начало')
     end_time = models.TimeField(verbose_name='конец')
     capacity = models.PositiveIntegerField(verbose_name='размер группы')
+    description = RichTextField(verbose_name='Описание', default='')
     created = models.DateTimeField(verbose_name='создана', auto_now_add=True)
 
     def __str__(self):

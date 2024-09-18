@@ -5,7 +5,7 @@ from .models import Subscribe, NewsModel
 @admin.register(NewsModel)
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('title_or_placeholder', 'likes', 'is_sent', 'hide', 'created')
-    fields = ('title', 'media_type', 'file', 'text', 'description')
+    fields = ('title', 'media_type', 'file', 'text')
 
     def title_or_placeholder(self, obj):
         return obj.title if obj.title else 'Без заголовка'

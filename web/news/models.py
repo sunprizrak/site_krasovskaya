@@ -27,7 +27,6 @@ class NewsModel(models.Model):
         ]
     )
     text = RichTextField(verbose_name='Текст')
-    description = RichTextField(verbose_name='Описание', default='')
     likes = models.IntegerField(verbose_name='Лайки', default=0)
     hide = models.BooleanField(verbose_name='Скрыть', default=False)
     is_sent = models.BooleanField(verbose_name='Отправлено', default=False)
@@ -45,10 +44,12 @@ class NewsModel(models.Model):
             if not mime_type or not mime_type.startswith('video'):
                 raise ValidationError({'file': "Файл не является видео."})
 
-
     def save(self, *args, **kwargs):
         self.full_clean()  # Выполнить валидацию перед сохранением
         super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.title}'
 
     class Meta:
         ordering = ['-created']
