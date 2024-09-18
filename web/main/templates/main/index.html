@@ -60,9 +60,11 @@
                                 <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
                             </div>
                             {% for text in news_text %}
-                                <div class="col py-2 news-item" style="{% if forloop.first %}display: block;{% else %}display: none;{% endif %}">
-                                    {{ text|safe }}
-                                </div>
+                                {% if not news_item.hide %}
+                                    <div class="col py-2 news-item" style="{% if forloop.first %}display: block;{% else %}display: none;{% endif %}">
+                                        {{ text|safe }}
+                                    </div>
+                                {% endif %}
                             {% endfor %}
                         </div>
                         <div id="home-bottom-right-rectangle"></div>
