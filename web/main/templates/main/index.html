@@ -61,7 +61,7 @@
                             </div>
                             {% for text in news_text %}
                                 <div class="col py-2 news-item" style="{% if forloop.first %}display: block;{% else %}display: none;{% endif %}">
-                                    {{ text|safe }}
+                                    <p>{{ text|safe }}</p>
                                 </div>
                             {% endfor %}
                         </div>
