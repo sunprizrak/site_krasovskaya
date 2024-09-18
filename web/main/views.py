@@ -5,6 +5,7 @@ from mixins.browser import CheckBrowserVersionMixin
 from news.models import NewsModel
 from .models import GroupLesson
 from .forms import QuestionForm, WantWriteGroupForm
+from django.utils.html import strip_tags
 
 
 class HomeView(CheckBrowserVersionMixin, FormMixin, ListView):
@@ -26,7 +27,7 @@ class HomeView(CheckBrowserVersionMixin, FormMixin, ListView):
 
             for obj in news:
                 if not obj.hide:
-                    text = obj.text
+                    text = strip_tags(obj.text)
                     abbreviated_text = self.truncate_text(text, 150)
                     context['news_text'].append(abbreviated_text)
         return context
