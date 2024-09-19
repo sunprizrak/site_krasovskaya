@@ -30,13 +30,13 @@
         </div>
         <div class="row row-cols-2" id="schedule-bottom-row">
             {% for day in schedule_days %}
-                <div class="col {% if day == 'ЧТ' or day == 'ПТ' %}d-flex flex-column align-items-end{% endif %}">
+                <div class="col {% if day == 'ЧТ' or day == 'ПТ' %}d-flex flex-column align-items-end{% endif %}" id="{% if day == 'СР' %}col-left-bottom{% endif %}">
                     <div class="row schedule-header">
                         <div class="col d-flex align-items-center {% if day == 'ЧТ' or day == 'ПТ' %}justify-content-start{% else %}justify-content-end{% endif %}">
                             <span class="{% if day == 'ЧТ' or day == 'ПТ' %}right-color{% else %}left-color{% endif %}">{{ day }}</span>
                         </div>
                     </div>
-                    <div class="row-1 schedule-box">
+                    <div class="row schedule-box">
                         {% for group in group_lesson %}
                             {% if group.day == day %}
                                 <div class="col">
@@ -77,9 +77,9 @@
                     </div>
                 </div>
             {% endfor %}
-            <div class="col mt-3 d-flex flex-column align-items-end" id="col-right-bottom">
-                <div class="schedule-header justify-content-end header-right-bottom"></div>
-                <div class="schedule-box d-flex flex-column justify-content-center box-right-bottom">
+            <div class="col d-flex flex-column justify-content-center align-items-end" id="col-right-bottom">
+                <div class="row schedule-header justify-content-end header-right-bottom"></div>
+                <div class="row schedule-box justify-content-center box-right-bottom">
                     <p>Если вы хотите записаться в группу, заполните, <br>
                         пожалуйста форму
                     </p>

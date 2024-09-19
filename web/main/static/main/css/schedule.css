@@ -63,6 +63,7 @@
             height: 90%;
 
             .schedule-header {
+                position: relative;
                 height: 36px;
                 width: 90%;
                 border-radius: 43px;
@@ -85,6 +86,8 @@
             }
 
             .schedule-box {
+                display: flex;
+                flex-direction: column;
                 width: 90%;
                 position: relative;
                 border: 1px solid #4e9599;
@@ -147,6 +150,7 @@
 
             #col-left-bottom {
                 position: relative;
+                z-index: 1;
 
                 &:before {
                     position: absolute;
@@ -157,7 +161,7 @@
                     left: -50vw;
                     border-top-right-radius: 43px;
                     background-color: #fbde98;
-                    z-index: 5;
+                    z-index: 0;
                 }
             }
 

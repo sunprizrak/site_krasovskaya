@@ -9,7 +9,7 @@
                 </a>
                 <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{% url 'about' %}" draggable="false">ОБО МНЕ</a>
                 <a class="nav-link {% if request.path == '/' %}d-none{% endif %} {% if request.path == '/news/' %}active{% endif %}" href="{% url 'news' %}" draggable="false">НОВОСТИ</a>
-                <a class="nav-link {% if request.path == '/groups' %}active{% endif %}" href="#" draggable="false">ГРУППЫ</a>
+                <a class="nav-link {% if request.path == '/groups' %}active{% endif %}" href="{% url 'groups' %}" draggable="false">ГРУППЫ</a>
                 <a class="nav-link {% if request.path == '/schedule' %}active{% endif %}" href="{% url 'schedule' %}" draggable="false">РАСПИСАНИЕ</a>
                 <a class="nav-link {% if request.path == '/contacts' %}active{% endif %}" href="{% url 'contacts' %}" draggable="false">КОНТАКТЫ</a>
             </div>
