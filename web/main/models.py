@@ -4,6 +4,7 @@ from django.db import models
 
 class GroupLesson(models.Model):
     name = models.CharField(verbose_name='название',max_length=100)
+    description = RichTextField(verbose_name='Описание', default='')
     DAY_CHOICES = [
         ('ПН', 'Понедельник'),
         ('ВТ', 'Вторник'),
@@ -15,7 +16,15 @@ class GroupLesson(models.Model):
     start_time = models.TimeField(verbose_name='начало')
     end_time = models.TimeField(verbose_name='конец')
     capacity = models.PositiveIntegerField(verbose_name='размер группы')
-    description = RichTextField(verbose_name='Описание', default='')
+    city = models.CharField(verbose_name='город проведения', default='неизвестен')
+    price = models.IntegerField(verbose_name='Цена', default=0)
+    CURRENCY_CHOICES = [
+        ('$', 'USD'),
+        ('€', 'EUR'),
+        ('₽', 'RUB'),
+        ('Br', 'BYN')
+    ]
+    currency = models.CharField(verbose_name='Валюта', max_length=3, choices=CURRENCY_CHOICES, default='€')
     created = models.DateTimeField(verbose_name='создана', auto_now_add=True)
 
     def __str__(self):
@@ -24,6 +33,10 @@ class GroupLesson(models.Model):
     @property
     def available_slots(self):
         return self.capacity - self.enrollments.count()
+
+    @property
+    def get_price(self):
+        return f"{self.price}{self.currency}"
 
     class Meta:
         verbose_name = 'Групповое занятие'

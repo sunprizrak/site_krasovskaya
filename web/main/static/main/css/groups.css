@@ -58,5 +58,87 @@
                 }
             }
         }
+
+        .groups-header {
+            position: relative;
+            height: 36px;
+            border-radius: 43px;
+            background: linear-gradient(to right, rgba(227, 236, 237, 1) 0%, 38.550421595573425%, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
+            z-index: 100;
+
+            @media (min-width: 1400px) {
+                height: 45px;
+            }
+
+            span {
+                padding: 0 25px 0 25px;
+                font-size: 1.4rem;
+                font-weight: bold;
+
+                @media (min-width: 1400px) {
+                    font-size: 1.6rem;
+                 }
+
+                &.span-left {
+                    color: #4e9599;
+                }
+
+                &.span-right {
+                    color: #ece4d8;
+                }
+            }
+        }
+
+        .groups-box {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 25px;
+            border: 1px solid #4e9599;
+            border-radius: 43px;
+            z-index: 100;
+            background: #ece4d8;
+
+            p {
+                font-size: 13px;
+                margin: 0;
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 15px;
+                }
+
+                @media (min-width: 1400px) {
+                    font-size: 17px;
+                 }
+            }
+        }
+
+        #groups-top-right {
+            position: absolute;
+            top: -6%;
+            right: 0;
+            width: 213px;
+            height: 28%;
+            background-color: #fbde98;
+            z-index: 5;
+
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                width: 255px;
+            }
+
+            @media (min-width: 1400px) {
+                width: 284px;
+                min-height: 233px;
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 100vw;
+                background-color: #fbde98;
+                z-index: 150;
+            }
+        }
     }
 }

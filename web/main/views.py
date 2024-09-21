@@ -105,7 +105,7 @@ class ContactsView(CheckBrowserVersionMixin, FormMixin, TemplateView):
 class GroupsView(CheckBrowserVersionMixin,ListView):
     model = GroupLesson
     # form_class = WantWriteGroupForm
-    context_object_name = 'group_lesson'
+    context_object_name = 'group_lessons'
     template_name = 'main/groups.html'
     success_url = reverse_lazy('groups')
     extra_context = {
