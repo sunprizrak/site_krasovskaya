@@ -102,9 +102,9 @@ class ContactsView(CheckBrowserVersionMixin, FormMixin, TemplateView):
         return super().form_valid(form)
 
 
-class GroupsView(CheckBrowserVersionMixin,ListView):
+class GroupsView(CheckBrowserVersionMixin, FormMixin, ListView):
     model = GroupLesson
-    # form_class = WantWriteGroupForm
+    form_class = WantWriteGroupForm
     context_object_name = 'group_lessons'
     template_name = 'main/groups.html'
     success_url = reverse_lazy('groups')
@@ -112,6 +112,13 @@ class GroupsView(CheckBrowserVersionMixin,ListView):
         'title': 'Группы',
     }
 
-    # def form_valid(self, form):
-    #     form.save()
-    #     return super().form_valid(form)
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
