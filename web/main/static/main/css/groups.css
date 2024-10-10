@@ -89,85 +89,103 @@
 
         #groups-middle {
             height: 65%;
-            z-index: 100;
+            z-index: 150;
+            min-height: 480px;
 
-            #carousel-inner {
+            #groups-carousel {
+                z-index: 150;
+                height: 100%;
 
-                .groups-header {
+                #carousel-inner {
                     position: relative;
-                    height: 36px;
-                    border-radius: 43px;
-                    background: linear-gradient(to right, rgba(227, 236, 237, 1) 0%, 38.550421595573425%, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
-                    z-index: 100;
+                    height: 100%;
 
-                    @media (min-width: 1400px) {
-                        height: 45px;
+                    .carousel-indicators {
+                        transform: translateY(50%);
                     }
 
-                    span {
-                        padding: 0 25px 0 25px;
-                        font-size: 1.4rem;
-                        font-weight: bold;
+                    .carousel-item {
+                        height: 100%;
 
-                        @media (min-width: 1400px) {
-                            font-size: 1.6rem;
-                         }
+                        .groups-header {
+                            position: relative;
+                            border-radius: 43px;
+                            background: linear-gradient(to right, rgba(227, 236, 237, 1) 0%, 38.550421595573425%, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
+                            z-index: 100;
 
-                        &.span-left {
-                            color: #4e9599;
+
+                            @media (min-width: 1400px) {
+                                height: 45px;
+                            }
+
+                            span {
+                                padding: 0 25px 0 25px;
+                                font-size: 1.4rem;
+                                font-weight: bold;
+
+                                @media (min-width: 1400px) {
+                                    font-size: 1.6rem;
+                                 }
+
+                                &.span-left {
+                                    color: #4e9599;
+                                    float: left;
+                                }
+
+                                &.span-right {
+                                    color: #ece4d8;
+                                    float: right;
+                                }
+                            }
                         }
 
-                        &.span-right {
-                            color: #ece4d8;
+                        .groups-box {
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            padding: 25px;
+                            border: 1px solid #4e9599;
+                            border-radius: 43px;
+                            z-index: 100;
+                            background: #ece4d8;
+                            height: 89%;
+
+                            p {
+                                font-size: 13px;
+                                margin: 0;
+
+                                @media (min-width: 1200px) and (max-width: 1399px) {
+                                    font-size: 14px;
+                                }
+
+                                @media (min-width: 1400px) {
+                                    font-size: 17px;
+                                 }
+                            }
                         }
                     }
                 }
+                .carousel-control-prev {
+                    justify-content: start;
+                    left: -5%;
 
-                .groups-box {
-                    display: flex;
-                    flex-direction: column;
-                    position: relative;
-                    padding: 25px;
-                    border: 1px solid #4e9599;
-                    border-radius: 43px;
-                    z-index: 100;
-                    background: #ece4d8;
-
-                    p {
-                        font-size: 13px;
-                        margin: 0;
-
-                        @media (min-width: 1200px) and (max-width: 1399px) {
-                            font-size: 15px;
-                        }
-
-                        @media (min-width: 1400px) {
-                            font-size: 17px;
-                         }
+                    .carousel-control-prev-icon {
+                        filter: brightness(0) saturate(100%) invert(58%) sepia(30%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(86%);
                     }
                 }
-            }
 
-            .carousel-control-prev {
-                justify-content: start;
-                left: -3%;
+                .carousel-control-next {
+                    justify-content: end;
+                    right: -5%;
 
-                .carousel-control-prev-icon {
-                    filter: brightness(0) saturate(100%) invert(58%) sepia(30%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(86%);
+                    .carousel-control-next-icon {
+                        filter: brightness(0) saturate(100%) invert(58%) sepia(30%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(86%);
+                    }
                 }
-            }
 
-            .carousel-control-next {
-                justify-content: end;
-                right: -3%;
-
-                .carousel-control-next-icon {
-                    filter: brightness(0) saturate(100%) invert(58%) sepia(30%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(86%);
+                .carousel-indicators .active {
+                    background-color: #4e9599;
                 }
-            }
-
-            .carousel-indicators .active {
-                background-color: #4e9599;
             }
         }
 
@@ -175,7 +193,7 @@
             height: 25%;
             position: relative;
 
-            #groups-box {
+            #groups-box-form {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -192,7 +210,7 @@
                     margin: 0;
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        font-size: 15px;
+                        font-size: 14px;
                     }
 
                     @media (min-width: 1400px) {
