@@ -90,11 +90,12 @@
         #groups-middle {
             height: 65%;
             z-index: 150;
-            min-height: 480px;
+            position: relative;
 
             #groups-carousel {
                 z-index: 150;
                 height: 100%;
+                position: relative;
 
                 #carousel-inner {
                     position: relative;
@@ -106,13 +107,16 @@
 
                     .carousel-item {
                         height: 100%;
+                        position: relative;
 
                         .groups-header {
                             position: relative;
                             border-radius: 43px;
                             background: linear-gradient(to right, rgba(227, 236, 237, 1) 0%, 38.550421595573425%, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
                             z-index: 100;
-
+                            width: 100%;
+                            height: 43px;
+                            vertical-align: center;
 
                             @media (min-width: 1400px) {
                                 height: 45px;
@@ -122,6 +126,8 @@
                                 padding: 0 25px 0 25px;
                                 font-size: 1.4rem;
                                 font-weight: bold;
+                                position: relative;
+                                top: 10%;
 
                                 @media (min-width: 1400px) {
                                     font-size: 1.6rem;
@@ -140,27 +146,55 @@
                         }
 
                         .groups-box {
-                            display: flex;
-                            flex-direction: column;
+                            margin-top: 25px;
                             position: relative;
                             padding: 25px;
                             border: 1px solid #4e9599;
                             border-radius: 43px;
                             z-index: 100;
                             background: #ece4d8;
-                            height: 89%;
+                            box-sizing: border-box;
+                            height: calc(100% - 43px - 25px);
 
-                            p {
-                                font-size: 13px;
-                                margin: 0;
+                            /* Scrollbar */
 
-                                @media (min-width: 1200px) and (max-width: 1399px) {
-                                    font-size: 14px;
+                            ::-webkit-scrollbar {
+                                width: 5px;
+                                background-color: transparent;
+                            }
+
+                            /* Add a thumb */
+                            ::-webkit-scrollbar-thumb {
+                                border-radius: 10px;
+                                background: transparent;
+                            }
+
+                            /* end Scrollbar */
+
+                            @media (min-width: 1400px) {
+                                height: calc(100% - 45px - 25px);
+                            }
+
+                            .groups-description {
+                                position: relative;
+                                height: 100%;
+                                overflow-y: auto;
+                                overflow-x: hidden;
+                                box-sizing: border-box;
+                                word-wrap: break-word;
+
+                                p {
+                                    font-size: 13px;
+                                    margin: 0;
+
+                                    @media (min-width: 1200px) and (max-width: 1399px) {
+                                        font-size: 14px;
+                                    }
+
+                                    @media (min-width: 1400px) {
+                                        font-size: 17px;
+                                     }
                                 }
-
-                                @media (min-width: 1400px) {
-                                    font-size: 17px;
-                                 }
                             }
                         }
                     }

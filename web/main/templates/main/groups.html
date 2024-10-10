@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="row" id="groups-middle">
-            <div class="col">
+            <div class="col h-100">
                 <div class="carousel slide carousel-fade" data-bs-ride="false" id="groups-carousel">
                     <div id="carousel-inner">
                          <div class="carousel-indicators">
@@ -41,14 +41,12 @@
                         </div>
                         {% for group_lesson in group_lessons %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-group-id="{{ group_lesson.id }}">
-                                <div class="row groups-header">
-                                    <div class="col position-relative">
-                                        <span class="span-left">{{ group_lesson.name|capfirst }}</span>
-                                        <span class="span-right">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
-                                    </div>
+                                <div class="groups-header position-relative">
+                                    <span class="span-left">{{ group_lesson.name|capfirst }}</span>
+                                    <span class="span-right">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
                                 </div>
-                                <div class="row mt-4 groups-box">
-                                    <div class="col d-flex align-items-center">
+                                <div class="groups-box mostly-customized-scrollbar">
+                                    <div class="col groups-description h-100">
                                         {{ group_lesson.description|safe }}
                                     </div>
                                 </div>
