@@ -4,7 +4,7 @@
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link {% if request.path == '/' %}d-none{% endif %}" href="{% url 'home' %}" tabindex="0" data-bs-toggle="popover" data-bs-custom-class="navbar-popover" data-bs-html="true" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-content="На главную" draggable="false">
+                <a class="nav-link {% if request.path == '/' %}d-none{% endif %}" href="{% url 'home' %}" data-bs-toggle="popover" data-bs-custom-class="navbar-popover" data-bs-html="true" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-content="На главную" draggable="false">
                     <i class="bi bi-house-heart-fill"></i>
                 </a>
                 <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{% url 'about' %}" draggable="false">ОБО МНЕ</a>
