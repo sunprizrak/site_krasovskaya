@@ -83,24 +83,6 @@ services:
         depends_on:
             - redis
             - db
-    flower:
-        build:
-            context: .
-        hostname: flower
-        env_file:
-            - ./.env.prod
-        command: celery -A web flower
-        volumes:
-            - .:/usr/src/web
-        links:
-            - redis
-        restart: always
-        depends_on:
-            - redis
-            - celery
-            - db
-        ports:
-            -   '5555:5555'
 volumes:
     postgres_data:
     static_volume:
