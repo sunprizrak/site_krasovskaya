@@ -252,20 +252,3 @@ main {
         }
     }
 }
-
-
-
-.tooltip {
-
-    .tooltip-inner {
-        background-color: #e0dbd7;
-        color: black;
-    }
-
-    .tooltip-arrow {
-
-        &:before {
-            border-bottom-color: #e0dbd7 !important;
-        }
-    }
-}

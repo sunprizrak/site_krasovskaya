@@ -76,6 +76,21 @@
         #news-middle {
             height: 79%;
 
+            /* Scrollbar */
+
+            ::-webkit-scrollbar {
+                width: 5px;
+                background-color: transparent;
+            }
+
+            /* Add a thumb */
+            ::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background: #4e9599;
+            }
+
+            /* end Scrollbar */
+
             .full-width-hr {
                 position: relative;
                 height: 1px;
@@ -94,7 +109,6 @@
                 overflow-y: auto;
                 overflow-x: hidden;
                 height: 100%;
-                scrollbar-color: #4E9599 #ece4d8;
 
                 .news {
                     display: flex;

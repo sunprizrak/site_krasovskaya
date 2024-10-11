@@ -50,8 +50,10 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col">
-                                            <p>{{ group.name }}</p>
+                                        <div class="col d-flex justify-content-center">
+                                            <a data-bs-toggle="popover" data-bs-custom-class="schedule-popover" data-bs-content="{{ group.description|safe }}" data-bs-html="true" data-bs-trigger="hover">
+                                                {{ group.name }}
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="row">

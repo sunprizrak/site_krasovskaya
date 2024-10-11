@@ -29,3 +29,14 @@
         }
     }
 }
+
+.navbar-popover {
+    --bs-popover-border-color: #4e9599 !important;
+    --bs-popover-bg: #ece4d8 !important;
+    --bs-popover-body-padding-x: 5px !important;
+    --bs-popover-body-padding-y: 5px !important;
+
+    .popover-body {
+        user-select: none;
+    }
+}

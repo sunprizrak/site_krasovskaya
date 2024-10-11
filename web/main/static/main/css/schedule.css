@@ -116,6 +116,18 @@
                     }
                 }
 
+                a {
+                    font-size: 13px;
+
+                     @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 15px;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 17px;
+                     }
+                }
+
                 button {
                     background-color: #4e9599;
                     color: #fff;
@@ -376,3 +388,32 @@
         }
     }
 }
+
+.schedule-popover {
+    --bs-popover-max-width: 50% !important;
+    --bs-popover-border-color: #4e9599 !important;
+    --bs-popover-header-bg: #ece4d8 !important;
+    --bs-popover-header-color: #ece4d8 !important;
+    --bs-popover-bg: #ece4d8 !important;
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+    }
+
+    /* Add a thumb */
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #4e9599;
+    }
+
+    .popover-body {
+        max-height: 600px !important; /* Фиксированная высота */
+        overflow-y: auto !important;
+        user-select: none;
+
+    }
+}
+

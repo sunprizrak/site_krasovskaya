@@ -166,7 +166,7 @@
                             /* Add a thumb */
                             ::-webkit-scrollbar-thumb {
                                 border-radius: 10px;
-                                background: transparent;
+                                background: #4e9599;
                             }
 
                             /* end Scrollbar */
