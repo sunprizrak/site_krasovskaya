@@ -51,9 +51,9 @@
                                     </div>
                                     <div class="row">
                                         <div class="col d-flex justify-content-center">
-                                            <a data-bs-toggle="popover" data-bs-custom-class="schedule-popover" data-bs-content="{{ group.description|safe }}" data-bs-html="true" data-bs-trigger="hover">
+                                            <button name="popover" data-bs-toggle="popover" data-bs-custom-class="schedule-popover" data-bs-content="{{ group.description|safe }}" data-bs-html="true" data-bs-trigger="focus">
                                                 {{ group.name }}
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -85,7 +85,7 @@
                     <p>Если вы хотите записаться в группу, заполните, <br>
                         пожалуйста форму
                     </p>
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#schedule-modal-group" class="align-self-center">ХОЧУ В ГРУППУ</button>
+                    <button name="form" type="button" data-bs-toggle="modal" data-bs-target="#schedule-modal-group" class="align-self-center">ХОЧУ В ГРУППУ</button>
                 </div>
             </div>
         </div>

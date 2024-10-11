@@ -116,19 +116,22 @@
                     }
                 }
 
-                a {
+                button[name='popover'] {
+                    border: 0;
+                    background-color: #ece4d8;
                     font-size: 13px;
+                    text-transform: capitalize;
 
-                     @media (min-width: 1200px) and (max-width: 1399px) {
+                    @media (min-width: 1200px) and (max-width: 1399px) {
                         font-size: 15px;
                     }
 
                     @media (min-width: 1400px) {
                         font-size: 17px;
-                     }
+                    }
                 }
 
-                button {
+                button[name='form'] {
                     background-color: #4e9599;
                     color: #fff;
                     width: 65%;
@@ -223,7 +226,6 @@
             }
         }
     }
-
 
     .left-color {
         color: #ece4d8;
