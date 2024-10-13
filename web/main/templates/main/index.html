@@ -23,14 +23,17 @@
 {% block main %}
 <main id="index-main">
     <div class="container position-relative" id="index_container">
-        <div class="row">
+        <div class="row" id="index-content-top">
             <div class="col-auto" id="index-left-column">
                 <div id="wrap-home-left-image">
-                    <img src="{% static 'main/img/home-left.jpg' %}" alt="left-image">
+                    <picture>
+                        <source media="(max-width: 767.98px)" srcset="{% static 'main/img/mob-index-left.png' %}">
+                        <img src="{% static 'main/img/home-left.jpg' %}" alt="left-image">
+                    </picture>
                 </div>
             </div>
             <div class="col d-flex flex-column" id="index-right-column">
-                <div class="row">
+                <div class="row" id="index-top-right-row-mob">
                     <div class="col-auto position-relative" id="index-middle-left">
                         <div id="name_hello">
                             <p>Меня зовут</p>
@@ -39,37 +42,83 @@
                             <p>я - психолог,<br>групповой терапевт</p>
                         </div>
                     </div>
-                    <div class="col position-relative">
+                    <div class="col position-relative" id="index-bottom-right-col-mob">
                         <div id="wrap-home-right-image">
-                            <img src="{% static 'main/img/home-right.jpg' %}" alt="right-image">
+                            <picture>
+                                <source media="(max-width: 767.98px)" srcset="{% static 'main/img/index_mob_right.png' %}">
+                                <img src="{% static 'main/img/home-right.jpg' %}" alt="right-image">
+                            </picture>
                         </div>
                     </div>
                 </div>
-                <div class="row d-flex flex-grow-1">
+                <div class="row d-flex flex-grow-1 d-none d-md-flex">
                     <div class="col" id="ask_question-wrap">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal">ЗАДАТЬ ВОПРОС</button>
                     </div>
                 </div>
-                <div class="row d-flex">
+                <div class="row d-flex d-none d-md-flex news-block">
                     <div class="col d-flex justify-content-center" id="index-bottom">
-                        <div class="row-1" id="my_news">
-                            <div class="col d-flex justify-content-center">
-                                <a name="news" href="{% url 'news' %}" draggable="false">МОИ НОВОСТИ</a>
-                            </div>
-                            <div class="col d-flex justify-content-center">
-                                <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
-                            </div>
-                            {% for text in news_text %}
-                                <div class="col py-2 news-item" style="{% if forloop.first %}display: block;{% else %}display: none;{% endif %}">
-                                    <p>{{ text|safe }}</p>
+                        <div class="row" id="my_news">
+                            <div class="col d-flex flex-column">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center">
+                                        <a name="news" href="{% url 'news' %}" draggable="false">МОИ НОВОСТИ</a>
+                                    </div>
                                 </div>
-                            {% endfor %}
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center">
+                                        <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
+                                    </div>
+                                </div>
+                                <div class="row flex-grow-1">
+                                    {% for text in news_text %}
+                                        <div class="col py-2 news-item align-items-center justify-content-center" style="{% if forloop.first %}display: flex;{% else %}display: none;{% endif %}">
+                                            <p>{{ text|safe }}</p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </div>
                         <div id="home-bottom-right-rectangle"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row d-md-none news-block" id="index-content-bottom-mob">
+            <div class="col d-flex flex-column">
+                <div class="row">
+                    <div class="col d-flex justify-content-center" id="ask_question-wrap-mob">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal">ЗАДАТЬ ВОПРОС</button>
+                    </div>
+                </div>
+                <div class="row flex-grow-1 py-3">
+                    <div class="col d-flex justify-content-center" id="index-wrap-news-mob">
+                        <div class="row" id="my_news-mob">
+                            <div class="col d-flex flex-column">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center">
+                                        <a name="news" href="{% url 'news' %}" draggable="false">МОИ НОВОСТИ</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center">
+                                        <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
+                                    </div>
+                                </div>
+                                <div class="row flex-grow-1">
+                                    {% for text in news_text %}
+                                        <div class="col py-2 news-item align-items-center justify-content-center" style="{% if forloop.first %}display: flex;{% else %}display: none;{% endif %}">
+                                            <p>{{ text|safe }}</p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-block d-md-none" id="index-mob-footer"></div>
     </div>
 </main>
 {% endblock %}

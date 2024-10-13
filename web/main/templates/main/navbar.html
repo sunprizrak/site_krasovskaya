@@ -2,17 +2,32 @@
 
 <nav class="navbar navbar-expand-lg {% if navbar_property %}{{ navbar_property }}{% endif %}">
     <div class="container">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link {% if request.path == '/' %}d-none{% endif %}" href="{% url 'home' %}" data-bs-toggle="popover" data-bs-custom-class="navbar-popover" data-bs-html="true" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-content="На главную" draggable="false">
-                    <i class="bi bi-house-heart-fill"></i>
-                </a>
-                <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{% url 'about' %}" draggable="false">ОБО МНЕ</a>
-                <a class="nav-link {% if request.path == '/' %}d-none{% endif %} {% if request.path == '/news/' %}active{% endif %}" href="{% url 'news' %}" draggable="false">НОВОСТИ</a>
-                <a class="nav-link {% if request.path == '/groups' %}active{% endif %}" href="{% url 'groups' %}" draggable="false">ГРУППЫ</a>
-                <a class="nav-link {% if request.path == '/schedule' %}active{% endif %}" href="{% url 'schedule' %}" draggable="false">РАСПИСАНИЕ</a>
-                <a class="nav-link {% if request.path == '/contacts' %}active{% endif %}" href="{% url 'contacts' %}" draggable="false">КОНТАКТЫ</a>
-            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}d-none{% endif %}" href="{% url 'home' %}" data-bs-toggle="popover" data-bs-custom-class="navbar-popover" data-bs-html="true" data-bs-placement="bottom" data-bs-trigger="hover" data-bs-content="На главную" draggable="false">
+                        <i class="bi bi-house-heart-fill"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{% url 'about' %}" draggable="false">ОБО МНЕ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}d-none{% endif %} {% if request.path == '/news/' %}active{% endif %}" href="{% url 'news' %}" draggable="false">НОВОСТИ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/groups' %}active{% endif %}" href="{% url 'groups' %}" draggable="false">ГРУППЫ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/schedule' %}active{% endif %}" href="{% url 'schedule' %}" draggable="false">РАСПИСАНИЕ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/contacts' %}active{% endif %}" href="{% url 'contacts' %}" draggable="false">КОНТАКТЫ</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
