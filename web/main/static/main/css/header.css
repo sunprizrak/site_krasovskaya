@@ -16,27 +16,31 @@
             }
         }
 
-        .navbar-nav {
-            position: absolute;
+        .navbar-collapse {
+            z-index: 1000;
 
-            @media (max-width: 767.98px) {
-                    position: static;
+            .navbar-nav {
+                position: absolute;
+
+                @media (max-width: 767.98px) {
+                        position: static;
+                    }
+
+                @media (min-width: 1400px) {
+                    right: 40px;
+                }
+            }
+
+            .nav-link {
+                white-space: nowrap;
+
+                &:hover {
+                    text-decoration: underline;
                 }
 
-            @media (min-width: 1400px) {
-                right: 40px;
-            }
-        }
-
-        .nav-link {
-            white-space: nowrap;
-
-            &:hover {
-                text-decoration: underline;
-            }
-
-            &.active {
-                color: #a09c99 !important;
+                &.active {
+                    color: #a09c99 !important;
+                }
             }
         }
     }
