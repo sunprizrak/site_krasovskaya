@@ -1,6 +1,12 @@
 #about-header {
     height: 7%;
     min-height: 51px;
+    z-index: 10;
+
+    @media (max-width: 767.98px) {
+        height: 6%;
+        min-height: auto;
+    }
 
     .navbar {
         height: 100%;
@@ -48,9 +54,9 @@
 }
 
 
-
 #about-main {
     height: 93%;
+    z-index: 150;
 
     #about-container {
         height: 100% !important;
@@ -61,6 +67,10 @@
             height: 35%;
             min-height: 243px;
             max-height: 250px;
+
+            @media (max-width: 767.98px) {
+                height: 45%;
+            }
 
 
             @media (min-width: 1200px) and (max-width: 1399px) {
@@ -78,6 +88,11 @@
             #top-left-col {
                 height: 100%;
 
+                @media (max-width: 767.98px) {
+                    width: 50% !important;
+                    padding-right: 0;
+                }
+
                 #wrap-about-image {
                     position: relative;
                     display: flex;
@@ -87,6 +102,14 @@
                     max-width: 343px;
                     height: 80%;
                     border-radius:  0 43px 43px 0;
+
+                    @media (max-width: 767.98px) {
+                        width: 100%;
+                        background-color: transparent;
+                        min-width: auto;
+                        max-width: auto;
+                        height: 100%;
+                    }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
                         min-width: 373px;
@@ -106,6 +129,14 @@
                         max-height: 285px;
                         z-index: 1000;
 
+                        @media (max-width: 767.98px) {
+                            width: 100%;
+                            height: 90%;
+                            min-height: auto;
+                            max-height: auto;
+                            border-radius: 43px;
+                        }
+
                         @media (min-width: 1200px) and (max-width: 1399px) {
                             min-height: 302px;
                             max-height: 343px;
@@ -120,33 +151,76 @@
             }
 
             #top-right-col {
-                .vertical-line-text {
-                      margin-left: 28px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
 
-                      @media (min-width: 1400px) {
-                          margin-left: 62px;
-                      }
+                @media (max-width: 767.98px) {
+                    width: 50% !important;
+                    height: 100%;
+
+                }
+
+                .vertical-line-text {
+                    margin-left: 28px;
+
+                    @media (max-width: 767.98px) {
+                        margin-left: 0;
+                    }
+
+                    @media (min-width: 1400px) {
+                        margin-left: 62px;
+                    }
+
+                    p {
+                        @media (max-width: 767.98px) {
+                            font-size: 11px;
+                        }
+                    }
                 }
             }
         }
 
-        #about-middle-row {
+        #top-mob-bottom {
+            p {
+                @media (max-width: 767.98px) {
+                    font-size: 11px;
+                }
+            }
+        }
+
+        .about-middle-row {
             height: 35%;
             min-height: 208px;
 
+            @media (max-width: 767.98px) {
+                height: auto;
+                min-height: auto;
+            }
+
             @media (min-width: 1200px) and (max-width: 1399px) {
                 min-height: 224px;
-
             }
 
             @media (min-width: 1400px) {
                 min-height: 254px;
             }
 
-            #about-middle-title {
+            .about-middle-title {
+
+                 @media (max-width: 767.98px) {
+                    padding-top: 7px;
+                    padding-bottom: 6px;
+                    background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+                 }
 
                 h2 {
                     text-align: center;
+
+                    @media (max-width: 767.98px) {
+                        font-size: 1.2rem;
+                        margin: 0;
+                    }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
                         font-size: 2.3rem;
@@ -163,10 +237,10 @@
             }
 
 
-            #about-col-one {
+            .about-col-one {
                 position: relative;
 
-                #about-one {
+                .about-one {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -178,6 +252,13 @@
                     position: absolute;
                     bottom: 25px;
 
+                    @media (max-width: 767.98px) {
+                        position: relative;
+                        width: auto;
+                        height: auto;
+                        bottom: auto;
+                    }
+
                     span {
                         position: absolute;
                         font-family: 'Monplesir script';
@@ -185,12 +266,21 @@
                         color: #4e9599;
                         top: -23px;
                         left: 32px;
+
+                        @media (max-width: 767.98px) {
+                            top: auto;
+                            left: 13px;
+                        }
                     }
 
                     p {
                         text-align: center;
                         margin: 0;
                         flex-grown: 1;
+
+                        @media (max-width: 767.98px) {
+                            font-size: 11px;
+                        }
                     }
                 }
             }
@@ -265,6 +355,11 @@
             height: 30%;
             min-height: 216px;
 
+            @media (max-width: 767.98px) {
+                height: 53%;
+                min-height: auto;
+            }
+
             @media (min-width: 1200px) and (max-width: 1399px) {
                 min-height: 256px;
             }
@@ -293,7 +388,6 @@
             .vertical-line-text {
 
                 p {
-
                     span {
                         font-style: italic;
                     }
@@ -331,6 +425,10 @@
 .vertical-line-text {
     border-left: 2px solid #4e9599;
     padding: 10px;
+
+    @media (max-width: 767.98px) {
+        border: 0;
+    }
 
     p {
         padding: 0;

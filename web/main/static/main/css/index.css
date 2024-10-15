@@ -1,6 +1,7 @@
 #index-header {
     height: 22%;
     min-height: 150px;
+    z-index: 10;
 
     @media (max-width: 767.98px) {
         height: 6%;
@@ -54,6 +55,7 @@
 
 #index-main {
     height: 78%;
+    z-index: 150;
 
     @media (max-width: 767.98px) {
         height: 94%;
@@ -522,6 +524,4 @@
         }
     }
 }
-
-
 

@@ -29,9 +29,9 @@
                     <img src="{% static 'main/img/about-image.png' %}" alt="about-image">
                 </div>
             </div>
-            <div class="col-7 d-flex flex-column justify-content-center" id="top-right-col">
+            <div class="col-7" id="top-right-col">
                 <div class="vertical-line-text">
-                    <p>
+                    <p class="d-none d-md-block">
                         <strong>Магистр</strong> практико-ориентированной психологии (психологическое <br>
                         консультирование и психокоррекция), <strong>групповой терапевт</strong>. <br>
                         <br>
@@ -42,10 +42,26 @@
                         терапевт. Умею быть рядом с вами, обсуждать тяжелые темы <br>
                         и сильные чувства, говорить о глубоком и важном.
                     </p>
+                    <p class="d-md-none">
+                        <strong>Магистр</strong> практико-ориентированной психологии (психологическое <br>
+                        консультирование и психокоррекция), <strong>групповой терапевт</strong>. <br>
+                        <br>
+                        Более 10 лет работаю с группами и все больше убеждаюсь <br>
+                        в эффективности групповых процессов.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="row d-flex about-gradient" id="about-middle-row">
+        <div class="row d-md-none" id="top-mob-bottom">
+            <div class="col" >
+                <p>
+                    В работе я внимательный, бережный и устойчивый групповой <br>
+                    терапевт. Умею быть рядом с вами, обсуждать тяжелые темы <br>
+                    и сильные чувства, говорить о глубоком и важном.
+                </p>
+            </div>
+        </div>
+        <div class="row d-none d-md-flex about-gradient about-middle-row">
             <div class="col d-flex flex-column justify-content-center about-middle-zindex">
                 <div class="row">
                     <div class="col d-flex justify-content-center" id="about-middle-title">
@@ -53,8 +69,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3 d-flex" id="about-col-one">
-                        <div id="about-one">
+                    <div class="col-3 d-flex about-col-one">
+                        <div class="about-one">
                             <span>01</span>
                             <p>
                                 Огромный ресурс<br>
@@ -86,6 +102,19 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 d-md-none about-middle-row">
+            <div class="col d-flex justify-content-center align-items-center about-middle-title">
+                <h2>Почему групповая терапия?</h2>
+            </div>
+            <div class="col about-col-one">
+                <div class="about-one">
+                    <span>01</span>
+                    <p>
+                        Огромный ресурс для участников процесса
+                    </p>
                 </div>
             </div>
         </div>
