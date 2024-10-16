@@ -41,8 +41,9 @@
                         </div>
                         {% for group_lesson in group_lessons %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-group-id="{{ group_lesson.id }}">
+                                <h6>{{ group_lesson.name|capfirst }}</h6>
                                 <div class="groups-header position-relative">
-                                    <span class="span-left">{{ group_lesson.name|capfirst }}</span>
+                                    <span class="span-left d-none d-md-block">{{ group_lesson.name|capfirst }}</span>
                                     <span class="span-right">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
                                 </div>
                                 <div class="groups-box mostly-customized-scrollbar">
@@ -64,15 +65,15 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="groups-bottom">
+        <div class="row order-first order-md-last" id="groups-bottom">
             <div class="col d-flex justify-content-center align-items-center">
                 <div id="groups-box-form">
                     <p>Если вы хотите записаться в группу, заполните, пожалуйста форму</p>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#groups-modal" class="align-self-center">ХОЧУ В ГРУППУ</button>
                 </div>
             </div>
-            <div id="groups-bottom-left"></div>
-            <div id="groups-bottom-right"></div>
+            <div class="d-none d-md-block" id="groups-bottom-left"></div>
+            <div class="d-none d-md-block" id="groups-bottom-right"></div>
         </div>
     </div>
 </main>

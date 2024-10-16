@@ -1,5 +1,11 @@
 #groups-header {
     height: 5%;
+    z-index: 10;
+
+    @media (max-width: 767.98px) {
+        height: 6%;
+        min-height: auto;
+    }
 
     .navbar {
         height: 100%;
@@ -34,6 +40,10 @@
 #groups-main {
     height: 95%;
 
+    @media (max-width: 767.98px) {
+        height: auto;
+    }
+
     #groups-container {
         height: 100% !important;
         font-family: 'PlayfairDisplay';
@@ -41,8 +51,21 @@
         height: inherit;
         position: relative;
 
+        @media (max-width: 767.98px) {
+            height: auto;
+            display: grid;
+        }
+
         #groups-top-row {
             height: 10%;
+
+            @media (max-width: 767.98px) {
+                position: fixed;
+                top: 0;
+                left: 53%;
+                transform: translateX(-50%);
+                z-index: 200;
+            }
 
             .col {
                 h2 {
@@ -68,6 +91,22 @@
             background-color: #fbde98;
             z-index: 5;
 
+            @media (max-width: 767.98px) {
+                position: fixed;
+                right: auto;
+                top: 0;
+                width: 50%;
+                height: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                &:after {
+                    display: none;
+                }
+
+
+            }
+
             @media (min-width: 1200px) and (max-width: 1399px) {
                 width: 255px;
             }
@@ -92,6 +131,10 @@
             z-index: 150;
             position: relative;
 
+            @media (max-width: 767.98px) {
+                margin-top: 15px;
+            }
+
             #groups-carousel {
                 z-index: 150;
                 height: 100%;
@@ -109,6 +152,11 @@
                         height: 100%;
                         position: relative;
 
+                        h6 {
+                            text-align: center;
+                            color: #4e9599;
+                        }
+
                         .groups-header {
                             position: relative;
                             border-radius: 43px;
@@ -117,6 +165,14 @@
                             width: 100%;
                             height: 43px;
                             vertical-align: center;
+
+                            @media (max-width: 767.98px) {
+                                height: 30px;
+                                display: flex;
+                                justify-content: end;
+                                align-items: center;
+                                margin-top: 15px;
+                            }
 
                             @media (min-width: 1400px) {
                                 height: 45px;
@@ -128,6 +184,12 @@
                                 font-weight: bold;
                                 position: relative;
                                 top: 10%;
+
+                                @media (max-width: 767.98px) {
+                                    font-size: 1rem;
+                                    top: auto;
+                                    padding: 0 15px 0 0;
+                                }
 
                                 @media (min-width: 1400px) {
                                     font-size: 1.6rem;
@@ -227,6 +289,11 @@
             height: 25%;
             position: relative;
 
+            @media (max-width: 767.98px) {
+                height: auto;
+                margin-top: 15px;
+            }
+
             #groups-box-form {
                 display: flex;
                 flex-direction: column;
@@ -237,6 +304,13 @@
                 border-radius: 43px;
                 z-index: 100;
                 background: #ece4d8;
+
+                @media (max-width: 767.98px) {
+                    height: auto;
+                    width: 90%;
+                    border-radius: 20px;
+                    padding: 10px;
+                }
 
                 p {
                     text-align: center;
@@ -261,6 +335,10 @@
                     border-radius: 30px;
                     border: 0;
                     margin-top: 10px;
+
+                    @media (max-width: 767.98px) {
+                        width: 90%;
+                    }
                 }
             }
 

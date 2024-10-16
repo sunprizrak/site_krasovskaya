@@ -8,6 +8,16 @@
     .container {
         position: relative;
 
+        .navbar-brand {
+            color: #4e9599;
+
+            i {
+                &:before {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+
         .navbar-toggler {
             color: #4e9599;
 
