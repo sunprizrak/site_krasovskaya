@@ -25,13 +25,13 @@
 <main id="groups-main">
     <div class="container" id="groups-container">
         <div id="groups-top-right"></div>
-        <div class="row" id="groups-top-row">
+        <div class="row d-none d-md-flex" id="groups-top-row">
             <div class="col d-flex justify-content-center align-items-center">
                 <h2>Группы</h2>
             </div>
         </div>
         <div class="row" id="groups-middle">
-            <div class="col h-100">
+            <div class="col h-md-100">
                 <div class="carousel slide carousel-fade" data-bs-ride="false" id="groups-carousel">
                     <div id="carousel-inner">
                          <div class="carousel-indicators">
@@ -41,7 +41,17 @@
                         </div>
                         {% for group_lesson in group_lessons %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}" data-group-id="{{ group_lesson.id }}">
-                                <h6>{{ group_lesson.name|capfirst }}</h6>
+                                <div class="d-md-none d-flex justify-content-center align-items-center mob-groups-item-header">
+                                    <button class="carousel-control-prev d-md-none" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Предыдущий</span>
+                                    </button>
+                                    <h6>{{ group_lesson.name|capfirst }}</h6>
+                                    <button class="carousel-control-next d-md-none" type="button" data-bs-target="#groups-carousel"  data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Следующий</span>
+                                    </button>
+                                </div>
                                 <div class="groups-header position-relative">
                                     <span class="span-left d-none d-md-block">{{ group_lesson.name|capfirst }}</span>
                                     <span class="span-right">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
@@ -54,11 +64,11 @@
                             </div>
                         {% endfor %}
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">
+                    <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Предыдущий</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#groups-carousel"  data-bs-slide="next">
+                    <button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#groups-carousel"  data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Следующий</span>
                     </button>
@@ -74,6 +84,9 @@
             </div>
             <div class="d-none d-md-block" id="groups-bottom-left"></div>
             <div class="d-none d-md-block" id="groups-bottom-right"></div>
+        </div>
+        <div class="row d-md-none" id="groups-mob-bottom">
+            <div class="col"></div>
         </div>
     </div>
 </main>

@@ -1,14 +1,60 @@
 #groups-header {
     height: 5%;
-    z-index: 10;
 
     @media (max-width: 767.98px) {
-        height: 6%;
+        height: 57px;
         min-height: auto;
+        z-index: 1000;
     }
 
     .navbar {
         height: 100%;
+
+        @media (max-width: 767.98px) {
+            height: auto;
+            width: 100%;
+            position: fixed;
+            background-color: #ece4d8;
+
+            &:after {
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 50%;
+                left: 24%;
+                background-color: #fbde98;
+                z-index: 1000;
+            }
+        }
+
+        #mob-header-name {
+            display: none;
+
+            @media (max-width: 767.98px) {
+                position: absolute;
+                left: 35%;
+                align-items: center;
+                display: flex !important;
+                width: auto;
+                height: 100%;
+            }
+
+            h2 {
+                margin: 0;
+                color: #4e9599;
+                z-index: 1010;
+
+                &::first-letter {
+                    font-family: 'Monplesir script';
+                }
+            }
+        }
+
+        .navbar-collapse {
+            @media (max-width: 767.98px) {
+                z-index: 1020;
+            }
+        }
 
         .navbar-nav {
             right: 30px;
@@ -59,14 +105,6 @@
         #groups-top-row {
             height: 10%;
 
-            @media (max-width: 767.98px) {
-                position: fixed;
-                top: 0;
-                left: 53%;
-                transform: translateX(-50%);
-                z-index: 200;
-            }
-
             .col {
                 h2 {
                     color: #4e9599;
@@ -92,13 +130,7 @@
             z-index: 5;
 
             @media (max-width: 767.98px) {
-                position: fixed;
-                right: auto;
-                top: 0;
-                width: 50%;
-                height: 100px;
-                left: 50%;
-                transform: translateX(-50%);
+                display: none;
 
                 &:after {
                     display: none;
@@ -146,15 +178,39 @@
 
                     .carousel-indicators {
                         transform: translateY(50%);
+
+                        @media (max-width: 767.98px) {
+                            top: 15px;
+                            bottom: auto;
+                        }
                     }
 
                     .carousel-item {
                         height: 100%;
                         position: relative;
 
-                        h6 {
-                            text-align: center;
-                            color: #4e9599;
+                        .mob-groups-item-header {
+                            button[data-bs-slide="prev"] {
+                                position: relative;
+
+                                .carousel-control-prev-icon {
+                                    width: 20px;
+                                }
+                            }
+
+                            h6 {
+                                text-align: center;
+                                color: #4e9599;
+                                margin: 0;
+                            }
+
+                            button[data-bs-slide="next"] {
+                                position: relative;
+
+                                .carousel-control-next-icon {
+                                    width: 20px;
+                                }
+                            }
                         }
 
                         .groups-header {
@@ -245,6 +301,10 @@
                                 box-sizing: border-box;
                                 word-wrap: break-word;
 
+                                @media (max-width: 767.98px) {
+                                    overflow-y: hidden;
+                                }
+
                                 p {
                                     font-size: 13px;
                                     margin: 0;
@@ -292,6 +352,7 @@
             @media (max-width: 767.98px) {
                 height: auto;
                 margin-top: 15px;
+                z-index: 200;
             }
 
             #groups-box-form {
@@ -310,6 +371,17 @@
                     width: 90%;
                     border-radius: 20px;
                     padding: 10px;
+                    position: relative;
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        height: 23px;
+                        width: 60%;
+                        background-color: #fbde98;
+                        top: -24px;
+                        left: 19%;
+                    }
                 }
 
                 p {
@@ -380,8 +452,6 @@
                 height: 100%;
                 z-index: 5;
 
-
-
                 &:after {
                     position: absolute;
                     content: '';
@@ -392,6 +462,12 @@
                     border-top-left-radius: 43px;
                 }
             }
+        }
+
+        #groups-mob-bottom {
+            height: 100px;
+            width: 100vw;
+            background: linear-gradient(to bottom, rgba(234, 239, 239, 1) 0%, 29.588013887405396%, rgba(170, 201, 203, 1) 59.17602777481079%, 79.5880138874054%, rgba(119, 172, 175, 1) 100%);
         }
     }
 }
@@ -453,6 +529,10 @@
 
                         span {
                             font-size: 1.5rem;
+
+                            @media (max-width: 767.98px) {
+                                font-size: 1rem;
+                            }
 
                             &::first-letter {
                                 font-family: 'Monplesir script';
