@@ -7,6 +7,34 @@
         z-index: 1000;
     }
 
+    #mob-header-name {
+        display: none;
+
+        @media (max-width: 767.98px) {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            align-items: center;
+            display: flex !important;
+            justify-content: center;
+            width: auto;
+            height: 100%;
+            z-index: 1010;
+            background-color: #fbde98;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        h2 {
+            margin: 0;
+            color: #4e9599;
+
+            &::first-letter {
+                font-family: 'Monplesir script';
+            }
+        }
+    }
+
     .navbar {
         height: 100%;
 
@@ -15,39 +43,6 @@
             width: 100%;
             position: fixed;
             background-color: #ece4d8;
-
-            &:after {
-                position: absolute;
-                content: '';
-                height: 100%;
-                width: 50%;
-                left: 24%;
-                background-color: #fbde98;
-                z-index: 1000;
-            }
-        }
-
-        #mob-header-name {
-            display: none;
-
-            @media (max-width: 767.98px) {
-                position: absolute;
-                left: 35%;
-                align-items: center;
-                display: flex !important;
-                width: auto;
-                height: 100%;
-            }
-
-            h2 {
-                margin: 0;
-                color: #4e9599;
-                z-index: 1010;
-
-                &::first-letter {
-                    font-family: 'Monplesir script';
-                }
-            }
         }
 
         .navbar-collapse {
@@ -165,6 +160,7 @@
 
             @media (max-width: 767.98px) {
                 margin-top: 15px;
+                height: auto;
             }
 
             #groups-carousel {
@@ -351,7 +347,6 @@
 
             @media (max-width: 767.98px) {
                 height: auto;
-                margin-top: 15px;
                 z-index: 200;
             }
 
@@ -372,16 +367,6 @@
                     border-radius: 20px;
                     padding: 10px;
                     position: relative;
-
-                    &:before {
-                        position: absolute;
-                        content: '';
-                        height: 23px;
-                        width: 60%;
-                        background-color: #fbde98;
-                        top: -24px;
-                        left: 19%;
-                    }
                 }
 
                 p {

@@ -68,6 +68,7 @@ class ScheduleView(CheckBrowserVersionMixin, FormMixin, ListView):
     extra_context = {
         'title': 'Расписание',
         'schedule_days': ('ПН', 'ЧТ', 'ВТ', 'ПТ', 'СР'),
+        'schedule_days_mob': ('ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ'),
     }
 
     def post(self, request, *args, **kwargs):

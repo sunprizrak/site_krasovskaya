@@ -1,8 +1,49 @@
 #schedule-header {
     height: 5%;
 
+    @media (max-width: 767.98px) {
+        height: 57px;
+        z-index: 1000;
+        position: relative;
+    }
+
+    #mob-header-name {
+        display: none;
+
+        @media (max-width: 767.98px) {
+            position: absolute;
+            top: 0;
+            align-items: center;
+            display: flex !important;
+            width: auto;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1010;
+            background-color: #fbde98;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        h2 {
+            margin: 0;
+            color: #4e9599;
+
+            &::first-letter {
+                font-family: 'Monplesir script';
+            }
+        }
+    }
+
     .navbar {
         height: 100%;
+
+        @media (max-width: 767.98px) {
+            height: auto;
+            width: 100%;
+            position: fixed;
+            background-color: #ece4d8;
+        }
 
         .navbar-nav {
             right: 30px;
@@ -34,12 +75,20 @@
 #schedule-main {
     height: 95%;
 
+    @media (max-width: 767.98px) {
+        height: auto;
+    }
+
     #schedule-container {
         height: 100% !important;
         font-family: 'PlayfairDisplay';
         user-select: none;
         height: inherit;
         position: relative;
+
+        @media (max-width: 767.98px) {
+            height: auto;
+        }
 
         #schedule-top-row {
             height: 10%;
@@ -59,8 +108,58 @@
             }
         }
 
-        #schedule-bottom-row {
+        #schedule-box-form {
+            @media (max-width: 767.98px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border: 1px solid #4e9599;
+                border-radius: 43px;
+                z-index: 100;
+                background: #ece4d8;
+                height: auto;
+                width: 90%;
+                border-radius: 20px;
+                padding: 10px;
+                position: relative;
+            }
+
+            p {
+                text-align: center;
+                font-size: 13px;
+                margin: 0;
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 14px;
+                }
+
+                @media (min-width: 1400px) {
+                    font-size: 17px;
+                 }
+            }
+
+            button {
+                background-color: #4e9599;
+                color: #fff;
+                width: 65%;
+                font-size: 1.1rem;
+                padding: 5px;
+                border-radius: 30px;
+                border: 0;
+                margin-top: 10px;
+
+                @media (max-width: 767.98px) {
+                    width: 90%;
+                }
+            }
+        }
+
+        .schedule-bottom-row {
             height: 90%;
+
+            @media (max-width: 767.98px) {
+                height: auto;
+            }
 
             .schedule-header {
                 position: relative;
@@ -78,6 +177,11 @@
                     padding: 0 45px 0 45px;
                     font-size: 1.4rem;
                     font-weight: bold;
+
+                    @media (max-width: 767.98px) {
+                        color: #4e9599;
+                        padding: 0;
+                    }
 
                     @media (min-width: 1400px) {
                         font-size: 1.6rem;
@@ -207,6 +311,10 @@
             background-color: #fbde98;
             z-index: 5;
 
+            @media (max-width: 767.98px) {
+                display: none;
+            }
+
             @media (min-width: 1200px) and (max-width: 1399px) {
                 width: 255px;
             }
@@ -224,6 +332,12 @@
                 background-color: #fbde98;
                 z-index: 150;
             }
+        }
+
+        #schedule-mob-bottom {
+            height: 100px;
+            width: 100vw;
+            background: linear-gradient(to bottom, rgba(234, 239, 239, 1) 0%, 29.588013887405396%, rgba(170, 201, 203, 1) 59.17602777481079%, 79.5880138874054%, rgba(119, 172, 175, 1) 100%);
         }
     }
 
