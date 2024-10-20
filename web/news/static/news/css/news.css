@@ -2,10 +2,31 @@
     height: 5%;
     min-height: 40px;
 
+    @media (max-width: 767.98px) {
+        height: 57px;
+        z-index: 1000;
+        min-height: auto;
+        position: relative;
+    }
+
     .navbar {
         height: 100%;
         background-color: transparent;
         z-index: 1030;
+
+        @media (max-width: 767.98px) {
+            height: auto;
+            width: 100%;
+            position: fixed;
+            background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
+        }
+
+        .navbar-toggler {
+
+            .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ece4d8' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            }
+        }
 
         .navbar-nav {
             right: 65px;
@@ -39,6 +60,20 @@
             position: relative;
             height: 11%;
             min-height: 64px;
+
+            @media (max-width: 767.98px) {
+                position: fixed;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 64px;
+                min-height: auto;
+                z-index: 1100;
+
+                &:before {
+                    display: none;
+                }
+            }
 
             &:before {
                 position: absolute;
@@ -76,6 +111,10 @@
         #news-middle {
             height: 79%;
 
+            @media (max-width: 767.98px) {
+                height: auto;
+            }
+
             /* Scrollbar */
 
             ::-webkit-scrollbar {
@@ -89,11 +128,21 @@
                 background: #4e9599;
             }
 
+            @media (max-width: 767.98px) {
+                ::-webkit-scrollbar-thumb {
+                    background: transparent;
+                }
+            }
+
             /* end Scrollbar */
 
             .full-width-hr {
                 position: relative;
                 height: 1px;
+
+                @media (max-width: 767.98px) {
+                    display: none;
+                }
 
                 &:before {
                     position: absolute;
@@ -109,6 +158,10 @@
                 overflow-y: auto;
                 overflow-x: hidden;
                 height: 100%;
+
+                @media (max-width: 767.98px) {
+                    padding-top: 5px;
+                }
 
                 .news {
                     display: flex;
@@ -149,6 +202,10 @@
                             margin: 0 10px 0 0;
                             font-size: 13px;
 
+                            @media (max-width: 767.98px) {
+                                margin: 0;
+                            }
+
                             @media (min-width: 1200px) and (max-width: 1399px) {
                                 font-size: 15px;
                             }
@@ -187,6 +244,20 @@
             height: 10%;
             min-height: 70px;
 
+            @media (max-width: 767.98px) {
+                height: auto;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background-color: #ece4d8;
+            }
+
+            .col {
+                @media (max-width: 767.98px) {
+                    justify-content: center;
+                }
+            }
+
             button {
                 background-color: #fbc01c;
                 color: #4f4e4e;
@@ -198,6 +269,10 @@
 
                 &:active {
                     box-shadow: 5px 7px 10px 2px rgba(0,0,0,.4);
+                }
+
+                @media (max-width: 767.98px) {
+                    width: 90%;
                 }
 
                 @media (min-width: 1200px) and (max-width: 1399px) {

@@ -54,7 +54,7 @@
                                     {{ news_item.text|safe }}
                                 </div>
                             </div>
-                            <div class="col-11  d-flex align-self-center justify-content-end position-relative">
+                            <div class="col-md-11 d-flex align-self-center justify-content-end position-relative">
                                 <div class="heart" data-news-id="{{ news_item.id }}">
                                     <span>{{ news_item.likes }}</span>
                                     <i class="bi bi-heart-fill"></i>
@@ -70,7 +70,7 @@
             <div class="col d-flex align-items-center">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_subscribe">ПОДПИСАТЬСЯ НА РАССЫЛКУ</button>
             </div>
-            <div class="col d-flex justify-content-end align-items-center">
+            <div class="col d-none d-md-flex d-flex justify-content-end align-items-center">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal">ЗАДАТЬ ВОПРОС</button>
             </div>
         </div>

@@ -26,6 +26,23 @@ html, body {
     overflow-x: hidden;
     background-color: #ece4d8 !important;
 
+    @media (max-width: 767.98px) {
+        /* Scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background-color: transparent;
+        }
+
+        /* Add a thumb */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            background: transparent;
+        }
+
+        /* end Scrollbar */
+    }
+
     @media (min-width: 992px) and (max-width: 1199px) and (min-height: 618px) {
         overflow-y: hidden;
     }
