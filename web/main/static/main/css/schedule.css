@@ -8,34 +8,6 @@
         position: relative;
     }
 
-    #mob-header-name {
-        display: none;
-
-        @media (max-width: 767.98px) {
-            position: absolute;
-            top: 0;
-            align-items: center;
-            display: flex !important;
-            width: auto;
-            height: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1010;
-            background-color: #fbde98;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
-
-        h2 {
-            margin: 0;
-            color: #4e9599;
-
-            &::first-letter {
-                font-family: 'Monplesir script';
-            }
-        }
-    }
-
     .navbar {
         height: 100%;
 
@@ -94,9 +66,24 @@
         #schedule-top-row {
             height: 10%;
 
+            @media (max-width: 767.98px) {
+                position: fixed;
+                top: 0;
+                left: 53%;
+                transform: translateX(-53%);
+                height: 57px;
+                min-height: auto;
+                z-index: 1100;
+                background-color: #fbde98;
+            }
+
             .col {
                 h2 {
                     color: #4e9599;
+
+                    @media (max-width: 767.98px) {
+                        margin: 0;
+                    }
 
                     &::first-letter {
                         font-family: 'Monplesir script';
