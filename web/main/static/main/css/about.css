@@ -41,6 +41,10 @@
                     font-size: 1rem !important;
                     color: #4e9599;
 
+                    @media (max-width: 767.98px) {
+                        font-size: 1rem !important;
+                    }
+
                     @media (min-width: 1400px) {
                         font-size: 1.3rem !important;
                     }
@@ -112,6 +116,7 @@
                 @media (max-width: 767.98px) {
                     width: 50% !important;
                     padding-right: 0;
+                    padding-top: 5px;
                 }
 
                 #wrap-about-image {

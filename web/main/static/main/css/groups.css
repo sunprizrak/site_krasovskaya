@@ -38,6 +38,10 @@
                 font-size: 0.85rem !important;
                 color: #4e9599;
 
+                @media (max-width: 767.98px) {
+                    font-size: 1rem !important;
+                }
+
                 @media (min-width: 1200px) and (max-width: 1399px) {
                     font-size: 1.05rem !important;
                 }
@@ -146,7 +150,6 @@
             position: relative;
 
             @media (max-width: 767.98px) {
-                margin-top: 15px;
                 height: auto;
             }
 
@@ -163,7 +166,8 @@
                         transform: translateY(50%);
 
                         @media (max-width: 767.98px) {
-                            top: 15px;
+                            position: relative;
+                            top: auto;
                             bottom: auto;
                         }
                     }
@@ -173,26 +177,11 @@
                         position: relative;
 
                         .mob-groups-item-header {
-                            button[data-bs-slide="prev"] {
-                                position: relative;
-
-                                .carousel-control-prev-icon {
-                                    width: 20px;
-                                }
-                            }
 
                             h6 {
                                 text-align: center;
                                 color: #4e9599;
                                 margin: 0;
-                            }
-
-                            button[data-bs-slide="next"] {
-                                position: relative;
-
-                                .carousel-control-next-icon {
-                                    width: 20px;
-                                }
                             }
                         }
 
@@ -257,6 +246,10 @@
                             box-sizing: border-box;
                             height: calc(100% - 43px - 25px);
 
+                            @media (max-width: 767.98px) {
+                                height: auto;
+                            }
+
                             /* Scrollbar */
 
                             ::-webkit-scrollbar {
@@ -308,8 +301,18 @@
                     justify-content: start;
                     left: -5%;
 
+                    @media (max-width: 767.98px) {
+                        position: relative;
+                        left: auto;
+                        justify-content: center;
+                    }
+
                     .carousel-control-prev-icon {
                         filter: brightness(0) saturate(100%) invert(58%) sepia(30%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(86%);
+
+                        @media (max-width: 767.98px) {
+                            width: 20px;
+                        }
                     }
                 }
 
@@ -317,8 +320,18 @@
                     justify-content: end;
                     right: -5%;
 
+                    @media (max-width: 767.98px) {
+                        position: relative;
+                        right: auto;
+                        justify-content: center;
+                    }
+
                     .carousel-control-next-icon {
                         filter: brightness(0) saturate(100%) invert(58%) sepia(30%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(86%);
+
+                        @media (max-width: 767.98px) {
+                            width: 20px;
+                        }
                     }
                 }
 
@@ -437,6 +450,7 @@
         }
 
         #groups-mob-bottom {
+            margin-top: -50px;
             height: 100px;
             width: 100vw;
             background: linear-gradient(to bottom, rgba(234, 239, 239, 1) 0%, 29.588013887405396%, rgba(170, 201, 203, 1) 59.17602777481079%, 79.5880138874054%, rgba(119, 172, 175, 1) 100%);
@@ -445,6 +459,10 @@
 }
 
 #groups-modal {
+
+    @media (max-width: 767.98px) {
+        z-index: 1200;
+    }
 
     .modal-dialog {
         max-width: 700px;
@@ -466,6 +484,10 @@
                     label[for="InputName"] {
                         padding: 0 0 0 10px;
                         font-size: 1.8rem;
+
+                        @media (max-width: 767.98px) {
+                            text-align: center;
+                        }
 
                     }
 
@@ -528,6 +550,10 @@
                         .form-select {
                             border-radius: 43px;
                             background-image: none;
+
+                            @media (max-width: 767.98px) {
+                                font-size: 1rem;
+                            }
 
                             &:focus {
                                 outline: none;

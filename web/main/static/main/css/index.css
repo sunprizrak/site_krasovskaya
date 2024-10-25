@@ -4,8 +4,9 @@
     z-index: 10;
 
     @media (max-width: 767.98px) {
-        height: 6%;
+        height: 57px;
         min-height: auto;
+        position: relative;
     }
 
     .navbar {
@@ -58,7 +59,7 @@
     z-index: 150;
 
     @media (max-width: 767.98px) {
-        height: 94%;
+        height: auto;
     }
 
     #index_container {
@@ -77,7 +78,7 @@
             padding-left: 0;
 
             @media (max-width: 767.98px) {
-                max-width: 46%;
+                width: 50%;
                 height: 100%;
                 padding-right: 0;
             }
@@ -164,11 +165,12 @@
 
                     @media (max-width: 767.98px) {
                         height: 100%;
+                        width: 100%;
                         left: 0;
                         bottom: 15px;
                         border-top-right-radius: 60px;
                         border-top-left-radius: 0;
-                        min-height: 1px;
+                        min-height: auto;
                     }
 
 
@@ -193,7 +195,7 @@
         #index-right-column {
 
             @media (max-width: 767.98px) {
-                width: auto;
+                width: 50%;
             }
 
             #index-middle-left {
@@ -214,7 +216,7 @@
                     @media (max-width: 767.98px) {
                         left: 0;
                         top: 0;
-                        margin-top: 20px;
+                        margin-top: 40px;
                     }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
@@ -299,8 +301,8 @@
                     position: absolute;
                     bottom: 10%;
                     right: auto;
-                    width: 30%;
-                    height: 95%;
+                    width: 50%;
+                    height: 100%;
                     border-top-right-radius: 0;
                     border-bottom-right-radius: 0;
                 }
@@ -519,7 +521,7 @@
         }
 
         #index-mob-footer {
-            height: 6%;
+            height: 60px;
             background: linear-gradient(to left, rgba(249, 197, 54, 1) 0%, rgba(248, 197, 58, 1) 1.8502943217754364%, rgba(236, 229, 219, 1) 100%);
         }
     }

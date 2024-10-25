@@ -33,6 +33,10 @@
                 font-size: 0.85rem !important;
                 color: #4e9599;
 
+                @media (max-width: 767.98px) {
+                    font-size: 1rem !important;
+                }
+
                 @media (min-width: 1200px) and (max-width: 1399px) {
                     font-size: 1.05rem !important;
                 }
@@ -365,6 +369,10 @@
 
 #schedule-modal-group {
 
+    @media (max-width: 767.98px) {
+        z-index: 1200;
+    }
+
     .modal-dialog {
         max-width: 700px;
 
@@ -386,6 +394,9 @@
                         padding: 0 0 0 10px;
                         font-size: 1.8rem;
 
+                        @media (max-width: 767.98px) {
+                            text-align: center;
+                        }
                     }
 
                     label[for="InputContact"] {
@@ -447,6 +458,10 @@
                         .form-select {
                             border-radius: 43px;
                             background-image: none;
+
+                            @media (max-width: 767.98px) {
+                                font-size: 1rem;
+                            }
 
                             &:focus {
                                 outline: none;
