@@ -23,22 +23,24 @@
     <!-- Animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body>
-    {% if show_update_message %}
-        {% include 'main/browser_update_message.html' %}
-    {% else %}
-        {% block header %}
-        {% endblock %}
-        {% block main %}
-        {% endblock %}
-        {% block modal %}
-        {% endblock %}
-        <script src="{% static 'main/js/change_zindex_navbar.js' %}"></script>
-        <script src="{% static 'main/js/validate_forms.js' %}"></script>
-        <script src="{% static 'main/js/bootstrap_tooltip.js' %}"></script>
-        <script src="{% static 'main/js/popover.js' %}"></script>
-        {% block js %}
-        {% endblock %}
-    {% endif %}
+<body class="d-flex flex-column">
+{% if show_update_message %}
+    {% include 'main/browser_update_message.html' %}
+{% else %}
+    {% block header %}
+    {% endblock %}
+    {% block main %}
+    {% endblock %}
+    {% block footer %}
+    {% endblock %}
+    {% block modal %}
+    {% endblock %}
+    <script src="{% static 'main/js/change_zindex_navbar.js' %}"></script>
+    <script src="{% static 'main/js/validate_forms.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap_tooltip.js' %}"></script>
+    <script src="{% static 'main/js/popover.js' %}"></script>
+    {% block js %}
+    {% endblock %}
+{% endif %}
 </body>
 </html>

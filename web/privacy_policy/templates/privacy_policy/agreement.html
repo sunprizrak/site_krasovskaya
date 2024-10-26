@@ -1,0 +1,43 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block google_tags %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-27K13ETBN6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-27K13ETBN6');
+</script>
+{% endblock %}
+
+{% block header %}
+<header class="legal-header">
+    <div class="row h-100">
+        <div class="col d-flex justify-content-center align-items-center">
+            <h2>Пользовательское соглашение</h2>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block main %}
+<main class="legal-main">
+    <div class="container legal-container">
+        <div class="row">
+            <div class="col col-text">
+                {{ agreement.text|safe }}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block footer %}
+<footer class="legal-footer">
+    {% include 'main/navbar.html' %}
+</footer>
+{% endblock %}

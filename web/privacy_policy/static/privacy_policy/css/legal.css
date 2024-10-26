@@ -1,0 +1,100 @@
+.legal-header {
+    height: 60px;
+    min-height: 60px;
+    background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+
+    h2 {
+        color: #4e9599;
+        margin: 0;
+
+        @media (max-width: 767.98px){
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        &::first-letter {
+            font-family: 'Monplesir script';
+        }
+
+
+    }
+}
+
+.legal-main {
+    flex-grow: 1;
+
+    @media (max-width: 767.98px) {
+        padding-bottom: 57px;
+    }
+
+    .legal-container {
+        font-family: 'PlayfairDisplay';
+        user-select: none;
+
+        .col-text {
+            padding-top: 15px;
+        }
+    }
+}
+
+.legal-footer {
+    height: 60px;
+    min-height: 60px;
+
+    @media (max-width: 767.98px) {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 57px;
+        z-index: 1000;
+        min-height: auto;
+    }
+
+    .navbar {
+        height: 100%;
+        background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+
+        .navbar-collapse {
+
+            @media (max-width: 767.98px) {
+                position: fixed;
+                bottom: 50px;
+                background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+                width: 100%;
+                left: 0;
+                right: 0;
+            }
+
+            .navbar-nav {
+                right: 30px;
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    right: 42px;
+                }
+
+                @media (min-width: 1400px) {
+                    right: 56px;
+                }
+
+                .nav-link {
+                    font-size: 0.85rem !important;
+                    color: #4e9599;
+
+                    @media (max-width: 767.98px) {
+                        font-size: 1rem !important;
+                        text-align: center;
+                    }
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 1.05rem !important;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 1.25rem !important;
+                    }
+                }
+            }
+        }
+    }
+}
+

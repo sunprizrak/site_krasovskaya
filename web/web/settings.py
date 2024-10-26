@@ -23,6 +23,7 @@ CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'http://localhost'
 
 INSTALLED_APPS = [
     'ckeditor',
+    'privacy_policy',
     'main.apps.MainConfig',
     'news.apps.NewsConfig',
     'grappelli',
