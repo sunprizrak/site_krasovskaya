@@ -195,7 +195,8 @@
                             vertical-align: center;
 
                             @media (max-width: 767.98px) {
-                                height: 30px;
+                                height: auto;
+                                min-height: 35px;
                                 display: flex;
                                 justify-content: end;
                                 align-items: center;
@@ -348,6 +349,7 @@
             @media (max-width: 767.98px) {
                 height: auto;
                 z-index: 200;
+                margin-top: 57px;
             }
 
             #groups-box-form {
