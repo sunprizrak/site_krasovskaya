@@ -52,6 +52,10 @@
             .nav-link {
                 white-space: nowrap;
 
+                @media (max-width: 767.98px) {
+                    text-align: center;
+                }
+
                 &:hover {
                     text-decoration: underline;
                 }

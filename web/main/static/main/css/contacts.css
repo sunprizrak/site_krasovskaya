@@ -65,6 +65,10 @@
         font-family: 'PlayfairDisplay';
         user-select: none;
 
+        @media (max-width: 767.98px) {
+            padding-top: 57px;
+        }
+
         #mob-page-name {
             .col {
                 padding: 10px;
@@ -86,6 +90,8 @@
 
             @media (max-width: 767.98px) {
                 flex-direction: column;
+                height: auto;
+                min-height: auto;
             }
 
             #contacts-left {

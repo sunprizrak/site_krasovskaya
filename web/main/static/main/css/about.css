@@ -86,6 +86,10 @@
         font-family: 'PlayfairDisplay';
         user-select: none;
 
+        @media (max-width: 767.98px) {
+            padding-top: 57px;
+        }
+
         #about-top-row {
             height: 35%;
             min-height: 243px;

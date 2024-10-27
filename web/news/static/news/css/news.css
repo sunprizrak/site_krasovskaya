@@ -6,20 +6,17 @@
         height: 57px;
         z-index: 1000;
         min-height: auto;
-        position: relative;
+        position: fixed;
+        background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
+        width: 100%;
     }
 
     .navbar {
         height: 100%;
-        background-color: transparent;
+
         z-index: 1030;
 
-        @media (max-width: 767.98px) {
-            height: auto;
-            width: 100%;
-            position: fixed;
-            background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
-        }
+
 
         .navbar-toggler {
 
@@ -28,26 +25,40 @@
             }
         }
 
-        .navbar-nav {
-            right: 65px;
+        .navbar-collapse {
 
-            .nav-link {
-                font-size: 0.7rem !important;
-                color: #4e9599;
+            @media (max-width: 767.98px) {
+                background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
+                position: fixed;
+                width: 100%;
+                left: 0;
+                right: 0;
+                top: 57px;
+            }
 
-                @media (max-width: 767.98px) {
-                    font-size: 1rem !important;
-                }
+            .navbar-nav {
+                right: 65px;
 
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 0.9rem !important;
-                }
+                .nav-link {
+                    font-size: 0.7rem !important;
+                    color: #4e9599;
 
-                @media (min-width: 1400px) {
-                    font-size: 1.1rem !important;
+                    @media (max-width: 767.98px) {
+                        font-size: 1rem !important;
+                    }
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 0.9rem !important;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 1.1rem !important;
+                    }
                 }
             }
         }
+
+
     }
 }
 
@@ -59,6 +70,10 @@
         font-family: 'PlayfairDisplay';
         user-select: none;
         height: 100% !important;
+
+        @media (max-width: 767.98px) {
+            padding-top: 57px;
+        }
 
         #news-top {
             position: relative;
