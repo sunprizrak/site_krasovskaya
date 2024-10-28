@@ -71,11 +71,17 @@
                                     </div>
                                 </div>
                                 <div class="row flex-grow-1">
-                                    {% for text in news_text %}
-                                        <div class="col py-2 news-item align-items-center justify-content-center" style="{% if forloop.first %}display: flex;{% else %}display: none;{% endif %}">
-                                            <p>{{ text|safe }}</p>
+                                    <div class="col col-carousel">
+                                        <div id="carouselNews" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                {% for text in news_text %}
+                                                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                                        <p>{{ text|safe }}</p>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
                                         </div>
-                                    {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -105,11 +111,17 @@
                                     </div>
                                 </div>
                                 <div class="row flex-grow-1">
-                                    {% for text in news_text %}
-                                        <div class="col py-2 news-item align-items-center justify-content-center" style="{% if forloop.first %}display: flex;{% else %}display: none;{% endif %}">
-                                            <p>{{ text|safe }}</p>
+                                    <div class="col col-carousel">
+                                        <div id="carouselNewsMob" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                {% for text in news_text %}
+                                                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                                        <p>{{ text|safe }}</p>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
                                         </div>
-                                    {% endfor %}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -125,8 +137,4 @@
 
 {% block modal %}
     {% include 'main/feedback_modal.html' %}
-{% endblock %}
-
-{% block js %}
-    <script src="{% static 'main/js/change_news.js' %}"></script>
 {% endblock %}
