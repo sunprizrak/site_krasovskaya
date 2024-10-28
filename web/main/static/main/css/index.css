@@ -438,28 +438,28 @@
                         }
                     }
                 }
+            }
+        }
 
-                #home-bottom-right-rectangle {
-                    width: 150px;
-                    border-top-left-radius: 43px;
-                    background-color: #fbde98;
-                    position: absolute;
-                    top: 25%;
-                    right: 0;
-                    bottom: 0;
+        #home-bottom-right-rectangle {
+            width: 150px;
+            height: 20vh;
+            border-top-left-radius: 43px;
+            background-color: #fbde98;
+            position: absolute;
+            right: 0;
+            bottom: 0;
 
-                    &:before {
-                        position: absolute;
-                        content: '';
-                        top: 0;
-                        left: 0;
-                        bottom: -100%;
-                        right: -50vw;
-                        background-color: #fbde98;
-                        border-top-left-radius: 43px;
-                        z-index: 150;
-                    }
-                }
+            &:before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: -50vw;
+                background-color: #fbde98;
+                border-top-left-radius: 43px;
+                z-index: 150;
             }
         }
 

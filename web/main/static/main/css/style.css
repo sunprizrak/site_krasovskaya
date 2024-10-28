@@ -19,7 +19,7 @@
     src: url('/static/main/font/Monplesir_script.ttf') format('truetype');
 }
 
-html{
+html {
     overflow-y: hidden;
 }
 

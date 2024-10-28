@@ -130,8 +130,8 @@
                     max-width: 476px;
                     min-height: 559px;
                     max-height: 617px;
-                    padding-left: 15px;
-                    padding-right: 15px;
+                    padding-left: 30px;
+                    padding-right: 30px;
 
                     @media (max-width: 767.98px) {
                         background-color: #d6cdc0;
@@ -208,7 +208,7 @@
                         white-space: nowrap;
 
                         @media (max-width: 767.98px) {
-                            font-size: 12px;
+                            font-size: 13px;
                         }
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
@@ -225,7 +225,7 @@
                         margin: 0;
 
                         @media (max-width: 767.98px) {
-                            font-size: 12px;
+                            font-size: 13px;
                         }
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
@@ -310,7 +310,7 @@
 
             @media (max-width: 767.98px) {
                 margin-top: 15px;
-                height: auto;
+                height: 57px;
                 background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
             }
 
@@ -335,7 +335,7 @@
                 font-size: 14px;
 
                 @media (max-width: 767.98px) {
-                    font-size: 12px;
+                    font-size: 13px;
                     text-align: center;
                 }
 
