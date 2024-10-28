@@ -514,7 +514,10 @@
                     }
 
                     .col-carousel {
-                        padding: 10px;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
 
                         p {
                             border-radius: 52px;
