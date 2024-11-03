@@ -3,8 +3,8 @@
     min-height: 40px;
 
     @media (max-width: 767.98px) {
-        height: 57px;
         z-index: 1000;
+        height: 57px;
         min-height: auto;
         position: fixed;
         background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
@@ -13,10 +13,7 @@
 
     .navbar {
         height: 100%;
-
         z-index: 1030;
-
-
 
         .navbar-toggler {
 
@@ -27,17 +24,12 @@
 
         .navbar-collapse {
 
-            @media (max-width: 767.98px) {
-                background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
-                position: fixed;
-                width: 100%;
-                left: 0;
-                right: 0;
-                top: 57px;
-            }
-
             .navbar-nav {
                 right: 65px;
+
+                @media (max-width: 767.98px) {
+                    right: auto;
+                }
 
                 .nav-link {
                     font-size: 0.7rem !important;
@@ -66,14 +58,15 @@
 #news-main {
     height: 95%;
 
+    @media (max-width: 767.98px) {
+        height: calc(100% - 57px);
+        top: 57px;
+    }
+
     #news-container {
         font-family: 'PlayfairDisplay';
         user-select: none;
         height: 100% !important;
-
-        @media (max-width: 767.98px) {
-            padding-top: 57px;
-        }
 
         #news-top {
             position: relative;
@@ -85,9 +78,9 @@
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
-                height: 64px;
+                height: 57px;
                 min-height: auto;
-                z-index: 1100;
+                z-index: 1050;
 
                 &:before {
                     display: none;
@@ -97,7 +90,7 @@
             &:before {
                 position: absolute;
                 content: '';
-                height: 90%;
+                height: 100%;
                 left: -50vw;
                 right: -50vw;
                 background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
@@ -107,6 +100,7 @@
             h2 {
                 color: #F5F5F5;
                 z-index: 1050;
+                margin: 0;
 
                 &::first-letter {
                     font-family: 'Monplesir script';
@@ -129,9 +123,13 @@
 
         #news-middle {
             height: 79%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 10px;
 
             @media (max-width: 767.98px) {
-                height: auto;
+                height: calc(100% - 70px);
+                padding-left: 10px;
             }
 
             /* Scrollbar */
@@ -155,107 +153,80 @@
 
             /* end Scrollbar */
 
-            .full-width-hr {
-                position: relative;
-                height: 1px;
+            .news {
+                display: flex;
+                flex-direction: column;
+                margin-top: 15px;
+                padding-bottom: 15px;
+                border-top: 1px solid #4E9599;
+                border-bottom: 1px solid #4E9599;
 
-                @media (max-width: 767.98px) {
-                    display: none;
+                strong {
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 17px;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 19px;
+                    }
                 }
 
-                &:before {
-                    position: absolute;
-                    content: '';
-                    height: 100%;
-                    left: -50vw;
-                    right: -50vw;
-                    background-color: #4E9599;
-                }
-            }
+                img[alt='news-image'], video {
+                    float: left;
+                    margin-right: 20px;
+                    width: 190px;
+                    pointer-events: none;
 
-            .news-wrap {
-                overflow-y: auto;
-                overflow-x: hidden;
-                height: 100%;
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        width: 256px;
+                    }
 
-                @media (max-width: 767.98px) {
-                    padding-top: 5px;
+                    @media (min-width: 1400px) {
+                        width: 256px;
+                    }
                 }
 
-                .news {
-                    display: flex;
-                    flex-direction: column;
+                video::-webkit-media-controls {
+                    display: none !important;
+                }
 
-                    strong {
+                .news-text {
+
+                    p {
+                        margin: 0 10px 0 0;
+                        font-size: 13px;
+
+                        @media (max-width: 767.98px) {
+                            margin: 0;
+                        }
+
                         @media (min-width: 1200px) and (max-width: 1399px) {
+                            font-size: 15px;
+                        }
+
+                        @media (min-width: 1400px) {
                             font-size: 17px;
                         }
+                    }
+                }
 
-                        @media (min-width: 1400px) {
-                            font-size: 19px;
-                        }
+                .heart {
+                    position: relative;
+                    cursor: pointer;
+
+                    span {
+                        margin-right: 5px;
                     }
 
-                    img[alt='news-image'], video {
-                        float: left;
-                        margin-right: 20px;
-                        width: 190px;
-                        pointer-events: none;
+                    i {
+                        color: #4E9599;
+                        transition: transform 0.1s ease-in-out;
+                        transform-origin: center;
 
-                        @media (min-width: 1200px) and (max-width: 1399px) {
-                            width: 256px;
-                        }
-
-                        @media (min-width: 1400px) {
-                            width: 256px;
+                        &:active {
+                            transform: scale(1.3);
                         }
                     }
-
-                    video::-webkit-media-controls {
-                        display: none !important;
-                    }
-
-                    .news-text {
-
-                        p {
-                            margin: 0 10px 0 0;
-                            font-size: 13px;
-
-                            @media (max-width: 767.98px) {
-                                margin: 0;
-                            }
-
-                            @media (min-width: 1200px) and (max-width: 1399px) {
-                                font-size: 15px;
-                            }
-
-                            @media (min-width: 1400px) {
-                                font-size: 17px;
-                            }
-                        }
-                    }
-
-                    .heart {
-                        display: inline-flex;
-                        align-items: center;
-                        position: relative;
-                        cursor: pointer;
-
-                        span {
-                            margin-right: 5px;
-                        }
-
-                        i {
-                            color: #4E9599;
-                            transition: transform 0.1s ease-in-out;
-                            transform-origin: center;
-
-                            &:active {
-                                transform: scale(1.3);
-                            }
-                        }
-                    }
-
                 }
             }
         }
@@ -265,10 +236,11 @@
 
             @media (max-width: 767.98px) {
                 height: auto;
+                min-height: 70px;
                 position: fixed;
                 bottom: 0;
                 width: 100%;
-                background-color: #ece4d8;
+                background-color: #F5F5F5;
             }
 
             .col {
@@ -291,6 +263,7 @@
                 }
 
                 @media (max-width: 767.98px) {
+                    font-size: 1.2rem;
                     width: 90%;
                 }
 
@@ -307,8 +280,6 @@
     }
 }
 
-
-
 #feedback_subscribe {
     .modal-dialog {
         max-width: 700px;
@@ -319,7 +290,6 @@
 
                 label[for="InputName"], label[for="InputEmail"] {
                     color: #4e9599;
-                    font-size: 1.8rem;
 
                     &::first-letter {
                         font-family: 'Monplesir script';
@@ -331,10 +301,26 @@
                     border-radius: 43px;
                     height: 50px;
 
+                    @media (max-width: 767.98px) {
+                        width: 100%;
+                    }
+
                     &:focus {
                         outline: none;
                         border-color: #4e9599;
                         box-shadow: 0 0 0 0.2rem rgba(78, 149, 153, 0.5);
+                    }
+                }
+
+                label[for="InputName"] {
+                    font-size: 1.8rem;
+                }
+
+                label[for="InputEmail"] {
+                    font-size: 1.8rem;
+
+                    @media (max-width: 767.98px) {
+                        font-size: 1.2rem;
                     }
                 }
 
@@ -359,25 +345,35 @@
                         font-size: 13px;
                         color: inherit;
                         padding: 7px 0 0 10px;
+
+                        @media (max-width: 767.98px) {
+                            font-size: 11px;
+                        }
                     }
                 }
 
                 strong {
                     font-size: 14px;
+
+                    @media (max-width: 767.98px) {
+                        font-size: 11px;
+                        text-align: center;
+                    }
                 }
             }
 
             .modal-footer {
                 padding-bottom: 25px;
-                    button {
-                        width: 60%;
-                        font-size: 1.2rem;
 
-                        @media (min-width: 1400px) {
-                            font-size: 1.3rem;
-                        }
+                button {
+                    width: 60%;
+                    font-size: 1.2rem;
+
+                    @media (min-width: 1400px) {
+                        font-size: 1.3rem;
                     }
                 }
+            }
         }
     }
 }

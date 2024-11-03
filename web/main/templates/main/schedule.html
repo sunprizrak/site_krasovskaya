@@ -47,8 +47,8 @@
                         </div>
                     </div>
                     <div class="row schedule-box">
-                        {% for group in group_lesson %}
-                            {% if group.day == day %}
+                        {% if day in grouped_lessons and grouped_lessons|get_item:day %}
+                            {% for group in grouped_lessons|get_item:day %}
                                 <div class="col">
                                     <div class="row">
                                         <div class="col">
@@ -84,8 +84,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            {% endif %}
-                        {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                            <div class="col">
+                                <p class="d-flex justify-content-center">
+                                    Нет занятий
+                                </p>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}
@@ -108,8 +114,8 @@
                         </div>
                     </div>
                     <div class="row schedule-box">
-                        {% for group in group_lesson %}
-                            {% if group.day == day %}
+                        {% if day in grouped_lessons and grouped_lessons|get_item:day %}
+                            {% for group in grouped_lessons|get_item:day %}
                                 <div class="col">
                                     <div class="row">
                                         <div class="col">
@@ -145,8 +151,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            {% endif %}
-                        {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                            <div class="col">
+                                <p class="d-flex justify-content-center">
+                                    Нет занятий
+                                </p>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

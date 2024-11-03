@@ -14,17 +14,15 @@
             height: auto;
             width: 100%;
             position: fixed;
-            background-color: #ece4d8;
-        }
-
-        .navbar-collapse {
-            @media (max-width: 767.98px) {
-                z-index: 1020;
-            }
+            background-color: #F5F5F5;
         }
 
         .navbar-nav {
             right: 30px;
+
+            @media (max-width: 767.98px) {
+                right: auto;
+            }
 
             @media (min-width: 1200px) and (max-width: 1399px) {
                 right: 42px;
@@ -83,7 +81,7 @@
                 transform: translateX(-53%);
                 height: 57px;
                 min-height: auto;
-                z-index: 1100;
+                z-index: 1050;
                 background-color: #fbde98;
             }
 
@@ -201,6 +199,13 @@
                                 justify-content: end;
                                 align-items: center;
                                 margin-top: 15px;
+                                background: linear-gradient(
+                                    to right,
+                                    rgba(227, 236, 237, 1) 0%, /* Уменьшили яркость белого */
+                                    rgba(122, 175, 177, 1) 38.55%,
+                                    rgba(88, 155, 159, 1) 77.1%,
+                                    rgba(88, 155, 159, 1) 100%
+                                );
                             }
 
                             @media (min-width: 1400px) {
@@ -230,7 +235,7 @@
                                 }
 
                                 &.span-right {
-                                    color: #ece4d8;
+                                    color: #F5F5F5;
                                     float: right;
                                 }
                             }
@@ -243,9 +248,9 @@
                             border: 1px solid #4e9599;
                             border-radius: 43px;
                             z-index: 100;
-                            background: #ece4d8;
                             box-sizing: border-box;
                             height: calc(100% - 43px - 25px);
+                            background-color: #F5F5F5;
 
                             @media (max-width: 767.98px) {
                                 height: auto;
@@ -298,6 +303,7 @@
                         }
                     }
                 }
+
                 .carousel-control-prev {
                     justify-content: start;
                     left: -5%;
@@ -361,7 +367,7 @@
                 border: 1px solid #4e9599;
                 border-radius: 43px;
                 z-index: 100;
-                background: #ece4d8;
+                background-color: #F5F5F5;
 
                 @media (max-width: 767.98px) {
                     height: auto;

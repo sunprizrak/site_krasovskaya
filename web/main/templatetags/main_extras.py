@@ -16,3 +16,8 @@ def ru_plural(value, variants):
         variant = 2
 
     return variants[variant]
+
+
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)

@@ -41,8 +41,22 @@
                 position: absolute;
 
                 @media (max-width: 767.98px) {
-                        position: static;
+                    position: relative;
+                    padding: 30px 30px 30px 45px;
+                    background-color: #FDF9F3;
+                    border-radius: 43px;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 3px;
+                        left: 25px;
+                        bottom: 30px;
+                        top: 30px;
+
+                        background-color: #4e9599 !important;
                     }
+                }
 
                 @media (min-width: 1400px) {
                     right: 40px;
@@ -53,7 +67,7 @@
                 white-space: nowrap;
 
                 @media (max-width: 767.98px) {
-                    text-align: center;
+                    color: #4e9599;
                 }
 
                 &:hover {
@@ -70,7 +84,7 @@
 
 .navbar-popover {
     --bs-popover-border-color: #4e9599 !important;
-    --bs-popover-bg: #ece4d8 !important;
+    --bs-popover-bg: #F5F5F5 !important;
     --bs-popover-body-padding-x: 5px !important;
     --bs-popover-body-padding-y: 5px !important;
 

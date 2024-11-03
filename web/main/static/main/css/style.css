@@ -29,7 +29,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #ece4d8 !important;
+    background-color: #F5F5F5 !important;
 
     /* Scrollbar */
 
@@ -89,7 +89,7 @@ main {
     .modal-dialog {
 
         .modal-content {
-            background-color: #ece4d8 !important;
+            background-color: #ECE7E4 !important;
             font-family: 'PlayfairDisplay';
             border: 3px solid #4e9599;
             border-radius: 43px;
@@ -98,6 +98,7 @@ main {
 
                 h5 {
                     color: #4e9599;
+
                     &::first-letter {
                         font-family: 'Monplesir script';
                     }

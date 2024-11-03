@@ -28,43 +28,43 @@
                 <h2>Мои новости</h2>
             </div>
         </div>
-        <div class="row-1" id="news-middle">
-            <div class="col full-width-hr"></div>
-            <div class="col d-flex flex-column flex-fill news-wrap">
-                {% for news_item in news %}
-                    {% if not news_item.hide %}
-                        <div class="row pb-5 news">
-                            {% if news_item.title %}
-                                <div class="col d-flex justify-content-center">
+        <div class="row row-cols-1" id="news-middle">
+            {% for news_item in news %}
+                {% if not news_item.hide %}
+                    <div class="col news">
+                        {% if news_item.title %}
+                            <div class="row">
+                                <div class="col mt-2 d-flex justify-content-center">
                                     <strong>{{ news_item.title }}</strong>
                                 </div>
-                            {% endif %}
+                            </div>
+                        {% endif %}
+                        <div class="row">
                             <div class="col mt-3">
-                                {% if news_item.file %}
-                                    {% if news_item.media_type == 'photo' %}
-                                        <img src="{{ news_item.file.url }}" alt="news-image">
-                                    {% elif news_item.media_type == 'video' %}
-                                        <video controls autoplay loop muted>
-                                            <source src="{{ news_item.file.url }}">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    {% endif %}
+                            {% if news_item.file %}
+                                {% if news_item.media_type == 'photo' %}
+                                    <img src="{{ news_item.file.url }}" alt="news-image">
+                                {% elif news_item.media_type == 'video' %}
+                                    <video controls autoplay loop muted>
+                                        <source src="{{ news_item.file.url }}">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 {% endif %}
                                 <div class="news-text">
                                     {{ news_item.text|safe }}
                                 </div>
-                            </div>
-                            <div class="col-md-11 d-flex align-self-center justify-content-end position-relative">
-                                <div class="heart" data-news-id="{{ news_item.id }}">
-                                    <span>{{ news_item.likes }}</span>
-                                    <i class="bi bi-heart-fill"></i>
-                                </div>
+                            {% endif %}
                             </div>
                         </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="col full-width-hr"></div>
+                        <div class="row">
+                            <div class="col d-flex align-items-center justify-content-end heart" data-news-id="{{ news_item.id }}">
+                                <span>{{ news_item.likes }}</span>
+                                <i class="bi bi-heart-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="row" id="news-bottom">
             <div class="col d-flex align-items-center">

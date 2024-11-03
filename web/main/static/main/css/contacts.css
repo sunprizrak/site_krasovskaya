@@ -1,35 +1,42 @@
 #contacts-header {
     height: 21%;
     min-height: 136px;
+    background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+
 
     @media (max-width: 767.98px) {
         height: 57px;
         z-index: 1000;
         min-height: auto;
-        position: relative;
+        position: fixed;
+        width: 100%;
+    }
+
+    @media (min-width: 1400px) {
+        min-height: 155px;
     }
 
     .navbar {
         height: 100%;
         z-index: 1030;
-        background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
 
         @media (max-width: 767.98px) {
             height: auto;
             width: 100%;
             position: fixed;
+            background-color: transparent;
         }
 
         .container {
             bottom: 34%;
-
-            @media (min-width: 1400px) {
-                bottom: 65px;
-            }
         }
 
         .navbar-nav {
             right: 15px;
+
+            @media (max-width: 767.98px) {
+                right: auto;
+            }
 
             .nav-link {
                 font-size: 0.9rem !important;
@@ -53,10 +60,10 @@
 
 
 #contacts-main {
-    height: 79%;
+    height: 79% !important;
 
     @media (max-width: 767.98px) {
-        height: auto;
+        height: calc(100% - 57px);
         z-index: 500;
     }
 
@@ -94,10 +101,13 @@
                 min-height: auto;
             }
 
+            @media (min-width: 1400px) {
+                min-height: 565px;
+            }
+
             #contacts-left {
                 min-width: 500px;
                 position: relative;
-                bottom: 18%;
 
                 @media (max-width: 767.98px) {
                     width: 100%;
@@ -106,35 +116,41 @@
 
                 h2 {
                     color: #4e9599;
-                    position: relative;
+                    position: fixed;
                     z-index: 1050;
+                    margin: 0;
+                    top: 50px;
 
                     &::first-letter {
                         font-family: 'Monplesir script';
                     }
 
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        top: 55px;
+                    }
+
                     @media (min-width: 1400px) {
                         font-size: 2.7rem;
+                        top: 60px;
                     }
                 }
 
                 #contacts-info {
                     width: 100%;
-                    background-color: #ece4d8;
+                    position: absolute;
+                    bottom: 5%;
+                    height: 100%;
+                    background-color: #ECE7E4;
                     border-top-left-radius: 43px;
                     border-top-right-radius: 43px;
-                    position: relative;
                     z-index: 1050;
-                    top: 5px;
-                    height: 73vh;
                     max-width: 476px;
-                    min-height: 559px;
-                    max-height: 617px;
                     padding-left: 30px;
                     padding-right: 30px;
+                    padding-bottom: 15px;
 
                     @media (max-width: 767.98px) {
-                        background-color: #d6cdc0;
+                        background-color: #ECE7E4;
                         min-height: auto;
                         max-height: auto;
                         max-width: auto;
@@ -150,13 +166,13 @@
                     }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        min-height: 579px;
-                        max-height: 625px;
+                        max-width: 550px;
                     }
 
                     @media (min-width: 1400px) {
                         max-width: 600px;
-                        max-height: none;
+                        max-height: auto;
+                        min-height: 546px;
                     }
 
                     i {
@@ -268,6 +284,7 @@
 
             #contacts-right {
                 max-width: 460px;
+                position: relative;
 
                 @media (min-width: 1400px) {
                     max-width: 804px;
@@ -275,14 +292,15 @@
 
 
                 img {
-                    position: relative;
+                    position: absolute;
                     z-index: 1050;
                     border-top-left-radius: 43px;
                     border-top-right-radius: 43px;
-                    height: 78vh;
-                    min-height: 606px;
-                    max-height: 655px;
-                    bottom: 14%;
+                    height: 82vh;
+                    min-height: 576px;
+                    max-height: 610px;
+                    bottom: 5%;
+                    left: 10%;
 
                     @media (max-width: 767.98px) {
                         bottom: auto;
@@ -293,12 +311,13 @@
                     }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        min-height: 624px;
+                        min-height: 580px;
                         max-height: 660px;
                     }
 
                     @media (min-width: 1400px) {
                         max-height: none;
+                        min-height: 630px;
                     }
                 }
             }

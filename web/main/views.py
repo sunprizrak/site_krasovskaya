@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView
 from django.views.generic.edit import FormMixin
@@ -61,8 +63,8 @@ class AboutView(CheckBrowserVersionMixin, TemplateView):
 
 class ScheduleView(CheckBrowserVersionMixin, FormMixin, ListView):
     model = GroupLesson
-    form_class = WantWriteGroupForm
     context_object_name = 'group_lesson'
+    form_class = WantWriteGroupForm
     template_name = 'main/schedule.html'
     success_url = reverse_lazy('schedule')
     extra_context = {
@@ -81,6 +83,24 @@ class ScheduleView(CheckBrowserVersionMixin, FormMixin, ListView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+
+    def get_queryset(self):
+        # Получаем все группы и сортируем по времени начала
+        return GroupLesson.objects.all().order_by('start_time')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        schedule_days = self.extra_context['schedule_days']
+
+        # Группируем занятия по дням недели
+        grouped_lessons = defaultdict(list)
+        for lesson in context['group_lesson']:
+            grouped_lessons[lesson.day].append(lesson)
+
+        # Добавляем сгруппированные данные в контекст
+        context['grouped_lessons'] = grouped_lessons
+        context['schedule_days'] = schedule_days
+        return context
 
 
 class ContactsView(CheckBrowserVersionMixin, FormMixin, TemplateView):

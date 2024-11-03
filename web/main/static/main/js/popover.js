@@ -1,6 +1,7 @@
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl, {
-    trigger: 'focus'
-  })
-})
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+popoverTriggerList.forEach(function (popoverTriggerEl) {
+    var trigger = popoverTriggerEl.getAttribute('data-bs-trigger');
+    var popover = new bootstrap.Popover(popoverTriggerEl, {
+        trigger: trigger
+    });
+});
