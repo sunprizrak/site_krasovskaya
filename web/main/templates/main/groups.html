@@ -57,7 +57,11 @@
                                     </div>
                                     <div class="groups-header position-relative">
                                         <span class="span-left d-none d-md-block">{{ group_lesson.name|capfirst }}</span>
-                                        <span class="span-right">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
+                                        <span class="span-right d-none d-md-block">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
+                                        <span class="d-md-none">
+                                            {{ group_lesson.city|capfirst }}<br>
+                                            {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}
+                                        </span>
                                     </div>
                                     <div class="groups-box mostly-customized-scrollbar">
                                         <div class="col groups-description h-100">

@@ -202,13 +202,10 @@
                                 justify-content: end;
                                 align-items: center;
                                 margin-top: 15px;
-                                background: linear-gradient(
-                                    to right,
-                                    rgba(227, 236, 237, 1) 0%, /* Уменьшили яркость белого */
-                                    rgba(122, 175, 177, 1) 38.55%,
-                                    rgba(88, 155, 159, 1) 77.1%,
-                                    rgba(88, 155, 159, 1) 100%
-                                );
+                                                            background: linear-gradient(to right, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
+                                justify-content: center;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
                             }
 
                             @media (min-width: 1400px) {
@@ -225,7 +222,9 @@
                                 @media (max-width: 767.98px) {
                                     font-size: 1rem;
                                     top: auto;
-                                    padding: 0 15px 0 0;
+                                    padding: 0 0 0 0;
+                                    text-align: center;
+                                    color: #F5F5F5;
                                 }
 
                                 @media (min-width: 1400px) {
