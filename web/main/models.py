@@ -18,6 +18,7 @@ class GroupLesson(models.Model):
     capacity = models.PositiveIntegerField(verbose_name='размер группы')
     city = models.CharField(verbose_name='город проведения', default='неизвестен')
     price = models.IntegerField(verbose_name='Цена', default=0)
+    show_if_no_seats = models.BooleanField(default=False, verbose_name='отображать, если нет мест')
     CURRENCY_CHOICES = [
         ('$', 'USD'),
         ('€', 'EUR'),

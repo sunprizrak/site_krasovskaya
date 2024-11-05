@@ -57,6 +57,8 @@
 
     @media (max-width: 767.98px) {
         height: auto;
+        top: 57px;
+
     }
 
     #groups-container {
@@ -67,8 +69,9 @@
         position: relative;
 
         @media (max-width: 767.98px) {
-            height: auto;
-            display: grid;
+            display: flex;
+            flex-direction: column;
+            height: auto !important;
         }
 
         #groups-top-row {
@@ -254,6 +257,7 @@
 
                             @media (max-width: 767.98px) {
                                 height: auto;
+                                min-height: 100vh;
                             }
 
                             /* Scrollbar */
@@ -355,7 +359,6 @@
             @media (max-width: 767.98px) {
                 height: auto;
                 z-index: 200;
-                margin-top: 57px;
             }
 
             #groups-box-form {

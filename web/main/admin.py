@@ -10,7 +10,7 @@ class EnrollmentInline(admin.TabularInline):
 @admin.register(GroupLesson)
 class GroupLessonAdmin(admin.ModelAdmin):
     inlines = [EnrollmentInline]
-    list_display = ('name', 'day', 'start_time', 'end_time', 'capacity', 'available_slots')
+    list_display = ('name', 'day', 'start_time', 'end_time', 'capacity', 'available_slots', 'show_if_no_seats')
 
     def available_slots(self, obj):
         return obj.available_slots
