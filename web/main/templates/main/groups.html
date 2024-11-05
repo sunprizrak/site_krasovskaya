@@ -32,44 +32,40 @@
         </div>
         <div class="row" id="groups-middle">
             <div class="col h-md-100">
-                <div class="carousel slide" data-bs-ride="false" id="groups-carousel">
+                <div class="carousel slide" id="groups-carousel">
                     <div id="carousel-inner">
                          <div class="carousel-indicators">
-                            {% for group_lesson in group_lessons %}
-                                {% if group_lesson.available_slots > 0 or group_lesson.show_if_no_seats %}
-                                    <button type="button" data-bs-target="#groups-middle" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
-                                {% endif %}
+                             {% for group_lesson in group_lessons %}
+                                <button type="button" data-bs-target="#groups-carousel" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
                              {% endfor %}
                         </div>
                         {% for group_lesson in group_lessons %}
-                            {% if group_lesson.available_slots > 0 or group_lesson.show_if_no_seats %}
-                                <div class="carousel-item {% if forloop.first %}active{% endif %}" data-group-id="{{ group_lesson.id }}">
-                                    <div class="d-md-none d-flex justify-content-center align-items-center mob-groups-item-header">
-                                        <button class="carousel-control-prev d-md-none" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Предыдущий</span>
-                                        </button>
-                                        <h6>{{ group_lesson.name|capfirst }}</h6>
-                                        <button class="carousel-control-next d-md-none" type="button" data-bs-target="#groups-carousel"  data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Следующий</span>
-                                        </button>
-                                    </div>
-                                    <div class="groups-header position-relative">
-                                        <span class="span-left d-none d-md-block">{{ group_lesson.name|capfirst }}</span>
-                                        <span class="span-right d-none d-md-block">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
-                                        <span class="d-md-none">
-                                            {{ group_lesson.city|capfirst }}<br>
-                                            {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}
-                                        </span>
-                                    </div>
-                                    <div class="groups-box mostly-customized-scrollbar">
-                                        <div class="col groups-description h-100">
-                                            {{ group_lesson.description|safe }}
-                                        </div>
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}" data-group-id="{{ group_lesson.id }}">
+                                <div class="d-md-none d-flex justify-content-center align-items-center mob-groups-item-header">
+                                    <button class="carousel-control-prev d-md-none" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Предыдущий</span>
+                                    </button>
+                                    <h6>{{ group_lesson.name|capfirst }}</h6>
+                                    <button class="carousel-control-next d-md-none" type="button" data-bs-target="#groups-carousel"  data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Следующий</span>
+                                    </button>
+                                </div>
+                                <div class="groups-header position-relative">
+                                    <span class="span-left d-none d-md-block">{{ group_lesson.name|capfirst }}</span>
+                                    <span class="span-right d-none d-md-block">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
+                                    <span class="d-md-none">
+                                        {{ group_lesson.city|capfirst }}<br>
+                                        {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}
+                                    </span>
+                                </div>
+                                <div class="groups-box mostly-customized-scrollbar">
+                                    <div class="col groups-description h-100">
+                                        {{ group_lesson.description|safe }}
                                     </div>
                                 </div>
-                            {% endif %}
+                            </div>
                         {% endfor %}
                     </div>
                     <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">

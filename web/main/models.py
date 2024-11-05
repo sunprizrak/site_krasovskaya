@@ -33,7 +33,7 @@ class GroupLesson(models.Model):
 
     @property
     def available_slots(self):
-        return self.capacity - self.enrollments.count()
+        return int(self.capacity) - self.enrollments.count()
 
     @property
     def get_price(self):

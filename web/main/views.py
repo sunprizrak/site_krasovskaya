@@ -133,6 +133,10 @@ class GroupsView(CheckBrowserVersionMixin, FormMixin, ListView):
         'title': 'Группы',
     }
 
+    def get_queryset(self):
+        all_groups = super().get_queryset()
+        return [group for group in all_groups if group.available_slots > 0 or group.show_if_no_seats]
+
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         if form.is_valid():
