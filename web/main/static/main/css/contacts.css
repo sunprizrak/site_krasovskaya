@@ -125,6 +125,8 @@
                 #mob-bg-contacts-info {
                     @media (max-width: 767.98px) {
                         background-color: #ECE7E4;
+                        border-bottom-left-radius: 43px;
+                        border-bottom-right-radius: 43px;
                     }
                 }
 
