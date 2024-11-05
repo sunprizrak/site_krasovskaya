@@ -105,6 +105,12 @@
                 min-height: 565px;
             }
 
+            #col-contacts-info {
+                @media (max-width: 767.98px) {
+                    padding: 0;
+                }
+            }
+
             #contacts-left {
                 min-width: 500px;
                 position: relative;
@@ -112,6 +118,14 @@
                 @media (max-width: 767.98px) {
                     width: 100%;
                     min-width: auto;
+                    justify-content: center !important;
+                    margin-top: 15px;
+                }
+
+                #mob-bg-contacts-info {
+                    @media (max-width: 767.98px) {
+                        background-color: #ECE7E4;
+                    }
                 }
 
                 h2 {
@@ -150,6 +164,8 @@
                     padding-bottom: 15px;
 
                     @media (max-width: 767.98px) {
+                        position: relative;
+                        bottom: auto;
                         background-color: #ECE7E4;
                         min-height: auto;
                         max-height: auto;
@@ -157,8 +173,9 @@
                         min-width: auto;
                         width: 100% !important;
                         height: auto;
-                        padding-left: 15px;
-                        padding-right: 15px;
+                        padding-left: 0;
+                        padding-right: 0;
+                        padding-bottom: 10px;
                         border-top-left-radius: 0;
                         border-top-right-radius: 0;
                         border-bottom-left-radius: 43px;
@@ -303,6 +320,8 @@
                     left: 10%;
 
                     @media (max-width: 767.98px) {
+                        position: relative;
+                        left: auto;
                         bottom: auto;
                         min-height: auto;
                         max-height: auto;
