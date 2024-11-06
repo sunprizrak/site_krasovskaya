@@ -32,7 +32,7 @@
                 }
 
                 .nav-link {
-                    font-size: 0.7rem !important;
+                    font-size: 0.9rem !important;
                     color: #4e9599;
 
                     @media (max-width: 767.98px) {
@@ -194,10 +194,11 @@
 
                     p {
                         margin: 0 10px 0 0;
-                        font-size: 13px;
+                        font-size: 14px;
 
                         @media (max-width: 767.98px) {
                             margin: 0;
+                            font-size: 13px;
                         }
 
                         @media (min-width: 1200px) and (max-width: 1399px) {

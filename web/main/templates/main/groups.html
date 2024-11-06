@@ -52,7 +52,7 @@
                                         <span class="visually-hidden">Следующий</span>
                                     </button>
                                 </div>
-                                <div class="groups-header position-relative">
+                                <div class="groups-header">
                                     <span class="span-left d-none d-md-block">{{ group_lesson.name|capfirst }}</span>
                                     <span class="span-right d-none d-md-block">{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
                                     <span class="d-md-none">
@@ -64,18 +64,18 @@
                                     <div class="col groups-description h-100">
                                         {{ group_lesson.description|safe }}
                                     </div>
+                                    <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Предыдущий</span>
+                                    </button>
+                                    <button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#groups-carousel"  data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Следующий</span>
+                                    </button>
                                 </div>
                             </div>
                         {% endfor %}
                     </div>
-                    <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Предыдущий</span>
-                    </button>
-                    <button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#groups-carousel"  data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Следующий</span>
-                    </button>
                 </div>
             </div>
         </div>

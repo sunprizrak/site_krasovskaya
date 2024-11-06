@@ -1,5 +1,6 @@
 #groups-header {
     height: 5%;
+    min-height: 30px;
 
     @media (max-width: 767.98px) {
         height: 57px;
@@ -33,7 +34,7 @@
             }
 
             .nav-link {
-                font-size: 0.85rem !important;
+                font-size: 0.9rem !important;
                 color: #4e9599;
 
                 @media (max-width: 767.98px) {
@@ -187,13 +188,16 @@
                         }
 
                         .groups-header {
-                            position: relative;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
                             border-radius: 43px;
                             background: linear-gradient(to right, rgba(227, 236, 237, 1) 0%, 38.550421595573425%, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
                             z-index: 100;
                             width: 100%;
                             height: 43px;
-                            vertical-align: center;
+                            padding-left: 20px;
+                            padding-right: 20px;
 
                             @media (max-width: 767.98px) {
                                 height: auto;
@@ -202,10 +206,12 @@
                                 justify-content: end;
                                 align-items: center;
                                 margin-top: 15px;
-                                                            background: linear-gradient(to right, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
+                                background: linear-gradient(to right, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
                                 justify-content: center;
                                 padding-top: 5px;
                                 padding-bottom: 5px;
+                                padding-left: auto;
+                                padding-right: auto;
                             }
 
                             @media (min-width: 1400px) {
@@ -213,11 +219,9 @@
                             }
 
                             span {
-                                padding: 0 25px 0 25px;
-                                font-size: 1.4rem;
+                                font-size: 1.1rem;
                                 font-weight: bold;
                                 position: relative;
-                                top: 10%;
 
                                 @media (max-width: 767.98px) {
                                     font-size: 1rem;
@@ -233,12 +237,10 @@
 
                                 &.span-left {
                                     color: #4e9599;
-                                    float: left;
                                 }
 
                                 &.span-right {
                                     color: #F5F5F5;
-                                    float: right;
                                 }
                             }
                         }
@@ -291,8 +293,12 @@
                                 }
 
                                 p {
-                                    font-size: 13px;
+                                    font-size: 14px;
                                     margin: 0;
+
+                                    @media (max-width: 767.98px) {
+                                        font-size: 13px;
+                                    }
 
                                     @media (min-width: 1200px) and (max-width: 1399px) {
                                         font-size: 14px;
@@ -366,6 +372,7 @@
                 justify-content: center;
                 width: 60%;
                 height: 70%;
+                min-height: 81px;
                 border: 1px solid #4e9599;
                 border-radius: 43px;
                 z-index: 100;
@@ -381,8 +388,12 @@
 
                 p {
                     text-align: center;
-                    font-size: 13px;
+                    font-size: 14px;
                     margin: 0;
+
+                    @media (max-width: 767.98px) {
+                        font-size: 13px;
+                    }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
                         font-size: 14px;
@@ -461,7 +472,6 @@
         #groups-mob-bottom {
             margin-top: -50px;
             height: 100px;
-            width: 100vw;
             background: linear-gradient(to bottom, rgba(234, 239, 239, 1) 0%, 29.588013887405396%, rgba(170, 201, 203, 1) 59.17602777481079%, 79.5880138874054%, rgba(119, 172, 175, 1) 100%);
         }
     }
