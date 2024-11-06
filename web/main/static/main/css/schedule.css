@@ -1,5 +1,6 @@
 #schedule-header {
     height: 5%;
+    min-height: 30px;
 
     @media (max-width: 767.98px) {
         height: 57px;
@@ -73,6 +74,7 @@
 
         #schedule-top-row {
             height: 10%;
+            min-height: 55px;
 
             @media (max-width: 767.98px) {
                 position: fixed;
@@ -336,6 +338,7 @@
                 position: absolute;
                 content: '';
                 height: 100%;
+                min-height: 165px;
                 width: 100vw;
                 background-color: #fbde98;
                 z-index: 150;

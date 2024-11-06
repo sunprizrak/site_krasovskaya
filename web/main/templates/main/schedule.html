@@ -40,7 +40,7 @@
         </div>
         <div class="row row-cols-2 d-none d-md-flex schedule-bottom-row">
             {% for day in schedule_days %}
-                <div class="col {% if day == 'ЧТ' or day == 'ПТ' %}d-flex flex-column align-items-end{% endif %}" id="{% if day == 'СР' %}col-left-bottom{% endif %}">
+                <div class="col pb-3 {% if day == 'ЧТ' or day == 'ПТ' %}d-flex flex-column align-items-end{% endif %}" id="{% if day == 'СР' %}col-left-bottom{% endif %}">
                     <div class="row schedule-header">
                         <div class="col d-flex align-items-center {% if day == 'ЧТ' or day == 'ПТ' %}justify-content-start{% else %}justify-content-end{% endif %}">
                             <span class="{% if day == 'ЧТ' or day == 'ПТ' %}right-color{% else %}left-color{% endif %}">{{ day }}</span>
