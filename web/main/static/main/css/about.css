@@ -135,6 +135,7 @@
                         min-width: auto;
                         max-width: auto;
                         height: 100%;
+                        justify-content: center;
                     }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
