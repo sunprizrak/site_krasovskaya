@@ -301,12 +301,11 @@
                 .city-time {
                     height: auto;
                     display: flex;
-                    background: linear-gradient(to right, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
-                    background-color: red;
                     justify-content: center;
                     border-radius: 43px;
                     padding-top: 5px;
                     padding-bottom: 5px;
+                    background: linear-gradient(to right, rgba(227, 236, 237, 1) 0%, 25.550421595573425%, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
 
                     p {
                         font-size: 1rem;
