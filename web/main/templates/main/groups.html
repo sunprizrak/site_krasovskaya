@@ -65,22 +65,22 @@
             </div>
             <div class="col d-md-none">
                 {% for group_lesson in group_lessons %}
-<!--                    <div class="container mob-groups-content">-->
-<!--                        <div class="row row-cols-1">-->
-<!--                            <div class="col mt-3 d-flex justify-content-center">-->
-<!--                                <h6>{{ group_lesson.name|capfirst }}</h6>-->
-<!--                            </div>-->
-<!--                            <div class="col mt-2 city-time">-->
-<!--                                <p>-->
-<!--                                    {{ group_lesson.city|capfirst }}<br>-->
-<!--                                    {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="col mt-3 description">-->
-<!--                                {{ group_lesson.description|safe }}-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                    <div class="container mob-groups-content">
+                        <div class="row row-cols-1">
+                            <div class="col mt-3 d-flex justify-content-center">
+                                <h6>{{ group_lesson.name|capfirst }}</h6>
+                            </div>
+                            <div class="col mt-2 city-time">
+                                <p>
+                                    {{ group_lesson.city|capfirst }}<br>
+                                    {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}
+                                </p>
+                            </div>
+                            <div class="col mt-3 description">
+                                {{ group_lesson.description|safe }}
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
