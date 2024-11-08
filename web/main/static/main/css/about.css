@@ -5,7 +5,7 @@
 
     @media (max-width: 767.98px) {
         height: 57px;
-        min-height: auto;
+        min-height: 57px;
     }
 
     .navbar {
@@ -85,10 +85,6 @@
         height: 100% !important;
         font-family: 'PlayfairDisplay';
         user-select: none;
-
-        @media (max-width: 767.98px) {
-            padding-top: 57px;
-        }
 
         #about-top-row {
             height: 35%;

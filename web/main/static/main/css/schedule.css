@@ -5,7 +5,7 @@
     @media (max-width: 767.98px) {
         height: 57px;
         z-index: 1000;
-        min-height: auto;
+        min-height: 57px;
         position: relative;
     }
 
@@ -69,7 +69,8 @@
         position: relative;
 
         @media (max-width: 767.98px) {
-            height: auto !important;
+            display: flex;
+            flex-direction: column;
         }
 
         #schedule-top-row {
@@ -106,9 +107,9 @@
             }
         }
 
-        #mob-schedule-form-row {
+        /*#mob-schedule-form-row {
             margin-top: 57px;
-        }
+        }*/
 
         #schedule-box-form {
             @media (max-width: 767.98px) {
@@ -164,7 +165,7 @@
             height: 90%;
 
             @media (max-width: 767.98px) {
-                height: auto;
+                height: height: 100%;
             }
 
             .schedule-header {
@@ -346,9 +347,8 @@
         }
 
         #schedule-mob-bottom {
-            margin-top: -25px;
+            margin-top: -50px;
             height: 100px;
-            width: 100vw;
             background: linear-gradient(to bottom, rgba(234, 239, 239, 1) 0%, 29.588013887405396%, rgba(170, 201, 203, 1) 59.17602777481079%, 79.5880138874054%, rgba(119, 172, 175, 1) 100%);
         }
     }

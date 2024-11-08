@@ -4,7 +4,7 @@
 
     @media (max-width: 767.98px) {
         height: 57px;
-        min-height: auto;
+        min-height: 57px;
         z-index: 1000;
     }
 
@@ -58,8 +58,6 @@
 
     @media (max-width: 767.98px) {
         height: auto;
-        top: 57px;
-
     }
 
     #groups-container {
@@ -72,7 +70,6 @@
         @media (max-width: 767.98px) {
             display: flex;
             flex-direction: column;
-            height: auto !important;
         }
 
         #groups-top-row {
@@ -152,7 +149,7 @@
             position: relative;
 
             @media (max-width: 767.98px) {
-                height: auto;
+                height: 100%;
             }
 
             #groups-carousel {
@@ -166,12 +163,6 @@
 
                     .carousel-indicators {
                         transform: translateY(50%);
-
-                        @media (max-width: 767.98px) {
-                            position: relative;
-                            top: auto;
-                            bottom: auto;
-                        }
                     }
 
                     .carousel-item {
@@ -199,21 +190,6 @@
                             padding-left: 20px;
                             padding-right: 20px;
 
-                            @media (max-width: 767.98px) {
-                                height: auto;
-                                min-height: 35px;
-                                display: flex;
-                                justify-content: end;
-                                align-items: center;
-                                margin-top: 15px;
-                                background: linear-gradient(to right, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
-                                justify-content: center;
-                                padding-top: 5px;
-                                padding-bottom: 5px;
-                                padding-left: auto;
-                                padding-right: auto;
-                            }
-
                             @media (min-width: 1400px) {
                                 height: 45px;
                             }
@@ -222,14 +198,6 @@
                                 font-size: 1.1rem;
                                 font-weight: bold;
                                 position: relative;
-
-                                @media (max-width: 767.98px) {
-                                    font-size: 1rem;
-                                    top: auto;
-                                    padding: 0 0 0 0;
-                                    text-align: center;
-                                    color: #F5F5F5;
-                                }
 
                                 @media (min-width: 1400px) {
                                     font-size: 1.6rem;
@@ -255,11 +223,6 @@
                             box-sizing: border-box;
                             height: calc(100% - 43px - 25px);
                             background-color: #F5F5F5;
-
-                            @media (max-width: 767.98px) {
-                                height: auto;
-                                min-height: 100vh;
-                            }
 
                             /* Scrollbar */
 
@@ -288,17 +251,9 @@
                                 box-sizing: border-box;
                                 word-wrap: break-word;
 
-                                @media (max-width: 767.98px) {
-                                    overflow-y: hidden;
-                                }
-
                                 p {
                                     font-size: 14px;
                                     margin: 0;
-
-                                    @media (max-width: 767.98px) {
-                                        font-size: 13px;
-                                    }
 
                                     @media (min-width: 1200px) and (max-width: 1399px) {
                                         font-size: 14px;
@@ -317,18 +272,8 @@
                     justify-content: start;
                     left: -5%;
 
-                    @media (max-width: 767.98px) {
-                        position: relative;
-                        left: auto;
-                        justify-content: center;
-                    }
-
                     .carousel-control-prev-icon {
                         filter: brightness(0) saturate(100%) invert(58%) sepia(30%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(86%);
-
-                        @media (max-width: 767.98px) {
-                            width: 20px;
-                        }
                     }
                 }
 
@@ -336,23 +281,50 @@
                     justify-content: end;
                     right: -5%;
 
-                    @media (max-width: 767.98px) {
-                        position: relative;
-                        right: auto;
-                        justify-content: center;
-                    }
-
                     .carousel-control-next-icon {
                         filter: brightness(0) saturate(100%) invert(58%) sepia(30%) saturate(645%) hue-rotate(144deg) brightness(96%) contrast(86%);
-
-                        @media (max-width: 767.98px) {
-                            width: 20px;
-                        }
                     }
                 }
 
                 .carousel-indicators .active {
                     background-color: #4e9599;
+                }
+            }
+
+            .mob-groups-content {
+                h6 {
+                    color: #4e9599;
+                    text-align: center;
+                }
+
+                .city-time {
+                    height: auto;
+                    display: flex;
+                    background: linear-gradient(to right, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
+                    background-color: red;
+                    justify-content: center;
+                    border-radius: 43px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+
+                    p {
+                        font-size: 1rem;
+                        margin: 0;
+                        text-align: center;
+                        color: #F5F5F5;
+                    }
+                }
+
+                .description {
+                    border: 1px solid #4e9599;
+                    border-radius: 43px;
+                    padding: 25px;
+                    background-color: #F5F5F5;
+
+                    p {
+                        font-size: 13px;
+                        margin: 0;
+                    }
                 }
             }
         }

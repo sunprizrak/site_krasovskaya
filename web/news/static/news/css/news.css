@@ -5,7 +5,7 @@
     @media (max-width: 767.98px) {
         z-index: 1000;
         height: 57px;
-        min-height: auto;
+        min-height: 57px;
         position: fixed;
         background: linear-gradient(90deg, #F5F5F5 0%, #4E9599 100%);
         width: 100%;
@@ -59,14 +59,20 @@
     height: 95%;
 
     @media (max-width: 767.98px) {
-        height: calc(100% - 57px);
-        top: 57px;
+        height: auto;
     }
 
     #news-container {
         font-family: 'PlayfairDisplay';
         user-select: none;
         height: 100% !important;
+
+        @media (max-width: 767.98px) {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding-top: 57px;
+        }
 
         #news-top {
             position: relative;
