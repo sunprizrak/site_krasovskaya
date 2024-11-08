@@ -1,5 +1,5 @@
 from collections import defaultdict
-
+import random
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView
 from django.views.generic.edit import FormMixin
@@ -32,6 +32,8 @@ class HomeView(CheckBrowserVersionMixin, FormMixin, ListView):
                     text = strip_tags(obj.text)
                     abbreviated_text = self.truncate_text(text, 150)
                     context['news_text'].append(abbreviated_text)
+
+            random.shuffle(context['news_text'])
         return context
 
     def truncate_text(self, text, max_length):
