@@ -24,6 +24,7 @@
 
             @media (max-width: 767.98px) {
                 right: auto;
+                margin-top: 10px;
             }
 
             @media (min-width: 1200px) and (max-width: 1399px) {
