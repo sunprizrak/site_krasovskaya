@@ -74,6 +74,35 @@ main {
 
 }
 
+.alert {
+    display: none;
+    justify-content: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    background-color: #ECE7E4 !important;
+    border: 2px solid #4e9599 !important;
+
+    @media (max-width: 767.98px) {
+        left: 30%;
+    }
+
+    p {
+        margin: 0;
+        color: #4e9599;
+        font-size: 13px;
+
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            font-size: 14px;
+         }
+
+         @media (min-width: 1400px) {
+            font-size: 17px;
+         }
+    }
+}
+
 .h-100-p {
     height: 100%;
 }
