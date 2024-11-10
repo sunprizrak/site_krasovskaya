@@ -16,11 +16,6 @@
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 30px 20px 5px rgba(0, 0, 0, 0.2);
-
-    @media (max-width: 767.98px) {
-        width: 80%;
-        height: auto;
-    }
 }
 
 .apple-window nav {
@@ -62,16 +57,23 @@
     position: relative;
     color: #4e9599;
     user-select: none;
+}
 
-    h5 {
-        text-align: center;
-    }
-
-    @media (max-width: 767.98px) {
-        padding: 10px;
-    }
+.apple-window .apple-text h5 {
+    text-align: center;
 }
 
 .apple-window .apple-text h5::first-letter {
     font-family: 'Monplesir script';
+}
+
+@media (max-width: 767.98px) {
+    .apple-window {
+        width: 80%;
+        height: auto;
+    }
+
+    .apple-window .apple-text {
+        padding: 10px;
+    }
 }
