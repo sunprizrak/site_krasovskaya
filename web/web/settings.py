@@ -18,6 +18,8 @@ DEBUG = bool(int(os.environ.get('DEBUG', '1')))
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(' ')
 
 CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', 'http://localhost').split(' ')
+CSRF_COOKIE_SAMESITE = os.environ.get('CSRF_COOKIE_SAMESITE', 'Lax')
+CSRF_COOKIE_SECURE = bool(int(os.environ.get('CSRF_COOKIE_SECURE', '1')))
 
 # Application definition
 
