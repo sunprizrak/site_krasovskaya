@@ -26,6 +26,7 @@ class NewsModel(models.Model):
             FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif', 'mp4', 'avi'])
         ]
     )
+    iframe_code = RichTextField(verbose_name='HTML код iframe video', blank=True, null=True)
     text = RichTextField(verbose_name='Текст')
     likes = models.IntegerField(verbose_name='Лайки', default=0)
     hide = models.BooleanField(verbose_name='Скрыть', default=False)
@@ -43,6 +44,10 @@ class NewsModel(models.Model):
             mime_type, encoding = mimetypes.guess_type(self.file.name)
             if not mime_type or not mime_type.startswith('video'):
                 raise ValidationError({'file': "Файл не является видео."})
+        elif not self.file and self.media_type == 'video':
+            if not self.iframe_code:
+                raise ValidationError(
+                    {'iframe_code': "Для видео требуется либо загрузить файл, либо указать код iframe."})
 
     def save(self, *args, **kwargs):
         self.full_clean()  # Выполнить валидацию перед сохранением

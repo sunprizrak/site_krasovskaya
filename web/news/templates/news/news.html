@@ -45,10 +45,14 @@
                                 {% if news_item.media_type == 'photo' %}
                                     <img src="{{ news_item.file.url }}" alt="news-image">
                                 {% elif news_item.media_type == 'video' %}
-                                    <video controls autoplay loop muted>
-                                        <source src="{{ news_item.file.url }}">
-                                        Your browser does not support the video tag.
-                                    </video>
+                                    {% if news_item.iframe_code %}
+                                        {{ news_item.iframe_code|safe }}
+                                    {% else %}
+                                        <video controls>
+                                            <source src="{{ news_item.file.url }}">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    {% endif %}
                                 {% endif %}
                                 <div class="news-text">
                                     {{ news_item.text|safe }}

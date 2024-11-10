@@ -162,6 +162,9 @@ CKEDITOR_CONFIGS = {
     'default': {
         'skin': 'moono',
         # 'skin': 'office2013',
+        'allowedContent': True,  # Позволяет любой HTML-контент
+        'extraAllowedContent': 'iframe[*]',  # Разрешить теги iframe с любыми атрибутами
+        'removeFormatAttributes': '',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
         ],
@@ -207,6 +210,7 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join([
             'uploadimage', # the upload image feature
             # your extra plugins here
+            'iframe',
             'div',
             'autolink',
             'autoembed',
