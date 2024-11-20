@@ -29,7 +29,6 @@
 
     .legal-container {
         font-family: 'PlayfairDisplay';
-        user-select: none;
 
         .col-text {
             padding-top: 15px;

@@ -65,7 +65,6 @@
     #schedule-container {
         height: 100% !important;
         font-family: 'PlayfairDisplay';
-        user-select: none;
         height: inherit;
         position: relative;
 
@@ -107,10 +106,6 @@
                 }
             }
         }
-
-        /*#mob-schedule-form-row {
-            margin-top: 57px;
-        }*/
 
         #schedule-box-form {
             @media (max-width: 767.98px) {

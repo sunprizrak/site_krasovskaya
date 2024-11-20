@@ -64,7 +64,6 @@
     #groups-container {
         height: 100% !important;
         font-family: 'PlayfairDisplay';
-        user-select: none;
         height: inherit;
         position: relative;
 

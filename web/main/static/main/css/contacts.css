@@ -70,7 +70,6 @@
     #contacts-container {
         height: 100% !important;
         font-family: 'PlayfairDisplay';
-        user-select: none;
 
         @media (max-width: 767.98px) {
             padding-top: 57px;
@@ -320,6 +319,8 @@
                     max-height: 610px;
                     bottom: 5%;
                     left: 10%;
+                    pointer-events: none;
+                    user-select: none;
 
                     @media (max-width: 767.98px) {
                         position: relative;

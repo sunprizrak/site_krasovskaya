@@ -64,7 +64,6 @@
 
     #news-container {
         font-family: 'PlayfairDisplay';
-        user-select: none;
         height: 100% !important;
 
         @media (max-width: 767.98px) {
@@ -183,6 +182,7 @@
                     margin-right: 20px;
                     width: 190px;
                     pointer-events: none;
+                    user-select: none;
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
                         width: 256px;

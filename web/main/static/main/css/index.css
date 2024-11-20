@@ -77,7 +77,6 @@
     #index_container {
         height: 100% !important;
         font-family: 'PlayfairDisplay';
-        user-select: none;
 
         #index-content-top {
             @media (max-width: 767.98px) {
@@ -173,8 +172,8 @@
                     user-drag: none;
                     draggable: false;
                     position: relative;
-
-
+                    pointer-events: none;
+                    user-select: none;
 
                     @media (max-width: 767.98px) {
                         height: 100%;
@@ -224,7 +223,6 @@
                     position: relative;
                     top: 25px;
                     left: 17px;
-                    user-select: none;
                     z-index: 1050;
 
                     @media (max-width: 767.98px) {
@@ -344,6 +342,8 @@
                     -moz-user-drag: none; /* Mozilla Firefox */
                     user-drag: none;
                     draggable: false;
+                    pointer-events: none;
+                    user-select: none;
 
                     @media (max-width: 767.98px) {
                         border-top-right-radius: 0;
