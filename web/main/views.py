@@ -30,7 +30,7 @@ class HomeView(CheckBrowserVersionMixin, FormMixin, ListView):
             for obj in news:
                 if not obj.hide:
                     text = strip_tags(obj.text)
-                    abbreviated_text = self.truncate_text(text, 150)
+                    abbreviated_text = self.truncate_text(text, 130)
                     context['news_text'].append(abbreviated_text)
 
             random.shuffle(context['news_text'])

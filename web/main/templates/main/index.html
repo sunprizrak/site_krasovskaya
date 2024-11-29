@@ -21,7 +21,7 @@
 {% endblock %}
 
 {% block main %}
-<main id="index-main">
+<!--<main id="index-main">
     <div class="container position-relative" id="index_container">
         <div class="row" id="index-content-top">
             <div class="col-auto" id="index-left-column">
@@ -132,7 +132,83 @@
         <div class="d-none d-md-block" id="home-bottom-right-rectangle"></div>
         <div class="row d-block d-md-none" id="index-mob-footer"></div>
     </div>
+</main> -->
+
+
+<main id="index-main">
+    <div class="container" id="index-container">
+        <div class="row" id="index-content">
+            <div class="col-auto" id="index-main-left-col">
+                <div id="index-main-wrap-left-image">
+                    <picture>
+                        <source media="(max-width: 767.98px)" srcset="{% static 'main/img/mob-index-left.png' %}">
+                        <img src="{% static 'main/img/home-left.jpg' %}" alt="left-image">
+                    </picture>
+                </div>
+            </div>
+            <div class="col-auto" id="index-main-right-col">
+                <div class="row">
+                    <div class="col col-one">
+                        <div id="name-hello">
+                            <p>Меня зовут<br>
+                            <span class="name">Катерина</span><br>
+                            <span class="name">Красницкая,</span><br>
+                            я - психолог,<br>групповой терапевт</p>
+                        </div>
+                        <div id="index-main-wrap-right-image">
+                            <picture>
+                                <source media="(max-width: 767.98px)" srcset="{% static 'main/img/index_mob_right.png' %}">
+                                <img src="{% static 'main/img/home-right.jpg' %}" alt="right-image">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="col col-two">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal">ЗАДАТЬ ВОПРОС</button>
+                    </div>
+                    <div class="col col-three">
+                        <div class="container-fluid" id="my_news">
+                            <div class="row flex-column">
+                                <div class="col d-flex justify-content-center">
+                                    <a name="news" href="{% url 'news' %}" draggable="false">МОИ НОВОСТИ</a>
+                                </div>
+                                <div class="col d-flex justify-content-center">
+                                    <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
+                                </div>
+                                <div class="col d-flex">
+                                    <div id="carouselNews" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000">
+                                        <div class="carousel-inner">
+                                            {% for text in news_text %}
+                                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                                    <p>{{ text|safe }}</p>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
+
+{% endblock %}
+
+{% block other %}
+    <div id="index-other">
+        <div class="container">
+            <div id="index-top-rectangle"></div>
+            <div id="index-bottom-rectangle"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<footer id="index-footer">
+    <div class="row"></div>
+</footer>
 {% endblock %}
 
 {% block modal %}
