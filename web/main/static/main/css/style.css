@@ -82,7 +82,7 @@ p {
     }
 
     @media (min-width: 1200px) and (max-width: 1399px) {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     @media (min-width: 1400px) {
