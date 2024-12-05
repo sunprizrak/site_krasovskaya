@@ -168,13 +168,13 @@
                     <div class="col col-three">
                         <div class="container-fluid" id="my_news">
                             <div class="row flex-column">
-                                <div class="col d-flex justify-content-center">
+                                <div class="col d-flex justify-content-center" id="my_news-top">
                                     <a name="news" href="{% url 'news' %}" draggable="false">МОИ НОВОСТИ</a>
                                 </div>
-                                <div class="col d-flex justify-content-center">
+                                <div class="col d-flex justify-content-center" id="my_news-middle">
                                     <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
                                 </div>
-                                <div class="col d-flex">
+                                <div class="col d-flex" id="my_news-bottom">
                                     <div id="carouselNews" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000">
                                         <div class="carousel-inner">
                                             {% for text in news_text %}

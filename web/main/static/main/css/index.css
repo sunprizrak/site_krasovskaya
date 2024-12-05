@@ -559,11 +559,15 @@
 #index-header {
 
     @media (min-width: 1000px) and (max-width: 1199px) {
-        height: 175px;
+        min-height: 175px;
     }
 
     @media (min-width: 1200px) and (max-width: 1399px) {
-        font-size: 185px;
+        min-height: 185px;
+    }
+
+    @media (min-width: 1400px) {
+        min-height: 230px;
     }
 
     .navbar {
@@ -586,6 +590,11 @@
                     @media (min-width: 1200px) and (max-width: 1399px) {
                         right: 10px;
                         top: 40px;
+                    }
+
+                    @media (min-width: 1400px) {
+                        right: 15px;
+                        top: 55px;
                     }
 
                     .nav-link {
@@ -638,9 +647,19 @@
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
                         top: -120px;
-                        height: 290px;
+                        height: 315px;
                         width: 200px;
+                        border-bottom-left-radius: 55px;
                     }
+
+                    @media (min-width: 1400px) {
+                        top: -155px;
+                        height: 390px;
+                        width: 200px;
+                        border-bottom-left-radius: 60px;
+                    }
+
+
 
                     img {
                         width: auto;
@@ -664,6 +683,11 @@
                             left: 35px;
                             height: 689px;
                         }
+
+                        @media (min-width: 1400px) {
+                            left: 45px;
+                            height: 826px;
+                        }
                     }
                 }
             }
@@ -677,6 +701,10 @@
 
                 @media (min-width: 1200px) and (max-width: 1399px) {
                     width: 660px;
+                }
+
+                @media (min-width: 1400px) {
+                    width: 735px;
                 }
 
                 .row {
@@ -710,6 +738,11 @@
                                     font-size: 3.2rem;
                                 }
 
+                                @media (min-width: 1400px) {
+                                    font-size: 3.4rem;
+                                }
+
+
                                 &::first-letter {
                                     font-family: 'Monplesir script';
                                     font-weight: normal;
@@ -736,6 +769,13 @@
                                 width: 325px;
                             }
 
+                            @media (min-width: 1400px) {
+                                right: 55px;
+                                height: 120%;
+                                width: 368px;
+                                border-radius: 55px;
+                            }
+
                             img {
                                 position: absolute;
                                 border-radius: 43px;
@@ -753,6 +793,13 @@
                                     right: -42px;
                                     bottom: 35px;
                                 }
+
+                                @media (min-width: 1400px) {
+                                    width: 372px;
+                                    height: auto;
+                                    right: -55px;
+                                    bottom: 30px;
+                                }
                             }
                         }
                     }
@@ -763,6 +810,14 @@
 
                         @media (min-width: 1000px) and (max-width: 1199px) {
                             padding: 27px 0px 27px 0px;
+                        }
+
+                        @media (min-width: 1200px) and (max-width: 1399px) {
+                            padding: 40px 0px 40px 0px;
+                        }
+
+                        @media (min-width: 1400px) {
+                            padding: 50px 0px 50px 0px;
                         }
 
                         button {
@@ -803,39 +858,103 @@
                             border-radius: 50px;
                             position: relative;
                             z-index: 25;
+                            display: flex;
 
-                            a[name='news'] {
-                                text-align: center;
-                                text-decoration: none;
-                                color: #4e9599;
-                                font-weight: bold;
+                            @media (min-width: 1000px) and (max-width: 1199px) {
+                                height: 139px;
+                            }
 
-                                @media (min-width: 1400px) {
-                                    font-size: 1.4rem;
+                            @media (min-width: 1200px) and (max-width: 1399px) {
+                                height: 149px;
+                            }
+
+                            @media (min-width: 1400px) {
+                                height: 210px;
+                            }
+
+                            #my_news-top {
+                                flex: 0 1 auto;
+
+                                a[name='news'] {
+                                    text-align: center;
+                                    text-decoration: none;
+                                    color: #4e9599;
+                                    font-weight: bold;
+
+                                    @media (min-width: 1000px) and (max-width: 1199px) {
+                                        font-size: 1rem;
+                                    }
+
+                                    @media (min-width: 1200px) and (max-width: 1399px) {
+                                        font-size: 1.2rem;
+                                    }
+
+                                    @media (min-width: 1400px) {
+                                        font-size: 1.4rem;
+                                    }
                                 }
                             }
 
-                            a[name='inst'] {
-                                text-align: center;
-                                text-decoration: none;
-                                color: #2b2a2c;
-                                font-weight: bold;
-                                font-size: 1rem;
-                                padding-bottom: 5px;
+                            #my_news-middle {
+                                flex: 0 1 auto;
 
-                                @media (min-width: 1400px) {
-                                    font-size: 1.4rem;
+                                a[name='inst'] {
+                                    text-align: center;
+                                    text-decoration: none;
+                                    color: #2b2a2c;
+                                    font-weight: bold;
+                                    font-size: 1rem;
+                                    padding-bottom: 5px;
+
+                                    @media (min-width: 1000px) and (max-width: 1199px) {
+                                        font-size: 1rem;
+                                    }
+
+                                    @media (min-width: 1200px) and (max-width: 1399px) {
+                                        font-size: 1.2rem;
+                                    }
+
+                                    @media (min-width: 1400px) {
+                                        font-size: 1.4rem;
+                                    }
                                 }
                             }
 
-                            p {
-                                background-color: #E1DBD8;
-                                border-radius: 52px;
-                                padding: 5px 20px 5px 20px;
-                                margin: 0;
-                                height: 73px;
-                            }
+                            #my_news-bottom {
+                                flex-grow: 1;
 
+                                .carousel-inner {
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+
+                                    .carousel-item {
+
+                                        @media (min-width: 1000px) and (max-width: 1199px) {
+                                            height: 73px;
+                                        }
+
+                                        @media (min-width: 1200px) and (max-width: 1399px) {
+                                            height: 73px;
+                                        }
+
+                                        @media (min-width: 1400px) {
+                                            height: 100px;
+                                        }
+
+                                        p {
+                                            background-color: #E1DBD8;
+                                            border-radius: 52px;
+                                            padding: 5px 20px 5px 20px;
+                                            margin: 0;
+                                            height: 100%;
+                                            display: flex;
+                                            align-items: center;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -891,6 +1010,13 @@
                 height: calc(100% - 546px);
             }
 
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                top: 647px;
+                width: 150px;
+                min-height: 153px;
+                height: calc(100% - 647px);
+            }
+
             &:before {
                 position: absolute;
                 content: '';
@@ -909,11 +1035,14 @@
 
     .row {
         background-color: transparent;
-        min-height: 50px;
         flex-grow: 1;
 
         @media (min-width: 1000px) and (max-width: 1199px) {
-            font-size: 1.2rem;
+            min-height: 50px;
+        }
+
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            min-height: 46px;
         }
     }
 }
