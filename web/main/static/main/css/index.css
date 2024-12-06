@@ -558,6 +558,13 @@
 
 #index-header {
 
+    @media (max-width: 767.98px) {
+        min-height: 57px;
+        z-index: auto;
+        position: relative;
+        background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
+    }
+
     @media (min-width: 1000px) and (max-width: 1199px) {
         min-height: 175px;
     }
@@ -574,6 +581,10 @@
         height: 100%;
         background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
 
+        @media (max-width: 767.98px) {
+            background: transparent;
+        }
+
         .container {
 
             .navbar-collapse {
@@ -581,6 +592,11 @@
                 .navbar-nav {
                     position: absolute;
                     z-index: 12;
+
+                    @media (max-width: 767.98px) {
+                        right: auto;
+                        width: 90%;
+                    }
 
                     @media (min-width: 1000px) and (max-width: 1199px) {
                         right: 10px;
@@ -598,6 +614,10 @@
                     }
 
                     .nav-link {
+
+                        @media (max-width: 767.98px) {
+                            font-size: 1rem;
+                        }
 
                         @media (min-width: 1000px) and (max-width: 1199px) {
                             font-size: 1.15rem !important;
@@ -622,7 +642,6 @@
 
     #index-container {
         height: 100% !important;
-        background-color: gray;
 
         #index-content {
 
@@ -630,7 +649,6 @@
                 display: flex;
                 flex-grow: 1;
                 padding-left: 0;
-                background-color: yellow;
 
                 #index-main-wrap-left-image {
                     position: absolute;
@@ -693,7 +711,6 @@
             }
 
             #index-main-right-col {
-                background-color: pink;
 
                 @media (min-width: 1000px) and (max-width: 1199px) {
                     width: 545px;
@@ -714,7 +731,6 @@
                         display: flex;
                         position: relative;
                         padding: 0 0 0 0;
-                        background-color: blue;
 
                         #name-hello {
                             margin-top: 40px;
@@ -995,6 +1011,12 @@
                 width: 323px;
                 height: 225px;
             }
+
+            @media (min-width: 1400px) {
+                right: 735px;
+                width: 387px;
+                height: 279px;
+            }
         }
 
         #index-bottom-rectangle {
@@ -1015,6 +1037,13 @@
                 width: 150px;
                 min-height: 153px;
                 height: calc(100% - 647px);
+            }
+
+            @media (min-width: 1400px) {
+                top: 740px;
+                width: 150px;
+                min-height: 161px;
+                height: calc(100% - 740px);
             }
 
             &:before {
@@ -1043,6 +1072,10 @@
 
         @media (min-width: 1200px) and (max-width: 1399px) {
             min-height: 46px;
+        }
+
+        @media (min-width: 1400px) {
+            min-height: 60px;
         }
     }
 }
