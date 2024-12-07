@@ -77,6 +77,10 @@ main {
 
 p {
 
+    @media (max-width: 767.98px) {
+        font-size: 13px;
+    }
+
     @media (min-width: 1000px) and (max-width: 1199px) {
         font-size: 14px;
     }

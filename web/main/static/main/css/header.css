@@ -125,6 +125,7 @@ header {
                         padding: 30px 30px 30px 45px;
                         background-color: #FDF9F3;
                         border-radius: 43px;
+                        border: 1px solid #4e9599;
                         z-index: 1050;
 
                         &:before {
