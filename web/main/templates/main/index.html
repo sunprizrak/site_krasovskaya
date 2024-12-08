@@ -141,7 +141,7 @@
             <div class="col-auto" id="index-main-left-col">
                 <div id="index-main-wrap-left-image">
                     <picture>
-                        <source media="(max-width: 767.98px)" srcset="{% static 'main/img/mob-index-left.png' %}">
+                        <source media="(max-width: 999px)" srcset="{% static 'main/img/mob-index-left.png' %}">
                         <img src="{% static 'main/img/home-left.jpg' %}" alt="left-image">
                     </picture>
                 </div>
@@ -157,15 +157,15 @@
                         </div>
                         <div id="index-main-wrap-right-image">
                             <picture>
-                                <source media="(max-width: 767.98px)" srcset="{% static 'main/img/index_mob_right.png' %}">
+                                <source media="(max-width: 999px)" srcset="{% static 'main/img/index_mob_right.png' %}">
                                 <img src="{% static 'main/img/home-right.jpg' %}" alt="right-image">
                             </picture>
                         </div>
                     </div>
-                    <div class="col d-none d-md-flex col-two">
+                    <div class="col col-two">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal">ЗАДАТЬ ВОПРОС</button>
                     </div>
-                    <div class="col d-none d-md-flex col-three">
+                    <div class="col col-three">
                         <div class="container-fluid" id="my_news">
                             <div class="row flex-column">
                                 <div class="col d-flex justify-content-center" id="my_news-top">
@@ -191,12 +191,12 @@
                 </div>
             </div>
         </div>
-        <div class="row d-md-none">
+        <div class="row desktop-none">
             <div class="col d-flex justify-content-center" id="index-mob-button-feedback">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal">ЗАДАТЬ ВОПРОС</button>
             </div>
         </div>
-        <div class="row d-md-none">
+        <div class="row desktop-none">
             <div class="container" id="my_news_mob">
                 <div class="row flex-column">
                     <div class="col d-flex justify-content-center" id="my_news-mob-top">
@@ -206,7 +206,7 @@
                         <a name="inst" href="https://www.instagram.com/katerina_krasnitskaya?igsh=cnB5cHNhaHJsMmEy" target="_blank" draggable="false">| katerina_krasnitskaya |</a>
                     </div>
                     <div class="col d-flex" id="my_news-mob-bottom">
-                        <div id="carouselNewsMob" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000000000"> <!-- 10k -->
+                        <div id="carouselNewsMob" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="10000">
                             <div class="carousel-inner">
                                 {% for text in news_text %}
                                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
