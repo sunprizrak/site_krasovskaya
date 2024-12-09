@@ -552,14 +552,6 @@
                 }
             }
         }
-
-        #about-mob-bottom-interior {
-            background-color: #4e9599;
-            width: 80%;
-            height: 50px;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-        }
     }
 }
 
