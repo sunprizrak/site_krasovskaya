@@ -76,6 +76,7 @@ main {
 }
 
 p {
+    color: #4F4E4E;
 
     @media (max-width: 767.98px) {
         font-size: 13px;
@@ -132,8 +133,14 @@ p {
 
 
 
-@media (min-width: 999px) {
+@media (min-width: 1000px) {
     .desktop-none {
+        display: none !important;
+    }
+}
+
+@media (max-width: 999px) {
+    .mobile-none {
         display: none !important;
     }
 }

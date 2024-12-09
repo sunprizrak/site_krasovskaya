@@ -1,18 +1,19 @@
 #about-header {
-    height: 7%;
-    min-height: 51px;
-    z-index: 1000;
+    background-color: pink;
 
-    @media (max-width: 767.98px) {
-        height: 57px;
+    @media (max-width: 999px) {
         min-height: 57px;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1199px) {
+        min-height: 50px;
     }
 
     .navbar {
         height: 100%;
         background-color: transparent;
 
-        @media (max-width: 767.98px) {
+        @media (max-width: 999px) {
             height: auto;
             width: 100%;
             position: fixed;
@@ -21,13 +22,16 @@
 
         .container {
 
-            @media (max-width: 767.98px) {
+            @media (max-width: 999px) {
                 bottom: auto;
                 position: auto;
             }
 
             .navbar-nav {
-                right: 0;
+
+                @media (min-width: 1000px) and (max-width: 1199px) {
+                    right: 0;
+                }
 
                 @media (min-width: 1200px) and (max-width: 1399px) {
                     right: 140px;
@@ -38,11 +42,14 @@
                 }
 
                 .nav-link {
-                    font-size: 1rem !important;
                     color: #4e9599;
 
-                    @media (max-width: 767.98px) {
+                    @media (max-width: 999px) {
                         font-size: 1rem !important;
+                    }
+
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        font-size: 0.92rem !important;
                     }
 
                     @media (min-width: 1400px) {
@@ -50,8 +57,10 @@
                     }
 
                     i {
-                        &:before {
-                            font-size: 1.3rem;
+                        @media (min-width: 1000px) and (max-width: 1199px) {
+                            &:before {
+                                font-size: 1.4rem;
+                            }
                         }
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
@@ -74,45 +83,17 @@
 
 
 #about-main {
-    height: 93%;
-    z-index: 150;
-
-    @media (max-width: 767.98px) {
-        height: auto;
-    }
 
     #about-container {
-        height: 100% !important;
-        font-family: 'PlayfairDisplay';
 
-        #about-top-row {
-            height: 35%;
-            min-height: 243px;
-            max-height: 250px;
+        div[title='row-top'] {
+            display: flex;
 
-            @media (max-width: 767.98px) {
-                height: auto;
-                min-height: auto;
-                max-height: auto;
-            }
+            div[title='col-left'] {
+                padding: 0;
+                background-color: gray;
 
-
-            @media (min-width: 1200px) and (max-width: 1399px) {
-                min-height: 250px;
-                max-height: 297px;
-
-            }
-
-            @media (min-width: 1400px) {
-                min-height: 314px;
-                max-height: 351px;
-            }
-
-
-            #top-left-col {
-                height: 100%;
-
-                @media (max-width: 767.98px) {
+                @media (max-width: 999px) {
                     width: 50% !important;
                     padding-right: 0;
                     padding-top: 5px;
@@ -120,16 +101,10 @@
 
                 #wrap-about-image {
                     position: relative;
-                    display: flex;
                     background-color: #4e9599;
-                    width: 48vh;
-                    min-width: 337px;
-                    max-width: 343px;
-                    height: 80%;
                     border-radius:  0 43px 43px 0;
 
                     @media (max-width: 767.98px) {
-                        width: 100%;
                         background-color: transparent;
                         min-width: auto;
                         max-width: auto;
@@ -137,31 +112,28 @@
                         justify-content: center;
                     }
 
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        width: 325px;
+                        height: 209px;
+                    }
+
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        min-width: 373px;
-                        max-width: 411px;
+
                     }
 
                     @media (min-width: 1400px) {
-                        min-width: 455px;
-                        max-width: 481px;
+
                     }
 
                     img {
                         position: relative;
-                        align-self: center;
-                        height: 40vh;
-                        min-height: 277px;
-                        max-height: 285px;
                         z-index: 1000;
                         pointer-events: none;
                         user-select: none;
+                        bottom: 15%;
 
-                        @media (max-width: 767.98px) {
-                            width: auto;
-                            height: auto;
-                            min-height: auto;
-                            max-height: auto;
+                        @media (min-width: 1000px) and (max-width: 1199px) {
+                            width: 280px;
                         }
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
@@ -177,33 +149,31 @@
                 }
             }
 
-            #top-right-col {
-                display: flex;
+            div[title='col-right'] {
+                background-color: yellow;
+                /*display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: center; */
 
-                @media (max-width: 767.98px) {
+                @media (max-width: 999px) {
                     width: 50% !important;
                     height: auto;
                 }
 
                 .vertical-line-text {
-                    margin-left: 28px;
 
-                    @media (max-width: 767.98px) {
+                    @media (max-width: 999px) {
                         margin-left: 0;
                         border: 0;
                         padding: 0;
                     }
 
-                    @media (min-width: 1400px) {
-                        margin-left: 62px;
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        margin-left: 60px;
                     }
 
-                    p {
-                        @media (max-width: 767.98px) {
-                            font-size: 13px;
-                        }
+                    @media (min-width: 1400px) {
+
                     }
                 }
             }
@@ -211,21 +181,28 @@
 
         #top-mob-bottom {
             padding-top: 10px;
-
-            p {
-                @media (max-width: 767.98px) {
-                    font-size: 13px;
-                }
-            }
         }
 
-        .about-middle-row {
-            height: 35%;
-            min-height: 208px;
+        div[title="row-middle"] {
+            position: relative;
+            display: flex;
+            flex-direction: column;
 
-            @media (max-width: 767.98px) {
+            &:before {
+                position: absolute;
+                content: '';
+                height: 100%;
+                left: -50vw;
+                right: -50vw;
+                background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 52.92514716088772%, rgba(236, 229, 219, 1) 77%);
+            }
+
+            @media (max-width: 999px) {
                 height: auto;
-                min-height: auto;
+            }
+
+            @media (min-width: 1000px) and (max-width: 1199px) {
+                height: 186px;
             }
 
             @media (min-width: 1200px) and (max-width: 1399px) {
@@ -233,23 +210,34 @@
             }
 
             @media (min-width: 1400px) {
-                min-height: 254px;
+
             }
 
-            .about-middle-title {
+            div[title="col-middle-title"] {
+                display: flex;
+                justify-content: center;
+                z-index: 151;
 
-                 @media (max-width: 767.98px) {
+                @media (max-width: 767.98px) {
                     padding-top: 10px;
                     padding-bottom: 9px;
-                    background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
-                 }
+                    /*background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);*/
+                }
 
-                h2 {
+                span {
+                    display: inline-block;
                     text-align: center;
+                    font-weight: bold;
+                    color: #4F4E4E;
 
                     @media (max-width: 767.98px) {
                         font-size: 1.2rem;
                         margin: 0;
+                    }
+
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        font-size: 1.8rem;
+                        margin-top: 35px;
                     }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
@@ -262,245 +250,226 @@
 
                     &::first-letter {
                         font-family: 'Monplesir script';
+                        font-weight: normal;
                     }
                 }
             }
 
+            div[title="col-middle-info"] {
+                padding: 0;
+                position: absolute;
+                top: 105px;
 
-            .about-col-one {
-                position: relative;
+                .row {
 
-                .about-one {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    width: 100%;
-                    height: 125px;
-                    border: 1px solid #4e9599;
-                    border-radius: 43px;
-                    padding: 40px;
-                    position: absolute;
-                    bottom: 25px;
-
-                    @media (max-width: 767.98px) {
+                    div[title='col-info-one'] {
+                        display: flex;
                         position: relative;
-                        width: auto;
-                        height: auto;
-                        bottom: auto;
-                        padding: 10px;
-                        flex-direction: row;
-                    }
 
-                    span {
-                        position: absolute;
-                        font-family: 'Monplesir script';
-                        font-size: 2rem;
-                        color: #4e9599;
-                        top: -23px;
-                        left: 32px;
+                        .about-one {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            width: 100%;
+                            height: 125px;
+                            border: 1px solid #4e9599;
+                            border-radius: 43px;
+                            padding: 40px;
+                            position: absolute;
+                            bottom: 25px;
 
-                        @media (max-width: 767.98px) {
-                            top: auto;
-                            left: auto;
-                            font-size: 1.1rem;
-                            position: relative;
+                            @media (max-width: 767.98px) {
+                                position: relative;
+                                width: auto;
+                                height: auto;
+                                bottom: auto;
+                                padding: 10px;
+                                flex-direction: row;
+                            }
+
+                            span {
+                                position: absolute;
+                                font-family: 'Monplesir script';
+                                font-size: 2rem;
+                                color: #4e9599;
+                                top: -23px;
+                                left: 32px;
+
+                                @media (max-width: 767.98px) {
+                                    top: auto;
+                                    left: auto;
+                                    font-size: 1.1rem;
+                                    position: relative;
+                                }
+                            }
+
+                            p {
+                                text-align: center;
+                                margin: 0;
+                            }
                         }
                     }
 
-                    p {
-                        text-align: center;
-                        margin: 0;
-                        flex-grown: 1;
-                        font-size: 14px;
-
-                        @media (max-width: 767.98px) {
-                            font-size: 13px;
-                        }
-
-                        @media (min-width: 1400px) {
-                            font-size: 17px;
-                        }
-                    }
-                }
-            }
-
-            .about-col-two {
-                position: relative;
-
-                .about-two {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    position: relative;
-                    align-self: center;
-                    width: 80%;
-                    height: 125px;
-                    border: 1px solid #4e9599;
-                    border-radius: 43px;
-                    margin-top: 2%;
-                    padding: 40px;
-
-                    @media (max-width: 767.98px) {
+                    div[title="col-info-two"] {
                         position: relative;
-                        width: auto;
-                        height: auto;
-                        bottom: auto;
-                        padding: 10px;
-                        flex-direction: row;
-                        margin-top: auto;
-                    }
+                        display: flex;
+                        justify-content: center;
 
-                    @media (min-width: 1400px) {
-                        height: 154px;
-                    }
-
-                    span {
-                        position: absolute;
-                        font-family: 'Monplesir script';
-                        font-size: 2rem;
-                        color: #4e9599;
-                        top: -23px;
-                        left: 32px;
-
-                        @media (max-width: 767.98px) {
-                            top: auto;
-                            left: auto;
-                            font-size: 1.1rem;
+                        .about-two {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
                             position: relative;
+                            align-self: center;
+                            width: 80%;
+                            height: 125px;
+                            border: 1px solid #4e9599;
+                            border-radius: 43px;
+                            margin-top: 2%;
+                            padding: 40px;
+
+                            @media (max-width: 767.98px) {
+                                position: relative;
+                                width: auto;
+                                height: auto;
+                                bottom: auto;
+                                padding: 10px;
+                                flex-direction: row;
+                                margin-top: auto;
+                            }
+
+                            @media (min-width: 1400px) {
+                                height: 154px;
+                            }
+
+                            span {
+                                position: absolute;
+                                font-family: 'Monplesir script';
+                                font-size: 2rem;
+                                color: #4e9599;
+                                top: -23px;
+                                left: 32px;
+
+                                @media (max-width: 767.98px) {
+                                    top: auto;
+                                    left: auto;
+                                    font-size: 1.1rem;
+                                    position: relative;
+                                }
+                            }
+
+                            p {
+                                text-align: center;
+                                margin: 0;
+                            }
                         }
                     }
 
-                    p {
-                        text-align: center;
-                        margin: 0;
-                        flex-grown: 1;
-                        font-size: 14px;
-
-                        @media (max-width: 767.98px) {
-                            font-size: 13px;
-                        }
-
-                        @media (min-width: 1400px) {
-                            font-size: 17px;
-                        }
-                    }
-                }
-            }
-
-            .about-col-three {
-                position: relative;
-
-                .about-three {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    position: absolute;
-                    width: 100%;
-                    height: 125px;
-                    border: 1px solid #4e9599;
-                    border-radius: 43px;
-                    padding: 40px;
-                    bottom: 25px;
-
-                    @media (max-width: 767.98px) {
+                    div[title="col-info-three"] {
                         position: relative;
-                        width: auto;
-                        height: auto;
-                        bottom: auto;
-                        padding: 10px;
-                        flex-direction: row;
-                    }
+                        display: flex;
+                        justify-content: end;
 
-                    span {
-                        position: absolute;
-                        font-family: 'Monplesir script';
-                        font-size: 2rem;
-                        color: #4e9599;
-                        top: -23px;
-                        left: 32px;
+                        .about-three {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            position: absolute;
+                            width: 100%;
+                            height: 125px;
+                            border: 1px solid #4e9599;
+                            border-radius: 43px;
+                            padding: 40px;
+                            bottom: 25px;
 
-                        @media (max-width: 767.98px) {
-                            top: auto;
-                            left: auto;
-                            font-size: 1.1rem;
-                            position: relative;
-                        }
-                    }
+                            @media (max-width: 767.98px) {
+                                position: relative;
+                                width: auto;
+                                height: auto;
+                                bottom: auto;
+                                padding: 10px;
+                                flex-direction: row;
+                            }
 
-                    p {
-                        text-align: center;
-                        margin: 0;
-                        flex-grown: 1;
-                        font-size: 14px;
+                            span {
+                                position: absolute;
+                                font-family: 'Monplesir script';
+                                font-size: 2rem;
+                                color: #4e9599;
+                                top: -23px;
+                                left: 32px;
 
-                        @media (max-width: 767.98px) {
-                            font-size: 13px;
-                        }
+                                @media (max-width: 767.98px) {
+                                    top: auto;
+                                    left: auto;
+                                    font-size: 1.1rem;
+                                    position: relative;
+                                }
+                            }
 
-                        @media (min-width: 1400px) {
-                            font-size: 17px;
+                            p {
+                                text-align: center;
+                                margin: 0;
+                            }
                         }
                     }
                 }
             }
         }
 
-        #about-bottom-row {
-            height: 30%;
-            min-height: 216px;
+        div[title="row-bottom"] {
+            display: flex;
+            flex-direction: column;
 
-            @media (max-width: 767.98px) {
-                height: auto;
-                min-height: auto;
-                margin-top: 15px;
-            }
+            div[title="col-one"] {
+                display: flex;
+                justify-content: center;
 
-            @media (min-width: 1200px) and (max-width: 1399px) {
-                min-height: 256px;
-            }
-
-            @media (min-width: 1400px) {
-                min-height: 259px;
-            }
-
-            h2 {
-                text-align: center;
-                color: #4e9599;
-
-                @media (max-width: 767.98px) {
-                    font-size: 1.2rem;
-                }
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 2.3rem;
-                }
-
-                @media (min-width: 1400px) {
-                    font-size: 2.5rem;
-                }
-
-                &::first-letter {
-                    font-family: 'Monplesir script';
-                }
-            }
-
-            .vertical-line-text {
-
-                p {
-                    span {
-                        font-style: italic;
-                    }
-
-                    a {
-                        color: inherit;
-                    }
+                span {
+                    display: inline-block;
+                    text-align: center;
+                    color: #4e9599;
+                    font-weight: bold;
 
                     @media (max-width: 767.98px) {
-                        font-size: 13px;
+                        font-size: 1.2rem;
+                    }
+
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        font-size: 1.8rem;
+                        margin-top: 70px;
+                    }
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 2.3rem;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 2.5rem;
+                    }
+
+                    &::first-letter {
+                        font-family: 'Monplesir script';
+                        font-weight: normal;
                     }
                 }
             }
 
+            div[title="col-two"] {
+
+                .vertical-line-text {
+
+                    p {
+                        span {
+                            font-style: italic;
+                        }
+
+                        a {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
         }
 
         #about-mob-bottom-interior {
@@ -540,14 +509,5 @@
     p {
         padding: 0;
         margin: 0;
-        font-size: 14px;
-
-         @media (min-width: 1200px) and (max-width: 1399px) {
-            font-size: 14px;
-         }
-
-         @media (min-width: 1400px) {
-            font-size: 17px;
-         }
     }
 }

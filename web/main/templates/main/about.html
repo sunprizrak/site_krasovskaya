@@ -23,18 +23,18 @@
 {% block main %}
 <main id="about-main">
     <div class="container" id="about-container">
-        <div class="row" id="about-top-row">
-            <div class="col-5 d-flex align-items-center position-relative" id="top-left-col">
-                <div class="d-flex align-items-center" id="wrap-about-image">
+        <div class="row" title="row-top">
+            <div class="col-auto" title="col-left">
+                <div id="wrap-about-image">
                     <picture>
-                        <source media="(max-width: 767.98px)" srcset="{% static 'main/img/mob-about-image.png' %}">
+                        <source media="(max-width: 999px)" srcset="{% static 'main/img/mob-about-image.png' %}">
                         <img src="{% static 'main/img/about-image.png' %}" alt="about-image">
                     </picture>
                 </div>
             </div>
-            <div class="col-7" id="top-right-col">
+            <div class="col" title="col-right">
                 <div class="vertical-line-text">
-                    <p class="d-none d-md-block">
+                    <p class="mobile-none">
                         <strong>Магистр</strong> практико-ориентированной психологии (психологическое <br>
                         консультирование и психокоррекция), <strong>групповой терапевт</strong>. <br>
                         <br>
@@ -45,7 +45,7 @@
                         терапевт. Умею быть рядом с вами, обсуждать тяжелые темы <br>
                         и сильные чувства, говорить о глубоком и важном.
                     </p>
-                    <p class="d-md-none">
+                    <p class="desktop-none">
                         <strong>Магистр</strong> практико-ориентированной психологии (психологическое <br>
                         консультирование и психокоррекция), <strong>групповой терапевт</strong>. <br>
                         <br>
@@ -55,24 +55,13 @@
                 </div>
             </div>
         </div>
-        <div class="row d-md-none" id="top-mob-bottom">
-            <div class="col" >
-                <p>
-                    В работе я внимательный, бережный и устойчивый групповой
-                    терапевт. Умею быть рядом с вами, обсуждать тяжелые темы
-                    и сильные чувства, говорить о глубоком и важном.
-                </p>
+        <div class="row" title="row-middle">
+            <div class="col" title="col-middle-title">
+                <span>Почему групповая терапия?</span>
             </div>
-        </div>
-        <div class="row d-none d-md-flex about-gradient about-middle-row">
-            <div class="col d-flex flex-column justify-content-center about-middle-zindex">
+            <div class="col" title="col-middle-info">
                 <div class="row">
-                    <div class="col d-flex justify-content-center" id="about-middle-title">
-                        <h2>Почему групповая терапия?</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 d-flex about-col-one">
+                    <div class="col-3" title="col-info-one">
                         <div class="about-one">
                             <span>01</span>
                             <p>
@@ -82,7 +71,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-6 d-flex justify-content-center about-col-two">
+                    <div class="col-6" title="col-info-two">
                         <div class="about-two">
                             <span>02</span>
                             <p>
@@ -94,7 +83,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-3 d-flex justify-content-end about-col-three">
+                    <div class="col-3" title="col-info-three">
                         <div class="about-three">
                             <span>03</span>
                             <p>
@@ -107,78 +96,184 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row row-cols-1 d-md-none  justify-content-center about-middle-row">
-            <div class="col d-flex justify-content-center align-items-center about-middle-title">
-                <h2>Почему групповая терапия?</h2>
             </div>
-            <div class="col-11 mt-3 about-col-one">
-                <div class="row about-one">
-                    <div class="col-1 d-flex align-items-center">
-                        <span>01</span>
-                    </div>
-                    <div class="col-11 d-flex justify-content-center align-items-center">
-                        <p>
-                            Огромный ресурс для участников процесса
-                        </p>
-                    </div>
+        <div class="row" title="row-bottom">
+            <div class="col" title="col-one">
+                <span>Моё образование</span>
+            </div>
+            <div class="col" title="col-two">
+                <div class="vertical-line-text">
+                    <p>
+                        Училась в Белорусском государственном университете по специальности <span>"Психологическое консультирование и психокоррекция"</span> <br class="d-none d-md-block">
+                        (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-one">диплом магистра</a>, 2014 г.), успешно завершила программу по специализации <span>"Зависимость и зависимые отношения. Гештальт-подход"</span> <br class="d-none d-md-block">
+                        (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-two">сертификат</a> Общества практикующих психологов <span>"Гештальт-подход"</span>, 2012 г.) и по программе <span>"Группа как инструмент психологической <br class="d-none d-md-block">
+                        помощи"</span> (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-three">сертификат</a> Института супервизии и групповой терапии, 2024 г.). <br class="d-none d-md-block">
+                        Свои группы я веду под регулярной супервизией.
+                    </p>
                 </div>
-            </div>
-            <div class="col-11 mt-3 about-col-two">
-                <div class="row about-two">
-                    <div class="col-1 d-flex align-items-center">
-                        <span>02</span>
-                    </div>
-                    <div class="col-11 d-flex justify-content-center align-items-center">
-                        <p>
-                            Группа - это "лаборатория" выстраивания отношений
-                            про удовольствие, тепло и радость, для того, чтобы
-                            вы принесли их в свою повседневную жизнь
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-11 mt-3 about-col-three">
-                <div class="row about-three">
-                    <div class="col-1 d-flex align-items-center">
-                        <span>03</span>
-                    </div>
-                    <div class="col-11 d-flex justify-content-center align-items-center">
-                        <p>
-                            Возможность опереться на искренние реакции<br>
-                            разных людей и принятие вас
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" id="about-bottom-row">
-            <div class="col d-flex align-items-start">
-                <div class="row-1 w-100">
-                    <div class="col d-flex justify-content-center">
-                        <h2>Моё образование</h2>
-                    </div>
-                    <div class="col">
-                        <div class="vertical-line-text">
-                            <p>
-                                Училась в Белорусском государственном университете по специальности <span>"Психологическое консультирование и психокоррекция"</span> <br class="d-none d-md-block">
-                                (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-one">диплом магистра</a>, 2014 г.), успешно завершила программу по специализации <span>"Зависимость и зависимые отношения. Гештальт-подход"</span> <br class="d-none d-md-block">
-                                (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-two">сертификат</a> Общества практикующих психологов <span>"Гештальт-подход"</span>, 2012 г.) и по программе <span>"Группа как инструмент психологической <br class="d-none d-md-block">
-                                помощи"</span> (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-three">сертификат</a> Института супервизии и групповой терапии, 2024 г.). <br class="d-none d-md-block">
-                                Свои группы я веду под регулярной супервизией.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-4 d-md-none">
-            <div class="col d-flex justify-content-center">
-                <div id="about-mob-bottom-interior"></div>
             </div>
         </div>
     </div>
 </main>
+
+<!--<main id="about-main">-->
+<!--    <div class="container" id="about-container">-->
+<!--        <div class="row" id="about-top-row">-->
+<!--            <div class="col-5 d-flex align-items-center position-relative" id="top-left-col">-->
+<!--                <div class="d-flex align-items-center" id="wrap-about-image">-->
+<!--                    <picture>-->
+<!--                        <source media="(max-width: 767.98px)" srcset="{% static 'main/img/mob-about-image.png' %}">-->
+<!--                        <img src="{% static 'main/img/about-image.png' %}" alt="about-image">-->
+<!--                    </picture>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-7" id="top-right-col">-->
+<!--                <div class="vertical-line-text">-->
+<!--                    <p class="d-none d-md-block">-->
+<!--                        <strong>Магистр</strong> практико-ориентированной психологии (психологическое <br>-->
+<!--                        консультирование и психокоррекция), <strong>групповой терапевт</strong>. <br>-->
+<!--                        <br>-->
+<!--                        Более 10 лет работаю с группами и все больше убеждаюсь <br>-->
+<!--                        в эффективности групповых процессов. <br>-->
+<!--                        <br>-->
+<!--                        В работе я внимательный, бережный и устойчивый групповой <br>-->
+<!--                        терапевт. Умею быть рядом с вами, обсуждать тяжелые темы <br>-->
+<!--                        и сильные чувства, говорить о глубоком и важном.-->
+<!--                    </p>-->
+<!--                    <p class="d-md-none">-->
+<!--                        <strong>Магистр</strong> практико-ориентированной психологии (психологическое <br>-->
+<!--                        консультирование и психокоррекция), <strong>групповой терапевт</strong>. <br>-->
+<!--                        <br>-->
+<!--                        Более 10 лет работаю с группами и все больше убеждаюсь <br>-->
+<!--                        в эффективности групповых процессов.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row d-md-none" id="top-mob-bottom">-->
+<!--            <div class="col" >-->
+<!--                <p>-->
+<!--                    В работе я внимательный, бережный и устойчивый групповой-->
+<!--                    терапевт. Умею быть рядом с вами, обсуждать тяжелые темы-->
+<!--                    и сильные чувства, говорить о глубоком и важном.-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row d-none d-md-flex about-gradient about-middle-row">-->
+<!--            <div class="col d-flex flex-column justify-content-center about-middle-zindex">-->
+<!--                <div class="row">-->
+<!--                    <div class="col d-flex justify-content-center" id="about-middle-title">-->
+<!--                        <h2>Почему групповая терапия?</h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <div class="col-3 d-flex about-col-one">-->
+<!--                        <div class="about-one">-->
+<!--                            <span>01</span>-->
+<!--                            <p>-->
+<!--                                Огромный ресурс<br>-->
+<!--                                для участников<br>-->
+<!--                                процесса-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-6 d-flex justify-content-center about-col-two">-->
+<!--                        <div class="about-two">-->
+<!--                            <span>02</span>-->
+<!--                            <p>-->
+<!--                                Группа - это "лаборатория"<br>-->
+<!--                                выстраивания отношений про<br>-->
+<!--                                удовольствие, тепло и радость,<br>-->
+<!--                                для того, чтобы вы принесли их<br>-->
+<!--                                в свою повседневную жизнь-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-3 d-flex justify-content-end about-col-three">-->
+<!--                        <div class="about-three">-->
+<!--                            <span>03</span>-->
+<!--                            <p>-->
+<!--                                Возможность опереться<br>-->
+<!--                                на искренние реакции<br>-->
+<!--                                разных людей<br>-->
+<!--                                и принятие вас-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row row-cols-1 d-md-none  justify-content-center about-middle-row">-->
+<!--            <div class="col d-flex justify-content-center align-items-center about-middle-title">-->
+<!--                <h2>Почему групповая терапия?</h2>-->
+<!--            </div>-->
+<!--            <div class="col-11 mt-3 about-col-one">-->
+<!--                <div class="row about-one">-->
+<!--                    <div class="col-1 d-flex align-items-center">-->
+<!--                        <span>01</span>-->
+<!--                    </div>-->
+<!--                    <div class="col-11 d-flex justify-content-center align-items-center">-->
+<!--                        <p>-->
+<!--                            Огромный ресурс для участников процесса-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-11 mt-3 about-col-two">-->
+<!--                <div class="row about-two">-->
+<!--                    <div class="col-1 d-flex align-items-center">-->
+<!--                        <span>02</span>-->
+<!--                    </div>-->
+<!--                    <div class="col-11 d-flex justify-content-center align-items-center">-->
+<!--                        <p>-->
+<!--                            Группа - это "лаборатория" выстраивания отношений-->
+<!--                            про удовольствие, тепло и радость, для того, чтобы-->
+<!--                            вы принесли их в свою повседневную жизнь-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-11 mt-3 about-col-three">-->
+<!--                <div class="row about-three">-->
+<!--                    <div class="col-1 d-flex align-items-center">-->
+<!--                        <span>03</span>-->
+<!--                    </div>-->
+<!--                    <div class="col-11 d-flex justify-content-center align-items-center">-->
+<!--                        <p>-->
+<!--                            Возможность опереться на искренние реакции<br>-->
+<!--                            разных людей и принятие вас-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row" id="about-bottom-row">-->
+<!--            <div class="col d-flex align-items-start">-->
+<!--                <div class="row-1 w-100">-->
+<!--                    <div class="col d-flex justify-content-center">-->
+<!--                        <h2>Моё образование</h2>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <div class="vertical-line-text">-->
+<!--                            <p>-->
+<!--                                Училась в Белорусском государственном университете по специальности <span>"Психологическое консультирование и психокоррекция"</span> <br class="d-none d-md-block">-->
+<!--                                (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-one">диплом магистра</a>, 2014 г.), успешно завершила программу по специализации <span>"Зависимость и зависимые отношения. Гештальт-подход"</span> <br class="d-none d-md-block">-->
+<!--                                (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-two">сертификат</a> Общества практикующих психологов <span>"Гештальт-подход"</span>, 2012 г.) и по программе <span>"Группа как инструмент психологической <br class="d-none d-md-block">-->
+<!--                                помощи"</span> (<a href="#" data-bs-toggle="modal" data-bs-target="#about-modal-three">сертификат</a> Института супервизии и групповой терапии, 2024 г.). <br class="d-none d-md-block">-->
+<!--                                Свои группы я веду под регулярной супервизией.-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row mt-4 d-md-none">-->
+<!--            <div class="col d-flex justify-content-center">-->
+<!--                <div id="about-mob-bottom-interior"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</main>-->
 {% endblock %}
 
 {% block modal %}
