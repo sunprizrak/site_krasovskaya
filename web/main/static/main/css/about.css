@@ -9,6 +9,14 @@
         min-height: 50px;
     }
 
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        min-height: 50px;
+    }
+
+    @media (min-width: 1400px) {
+        min-height: 65px;
+    }
+
     .navbar {
         height: 100%;
         background-color: transparent;
@@ -34,11 +42,11 @@
                 }
 
                 @media (min-width: 1200px) and (max-width: 1399px) {
-                    right: 140px;
+                    right: 0;
                 }
 
                 @media (min-width: 1400px) {
-                    right: 112px;
+                    right: 0;
                 }
 
                 .nav-link {
@@ -52,8 +60,12 @@
                         font-size: 0.92rem !important;
                     }
 
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 1.15rem !important;
+                    }
+
                     @media (min-width: 1400px) {
-                        font-size: 1.3rem !important;
+                        font-size: 1.4rem !important;
                     }
 
                     i {
@@ -65,13 +77,13 @@
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
                             &:before {
-                                font-size: 1.5rem;
+                                font-size: 1.7rem;
                             }
                         }
 
                         @media (min-width: 1400px) {
                             &:before {
-                                font-size: 1.7rem;
+                                font-size: 1.9rem;
                             }
                         }
                     }
@@ -88,6 +100,18 @@
 
         div[title='row-top'] {
             display: flex;
+
+            @media (min-width: 1000px) and (max-width: 1199px) {
+                padding-bottom: 15px;
+            }
+
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                padding-bottom: 20px;
+            }
+
+            @media (min-width: 1400px) {
+                padding-bottom: 30px;
+            }
 
             div[title='col-left'] {
                 padding: 0;
@@ -113,16 +137,18 @@
                     }
 
                     @media (min-width: 1000px) and (max-width: 1199px) {
-                        width: 325px;
+                        width: 340px;
                         height: 209px;
                     }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
-
+                        width: 410px;
+                        height: 255px;
                     }
 
                     @media (min-width: 1400px) {
-
+                        width: 465px;
+                        height: 300px;
                     }
 
                     img {
@@ -133,17 +159,15 @@
                         bottom: 15%;
 
                         @media (min-width: 1000px) and (max-width: 1199px) {
-                            width: 280px;
+                            width: 296px;
                         }
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
-                            min-height: 302px;
-                            max-height: 343px;
+                            width: 360px;
                         }
 
                         @media (min-width: 1400px) {
-                            min-height: 380px;
-                            max-height: 396px;
+                            width: 415px;
                         }
                     }
                 }
@@ -151,9 +175,8 @@
 
             div[title='col-right'] {
                 background-color: yellow;
-                /*display: flex;
-                flex-direction: column;
-                justify-content: center; */
+                display: flex;
+                align-items: center;
 
                 @media (max-width: 999px) {
                     width: 50% !important;
@@ -169,11 +192,15 @@
                     }
 
                     @media (min-width: 1000px) and (max-width: 1199px) {
-                        margin-left: 60px;
+                        margin-left: 50px;
+                    }
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        margin-left: 50px;
                     }
 
                     @media (min-width: 1400px) {
-
+                        margin-left: 68px;
                     }
                 }
             }
@@ -202,15 +229,15 @@
             }
 
             @media (min-width: 1000px) and (max-width: 1199px) {
-                height: 186px;
+                height: 171px;
             }
 
             @media (min-width: 1200px) and (max-width: 1399px) {
-                min-height: 224px;
+                height: 178px;
             }
 
             @media (min-width: 1400px) {
-
+                height: 208px;
             }
 
             div[title="col-middle-title"] {
@@ -241,11 +268,13 @@
                     }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        font-size: 2.3rem;
+                        font-size: 2rem;
+                        margin-top: 40px;
                     }
 
                     @media (min-width: 1400px) {
                         font-size: 2.5rem;
+                        margin-top: 35px;
                     }
 
                     &::first-letter {
@@ -258,7 +287,18 @@
             div[title="col-middle-info"] {
                 padding: 0;
                 position: absolute;
-                top: 105px;
+
+                @media (min-width: 1000px) and (max-width: 1199px) {
+                    top: 95px;
+                }
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    top: 105px;
+                }
+
+                @media (min-width: 1400px) {
+                    top: 115px;
+                }
 
                 .row {
 
@@ -285,6 +325,10 @@
                                 bottom: auto;
                                 padding: 10px;
                                 flex-direction: row;
+                            }
+
+                            @media (min-width: 1400px) {
+                                bottom: 45px;
                             }
 
                             span {
@@ -391,6 +435,10 @@
                                 flex-direction: row;
                             }
 
+                            @media (min-width: 1400px) {
+                                bottom: 45px;
+                            }
+
                             span {
                                 position: absolute;
                                 font-family: 'Monplesir script';
@@ -441,11 +489,13 @@
                     }
 
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        font-size: 2.3rem;
+                        font-size: 2rem;
+                        margin-top: 80px;
                     }
 
                     @media (min-width: 1400px) {
                         font-size: 2.5rem;
+                        margin-top: 100px;
                     }
 
                     &::first-letter {
@@ -479,6 +529,12 @@
             border-top-left-radius: 50px;
             border-top-right-radius: 50px;
         }
+    }
+}
+
+#about-footer {
+    .row {
+        height: 25px;
     }
 }
 
