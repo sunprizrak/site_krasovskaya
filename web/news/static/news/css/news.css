@@ -1,6 +1,11 @@
+.body-news {
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 #news-header {
-    height: 5%;
-    min-height: 40px;
+    flex-shrink: 0;
 
     @media (max-width: 767.98px) {
         z-index: 1000;
@@ -11,9 +16,20 @@
         width: 100%;
     }
 
+    @media (min-width: 1000px) and (max-width: 1199px) {
+        min-height: 50px;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        min-height: 50px;
+    }
+
+    @media (min-width: 1400px) {
+        min-height: 65px;
+    }
+
     .navbar {
         height: 100%;
-        z-index: 1030;
 
         .navbar-toggler {
 
@@ -25,46 +41,80 @@
         .navbar-collapse {
 
             .navbar-nav {
-                right: 65px;
+                position: absolute;
+
+                @media (max-width: 999px) {
+                    right: auto;
+                    width: 90%;
+                }
+
+                @media (min-width: 1000px) and (max-width: 1199px) {
+                    right: 0;
+                }
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    right: 0;
+                }
+
+                @media (min-width: 1400px) {
+                    right: 0;
+                }
 
                 @media (max-width: 767.98px) {
                     right: auto;
                 }
 
                 .nav-link {
-                    font-size: 0.9rem !important;
                     color: #4e9599;
 
-                    @media (max-width: 767.98px) {
+                    @media (max-width: 999px) {
                         font-size: 1rem !important;
                     }
 
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        font-size: 0.92rem !important;
+                    }
+
                     @media (min-width: 1200px) and (max-width: 1399px) {
-                        font-size: 0.9rem !important;
+                        font-size: 1.15rem !important;
                     }
 
                     @media (min-width: 1400px) {
-                        font-size: 1.1rem !important;
+                        font-size: 1.4rem !important;
+                    }
+
+                    i {
+
+                        @media (min-width: 1000px) and (max-width: 1199px) {
+                            &:before {
+                                font-size: 1.4rem;
+                            }
+                        }
+
+                        @media (min-width: 1200px) and (max-width: 1399px) {
+                            &:before {
+                                font-size: 1.7rem;
+                            }
+                        }
+
+                        @media (min-width: 1400px) {
+                            &:before {
+                                font-size: 1.9rem;
+                            }
+                        }
                     }
                 }
             }
         }
-
-
     }
 }
 
 
 #news-main {
-    height: 95%;
-
-    @media (max-width: 767.98px) {
-        height: auto;
-    }
+    display: flex;
+    flex: 1;
 
     #news-container {
-        font-family: 'PlayfairDisplay';
-        height: 100% !important;
 
         @media (max-width: 767.98px) {
             display: flex;
@@ -75,8 +125,6 @@
 
         #news-top {
             position: relative;
-            height: 11%;
-            min-height: 64px;
 
             @media (max-width: 767.98px) {
                 position: fixed;
@@ -102,35 +150,54 @@
                 z-index: 150;
             }
 
-            h2 {
-                color: #F5F5F5;
-                z-index: 1050;
-                margin: 0;
+            .col {
 
-                &::first-letter {
-                    font-family: 'Monplesir script';
-                }
-            }
-
-            p {
-                font-size: 14px;
-                z-index: 1050;
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 17px;
+                @media (min-width: 1000px) and (max-width: 1199px) {
+                    padding: 10px;
                 }
 
-                @media (min-width: 1400px) {
-                    font-size: 19px;
+
+                span {
+                    color: #F5F5F5;
+                    display: inline-block;
+                    text-align: center;
+                    font-weight: bold;
+                    z-index: 1050;
+
+                    @media (max-width: 767.99px) {
+                        font-size: 1rem;
+                        margin: 0;
+                    }
+
+                    @media (min-width: 767.99px) and (max-width: 999px) {
+                        font-size: 1.1rem;
+                        margin: 0;
+                    }
+
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        font-size: 1.6rem;
+                    }
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 2rem;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 2.5rem;
+                    }
+
+                    &::first-letter {
+                        font-family: 'Monplesir script';
+                        font-weight: normal;
+                    }
                 }
             }
         }
 
         #news-middle {
-            height: 79%;
+            flex: 1;
             overflow-y: auto;
             overflow-x: hidden;
-            -webkit-overflow-scrolling: touch;
             padding-right: 10px;
 
             @media (max-width: 767.98px) {
@@ -254,51 +321,63 @@
                 }
             }
         }
-        #news-bottom {
-            height: 10%;
+    }
+}
+
+#news-footer {
+    background-color: pink;
+    flex-shrink: 0;
+
+    .row {
+
+        @media (max-width: 767.98px) {
+            height: auto;
             min-height: 70px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #F5F5F5;
+        }
+
+        .col {
+            @media (max-width: 767.98px) {
+                justify-content: center;
+            }
+
+            @media (min-width: 1000px) and (max-width: 1199px) {
+                padding: 15px;
+            }
+        }
+
+        button {
+            background-color: #fbc01c;
+            color: #4F4E4E;
+            width: 65%;
+            padding: 5px;
+            border-radius: 30px;
+            border: 0;
+            font-weight: bold;
+
+            &:active {
+                box-shadow: 5px 7px 10px 2px rgba(0,0,0,.4);
+            }
 
             @media (max-width: 767.98px) {
-                height: auto;
-                min-height: 70px;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                background-color: #F5F5F5;
+                font-size: 1.2rem;
+                width: 90%;
             }
 
-            .col {
-                @media (max-width: 767.98px) {
-                    justify-content: center;
-                }
+            @media (min-width: 1000px) and (max-width: 1199px) {
+                font-size: 1rem;
             }
 
-            button {
-                background-color: #fbc01c;
-                color: #4f4e4e;
-                width: 65%;
-                font-size: 1.1rem;
-                padding: 5px;
-                border-radius: 30px;
-                border: 0;
+            @media (min-width: 1200px) and (max-width: 1399px) {
+                font-size: 1.3rem;
+            }
 
-                &:active {
-                    box-shadow: 5px 7px 10px 2px rgba(0,0,0,.4);
-                }
-
-                @media (max-width: 767.98px) {
-                    font-size: 1.2rem;
-                    width: 90%;
-                }
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 1.3rem;
-                }
-
-                @media (min-width: 1400px) {
-                    width: 55%;
-                    font-size: 1.4rem;
-                }
+            @media (min-width: 1400px) {
+                width: 55%;
+                font-size: 1.4rem;
             }
         }
     }

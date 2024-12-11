@@ -27,7 +27,7 @@
             <div class="col-auto" title="col-left">
                 <div id="wrap-about-image">
                     <picture>
-                        <source media="(max-width: 999px)" srcset="{% static 'main/img/mob-about-image.png' %}">
+                        <source media="(max-width: 767.98px)" srcset="{% static 'main/img/mob-about-image.png' %}">
                         <img src="{% static 'main/img/about-image.png' %}" alt="about-image">
                     </picture>
                 </div>
@@ -103,7 +103,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-11 d-flex justify-content-center col-info-one desktop-none">
+                    <div class="col-11 col-info-one desktop-none">
                         <div class="row about-one">
                             <div class="col-1">
                                 <span>01</span>
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-11 mt-3 d-flex justify-content-center col-info-two desktop-none">
+                    <div class="col-11 mt-3 col-info-two desktop-none">
                         <div class="row about-two">
                             <div class="col-1 d-flex align-items-center">
                                 <span>02</span>
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-11 mt-3 d-flex justify-content-center col-info-three desktop-none">
+                    <div class="col-11 mt-3 col-info-three desktop-none">
                         <div class="row about-three">
                             <div class="col-1 d-flex align-items-center">
                                 <span>03</span>
@@ -168,8 +168,14 @@
 {% block footer %}
 <footer id="about-footer">
     <div class="row">
-        <div class="col d-flex justify-content-center desktop-none">
-            <div id="about-mob-bottom-interior"></div>
+        <div class="col">
+            <div class="container desktop-none">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <div id="about-mob-bottom-interior"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </footer>

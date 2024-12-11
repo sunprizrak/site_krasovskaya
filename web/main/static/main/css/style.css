@@ -139,7 +139,7 @@ p {
     }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 999.99px) {
     .mobile-none {
         display: none !important;
     }

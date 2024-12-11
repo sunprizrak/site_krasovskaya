@@ -21,11 +21,11 @@
 {% endblock %}
 
 {% block main %}
-<main class="d-flex flex-grow-1" id="news-main">
-    <div class="container" id="news-container">
+<main class="" id="news-main">  <!--d-flex flex-grow-1 -->
+    <div class="container-fluid" id="news-container">
         <div class="row" id="news-top">
             <div class="col d-flex justify-content-center align-items-center">
-                <h2>Мои новости</h2>
+                <span>Мои новости</span>
             </div>
         </div>
         <div class="row row-cols-1" id="news-middle">
@@ -70,7 +70,14 @@
                 {% endif %}
             {% endfor %}
         </div>
-        <div class="row" id="news-bottom">
+    </div>
+</main>
+{% endblock %}
+
+{% block footer %}
+<footer id="news-footer">
+    <div class="container">
+        <div class="row">
             <div class="col d-flex align-items-center">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_subscribe">ПОДПИСАТЬСЯ НА РАССЫЛКУ</button>
             </div>
@@ -79,7 +86,7 @@
             </div>
         </div>
     </div>
-</main>
+</footer>
 {% endblock %}
 
 {% block modal %}
