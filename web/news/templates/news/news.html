@@ -21,54 +21,67 @@
 {% endblock %}
 
 {% block main %}
-<main class="" id="news-main">  <!--d-flex flex-grow-1 -->
+<main id="news-main">
     <div class="container-fluid" id="news-container">
         <div class="row" id="news-top">
             <div class="col d-flex justify-content-center align-items-center">
                 <span>Мои новости</span>
             </div>
         </div>
-        <div class="row row-cols-1" id="news-middle">
-            {% for news_item in news %}
-                {% if not news_item.hide %}
-                    <div class="col news">
-                        {% if news_item.title %}
-                            <div class="row">
-                                <div class="col mt-2 d-flex justify-content-center">
-                                    <strong>{{ news_item.title }}</strong>
+        <div class="row" id="news-middle">
+            <div class="col">
+                <div class="container">
+                    {% for news_item in news %}
+                        {% if not news_item.hide %}
+                            <div class="row news">
+                                <div class="col d-flex justify-content-center" id="news-title">
+                                    {% if news_item.title %}
+                                        <strong>{{ news_item.title }}</strong>
+                                    {% endif %}
+                                </div>
+                                <div class="col" id="news-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            {% if news_item.file %}
+                                                {% if news_item.media_type == 'photo' %}
+                                                    <img src="{{ news_item.file.url }}" alt="news-image">
+                                                {% elif news_item.media_type == 'video' %}
+                                                    {% if news_item.iframe_code %}
+                                                        {{ news_item.iframe_code|safe }}
+                                                    {% else %}
+                                                        <video controls>
+                                                            <source src="{{ news_item.file.url }}">
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                    {% endif %}
+                                                {% endif %}
+                                                <div class="news-text">
+                                                    {{ news_item.text|safe }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col news-bottom">
+                                    <div class="row">
+                                        <div class="col read-next">
+                                            <a href="{% url 'news_detail' news_item.id %}">
+                                                <p>Читать дальше</p>
+                                            </a>
+                                        </div>
+                                        <div class="col d-flex align-items-center justify-content-end" data-news-id="{{ news_item.id }}">
+                                            <div class="heart-stat">
+                                                <span>{{ news_item.likes }}</span>
+                                                <i class="bi bi-heart-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         {% endif %}
-                        <div class="row">
-                            <div class="col mt-3">
-                            {% if news_item.file %}
-                                {% if news_item.media_type == 'photo' %}
-                                    <img src="{{ news_item.file.url }}" alt="news-image">
-                                {% elif news_item.media_type == 'video' %}
-                                    {% if news_item.iframe_code %}
-                                        {{ news_item.iframe_code|safe }}
-                                    {% else %}
-                                        <video controls>
-                                            <source src="{{ news_item.file.url }}">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    {% endif %}
-                                {% endif %}
-                                <div class="news-text">
-                                    {{ news_item.text|safe }}
-                                </div>
-                            {% endif %}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col d-flex align-items-center justify-content-end heart" data-news-id="{{ news_item.id }}">
-                                <span>{{ news_item.likes }}</span>
-                                <i class="bi bi-heart-fill"></i>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </main>
@@ -81,7 +94,7 @@
             <div class="col d-flex align-items-center">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_subscribe">ПОДПИСАТЬСЯ НА РАССЫЛКУ</button>
             </div>
-            <div class="col d-none d-md-flex d-flex justify-content-end align-items-center">
+            <div class="col" title="col-two">
                 <button type="button" data-bs-toggle="modal" data-bs-target="#feedback_modal">ЗАДАТЬ ВОПРОС</button>
             </div>
         </div>

@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormMixin
 from main.forms import QuestionForm
 from .forms import SubscribeForm
@@ -70,3 +70,13 @@ class NewsView(CheckBrowserVersionMixin, FormMixin, ListView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+
+
+class NewsDetailView(DetailView):
+    model = NewsModel
+    context_object_name = 'news_item'
+    template_name = 'news/news_detail.html'
+
+    extra_context = {
+        'title': 'Новость',
+    }

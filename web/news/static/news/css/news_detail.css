@@ -1,0 +1,97 @@
+#news_detail-main {
+    display: flex;
+    flex: 1;
+
+    .container {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .news {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            border-top: 1px solid #4E9599;
+            border-bottom: 1px solid #4E9599;
+            padding-bottom: 5px;
+
+            #news-title {
+                padding: 10px 0 10px 0;
+                flex-shrink: 0;
+            }
+
+            #news-body {
+                flex: 1;
+
+                .row {
+
+                    .col {
+
+                        img[alt='news-image'] {
+                            width: 190px;
+                            pointer-events: none;
+                            user-select: none;
+                            position: relative;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                        video {
+                            width: 100%;
+                            position: relative;
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                        }
+
+                        iframe {
+                            width: 100%;
+                            position: relative;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                        .news-text {
+                            padding-top: 10px;
+
+                            p {
+                                margin: 0 10px 0 0;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .news-bottom {
+                position: relative;
+                padding-top: 5px;
+                flex-shrink: 0;
+
+                .heart-stat {
+                    position: relative;
+                    right: 25px;
+
+                    span {
+                        position: relative;
+                        right: 5px;
+                    }
+
+                    i {
+                        position: absolute;
+                        color: #4E9599;
+                        transition: transform 0.1s ease-in-out;
+                        transform-origin: center;
+                        cursor: pointer;
+
+                        &:active {
+                            transform: scale(1.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

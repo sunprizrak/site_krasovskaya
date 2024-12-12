@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.heart').click(function() {
+    $('.heart-stat').click(function() {
         var newsId = $(this).data('news-id');
         var likeCount = $(this).find('span');
 

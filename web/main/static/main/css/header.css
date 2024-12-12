@@ -126,6 +126,8 @@ header {
                         background-color: #FDF9F3;
                         border-radius: 43px;
                         border: 2px solid #4e9599;
+                        left: 50%;
+                        transform: translateX(-50%);
                         z-index: 1050;
 
                         &:before {
