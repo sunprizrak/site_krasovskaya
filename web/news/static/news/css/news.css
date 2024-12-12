@@ -503,7 +503,11 @@
 #feedback_subscribe {
     .modal-dialog {
         max-width: 700px;
-        top: 20%;
+
+        @media (max-width: 999.99px) {
+            top: 20%;
+        }
+
 
         .modal-content {
             .modal-body {
