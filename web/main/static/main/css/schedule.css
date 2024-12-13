@@ -1,54 +1,79 @@
 #schedule-header {
-    height: 5%;
-    min-height: 30px;
+    flex-shrink: 0;
+    background-color: yellow;
 
-    @media (max-width: 767.98px) {
+    @media (max-width: 999.99px) {
         height: 57px;
         z-index: 1000;
         min-height: 57px;
         position: relative;
     }
 
+    @media (min-width: 1000px) and (max-width: 1199px) {
+        height: 50px;
+    }
+
     .navbar {
         height: 100%;
 
-        @media (max-width: 767.98px) {
+        @media (max-width: 999.99px) {
             height: auto;
+            min-height: 57px;
             width: 100%;
             position: fixed;
             background-color: #F5F5F5;
         }
 
-        .navbar-nav {
-            right: 30px;
+        .container {
 
-            @media (max-width: 767.98px) {
-                right: auto;
-                margin-top: 10px;
-            }
+            .navbar-nav {
+                position: absolute;
+                right: 0;
 
-            @media (min-width: 1200px) and (max-width: 1399px) {
-                right: 42px;
-            }
-
-            @media (min-width: 1400px) {
-                right: 56px;
-            }
-
-            .nav-link {
-                font-size: 0.9rem !important;
-                color: #4e9599;
-
-                @media (max-width: 767.98px) {
-                    font-size: 1rem !important;
+                @media (max-width: 999px) {
+                    right: auto;
+                    width: 90%;
                 }
 
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 1.05rem !important;
-                }
+                .nav-link {
+                    color: #4e9599;
 
-                @media (min-width: 1400px) {
-                    font-size: 1.25rem !important;
+                    @media (max-width: 999px) {
+                        font-size: 1rem !important;
+                    }
+
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        font-size: 0.92rem !important;
+                    }
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 1.15rem !important;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 1.4rem !important;
+                    }
+
+                    i {
+
+                        @media (min-width: 1000px) and (max-width: 1199px) {
+                            &:before {
+                                font-size: 1.4rem;
+                            }
+                        }
+
+                        @media (min-width: 1200px) and (max-width: 1399px) {
+                            &:before {
+                                font-size: 1.7rem;
+                            }
+                        }
+
+                        @media (min-width: 1400px) {
+                            &:before {
+                                font-size: 1.9rem;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -56,26 +81,19 @@
 }
 
 #schedule-main {
-    height: 95%;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
 
-    @media (max-width: 767.98px) {
-        height: auto;
-    }
 
     #schedule-container {
-        height: 100% !important;
-        font-family: 'PlayfairDisplay';
-        height: inherit;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 100%;
 
-        @media (max-width: 767.98px) {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #schedule-top-row {
-            height: 10%;
-            min-height: 55px;
+        #row-schedule-title {
 
             @media (max-width: 767.98px) {
                 position: fixed;
@@ -89,20 +107,43 @@
             }
 
             .col {
-                h2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 5px;
+
+                span {
                     color: #4e9599;
+                    display: inline-block;
+                    text-align: center;
+                    font-weight: bold;
 
                     @media (max-width: 767.98px) {
+                        font-size: 1.2rem;
                         margin: 0;
+                    }
+
+                    @media (min-width: 767.99px) and (max-width: 999px) {
+                        font-size: 1.5rem;
+                        margin: 0;
+                    }
+
+                    @media (min-width: 1000px) and (max-width: 1199px) {
+                        font-size: 1.6rem;
+                    }
+
+                    @media (min-width: 1200px) and (max-width: 1399px) {
+                        font-size: 2rem;
+                    }
+
+                    @media (min-width: 1400px) {
+                        font-size: 2.5rem;
                     }
 
                     &::first-letter {
                         font-family: 'Monplesir script';
+                        font-weight: normal;
                     }
-
-                    @media (min-width: 1400px) {
-                        font-size: 2.3rem;
-                     }
                 }
             }
         }
@@ -157,42 +198,48 @@
             }
         }
 
-        .schedule-bottom-row {
-            height: 90%;
+        .row-schedule {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            flex: 1;
 
-            @media (max-width: 767.98px) {
-                height: height: 100%;
-            }
-
-            .schedule-header {
+            .schedule_box-header {
                 position: relative;
-                height: 36px;
                 width: 90%;
                 border-radius: 43px;
                 background: linear-gradient(to right, rgba(227, 236, 237, 1) 0%, 38.550421595573425%, rgba(122, 175, 177, 1) 77.10084319114685%, 88.55042159557343%, rgba(88, 155, 159, 1) 100%);
                 z-index: 100;
 
-                @media (min-width: 1400px) {
-                    height: 45px;
-                }
+                .col {
+                    padding: 0px 35px 0px 35px;
 
-                span {
-                    padding: 0 45px 0 45px;
-                    font-size: 1.4rem;
-                    font-weight: bold;
+                    span {
+                        font-weight: bold;
 
-                    @media (max-width: 767.98px) {
-                        color: #4e9599;
-                        padding: 0;
+                        @media (max-width: 767.98px) {
+                            color: #4e9599;
+                            padding: 0;
+                        }
+
+                        @media (min-width: 1000px) and (max-width: 1199px) {
+                            font-size: 1.5rem;
+                        }
+
+                        @media (min-width: 1200px) and (max-width: 1399px) {
+                            font-size: 1.5rem;
+                        }
+
+                        @media (min-width: 1400px) {
+                            font-size: 1.6rem;
+                         }
                     }
-
-                    @media (min-width: 1400px) {
-                        font-size: 1.6rem;
-                     }
                 }
+
+
             }
 
-            .schedule-box {
+            .schedule_box {
                 display: flex;
                 flex-direction: column;
                 width: 90%;
@@ -202,23 +249,11 @@
                 margin-top: 15px;
                 z-index: 100;
                 background: #F5F5F5;
+                padding: 10px 0 10px 0;
 
                 p {
                     text-align: center;
-                    font-size: 14px;
                     margin: 0;
-
-                    @media (max-width: 767.98px) {
-                        font-size: 13px;
-                    }
-
-                    @media (min-width: 1200px) and (max-width: 1399px) {
-                        font-size: 15px;
-                    }
-
-                    @media (min-width: 1400px) {
-                        font-size: 17px;
-                     }
 
                     strong {
                         &.color_true {

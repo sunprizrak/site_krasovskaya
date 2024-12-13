@@ -28,7 +28,7 @@
     .navbar {
         height: 100%;
 
-        @media (max-width: 999px) {
+        @media (max-width: 999.99px) {
             height: auto;
             min-height: 57px;
             width: 100%;
@@ -47,22 +47,11 @@
 
             .navbar-nav {
                 position: absolute;
+                right: 0;
 
                 @media (max-width: 999px) {
                     right: auto;
                     width: 90%;
-                }
-
-                @media (min-width: 1000px) and (max-width: 1199px) {
-                    right: 0;
-                }
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    right: 0;
-                }
-
-                @media (min-width: 1400px) {
-                    right: 0;
                 }
 
                 .nav-link {
