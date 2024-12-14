@@ -28,19 +28,17 @@
                 <span>Расписание</span>
             </div>
         </div>
-<!--        <div class="row d-md-none" id="mob-schedule-form-row">-->
-<!--            <div class="col d-flex justify-content-center align-items-center">-->
-<!--                <div id="schedule-box-form">-->
-<!--                    <p>Если вы хотите записаться в группу, заполните, пожалуйста форму</p>-->
-<!--                    <button type="button" data-bs-toggle="modal" data-bs-target="#schedule-modal-group" class="align-self-center">ХОЧУ В ГРУППУ</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="d-none d-md-block" id="groups-bottom-left"></div>-->
-<!--            <div class="d-none d-md-block" id="groups-bottom-right"></div>-->
-<!--        </div>-->
-        <div class="row row-schedule">
+        <div class="row d-md-none" id="mob-schedule-form-row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div id="schedule-box-form">
+                    <p>Если вы хотите записаться в группу, заполните, пожалуйста форму</p>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#schedule-modal-group" class="align-self-center">ХОЧУ В ГРУППУ</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mobile-none row-schedule">
             {% for day in schedule_days %}
-                <div class="col pb-3 {% if day == 'ЧТ' or day == 'ПТ' %}d-flex flex-column align-items-end{% endif %}" id="{% if day == 'СР' %}col-left-bottom{% endif %}">
+                <div class="col {% if day == 'ЧТ' or day == 'ПТ' %}d-flex flex-column align-items-end{% endif %}" id="{% if day == 'СР' %}col-left-bottom{% endif %}">
                     <div class="row schedule_box-header">
                         <div class="col d-flex {% if day == 'ЧТ' or day == 'ПТ' %}justify-content-start{% else %}justify-content-end{% endif %}">
                             <span class="{% if day == 'ЧТ' or day == 'ПТ' %}right-color{% else %}left-color{% endif %}">{{ day }}</span>
@@ -95,9 +93,9 @@
                     </div>
                 </div>
             {% endfor %}
-            <div class="col d-none d-md-flex flex-column justify-content-center align-items-end" id="col-right-bottom">
-                <div class="row schedule-header justify-content-end header-right-bottom"></div>
-                <div class="row schedule-box justify-content-center box-right-bottom">
+            <div class="col d-flex flex-column justify-content-center align-items-end" id="col-right-bottom">
+                <div class="row schedule_box-header justify-content-end header-right-bottom"></div>
+                <div class="row schedule_box justify-content-center box-right-bottom">
                     <p>Если вы хотите записаться в группу, заполните, <br>
                         пожалуйста форму
                     </p>
@@ -163,12 +161,19 @@
 <!--                </div>-->
 <!--            {% endfor %}-->
 <!--        </div>-->
-        <div id="schedule-top-right"></div>
 <!--        <div class="row d-md-none" id="schedule-mob-bottom">-->
 <!--            <div class="col"></div>-->
 <!--        </div>-->
     </div>
 </main>
+{% endblock %}
+
+{% block other %}
+    <div id="schedule-other">
+        <div class="container">
+            <div id="top-right"></div>
+        </div>
+    </div>
 {% endblock %}
 
 

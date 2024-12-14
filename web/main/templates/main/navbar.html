@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg {% if navbar_property %}{{ navbar_property }}{% endif %}">
     <div class="container">
-        <a class="navbar-brand d-md-none {% if request.path == '/' %}d-none{% endif %}" href="{% url 'home' %}">
+        <a class="navbar-brand desktop-none {% if request.path == '/' %}d-none{% endif %}" href="{% url 'home' %}">
             <i class="bi bi-house-heart-fill"></i>
         </a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
