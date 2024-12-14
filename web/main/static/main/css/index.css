@@ -162,7 +162,7 @@
                             z-index: 150;
                         }
 
-                        @media (min-width: 767.99px) and (max-width: 999px) {
+                        @media (min-width: 767.99px) and (max-width: 999.99px) {
                             position: relative;
                             width: 100%;
                             height: auto;

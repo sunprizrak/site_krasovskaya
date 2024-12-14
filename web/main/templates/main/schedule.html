@@ -28,9 +28,9 @@
                 <span>Расписание</span>
             </div>
         </div>
-        <div class="row d-md-none" id="mob-schedule-form-row">
+        <div class="row desktop-none" id="mob-schedule-form-row">
             <div class="col d-flex justify-content-center align-items-center">
-                <div id="schedule-box-form">
+                <div id="mob-schedule-box-form">
                     <p>Если вы хотите записаться в группу, заполните, пожалуйста форму</p>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#schedule-modal-group" class="align-self-center">ХОЧУ В ГРУППУ</button>
                 </div>
@@ -103,67 +103,64 @@
                 </div>
             </div>
         </div>
-<!--        <div class="row row-cols-1 d-md-none schedule-bottom-row">-->
-<!--            {% for day in schedule_days_mob %}-->
-<!--                <div class="col d-flex flex-column justify-content-center align-items-center">-->
-<!--                    <div class="row mt-3 schedule-header">-->
-<!--                        <div class="col d-flex align-items-center justify-content-start">-->
-<!--                            <span>{{ day }}</span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row schedule-box">-->
-<!--                        {% if day in grouped_lessons and grouped_lessons|get_item:day %}-->
-<!--                            {% for group in grouped_lessons|get_item:day %}-->
-<!--                                <div class="col">-->
-<!--                                    <div class="row">-->
-<!--                                        <div class="col">-->
-<!--                                            <p>-->
-<!--                                                <strong class="d-flex justify-content-center">-->
-<!--                                                    {{ group.start_time }} - {{ group.end_time }}-->
-<!--                                                </strong>-->
-<!--                                            </p>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="row">-->
-<!--                                        <div class="col d-flex justify-content-center">-->
-<!--                                            <button name="popover" data-bs-toggle="popover" data-bs-custom-class="schedule-popover" data-bs-content="{{ group.description|safe }}" data-bs-html="true" data-bs-trigger="focus">-->
-<!--                                                {{ group.name }}-->
-<!--                                            </button>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="row">-->
-<!--                                        <div class="col">-->
-<!--                                            {% if group.available_slots > 0 %}-->
-<!--                                                <p>-->
-<!--                                                    <strong class="d-flex justify-content-center color_true">-->
-<!--                                                        (есть {{ group.available_slots }} мес{{ group.available_slots|ru_plural:'то,та,т' }})-->
-<!--                                                    </strong>-->
-<!--                                                </p>-->
-<!--                                            {%  else %}-->
-<!--                                                <p>-->
-<!--                                                    <strong class="d-flex justify-content-center">-->
-<!--                                                        (нет мест)-->
-<!--                                                    </strong>-->
-<!--                                                </p>-->
-<!--                                            {% endif %}-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            {% endfor %}-->
-<!--                        {% else %}-->
-<!--                            <div class="col">-->
-<!--                                <p class="d-flex justify-content-center">-->
-<!--                                    Нет занятий-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        {% endif %}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            {% endfor %}-->
-<!--        </div>-->
-<!--        <div class="row d-md-none" id="schedule-mob-bottom">-->
-<!--            <div class="col"></div>-->
-<!--        </div>-->
+        <div class="row row-cols-1 desktop-none row-schedule">
+            {% for day in schedule_days_mob %}
+                <div class="col d-flex flex-column justify-content-center align-items-center">
+                    <div class="row mt-3 schedule_box-header">
+                        <div class="col d-flex align-items-center justify-content-start">
+                            <span>{{ day }}</span>
+                        </div>
+                    </div>
+                    <div class="row schedule_box">
+                        {% if day in grouped_lessons and grouped_lessons|get_item:day %}
+                            {% for group in grouped_lessons|get_item:day %}
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p>
+                                                <strong class="d-flex justify-content-center">
+                                                    {{ group.start_time }} - {{ group.end_time }}
+                                                </strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col d-flex justify-content-center">
+                                            <button name="popover" data-bs-toggle="popover" data-bs-custom-class="schedule-popover" data-bs-content="{{ group.description|safe }}" data-bs-html="true" data-bs-trigger="focus">
+                                                {{ group.name }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            {% if group.available_slots > 0 %}
+                                                <p>
+                                                    <strong class="d-flex justify-content-center color_true">
+                                                        (есть {{ group.available_slots }} мес{{ group.available_slots|ru_plural:'то,та,т' }})
+                                                    </strong>
+                                                </p>
+                                            {%  else %}
+                                                <p>
+                                                    <strong class="d-flex justify-content-center">
+                                                        (нет мест)
+                                                    </strong>
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="col">
+                                <p class="d-flex justify-content-center">
+                                    Нет занятий
+                                </p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </main>
 {% endblock %}
@@ -176,6 +173,14 @@
     </div>
 {% endblock %}
 
+
+{% block footer %}
+<footer class="desktop-none" id="schedule-footer">
+    <div class="row " id="schedule-mob-bottom">
+        <div class="col"></div>
+    </div>
+</footer>
+{% endblock %}
 
 {% block modal %}
 <div class="modal fade" id="schedule-modal-group" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
