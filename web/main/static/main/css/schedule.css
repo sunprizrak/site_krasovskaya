@@ -409,8 +409,6 @@
                     background-color: #fbde98;
                     z-index: 0;
                 }
-
-
             }
 
             #col-right-bottom {
@@ -425,6 +423,7 @@
                     height: 100%;
                     right: -50vw;
                     left: 0;
+                    bottom: 0;
                     border-top-left-radius: 43px;
                     z-index: 5;
                     background: linear-gradient(to bottom, rgba(234, 239, 239, 1) 0%, 29.588013887405396%, rgba(170, 201, 203, 1) 59.17602777481079%, 79.5880138874054%, rgba(125, 176, 179, 1) 100%);
