@@ -1,6 +1,5 @@
 #schedule-header {
     flex-shrink: 0;
-    background-color: yellow;
     z-index: 1000;
 
     @media (max-width: 999.99px) {
@@ -393,26 +392,6 @@
                         font-size: 1.4rem;
                     }
                 }
-
-                .schedule-star {
-                    position: absolute;
-                    background-color: #fbde98;
-                    left: 28px;
-                    bottom: 31px;
-                    width: 25px;
-                    height: 25px;
-                    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-
-                    @media (min-width: 1200px) and (max-width: 1399px) {
-                        left: 42px;
-                        bottom: 36px;
-                    }
-
-                    @media (min-width: 1400px) {
-                        left: 58px;
-                        bottom: 40px;
-                     }
-                }
             }
 
             #col-left-bottom {
@@ -438,6 +417,7 @@
                 border-top-left-radius: 43px;
                 position: relative;
                 background: linear-gradient(to bottom, rgba(234, 239, 239, 1) 0%, 29.588013887405396%, rgba(170, 201, 203, 1) 59.17602777481079%, 79.5880138874054%, rgba(119, 172, 175, 1) 100%);
+                padding-bottom: 10px;
 
                 &:after {
                     position: absolute;
@@ -476,12 +456,6 @@
 
         @media (min-width: 1400px) {
             height: 175px;
-        }
-
-        button {
-            @media (min-width: 1400px) {
-                font-size: 1.3rem !important;
-            }
         }
     }
 }
