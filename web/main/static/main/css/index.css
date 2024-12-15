@@ -612,7 +612,7 @@
     height: 100%;
     pointer-events: none;
 
-    @media (max-width: 999px) {
+    @media (max-width: 999.99px) {
         display: none;
     }
 
