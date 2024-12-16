@@ -23,14 +23,14 @@
 {% block main %}
 <main id="contacts-main">
     <div class="container position-relative" id="contacts-container">
-<!--        <div class="row desktop-none" id="mob-page-name">-->
-<!--            <div class="col d-flex justify-content-center align-items-center">-->
-<!--                <h2>Контакты</h2>-->
-<!--            </div>-->
-<!--        </div>-->
-        <div class="row">
+        <div class="row desktop-none" id="row-mob-title">
+            <div class="col d-flex justify-content-center align-items-center">
+                <span>Контакты</span>
+            </div>
+        </div>
+        <div class="row" id="row-main">
             <div class="col" title="col-left">
-                <div class="row" title="row-top-col-left">
+                <div class="row mobile-none" title="row-top-col-left">
                     <div class="col">
                         <span>Контакты</span>
                     </div>
@@ -99,15 +99,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col d-flex" id="contacts-tg">
-                                        <div class="contacts-links">
-                                            <i class="bi bi-telegram"></i>
-                                            <a class="ms-2" href="https://t.me/group_therapy_montenegro" target="_blank" >
-                                                <p>мой телеграм-канал "Групповая терапия. Будва"</p>
-                                            </a>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="col d-flex">
+                                <div class="contacts-links">
+                                    <i class="bi bi-telegram"></i>
+                                    <a class="ms-2" href="https://t.me/group_therapy_montenegro" target="_blank" >
+                                        <p>мой телеграм-канал "Групповая терапия. Будва"</p>
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-auto d-flex flex-grow-2 justify-content-center" id="col-button">
@@ -118,10 +116,10 @@
                 </div>
             </div>
             <div class="col" title="col-right">
-                    <picture>
-                        <source media="(max-width: 999.99px)" srcset="{% static 'main/img/mob-contacts.png' %}">
-                        <img src="{% static 'main/img/contacts-foto.png' %}" alt="contacts-foto">
-                    </picture>
+                <picture>
+                    <source media="(max-width: 999.99px)" srcset="{% static 'main/img/mob-contacts.png' %}">
+                    <img src="{% static 'main/img/contacts-foto.png' %}" alt="contacts-foto">
+                </picture>
             </div>
         </div>
 
