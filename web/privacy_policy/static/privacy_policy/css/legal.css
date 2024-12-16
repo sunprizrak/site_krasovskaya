@@ -1,34 +1,72 @@
+.body-legal {
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
 .legal-header {
-    height: 60px;
-    min-height: 60px;
+    flex-shrink: 0;
     background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
 
-    h2 {
-        color: #4e9599;
-        margin: 0;
+    @media (min-width: 1000px) and (max-width: 1199px) {
+        height: 70px;
+    }
 
-        @media (max-width: 767.98px){
-            font-size: 1.2rem;
-            text-align: center;
+    @media (min-width: 1200px) and (max-width: 1399px) {
+
+    }
+
+    @media (min-width: 1400px) {
+
+    }
+
+    .row {
+
+        .col {
+
+            span {
+                display: inline-block;
+                font-weight: bold;
+                color: #4e9599;
+
+                @media (max-width: 767.98px) {
+                    font-size: 1rem;
+                }
+
+                @media (min-width: 767.99px) and (max-width: 999.99px){
+                    font-size: 1.3rem;
+                }
+
+                @media (min-width: 1000px) and (max-width: 1199px) {
+                    font-size: 1.8rem;
+                }
+
+                @media (min-width: 1200px) and (max-width: 1399px) {
+                    font-size: 1.2rem;
+                }
+
+                @media (min-width: 1400px) {
+                    font-size: 1.3rem;
+                }
+
+                &::first-letter {
+                    font-family: 'Monplesir script';
+                    font-weight: normal;
+                }
+            }
         }
-
-        &::first-letter {
-            font-family: 'Monplesir script';
-        }
-
-
     }
 }
 
 .legal-main {
-    flex-grow: 1;
+    display: flex;
+    flex: 1;
 
     @media (max-width: 767.98px) {
         padding-bottom: 57px;
     }
 
     .legal-container {
-        font-family: 'PlayfairDisplay';
 
         .col-text {
             padding-top: 15px;
@@ -37,10 +75,9 @@
 }
 
 .legal-footer {
-    height: 60px;
-    min-height: 60px;
+    flex-shrink: 0;
 
-    @media (max-width: 767.98px) {
+    @media (max-width: 999.99px) {
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -49,23 +86,34 @@
         min-height: auto;
     }
 
+    @media (min-width: 1000px) and (max-width: 1199px) {
+        height: 70px;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1399px) {
+
+    }
+
+    @media (min-width: 1400px) {
+
+    }
+
     .navbar {
         height: 100%;
+        user-select: none;
+        --bs-navbar-nav-link-padding-x: 1rem !important;
+        padding: 0;
         background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
 
-        .navbar-collapse {
-
-            @media (max-width: 767.98px) {
-                position: fixed;
-                bottom: 57px;
-                background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
-                width: 100%;
-                left: 0;
-                right: 0;
-            }
+        .container {
+            position: relative;
+            height: 100%;
 
             .navbar-nav {
-                right: 30px;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
 
                 @media (min-width: 1200px) and (max-width: 1399px) {
                     right: 42px;

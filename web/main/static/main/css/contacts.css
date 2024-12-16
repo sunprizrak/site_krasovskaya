@@ -301,7 +301,7 @@
                                     color: #4F4E4E;
 
                                     @media (max-width: 767.98px) {
-
+                                        font-size: 1rem;
                                     }
 
                                     @media (min-width: 767.99px) and (max-width: 999.99px){
