@@ -8,16 +8,20 @@
     flex-shrink: 0;
     background: linear-gradient(to right, rgba(249, 197, 54, 1) 0%, 0.9251471608877182%, rgba(248, 197, 58, 1) 1.8502943217754364%, 50.92514716088772%, rgba(236, 229, 219, 1) 100%);
 
+    @media (max-width: 999.99px) {
+        height: 57px;
+    }
+
     @media (min-width: 1000px) and (max-width: 1199px) {
-        height: 70px;
+        height: 50px;
     }
 
     @media (min-width: 1200px) and (max-width: 1399px) {
-
+        height: 55px;
     }
 
     @media (min-width: 1400px) {
-
+        height: 65px;
     }
 
     .row {
@@ -31,22 +35,24 @@
 
                 @media (max-width: 767.98px) {
                     font-size: 1rem;
+                    text-align: center;
                 }
 
                 @media (min-width: 767.99px) and (max-width: 999.99px){
                     font-size: 1.3rem;
+                    text-align: center;
                 }
 
                 @media (min-width: 1000px) and (max-width: 1199px) {
-                    font-size: 1.8rem;
+                    font-size: 1.4rem;
                 }
 
                 @media (min-width: 1200px) and (max-width: 1399px) {
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                 }
 
                 @media (min-width: 1400px) {
-                    font-size: 1.3rem;
+                    font-size: 1.8rem;
                 }
 
                 &::first-letter {
@@ -61,6 +67,7 @@
 .legal-main {
     display: flex;
     flex: 1;
+    overflow-y: auto;
 
     @media (max-width: 767.98px) {
         padding-bottom: 57px;
@@ -86,16 +93,20 @@
         min-height: auto;
     }
 
+    @media (max-width: 999.99px) {
+        height: 57px;
+    }
+
     @media (min-width: 1000px) and (max-width: 1199px) {
-        height: 70px;
+        height: 50px;
     }
 
     @media (min-width: 1200px) and (max-width: 1399px) {
-
+        height: 55px;
     }
 
     @media (min-width: 1400px) {
-
+        height: 65px;
     }
 
     .navbar {
@@ -109,34 +120,65 @@
             position: relative;
             height: 100%;
 
-            .navbar-nav {
+            .navbar-collapse {
                 position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
+                bottom: 45px;
+                width: 100%;
+                left: 0px;
 
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    right: 42px;
-                }
+                .navbar-nav {
 
-                @media (min-width: 1400px) {
-                    right: 56px;
-                }
-
-                .nav-link {
-                    font-size: 0.85rem !important;
-                    color: #4e9599;
-
-                    @media (max-width: 767.98px) {
-                        font-size: 1rem !important;
+                    @media (max-width: 999.99px) {
+                        width: 90%;
+                        position: relative;
                     }
 
-                    @media (min-width: 1200px) and (max-width: 1399px) {
-                        font-size: 1.05rem !important;
+                    @media (min-width: 1000px) {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
                     }
 
-                    @media (min-width: 1400px) {
-                        font-size: 1.25rem !important;
+                    .nav-link {
+                        color: #4e9599;
+
+                        @media (max-width: 999px) {
+                            font-size: 1rem !important;
+                        }
+
+                        @media (min-width: 1000px) and (max-width: 1199px) {
+                            font-size: 0.92rem !important;
+                        }
+
+                        @media (min-width: 1200px) and (max-width: 1399px) {
+                            font-size: 1.15rem !important;
+                        }
+
+                        @media (min-width: 1400px) {
+                            font-size: 1.4rem !important;
+                        }
+
+                        i {
+
+                            @media (min-width: 1000px) and (max-width: 1199px) {
+                                &:before {
+                                    font-size: 1.4rem;
+                                }
+                            }
+
+                            @media (min-width: 1200px) and (max-width: 1399px) {
+                                &:before {
+                                    font-size: 1.7rem;
+                                }
+                            }
+
+                            @media (min-width: 1400px) {
+                                &:before {
+                                    font-size: 1.9rem;
+                                }
+                            }
+                        }
                     }
                 }
             }

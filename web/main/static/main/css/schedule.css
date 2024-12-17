@@ -32,56 +32,65 @@
 
         .container {
 
-            .navbar-nav {
+            .navbar-collapse {
                 position: absolute;
-                right: 0;
+                width: 100%;
+                top: 49px;
+                left: 0px;
 
-                @media (max-width: 999px) {
-                    top: 49px;
-                    right: auto;
-                    width: 90%;
-                }
+                .navbar-nav {
 
-                @media (min-width: 767.99px) and (max-width: 999.99px) {
-                    width: 85%;
-                }
-
-                .nav-link {
-                    color: #4e9599;
-
-                    @media (max-width: 999px) {
-                        font-size: 1rem !important;
+                    @media (max-width: 999.99px) {
+                        position: relative;
+                        width: 90%;
                     }
 
-                    @media (min-width: 1000px) and (max-width: 1199px) {
-                        font-size: 0.92rem !important;
+                    @media (min-width: 767.99px) and (max-width: 999.99px) {
+                        width: 85%;
                     }
 
-                    @media (min-width: 1200px) and (max-width: 1399px) {
-                        font-size: 1.15rem !important;
+                    @media (min-width: 1000px) {
+                        position: absolute;
+                        right: 0;
                     }
 
-                    @media (min-width: 1400px) {
-                        font-size: 1.4rem !important;
-                    }
+                    .nav-link {
+                        color: #4e9599;
 
-                    i {
+                        @media (max-width: 999px) {
+                            font-size: 1rem !important;
+                        }
 
                         @media (min-width: 1000px) and (max-width: 1199px) {
-                            &:before {
-                                font-size: 1.4rem;
-                            }
+                            font-size: 0.92rem !important;
                         }
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
-                            &:before {
-                                font-size: 1.7rem;
-                            }
+                            font-size: 1.15rem !important;
                         }
 
                         @media (min-width: 1400px) {
-                            &:before {
-                                font-size: 1.9rem;
+                            font-size: 1.4rem !important;
+                        }
+
+                        i {
+
+                            @media (min-width: 1000px) and (max-width: 1199px) {
+                                &:before {
+                                    font-size: 1.4rem;
+                                }
+                            }
+
+                            @media (min-width: 1200px) and (max-width: 1399px) {
+                                &:before {
+                                    font-size: 1.7rem;
+                                }
+                            }
+
+                            @media (min-width: 1400px) {
+                                &:before {
+                                    font-size: 1.9rem;
+                                }
                             }
                         }
                     }

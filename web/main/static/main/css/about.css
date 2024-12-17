@@ -37,63 +37,62 @@
                 position: auto;
             }
 
-            .navbar-nav {
+            .navbar-collapse {
                 position: absolute;
-                z-index: 12;
+                width: 100%;
+                top: 35px;
+                left: 0px;
 
-                @media (max-width: 999px) {
-                    right: auto;
-                    width: 90%;
-                }
-
-                @media (min-width: 1000px) and (max-width: 1199px) {
-                    right: 0;
-                }
-
-                @media (min-width: 1200px) and (max-width: 1399px) {
-                    right: 0;
-                }
-
-                @media (min-width: 1400px) {
-                    right: 0;
-                }
-
-                .nav-link {
-                    color: #4e9599;
+                .navbar-nav {
+                    z-index: 12;
 
                     @media (max-width: 999px) {
-                        font-size: 1rem !important;
+                        position: relative;
+                        width: 90%;
                     }
 
-                    @media (min-width: 1000px) and (max-width: 1199px) {
-                        font-size: 0.92rem !important;
+                    @media (min-width: 1000px) {
+                        position: absolute;
+                        right: 0;
                     }
 
-                    @media (min-width: 1200px) and (max-width: 1399px) {
-                        font-size: 1.15rem !important;
-                    }
+                    .nav-link {
+                        color: #4e9599;
 
-                    @media (min-width: 1400px) {
-                        font-size: 1.4rem !important;
-                    }
-
-                    i {
+                        @media (max-width: 999px) {
+                            font-size: 1rem !important;
+                        }
 
                         @media (min-width: 1000px) and (max-width: 1199px) {
-                            &:before {
-                                font-size: 1.4rem;
-                            }
+                            font-size: 0.92rem !important;
                         }
 
                         @media (min-width: 1200px) and (max-width: 1399px) {
-                            &:before {
-                                font-size: 1.7rem;
-                            }
+                            font-size: 1.15rem !important;
                         }
 
                         @media (min-width: 1400px) {
-                            &:before {
-                                font-size: 1.9rem;
+                            font-size: 1.4rem !important;
+                        }
+
+                        i {
+
+                            @media (min-width: 1000px) and (max-width: 1199px) {
+                                &:before {
+                                    font-size: 1.4rem;
+                                }
+                            }
+
+                            @media (min-width: 1200px) and (max-width: 1399px) {
+                                &:before {
+                                    font-size: 1.7rem;
+                                }
+                            }
+
+                            @media (min-width: 1400px) {
+                                &:before {
+                                    font-size: 1.9rem;
+                                }
                             }
                         }
                     }

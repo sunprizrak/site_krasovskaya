@@ -29,20 +29,21 @@
         .container {
 
             .navbar-collapse {
-
-                @media (max-width: 999px) {
-                    position: absolute;
-                    top: 35px;
-                    width: 95%;
-                }
+                position: absolute;
+                width: 100%;
+                top: 35px;
+                left: 0px;
 
                 .navbar-nav {
-                    position: absolute;
                     z-index: 12;
 
                     @media (max-width: 999px) {
-                        right: auto;
-                        width: 90%;
+                        position: relative;
+                        width: 85%;
+                    }
+
+                    @media (min-width: 1000px) {
+                        position: absolute;
                     }
 
                     @media (min-width: 1000px) and (max-width: 1199px) {
