@@ -10,7 +10,6 @@
     @media (max-width: 999.99px) {
         height: 57px;
         z-index: 1000;
-
     }
 
     @media (min-width: 1000px) and (max-width: 1199px) {
@@ -46,10 +45,13 @@
         .container {
 
             .navbar-collapse {
-                position: absolute;
-                width: 100%;
-                top: 35px;
-                left: 0px;
+
+                @media (max-width: 999.99px) {
+                    position: absolute;
+                    width: 100%;
+                    top: 35px;
+                    left: 0px;
+                }
 
                 .navbar-nav {
 

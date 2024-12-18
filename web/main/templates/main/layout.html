@@ -26,7 +26,8 @@
 <body class="d-flex flex-column
 {% if request.path == '/news/' %}body-news{% endif %}
 {% if request.path == '/legal/privacy-policy/' %}body-legal{% endif %}
-{% if request.path == '/legal/user-agreement/' %}body-legal{% endif %}">
+{% if request.path == '/legal/user-agreement/' %}body-legal{% endif %}
+{% if request.path == '/groups' %}body-groups{% endif %}">
 
 {% if show_update_message %}
     {% include 'main/browser_update_message.html' %}

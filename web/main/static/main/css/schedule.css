@@ -21,7 +21,6 @@
     .navbar {
         height: 100%;
 
-
         @media (max-width: 999.99px) {
             height: auto;
             min-height: 57px;
@@ -33,10 +32,13 @@
         .container {
 
             .navbar-collapse {
-                position: absolute;
-                width: 100%;
-                top: 49px;
-                left: 0px;
+
+                @media (max-width: 999.99px) {
+                    position: absolute;
+                    width: 100%;
+                    top: 49px;
+                    left: 0px;
+                }
 
                 .navbar-nav {
 
