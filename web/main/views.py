@@ -139,9 +139,27 @@ class GroupsView(CheckBrowserVersionMixin, FormMixin, ListView):
         all_groups = super().get_queryset()
         return [group for group in all_groups if group.available_slots > 0 or group.show_if_no_seats]
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        group_lessons = self.get_queryset()
+        context['constant_lessons'] = [group for group in group_lessons if not group.on_time_event]
+        context['on_time_lessons'] = [group for group in group_lessons if group.on_time_event]
+        return context
+
     def post(self, request, *args, **kwargs):
         form = self.get_form()
+
         if form.is_valid():
+            constant_group = form.cleaned_data.get('constant_group')
+            on_time_group = form.cleaned_data.get('on_time_group')
+
+            if constant_group:
+                form.instance.group = constant_group
+            elif on_time_group:
+                form.instance.group = on_time_group
+            else:
+                return self.form_invalid(form)
+
             return self.form_valid(form)
         else:
             return self.form_invalid(form)

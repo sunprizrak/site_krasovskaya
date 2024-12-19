@@ -30,69 +30,110 @@
             </div>
         </div>
         <div class="row" id="row-groups-switch-buttons">
-            <div class="col">
-                <button type="button" title="left">Постоянные группы</button>
-                <button type="button" title="right">Разовые мероприятия</button>
+            <div class="col" id="col-buttons-tabs">
+                <ul class="nav nav-tabs" id="groupsTabs" role="tablist">
+                    <li class="nav-item active">
+                        <button class="active groups-tabs-button" id="groups-button-tabs-left" data-bs-toggle="tab" data-bs-target="#constant-groups" type="button" role="tab" aria-controls="constant-groups" aria-selected="true">
+                            Постоянные группы
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="groups-tabs-button" id="groups-button-tabs-right" data-bs-toggle="tab" data-bs-target="#on_time_lessons-groups" type="button" role="tab" aria-controls="on_time_lessons-groups" aria-selected="false">
+                            Разовые мероприятия
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="row" id="groups-content">
             <div class="col">
-                <div class="carousel slide" id="groups-carousel">
-                    <div id="carousel-inner">
-                         <div class="carousel-indicators">
-                             {% for group_lesson in group_lessons %}
-                                <button type="button" data-bs-target="#groups-carousel" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
-                             {% endfor %}
-                        </div>
-                        {% for group_lesson in group_lessons %}
-                            <div class="carousel-item {% if forloop.first %}active{% endif %}" data-group-id="{{ group_lesson.id }}">
-                                <div class="item-header">
-                                    <span>{{ group_lesson.name|capfirst }}</span>
-                                    <span>{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
+                <div class="tab-content" id="groupsTabsContent">
+                    <div class="tab-pane fade show active" id="constant-groups" role="tabpanel" aria-labelledby="groups-button-tabs-left">
+                        <div class="carousel slide groups-carousel" id="groups-carousel-constant">
+                            <div class="carousel-inner">
+                                 <div class="carousel-indicators">
+                                     {% for group_lesson in constant_lessons %}
+                                        <button type="button" data-bs-target="#groups-carousel-constant" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first%}active{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
+                                     {% endfor %}
                                 </div>
-                                <div class="item-body" id="item-body-{{ group_lesson.pk }}">
-                                    <div class="item-tools">
-                                        <button type="button" data-target="#item-body-{{ group_lesson.pk }}" class="groups-item-body-fullscreen">
-                                            <i class="bi bi-arrows-fullscreen"></i>
-                                        </button>
+                                {% for group_lesson in constant_lessons %}
+                                    <div class="carousel-item {% if forloop.first %}active{% endif %}" data-group-id="{{ group_lesson.id }}">
+                                        <div class="item-header">
+                                            <span>{{ group_lesson.name|capfirst }}</span>
+                                            <span>{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
+                                        </div>
+                                        <div class="item-body" id="item-body-{{ group_lesson.pk }}">
+                                            <div class="item-tools">
+                                                <button type="button" data-target="#item-body-{{ group_lesson.pk }}" class="groups-item-body-fullscreen">
+                                                    <i class="bi bi-arrows-fullscreen"></i>
+                                                </button>
+                                            </div>
+                                            <div class="item-description">
+                                                {{ group_lesson.description|safe }}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="item-description">
-                                        {{ group_lesson.description|safe }}
-                                    </div>
-<!--                                    <button class="carousel-control-prev" type="button" data-bs-target="#groups-carousel"  data-bs-slide="prev">-->
-<!--                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--                                        <span class="visually-hidden">Предыдущий</span>-->
-<!--                                    </button>-->
-<!--                                    <button class="carousel-control-next" type="button" data-bs-target="#groups-carousel"  data-bs-slide="next">-->
-<!--                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--                                        <span class="visually-hidden">Следующий</span>-->
-<!--                                    </button>-->
-                                </div>
+                                {% endfor %}
                             </div>
-                        {% endfor %}
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="on_time_lessons-groups" role="tabpanel" aria-labelledby="groups-button-tabs-right">
+                        <div class="carousel slide groups-carousel" id="groups-carousel-on_time_lessons">
+                            <div class="carousel-inner">
+                                 <div class="carousel-indicators">
+                                     {% for group_lesson in on_time_lessons %}
+                                        <button type="button" data-bs-target="#groups-carousel-on_time_lessons" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first%}active{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
+                                     {% endfor %}
+                                </div>
+                                {% for group_lesson in on_time_lessons %}
+                                    <div class="carousel-item {% if forloop.first %}active{% endif %}" data-group-id="{{ group_lesson.id }}">
+                                        <div class="item-header">
+                                            <span>{{ group_lesson.name|capfirst }}</span>
+                                            <span>{{ group_lesson.city|capfirst }}, {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}</span>
+                                        </div>
+                                        <div class="item-body" id="item-body-{{ group_lesson.pk }}">
+                                            <div class="item-tools">
+                                                <button type="button" data-target="#item-body-{{ group_lesson.pk }}" class="groups-item-body-fullscreen">
+                                                    <i class="bi bi-arrows-fullscreen"></i>
+                                                </button>
+                                            </div>
+                                            <div class="item-description">
+                                                {{ group_lesson.description|safe }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% empty %}
+                                    <div class="w-100 h-100 d-flex justify-content-center align-items-center ">
+                                        <p class="w-50 text-center">К сожалению, сейчас не планируется активных мероприятий.
+                                            Следите за нашими новостями!
+                                        </p>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col d-md-none">
-                {% for group_lesson in group_lessons %}
-                    <div class="container mob-groups-content">
-                        <div class="row row-cols-1">
-                            <div class="col mt-3 d-flex justify-content-center">
-                                <h6>{{ group_lesson.name|capfirst }}</h6>
-                            </div>
-                            <div class="col mt-2 city-time">
-                                <p>
-                                    {{ group_lesson.city|capfirst }}<br>
-                                    {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}
-                                </p>
-                            </div>
-                            <div class="col mt-3 description">
-                                {{ group_lesson.description|safe }}
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
+<!--            <div class="col d-md-none">-->
+<!--                {% for group_lesson in group_lessons %}-->
+<!--                    <div class="container mob-groups-content">-->
+<!--                        <div class="row row-cols-1">-->
+<!--                            <div class="col mt-3 d-flex justify-content-center">-->
+<!--                                <h6>{{ group_lesson.name|capfirst }}</h6>-->
+<!--                            </div>-->
+<!--                            <div class="col mt-2 city-time">-->
+<!--                                <p>-->
+<!--                                    {{ group_lesson.city|capfirst }}<br>-->
+<!--                                    {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                            <div class="col mt-3 description">-->
+<!--                                {{ group_lesson.description|safe }}-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
         </div>
     </div>
 </main>
@@ -109,10 +150,10 @@
 {% block footer %}
 <footer id="groups-footer">
     <div class="container">
-        <div class="row d-flex h-100">
+        <div class="row d-flex h-100 position-relative">
             <div class="col d-flex justify-content-center" id="groups-bottom">
-                <div class="carousel-button" title="left">
-                    <svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <div class="carousel-button" id="custom-carousel-prev">
+                    <svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <g id="prev" transform="translate(8.500000, 8.500000) scale(-1, 1) translate(-8.500000, -8.500000)">
                             <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
                             <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
@@ -120,19 +161,23 @@
                         </g>
                     </svg>
                 </div>
-                <div id="groups-box-form">
+                <div class="groups-box-form" id="groups-box-form-constant">
                     <p>Если вы хотите записаться в группу, заполните, пожалуйста форму</p>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#groups-modal" class="align-self-center">ХОЧУ В ГРУППУ</button>
                 </div>
-                <div class="carousel-button" title="right">
-                <svg width="18px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <g>
-                        <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                        <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
-                        <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
-                    </g>
-                </svg>
-            </div>
+                <div class="groups-box-form" id="groups-box-form-on_time_lessons">
+                    <p>Если вы хотите попасть на мероприятие, заполните, пожалуйста форму</p>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#groups-modal" class="align-self-center">ХОЧУ ЗАПИСАТЬСЯ</button>
+                </div>
+                <div class="carousel-button" id="custom-carousel-next">
+                    <svg width="18px" height="17px" viewBox="-1 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <polygon class="arrow" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                            <polygon class="arrow-fixed" points="16.3746667 8.33860465 7.76133333 15.3067621 6.904 14.3175671 14.2906667 8.34246869 6.908 2.42790698 7.76 1.43613596"></polygon>
+                            <path d="M-4.58892184e-16,0.56157424 L-4.58892184e-16,16.1929159 L9.708,8.33860465 L-1.64313008e-15,0.56157424 L-4.58892184e-16,0.56157424 Z M1.33333333,3.30246869 L7.62533333,8.34246869 L1.33333333,13.4327013 L1.33333333,3.30246869 L1.33333333,3.30246869 Z"></path>
+                        </g>
+                    </svg>
+                </div>
             </div>
         </div>
         <div class="row desktop-none">
@@ -172,13 +217,18 @@
                     <div class="row">
                         <div class="col">
                             <div id="write-group">
-                                <span>Я хочу записаться в группу:</span>
+                                <span>Я хочу записаться:</span>
                             </div>
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col" id="select-col">
-                            {{ form.group }}
+                        <div class="col select-col">
+                            {{ form.constant_group }}
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col select-col">
+                            {{ form.on_time_group }}
                         </div>
                     </div>
                     <div class="row mt-3">

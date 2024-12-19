@@ -18,6 +18,7 @@ class GroupLesson(models.Model):
     capacity = models.PositiveIntegerField(verbose_name='размер группы')
     city = models.CharField(verbose_name='город проведения', default='неизвестен')
     price = models.IntegerField(verbose_name='Цена', default=0)
+    on_time_event = models.BooleanField(default=False, verbose_name='разовое занятие')
     show_if_no_seats = models.BooleanField(default=False, verbose_name='отображать, если нет мест')
     CURRENCY_CHOICES = [
         ('$', 'USD'),
@@ -114,5 +115,5 @@ class WantWriteGroup(models.Model):
 
     class Meta:
         ordering = ['-created']
-        verbose_name = 'Желающий записаться в группу'
-        verbose_name_plural = "Желающие записаться в группу"
+        verbose_name = 'Желающий записаться в группу и мероприятия'
+        verbose_name_plural = "Желающие записаться в группу и мероприятия"
