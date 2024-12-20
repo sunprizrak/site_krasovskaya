@@ -121,10 +121,13 @@
             height: 100%;
 
             .navbar-collapse {
-                position: absolute;
-                bottom: 45px;
-                width: 100%;
-                left: 0px;
+
+                @media (max-width: 999.99px) {
+                    position: absolute;
+                    bottom: 45px;
+                    width: 100%;
+                    left: 0px;
+                }
 
                 .navbar-nav {
 
