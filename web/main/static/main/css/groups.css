@@ -307,6 +307,7 @@
                     width: 100%;
                     display: flex;
                     justify-content: space-between;
+                    border: none;
 
                     .nav-item {
                         width: 45%;
