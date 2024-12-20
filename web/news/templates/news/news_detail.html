@@ -46,8 +46,8 @@
                     </div>
                 </div>
                 <div class="row news-bottom">
-                    <div class="col d-flex align-items-center justify-content-end" data-news-id="{{ news_item.id }}">
-                        <div class="heart-stat">
+                    <div class="col d-flex align-items-center justify-content-end">
+                        <div class="heart-stat" data-news-id="{{ news_item.id }}">
                             <span>{{ news_item.likes }}</span>
                             <i class="bi bi-heart-fill"></i>
                         </div>
@@ -57,4 +57,12 @@
         </div>
     </div>
 </main>
+{% endblock %}
+
+{% block js %}
+<script>
+    const csrfToken = "{{ csrf_token }}";
+    const NewsUrl = "{% url 'news' %}";
+</script>
+<script src="{% static 'news/js/like_news.js' %}"></script>
 {% endblock %}

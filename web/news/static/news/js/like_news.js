@@ -4,7 +4,7 @@ $(document).ready(function() {
         var likeCount = $(this).find('span');
 
         $.ajax({
-            url: '',
+            url: NewsUrl,
             type: 'POST',
             data: {
                 'news_id': newsId,
