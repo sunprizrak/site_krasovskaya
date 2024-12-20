@@ -29,6 +29,18 @@
                 <span>Группы и мероприятия</span>
             </div>
         </div>
+        <div class="row desktop-none" id="mob-groups-form">
+            <div class="col">
+                <div class="mob-groups-box-form groups-box-form-constant">
+                    <p>Если вы хотите записаться в группу, заполните, пожалуйста форму</p>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#groups-modal" class="align-self-center">ХОЧУ В ГРУППУ</button>
+                </div>
+                <div class="mob-groups-box-form groups-box-form-on_time_lessons">
+                    <p>Если вы хотите попасть на мероприятие, заполните, пожалуйста форму</p>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#groups-modal" class="align-self-center">ХОЧУ ЗАПИСАТЬСЯ</button>
+                </div>
+            </div>
+        </div>
         <div class="row" id="row-groups-switch-buttons">
             <div class="col" id="col-buttons-tabs">
                 <ul class="nav nav-tabs" id="groupsTabs" role="tablist">
@@ -49,7 +61,7 @@
             <div class="col">
                 <div class="tab-content" id="groupsTabsContent">
                     <div class="tab-pane fade show active" id="constant-groups" role="tabpanel" aria-labelledby="groups-button-tabs-left">
-                        <div class="carousel slide groups-carousel" id="groups-carousel-constant">
+                        <div class="carousel carousel-fade groups-carousel" id="groups-carousel-constant">
                             <div class="carousel-inner">
                                  <div class="carousel-indicators">
                                      {% for group_lesson in constant_lessons %}
@@ -78,7 +90,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="on_time_lessons-groups" role="tabpanel" aria-labelledby="groups-button-tabs-right">
-                        <div class="carousel slide groups-carousel" id="groups-carousel-on_time_lessons">
+                        <div class="carousel carousel-fade groups-carousel" id="groups-carousel-on_time_lessons">
                             <div class="carousel-inner">
                                  <div class="carousel-indicators">
                                      {% for group_lesson in on_time_lessons %}
@@ -114,26 +126,6 @@
                     </div>
                 </div>
             </div>
-<!--            <div class="col d-md-none">-->
-<!--                {% for group_lesson in group_lessons %}-->
-<!--                    <div class="container mob-groups-content">-->
-<!--                        <div class="row row-cols-1">-->
-<!--                            <div class="col mt-3 d-flex justify-content-center">-->
-<!--                                <h6>{{ group_lesson.name|capfirst }}</h6>-->
-<!--                            </div>-->
-<!--                            <div class="col mt-2 city-time">-->
-<!--                                <p>-->
-<!--                                    {{ group_lesson.city|capfirst }}<br>-->
-<!--                                    {{ group_lesson.get_day_display|lower }}, c {{ group_lesson.start_time }} до {{ group_lesson.end_time }}/{{ group_lesson.get_price }}-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="col mt-3 description">-->
-<!--                                {{ group_lesson.description|safe }}-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                {% endfor %}-->
-<!--            </div>-->
         </div>
     </div>
 </main>
@@ -162,11 +154,11 @@
                         </g>
                     </svg>
                 </div>
-                <div class="groups-box-form" id="groups-box-form-constant">
+                <div class="groups-box-form groups-box-form-constant mobile-none">
                     <p>Если вы хотите записаться в группу, заполните, пожалуйста форму</p>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#groups-modal" class="align-self-center">ХОЧУ В ГРУППУ</button>
                 </div>
-                <div class="groups-box-form" id="groups-box-form-on_time_lessons">
+                <div class="groups-box-form groups-box-form-on_time_lessons mobile-none">
                     <p>Если вы хотите попасть на мероприятие, заполните, пожалуйста форму</p>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#groups-modal" class="align-self-center">ХОЧУ ЗАПИСАТЬСЯ</button>
                 </div>

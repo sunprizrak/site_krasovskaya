@@ -36,6 +36,21 @@ class WantWriteGroupForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        # стандартное поле групп
+        self.fields['group'] = forms.ModelChoiceField(
+            queryset=GroupLesson.objects.filter(
+                on_time_event=False
+            ).annotate(
+                num_enrollments=Count('enrollments')
+            ).filter(capacity__gt=F('num_enrollments')),
+            required=False,  # Поле не обязательно
+            empty_label='Выберите группу',
+            widget=forms.Select(attrs={
+                'class': 'form-select form-select-lg',
+                'aria-label': 'schedule-select',
+            })
+        )
+
         # Поле для постоянных групп
         self.fields['constant_group'] = forms.ModelChoiceField(
             queryset=GroupLesson.objects.filter(
@@ -68,7 +83,7 @@ class WantWriteGroupForm(forms.ModelForm):
 
     class Meta:
         model = WantWriteGroup
-        fields = ('name', 'contact', 'agree_to_privacy_policy')
+        fields = ('name', 'contact', 'group', 'agree_to_privacy_policy')
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',

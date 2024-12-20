@@ -1,24 +1,7 @@
-function applyFadeOnMd() {
-    const carousels = document.querySelectorAll('.groups-carousel');
-    carousels.forEach(carousel => {
-        if (window.innerWidth >= 999) {
-            carousel.classList.add('carousel-fade');
-        } else {
-            carousel.classList.remove('carousel-fade');
-        }
-    });
-}
-
-// Запуск при загрузке страницы и при изменении размера окна
-applyFadeOnMd();
-window.addEventListener('resize', applyFadeOnMd);
-
-
-
 $(document).ready(function () {
     // Получаем ссылки на элементы форм
-    const constantForm = $('#groups-box-form-constant');
-    const onTimeForm = $('#groups-box-form-on_time_lessons');
+    const constantForm = $('.groups-box-form-constant');
+    const onTimeForm = $('.groups-box-form-on_time_lessons');
 
     // Получаем ссылки на элементы полей выбора групп
     const constantGroupField = $('.select-col').find('[name="constant_group"]').parent();
